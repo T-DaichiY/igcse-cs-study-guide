@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6 — Automated and Emerging Technologies | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Study Guide</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science (0478) · Automated and Emerging Technologies</div>
+  <h1>Chapter 6 · Automated and Emerging Technologies</h1>
+  <p>How sensors, microprocessors and actuators combine to build automated systems; what makes something a robot rather than just a machine, and the roles robots play across industry, transport, agriculture, medicine, the home and entertainment; and how artificial intelligence — expert systems and machine learning — simulates intelligent human behaviour. A quick quiz follows every topic to check you've got it.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Automated systems</a>
+    <a href="#unit2">② Robotics</a>
+    <a href="#unit3">③ Artificial intelligence</a>
+    <a href="chapter6_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter6.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>6.1 Automated Systems</h2><div class="unit-sub">Sensors, microprocessors and actuators working together with no human intervention</div></div>
+  </div>
+
+  <p>An <strong>automated system</strong> is a combination of software and hardware — sensors, microprocessors and actuators — designed and programmed to work automatically without the need for any human intervention. Such systems still often involve <strong>human monitoring</strong>: a supervisor typically watches the process remotely and can override it if something goes wrong.</p>
+
+  <h3>The sensor → microprocessor → actuator loop</h3>
+  <p>Every automated system, however complicated it looks at first, is built from the same three-part relationship:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Stage</th><th>Component</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>1. Input</td><td>Sensor(s)</td><td>Takes a reading from the environment (temperature, pressure, light…). Analogue readings are converted to digital by an <strong>analogue-to-digital converter (ADC)</strong>, since a microprocessor can only process digital data.</td></tr>
+      <tr><td>2. Process</td><td>Microprocessor / computer</td><td>Compares the sensor data with pre-set/stored values or programmed rules and decides what action (if any) is needed.</td></tr>
+      <tr><td>3. Output</td><td>Actuator(s)</td><td>Receives a signal from the microprocessor and performs the physical task — turning a motor, opening a valve, applying a brake.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note-box">💡 <strong>How to answer any "describe the automated system" question:</strong> work through the loop in order — name the specific sensor(s) relevant to the scenario, state what data they collect, say the (analogue) data may need an ADC, say it is sent to the microprocessor which compares it with a pre-set/stored value, and finally say the microprocessor sends a signal to a named actuator to perform a specific physical action. A vague answer that just says "sensors detect things and actuators respond" without naming the sensor, the comparison, and the actuator's specific action will lose marks.</div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — a fully automatic bottling plant for fizzy drinks</div>
+    <div class="step"><span class="sn">1</span>Sensors check that the correct amount of each ingredient has been added to the mixing tank.</div>
+    <div class="step"><span class="sn">2</span>A stirrer (an actuator) is automatically activated whenever ingredients are added, to mix them.</div>
+    <div class="step"><span class="sn">3</span>At the bottling stage, sensors check the correct amount of drink and carbon dioxide gas has been added to each bottle.</div>
+    <div class="step"><span class="sn">4</span>The central computer receives all sensor data continuously, compares it against the pre-set recipe values, and sends signals to actuators (valves, the stirrer motor, the capping mechanism) to control mixing, bottling, gas injection, capping and labelling.</div>
+    <div class="answer-line">➜ The whole process — from mixing through to labelling — runs with no human intervention.</div>
+  </div>
+
+  <h3>Automated systems across different sectors</h3>
+  <p>The syllabus expects you to recognise the sensor → microprocessor → actuator loop in scenarios drawn from industry, transport, agriculture, weather, gaming, lighting and science:</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🏭</div><div class="tc-name">Industry</div><div class="tc-example">A nuclear power station's distributed control system (DCS) uses temperature, pressure, flow and radiation sensors, with actuators on pumps, valves and an emergency shut-down mechanism.</div></div>
+    <div class="task-card"><div class="tc-icon">🚗</div><div class="tc-name">Transport</div><div class="tc-example">Self-parking cars use bumper sensors and cameras to gauge a space, then actuators control the steering rack, brakes and throttle.</div></div>
+    <div class="task-card"><div class="tc-icon">🌾</div><div class="tc-name">Agriculture</div><div class="tc-example">An automated irrigation system uses ultrasonic water-level sensors and a wireless link to a controller, which starts/stops pumps via actuators.</div></div>
+    <div class="task-card"><div class="tc-icon">🌦️</div><div class="tc-name">Weather</div><div class="tc-example">An automated weather station uses a thermometer, anemometer, hygrometer, barometer, level sensor and light sensor, feeding a microprocessor.</div></div>
+    <div class="task-card"><div class="tc-icon">🎮</div><div class="tc-name">Gaming</div><div class="tc-example">Accelerometers detect tilting; proximity sensors in smart touch pads detect finger position — both feed a microcontroller for immersive gameplay.</div></div>
+    <div class="task-card"><div class="tc-icon">💡</div><div class="tc-name">Lighting</div><div class="tc-example">A light sensor detects darkness and the microprocessor signals actuators to control garden LEDs and a fountain's water pumps.</div></div>
+    <div class="task-card"><div class="tc-icon">🧪</div><div class="tc-name">Science</div><div class="tc-example">In a pharmaceutical process, level sensors and a colorimeter feed a microprocessor, which opens/closes a burette tap via an actuator.</div></div>
+  </div>
+
+  <h3>Worked example — advantages and disadvantages of a nuclear power station's automated system</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Advantages</th><th>Disadvantages</th></tr></thead>
+    <tbody>
+      <tr><td>Much faster than a human operator at taking necessary action</td><td>Expensive to set up in the first place, and needs considerable testing</td></tr>
+      <tr><td>Safer — more likely to make timely interventions than a human, and keeps humans away from a dangerous environment</td><td>Always possible for a set of conditions to occur that were never considered during testing — hence the need for a human supervisor</td></tr>
+      <tr><td>The process runs closer to optimum conditions, since small changes are identified and corrected very quickly</td><td>Subject to cyberattacks no matter how good the system (a countermeasure is having no external links, though the connection to the supervisor is still a potential weak link)</td></tr>
+      <tr><td>Less expensive in the long run, since an automated system replaces most of the 24-hour monitoring workforce</td><td>Needs enhanced maintenance, which can be expensive</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn-box">⚠️ <strong>Common misconception (confirmed in two separate June 2025 Examiner Reports, Papers 0478/11 and 0478/13):</strong> when a question asks specifically for an advantage/disadvantage <em>to a named party</em> (e.g. "to the employee" or "to the worker"), many candidates repeatedly wrote generic advantages that actually benefit the <em>employer</em> instead (e.g. "robots don't need breaks", "robots work 24/7") — these earn zero marks because they don't answer the question that was actually asked. Always re-read exactly who the advantage/disadvantage must apply to before answering.</div>
+
+  <div class="teal-box">📌 Increased automation in industry has improved quality dramatically: in manual manufacture of car engines, piston installation had an error rate of around 1.5%; with automated systems this fell to about 0.00001%.</div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — Automated systems</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What converts an analogue sensor reading into a digital format before a microprocessor can process it?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>An actuator, which converts electrical signals into movement</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An inference engine</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An analogue-to-digital converter (ADC)</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A rules base</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the sensor → microprocessor → actuator loop, what is the role of the microprocessor?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It physically performs the task</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It takes readings from the environment</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It converts the microprocessor's digital output back into an analogue signal for the actuator</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It compares sensor data with stored values and decides what action to take</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What is a genuine disadvantage of a nuclear power station's automated (DCS) system, according to the textbook?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It is vulnerable to cyberattacks however well it is secured</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It is always cheaper to set up than manual control, even for small plants</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It cannot be monitored remotely</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It can never encounter untested conditions</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which sensor would you use in an automated weather station to measure wind speed?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Barometer</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Anemometer</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Hygrometer</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Thermometer</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">What is the correct order of stages in an automated system's control loop?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Actuator → sensor → microprocessor</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Sensor → microprocessor → actuator</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Microprocessor → sensor → actuator</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Sensor → actuator → microprocessor</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>6.2 Robotics</h2><div class="unit-sub">What makes a machine a robot, and the roles robots play across industry, transport, agriculture, medicine, the home and entertainment</div></div>
+  </div>
+
+  <p><strong>Robotics</strong> is a branch of (computer) science that brings together the <strong>design, construction and operation</strong> of robots. The word "robot" comes from the Czech word <em>robota</em>, meaning "forced labour", first used in the 1920s play <em>Rossum's Universal Robots</em>.</p>
+
+  <div class="note-box">💡 <strong>Command-word discipline:</strong> a full-mark definition of robotics names it as a <em>branch of (computer) science</em> and includes <em>all three</em> of design, construction and operation — dropping any one of the three, or describing robotics only as "building robots", loses marks.</div>
+
+  <h3>Robots across the syllabus's three named categories</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🏭</div><div class="tc-name">Factory equipment</div><div class="tc-example">Welding, spray-painting, fitting windscreens, cutting metal parts, bottling/labelling plants, automatic warehouses.</div></div>
+    <div class="task-card"><div class="tc-icon">🏠</div><div class="tc-name">Domestic robots</div><div class="tc-example">Autonomous floor sweepers, lawn mowers, pool cleaners, window cleaners and "friend" entertainment robots.</div></div>
+    <div class="task-card"><div class="tc-icon">🚁</div><div class="tc-name">Drones</div><div class="tc-example">Unmanned aerial vehicles (UAVs), remotely controlled or autonomous, used for reconnaissance or parcel delivery.</div></div>
+  </div>
+
+  <h3>The three defining characteristics of a robot</h3>
+  <p>To correctly be called a robot, a machine must demonstrate all three of the following:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Characteristic</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>1. Ability to sense its surroundings</td><td>Via sensors (light, pressure, temperature, acoustic…) that let it recognise its environment. Data is sent to a microprocessor or computer.</td></tr>
+      <tr><td>2. A degree of movement</td><td>A mechanical structure/framework (wheels, cogs, pistons, gears) plus electrical components (motors, actuators, circuit boards). Robots can use <strong>end-effectors</strong> — attachments for tasks like welding, spraying or lifting.</td></tr>
+      <tr><td>3. Programmable</td><td>A "brain" — the controller — determines the action to take, relying on data from sensors/cameras. Controllers are programmable, which lets a robot carry out tasks automatically.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn-box">⚠️ <strong>Common misconception, confirmed in the June 2025 Examiner Report (Paper 0478/11, Question 8(a)):</strong> "Some candidates gave an inaccurate response of 'artificial intelligence'. It would be beneficial for candidates to understand that not all robots have artificial intelligence. It is not a key characteristic of a robot and does not define a robot." Many robots simply carry out repetitive tasks and need no adaptive, "intelligent" behaviour at all.</div>
+
+  <p>It's also important not to confuse physical robots with <strong>software robots</strong> — a search-engine WebCrawler that scans websites, or a chatbot that appears to hold a conversation — which do not meet the physical definition of a robot at all.</p>
+
+  <h3>Independent vs dependent robots</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Independent robot</th><th>Dependent robot</th></tr></thead>
+    <tbody>
+      <tr><td>No direct human control — described as <strong>autonomous</strong> (e.g. an autonomous vehicle)</td><td>A human interfaces directly with it, via a computer or control panel</td></tr>
+      <tr><td>Can replace human activity totally; no human interaction is required to function</td><td>Can only supplement, not totally replace, human activity — e.g. humans and robots working together on a car assembly line</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Roles of robots across sectors</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Sector</th><th>Example role</th></tr></thead>
+    <tbody>
+      <tr><td>Industry</td><td>Paint spraying, welding, manufacturing microchips — capable of working in hazardous conditions, 24/7, but can struggle with "non-standard" tasks</td></tr>
+      <tr><td>Transport</td><td>Autonomous cars, buses, trains and (in future) airplanes use sensors, cameras and actuators to sense and react to conditions safely</td></tr>
+      <tr><td>Agriculture</td><td>Harvesting robots (e.g. the "vegebot") pick only ripe produce; weed-control robots use AI and GPS to distinguish crop from weed</td></tr>
+      <tr><td>Medicine</td><td>Surgical robots, blood-sampling robots, microbots for targeted therapy, and robotic prosthetic limbs</td></tr>
+      <tr><td>Domestic</td><td>Autonomous vacuum cleaners and grass cutters use proximity sensors/cameras to avoid obstacles and cover a whole area</td></tr>
+      <tr><td>Entertainment</td><td>Theme-park character robots, camera-operating robots, and robots that synchronise lighting/effects to within a millisecond</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — a real 0478 exam question on a human-controlled surgery robot (June 2025, Paper 0478/12, Q5)</div>
+    <p style="margin-top:.2rem">Scenario: a doctor controls a surgical robot remotely to operate on a patient.</p>
+    <div class="step"><span class="sn">1</span>Electrical components asked for: any two of sensors, microprocessors, actuators.</div>
+    <div class="step"><span class="sn">2</span>Advantages (point + expansion): "a doctor doesn't need to travel… so any specialist in the world can operate"; "surgery enhances precision/accuracy… so a smaller incision can be made… so recovery time may be shorter"; "components can be smaller than a human hand"; "surgery is safer/more hygienic… keeps the doctor away from an infectious patient".</div>
+    <div class="step"><span class="sn">3</span>Disadvantages (point + expansion): "the internet connection could be lost/delayed… so surgery may not be able to continue"; "the robot could be hacked… and endanger the patient's life".</div>
+    <div class="answer-line">➜ The examiner report notes most candidates lost marks in part (ii) by giving generic reasons like "robots don't need breaks" — but the scenario states a <em>human</em> is controlling the robot, so that generic reason does not apply here.</div>
+  </div>
+
+  <div class="teal-box">📌 Autonomous cars use radar, ultrasonic sensors and cameras as their "eyes and ears"; research shows autonomous vehicles could increase lane capacity by up to +100% and average speed by +20%, while removing human error from driving decisions.</div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — Robotics</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What are the three defining characteristics of a robot?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Sensing ability, artificial intelligence, and being able to learn from its own mistakes</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Sensing ability, movement, and artificial intelligence</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Sensing ability, movement (mechanical structure), and being programmable</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Movement, artificial intelligence, and speech recognition</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Why is "artificial intelligence" NOT one of the three defining characteristics of a robot?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Because many robots just carry out repetitive tasks and need no adaptive behaviour</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Because all robots need AI in order to move at all</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Because AI is used only in software, never in robots</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Because the syllabus never mentions artificial intelligence in any robot topic, so it cannot be tested</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A search-engine WebCrawler and a chatbot are both examples of…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A dependent robot</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An expert system</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An independent (autonomous) robot that works without human control</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Software "robots" — not true robots at all</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A doctor is remotely controlling a robot during surgery. Which advantage would be INAPPROPRIATE to give, according to real examiner feedback?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Smaller incisions can improve the patient's recovery time</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The robot doesn't need to take breaks, since a human is controlling it</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A specialist doctor could operate on a patient from anywhere in the world</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Components used can be smaller than a human hand</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which robot type can replace human activity totally, with no human interaction required to function?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A dependent robot that needs a human operator at all times</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A chatbot</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An end-effector</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>An independent (autonomous) robot</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>6.3 Artificial Intelligence</h2><div class="unit-sub">Simulating intelligent human behaviour — reasoning, learning, expert systems and machine learning</div></div>
+  </div>
+
+  <p><strong>Artificial intelligence (AI)</strong> is a branch of computer science dealing with the <strong>simulation of intelligent human behaviour</strong> by a computer — often described as replicating the <strong>cognitive functions</strong> of the human brain (the mental process of acquiring knowledge through thought, experience and the five senses).</p>
+
+  <div class="note-box">💡 <strong>Command-word discipline:</strong> a full-mark definition of AI needs two parts — (1) that it is a <em>branch of computer science</em>, and (2) that its purpose is the <em>simulation of intelligent human behaviour by a computer</em>. "A computer that thinks" or "when a machine is smart" won't gain full credit — it omits the technical framing the mark scheme expects.</div>
+
+  <h3>How AI differs from a normal computer program</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Standard computer program</th><th>AI system</th></tr></thead>
+    <tbody>
+      <tr><td>Only does exactly what it is coded to do</td><td>Can learn from new data and adapt its behaviour to new situations</td></tr>
+      <tr><td>Cannot handle a situation that was never explicitly programmed</td><td>Can reason and generalise to situations it has not seen before</td></tr>
+      <tr><td>Requires a human to rewrite the code for new requirements</td><td>Can change its own behaviour without being explicitly reprogrammed</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Three pillars of AI, and three levels compared with humans</h3>
+  <p>AI is essentially a collection of rules and data, combined with the ability to <strong>reason</strong>, <strong>learn</strong> and <strong>adapt</strong> to external stimuli:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Category</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td>Narrow AI</td><td>A machine has <strong>superior</strong> performance to a human doing <strong>one specific task</strong></td></tr>
+      <tr><td>General AI</td><td>A machine is <strong>similar (not superior)</strong> to a human's performance on a specific task</td></tr>
+      <tr><td>Strong AI</td><td>A machine has <strong>superior</strong> performance to a human in <strong>many tasks</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — deductive reasoning (making the perfect cup of tea)</div>
+    <div class="step"><span class="sn">1</span>AI works out how to make the perfect cup of tea, based on facts (water temperature, steeping time, milk quantity).</div>
+    <div class="step"><span class="sn">2</span>The machine learns from this experience and builds a set of rules from it.</div>
+    <div class="step"><span class="sn">3</span>Next time it's asked to make a related drink (coffee, hot chocolate), it applies and modifies its learned rules rather than starting from nothing.</div>
+    <div class="answer-line">➜ Over time the AI performs the task more effectively, even applying its rules to a completely new situation.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">📰</div><div class="tc-name">News generation</div><div class="tc-example">Processes live news feeds continuously to generate content.</div></div>
+    <div class="task-card"><div class="tc-icon">🔊</div><div class="tc-name">Smart home devices</div><div class="tc-example">Alexa, Siri, Cortana — recognise voice commands and become more sophisticated over time.</div></div>
+    <div class="task-card"><div class="tc-icon">💬</div><div class="tc-name">Chatbots</div><div class="tc-example">Replicate patterns of human interaction to respond to typed or voice messages.</div></div>
+    <div class="task-card"><div class="tc-icon">🙂</div><div class="tc-name">Facial expression recognition</div><div class="tc-example">Maps combinations of facial landmarks (eyebrows, mouth corners) to emotions.</div></div>
+  </div>
+
+  <h3>Expert systems</h3>
+  <p>An <strong>expert system</strong> uses AI to simulate the judgement and behaviour of a human expert — solving problems or answering questions that would normally require one. The syllabus limits this to exactly four required components:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Component</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>User interface</td><td>How the system interacts with the user — dialogue boxes, command prompts; usually Yes/No questions based on previous answers</td></tr>
+      <tr><td>Inference engine</td><td>The main processing element — acts like a search engine, examining the knowledge base for matches and applying the rules base to reach a conclusion</td></tr>
+      <tr><td>Knowledge base</td><td>A repository of facts — a collection of objects and their attributes, gathered from expert resources</td></tr>
+      <tr><td>Rules base</td><td>A set of inference rules used by the inference engine, usually IF statements, e.g. <code>IF continent = "South America" AND language = "Portuguese" THEN country = "Brazil"</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — how a knowledge base + rules base reach a conclusion</div>
+    <div class="step"><span class="sn">1</span>Is it a mammal? YES</div>
+    <div class="step"><span class="sn">2</span>Can it be a pet? NO</div>
+    <div class="step"><span class="sn">3</span>Does it live in water? YES · Does it make sonic sounds? YES · Is its body covered in skin? YES · Does it have legs? NO</div>
+    <div class="answer-line">➜ Conclusion: it is a WHALE.</div>
+  </div>
+
+  <div class="warn-box">⚠️ <strong>Common misconception, confirmed in the June 2025 Examiner Report (Paper 0478/12, Question 5(a)):</strong> when asked to <em>describe how an expert system decides a diagnosis</em>, most candidates only listed and defined the component parts rather than explaining the <em>process</em>. "Candidates found this question challenging… Few candidates were able to relate this to the context given and did not describe how the components are used to decide a diagnosis." Simply naming and defining the four components is not enough — describe the process: the inference engine compares input to the knowledge base, then applies the rules base to reach a conclusion.</div>
+
+  <h3>Machine learning</h3>
+  <p><strong>Machine learning</strong> is the science of training computers with sample data so they can make predictions about new, unseen data, without needing to be specifically reprogrammed. It is a sub-set of AI.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>AI</th><th>Machine learning</th></tr></thead>
+    <tbody>
+      <tr><td>Represents simulated intelligence in machines</td><td>Getting machines to make decisions without being explicitly programmed to do so</td></tr>
+      <tr><td>Aims to build machines capable of thinking like humans</td><td>Aims to make machines that learn through data acquisition, to solve new problems</td></tr>
+    </tbody>
+  </table></div>
+  <p>A general machine learning model development cycle: <strong>1. Data collection → 2. Data cleaning → 3. Exploration and analysis → 4. Building a model → 5. Evaluation.</strong> This applies to spam-email filtering, collaborative-filtering shopping recommendations, and fraud detection alike.</p>
+
+  <div class="teal-box">📌 <strong>Deep learning</strong> (beyond the 0478 syllabus, for interest) is a sub-set of machine learning that arranges algorithms in layers as an artificial neural network. It needs large amounts of data and computing power, and is especially good at complex visual tasks — but its reasoning is often called a "black box" since it's hard to see why a decision was made.</div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — Artificial intelligence</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What two elements must a full-mark definition of artificial intelligence include?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>That it is a branch of computer science and simulates intelligent human behaviour</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>That it is a type of robot, and that it uses sensors</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>That it always uses neural networks, and needs huge amounts of labelled training data</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>That it is faster than a human, and never makes mistakes once it has been trained</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A machine with superior performance to a human doing one specific task is an example of…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>General AI</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Deep learning</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Narrow AI</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Machine learning</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What are the four required components of an expert system?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Sensor, actuator, microprocessor, ADC</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Input, process, output, storage</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Knowledge base, rules base, inference engine, user interface</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Data collection, cleaning, training, testing, and deployment stages</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">What is the role of the inference engine in an expert system?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It stores the raw facts about objects and their attributes</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It is the screen through which the user interacts with the system</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It automatically trains itself on brand-new data with no rules at all, like a neural network</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It compares user input with the knowledge base and applies the rules to reach a conclusion</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">According to the June 2025 examiner report, what mistake did most candidates make when asked to "describe how an expert system decides a diagnosis"?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>They gave the diagnosis with no explanation at all</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>They only listed the component parts instead of describing the process</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>They confused an expert system with a robot</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>They described machine learning and neural networks instead of expert systems</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter5.html">← Chapter 5</a>
+  <a href="chapter6_easy.html">🍎 Easy version</a>
+  <a href="index.html">🏠 Overview</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Automated system</div><div class="term-def">Software + hardware designed to work automatically with no human intervention.</div></div>
+    <div class="term-item"><div class="term-name">Sensor / ADC</div><div class="term-def">Input device reading the environment / converts analogue readings to digital.</div></div>
+    <div class="term-item"><div class="term-name">Microprocessor / Actuator</div><div class="term-def">Decides the action from sensor data / physically performs it.</div></div>
+    <div class="term-item"><div class="term-name">Distributed control system (DCS)</div><div class="term-def">A powerful computer that monitors/controls a complex process with no human interaction.</div></div>
+    <div class="term-item"><div class="term-name">Robotics</div><div class="term-def">The branch of (computer) science covering the design, construction and operation of robots.</div></div>
+    <div class="term-item"><div class="term-name">Autonomous</div><div class="term-def">Able to operate independently, with no human input required.</div></div>
+    <div class="term-item"><div class="term-name">End-effector</div><div class="term-def">An attachment on a robot arm for a specific task, e.g. spray painting.</div></div>
+    <div class="term-item"><div class="term-name">Artificial intelligence (AI)</div><div class="term-def">Branch of computer science simulating intelligent human behaviour.</div></div>
+    <div class="term-item"><div class="term-name">Narrow / General / Strong AI</div><div class="term-def">Superior at one task / similar to a human / superior at many tasks.</div></div>
+    <div class="term-item"><div class="term-name">Expert system</div><div class="term-def">AI mimicking a human expert's judgement, via a knowledge base, rules base, inference engine and interface.</div></div>
+    <div class="term-item"><div class="term-name">Inference engine</div><div class="term-def">Compares input to the knowledge base and applies the rules base to reach a conclusion.</div></div>
+    <div class="term-item"><div class="term-name">Machine learning</div><div class="term-def">A sub-set of AI that trains on data to make predictions without being reprogrammed.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>If a question asks for an advantage/disadvantage <strong>to a named party</strong> (employee, patient…), only give points that genuinely benefit or harm that specific party — not the employer.</p>
+    <p>When a scenario says a <strong>human</strong> is controlling the robot (e.g. remote surgery), don't use generic "robots don't need breaks" answers — they don't apply to a human-controlled robot.</p>
+    <p>For expert-system questions, describe the <strong>process</strong> (inference engine compares input to the knowledge base, then applies the rules base) — don't just define the four components.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 6 · Automated and Emerging Technologies · Study guide (regular). Source: Cambridge IGCSE Computer Science (0478).
+  &nbsp;·&nbsp; <a href="chapter6_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+/* Per-topic quizzes: each keyed by its data-quiz id */
+var QUIZ = {
+  1:{answers:[2, 3, 0, 1, 1], total:5, score:0, done:0, feedback:[
+    "An analogue-to-digital converter (ADC) converts an analogue sensor reading into digital format, since the microprocessor can only process digital data.",
+    "The microprocessor compares the sensor data with pre-set/stored values and decides what action, if any, is needed.",
+    "No automated system, however well designed, is completely immune to cyberattacks — this is a genuine disadvantage even of high-quality DCS systems.",
+    "An anemometer measures wind speed in an automated weather station.",
+    "The correct loop order is sensor (input) → microprocessor (process) → actuator (output)."]},
+  2:{answers:[2, 0, 3, 1, 3], total:5, score:0, done:0, feedback:[
+    "The three defining characteristics of a robot are sensing ability, movement (mechanical + electrical), and being programmable.",
+    "Many robots carry out repetitive tasks and don't need adaptive/intelligent behaviour — AI is not a defining characteristic of a robot.",
+    "A WebCrawler and a chatbot are software 'robots' — they don't meet the physical definition of a true robot at all.",
+    "Since a human (the doctor) is controlling the robot, 'doesn't need breaks' is not an appropriate advantage — that only applies to fully autonomous robots.",
+    "An independent (autonomous) robot has no direct human control and can replace human activity totally."]},
+  3:{answers:[0, 2, 2, 3, 1], total:5, score:0, done:0, feedback:[
+    "A full-mark AI definition states it is a branch of computer science that simulates intelligent human behaviour.",
+    "Narrow AI is when a machine has superior performance to a human doing one specific task.",
+    "The four required components of an expert system are the knowledge base, rules base, inference engine and user interface.",
+    "The inference engine compares user input with the knowledge base and applies the rules base to reach a conclusion.",
+    "Most candidates only listed/defined the component parts instead of describing the process by which they interact to reach a diagnosis."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+/* Scroll reveal */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

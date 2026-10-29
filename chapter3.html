@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 — Hardware | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Study Guide</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science 0478 · Hardware</div>
+  <h1>Chapter 3 · Hardware</h1>
+  <p>How a computer is actually built: the CPU and the Von Neumann architecture that runs every instruction, the input/output devices and sensors that connect a computer to the real world, how data is stored in RAM, ROM, and secondary/cloud storage, and the hardware that connects a computer to a network — with a quick quiz after every topic to check you've got it.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① CPU Architecture</a>
+    <a href="#unit2">② Input, Output &amp; Sensors</a>
+    <a href="#unit3">③ Data Storage</a>
+    <a href="#unit4">④ Networking Hardware</a>
+    <a href="chapter3_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter3.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>3.1 CPU Architecture</h2><div class="unit-sub">The CPU, Von Neumann architecture, cores/cache/clock, instruction sets and embedded systems</div></div>
+  </div>
+
+  <h3>The central processing unit (CPU)</h3>
+  <p>The <strong>central processing unit (CPU)</strong> — also called a <strong>microprocessor</strong> or <strong>processor</strong> — is central to every modern computer system, including tablets and smartphones. It is responsible for the <strong>execution or processing of all the instructions and data</strong> in a computer application. Without a CPU, a computer cannot run any software at all.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Component group</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Control unit (CU)</td><td>Directs and synchronises the operation of the whole CPU by sending out control signals.</td></tr>
+      <tr><td>Arithmetic and logic unit (ALU)</td><td>Carries out arithmetic (e.g. +, −) and logic (e.g. AND, OR) operations.</td></tr>
+      <tr><td>Registers and buses</td><td>Registers temporarily hold data/instructions inside the CPU; buses carry data, addresses and control signals between components.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Command-word discipline.</strong> A full-mark answer for "describe the role of the CPU" must say the CPU <em>processes/executes instructions and data</em> — not simply "it controls the computer" or "it is the brain of the computer". Vague analogies earn no technical marks on their own.</div>
+  <p>A <strong>microprocessor</strong> is the CPU implemented as a single integrated circuit (chip). This differs from a <strong>microcontroller</strong> (a CPU plus RAM, ROM and other peripherals on one chip, dedicated to one task, e.g. a digital watch) and a <strong>system on chip (SoC)</strong> (a microcontroller plus even more components on one chip) — see the embedded systems section below.</p>
+
+  <h3>Von Neumann architecture — the stored program concept</h3>
+  <p>Early computers had to be fed data while running and couldn't store programs. In the mid-1940s <strong>John von Neumann</strong> developed the <strong>stored program computer</strong> concept, still the basis of computer architecture today: a CPU that can access memory directly; memory that stores programs as well as data; and stored programs made of instructions executed in sequential order.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Register</th><th>Abbreviation</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>Program counter</td><td>PC</td><td>Stores the address where the next instruction to be read can be found.</td></tr>
+      <tr><td>Memory address register</td><td>MAR</td><td>Stores the address of the memory location currently being read from or written to.</td></tr>
+      <tr><td>Memory data/buffer register</td><td>MDR</td><td>Stores data just read from memory, or about to be written to memory.</td></tr>
+      <tr><td>Current instruction register</td><td>CIR</td><td>Stores the current instruction being decoded and executed.</td></tr>
+      <tr><td>Accumulator</td><td>ACC</td><td>Stores the <em>result</em> of an ALU calculation — not the calculation itself.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Common misconception (Cambridge 0478 June 2025, Paper 11, Q5a).</strong> Some candidates incorrectly stated that the accumulator "stores calculations". The correct description: the accumulator stores the <em>result</em> of a calculation, not the calculation process itself.</div>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Bus</th><th>Direction</th><th>Carries</th></tr></thead>
+    <tbody>
+      <tr><td>Address bus</td><td>Unidirectional (CPU → memory)</td><td>Memory addresses. Wider bus = more locations addressable directly (16-bit → 2¹⁶ = 65,536 locations).</td></tr>
+      <tr><td>Data bus</td><td>Bidirectional</td><td>Data (address, instruction or value) between CPU, memory and I/O devices. Wider = larger "words" carried, better performance.</td></tr>
+      <tr><td>Control bus</td><td>Bidirectional</td><td>Signals from the CU to all other components; typically 8 bits wide.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 The fetch–decode–execute (FDE) cycle</div>
+    <div class="step"><span class="sn">1</span><strong>Fetch:</strong> the PC's address is copied to the MAR (via the address bus); the instruction at that address is copied from memory into the MDR; the MDR's contents are copied into the CIR; the PC is incremented by 1.</div>
+    <div class="step"><span class="sn">2</span><strong>Decode:</strong> the instruction now in the CIR is decoded so it can be interpreted.</div>
+    <div class="step"><span class="sn">3</span><strong>Execute:</strong> the CPU sends the decoded instruction as control signals (via the control bus) to the appropriate components, carrying it out.</div>
+    <div class="answer-line">➜ Full marks require the order PC → MAR → memory → MDR → CIR, and stating the PC increments before the next fetch.</div>
+  </div>
+
+  <h3>Cores, cache and internal clock — what affects CPU performance</h3>
+  <p>Several factors work together to determine CPU speed — increasing one alone rarely gives a proportional performance gain.</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">⏱️</div><div class="tc-name">Clock speed</div><div class="tc-example">The system clock synchronises all operations (e.g. 3.5 GHz = 3.5 billion cycles/second). Higher clock speed increases processing speed, but <strong>overclocking</strong> beyond design limits risks instability and overheating.</div></div>
+    <div class="task-card"><div class="tc-icon">📦</div><div class="tc-name">Cache</div><div class="tc-example">Fast memory located <strong>inside</strong> the CPU that stores <strong>frequently</strong> used instructions/data. The CPU checks cache before RAM. Larger cache = better performance.</div></div>
+    <div class="task-card"><div class="tc-icon">🧩</div><div class="tc-name">Number of cores</div><div class="tc-example">A core = ALU + control unit + registers. Dual/quad core reduces reliance on raw clock speed, but doubling cores doesn't double performance — cores must communicate, which costs time.</div></div>
+  </div>
+  <div class="note-box">💡 <strong>Summary rule.</strong> For "explain how X affects CPU performance", always state both the <em>direction</em> of the effect and a <em>limiting factor</em> — e.g. "increasing clock speed increases processing speed, BUT can cause overheating/instability if overclocked." A one-sided answer drops marks.</div>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Paper 0478/11, June 2025, Q5c).</strong> "Some candidates incorrectly stated that [higher clock speed] would mean more fetch-decode-execute cycles could be carried out <em>simultaneously</em>." FDE cycles on a single core happen one after another, faster — not in parallel. Also, per the Paper 0478/12 report: "Some candidates inaccurately gave 'clock speed' instead of 'clock' for controlling the number of FDE cycles" — <strong>clock speed is a measurement, not a component.</strong></div>
+
+  <h3>Instruction set</h3>
+  <p>Every operation is made of an <strong>opcode</strong> (what to do) and an <strong>operand</strong> (the data, register or memory location to act on). The <strong>instruction set</strong> is the complete, limited list of opcodes a particular CPU can process, expressed in machine code. <strong>X86</strong> is one common standard — Intel and AMD CPUs use almost identical X86 instruction sets even though their internal electronic designs differ.</p>
+  <div class="teal-box">📌 Do not confuse an instruction set with programming code. Instruction sets are low-level machine code; high-level program code needs a compiler/interpreter to convert it into instructions the instruction set understands.</div>
+
+  <h3>Embedded systems</h3>
+  <p>An <strong>embedded system</strong> is hardware plus software designed to carry out a <strong>specific, dedicated set of functions</strong> — unlike a general-purpose computer, which can run many different programs. Embedded systems are based on a microcontroller (CPU + RAM/ROM + peripherals on one chip), a microprocessor (CPU chip only, needing separate RAM/ROM), or a system on chip (SoC, which usually includes CPU, memory, I/O ports and storage together).</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Benefits</th><th>Drawbacks</th></tr></thead>
+    <tbody>
+      <tr><td>Small, low cost, low power</td><td>Hard to upgrade/troubleshoot — a specialist task</td></tr>
+      <tr><td>Simple, dedicated interface — no OS needed</td><td>Interface can look simple but be confusing to use</td></tr>
+      <tr><td>Fast reaction to changing input; reliable (mass produced)</td><td>Internet-connected devices are open to hackers/viruses</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Paper 0478/12, June 2025, Q4b).</strong> "Most candidates referred to the computer having more than one set task [but] need a greater understanding of the features of an embedded system beyond it being designed to perform a dedicated function." A full-mark answer needs a <strong>second, independent</strong> distinguishing point — e.g. dedicated vs general-purpose hardware, ease of reprogramming, or "built into a larger device" vs standalone — not two versions of the same point.</div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Real examples of embedded systems</div>
+    <div class="step"><span class="sn">1</span><strong>Motor vehicles:</strong> fuel injection, airbags, ABS braking, traction control, in-car entertainment/GPS.</div>
+    <div class="step"><span class="sn">2</span><strong>Vending machines:</strong> a microcontroller reads a keypad, coin counter, tilt sensor and temperature sensor, and controls motors, a display and a wireless modem.</div>
+    <div class="step"><span class="sn">3</span><strong>Security systems:</strong> a controller reads temperature/pressure/acoustic sensors plus a keypad, and produces alarm/light outputs; settings are held on SSD (not RAM) so they aren't lost when powered off.</div>
+    <div class="answer-line">➜ Note: a computer is NOT an embedded system, because it is multi-functional and can be repurposed by running different software.</div>
+  </div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — CPU Architecture</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is the best description of the role of the CPU?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It is the "brain" of the computer that controls everything, including storing every file permanently</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It stores all the files and programs permanently</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It executes/processes all the instructions and data in a computer application</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It connects the computer to a network</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the fetch stage of the FDE cycle, which register's address is copied into the MAR?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The accumulator (ACC)</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The program counter (PC)</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The current instruction register (CIR)</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The memory data register (MDR)</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A student says "increasing clock speed always increases overall CPU performance with no downside." What is wrong with this claim?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Overclocking beyond design limits risks instability and overheating; cache, cores and bus width also matter</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Clock speed has no effect on performance at all, because only the number of cores decides how fast a CPU runs</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Higher clock speed only affects the ALU, not the CU, because the control unit does not use the clock signal</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Clock speed can only be changed by replacing the CPU</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">What is an instruction set?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A high-level programming language used to write applications that run on any CPU without translation</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A list of files stored on the hard disk, together with the folders that contain them</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The set of registers inside the CPU that hold data during the fetch-decode-execute cycle</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The complete set of machine code instructions (opcodes) that a particular CPU can process</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Why is a washing machine's control system an embedded system, but a laptop is not?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A washing machine has a dedicated set of functions, while a laptop is general-purpose and runs many programs</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A washing machine has no CPU at all, because it only uses mechanical switches and timers to run or timers</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Only laptops have a control unit and ALU, because embedded processors work without either of them, so laptops need no extra chips</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Embedded systems always cost more than general-purpose computers because they need custom hardware</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>3.2 Input, Output and Sensors</h2><div class="unit-sub">Input devices, output devices, and the sensors that link a computer to the physical world</div></div>
+  </div>
+
+  <h3>Input devices</h3>
+  <p>Input devices let data enter a computer system. Match the device to <em>why</em> it fits the context — a mechanism description alone, without linking it to the scenario given, won't earn full marks.</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">📊</div><div class="tc-name">Barcode / QR scanner</div><div class="tc-example">Red laser/LED reads reflected light off dark/light bars via photoelectric cells. QR codes hold far more data (up to 4296 characters) and are read by a smartphone camera + app.</div></div>
+    <div class="task-card"><div class="tc-icon">📷</div><div class="tc-name">Digital camera</div><div class="tc-example">Light hits a CCD (millions of photodiodes = pixels), converted via an ADC — an 8-bit ADC gives 256 brightness levels per pixel; 24-bit RGB gives full colour.</div></div>
+    <div class="task-card"><div class="tc-icon">⌨️</div><div class="tc-name">Keyboard</div><div class="tc-example">A membrane detects which key completes a circuit; the CPU looks up an index file for the ASCII value. Frequent use risks RSI (repetitive strain injury).</div></div>
+    <div class="task-card"><div class="tc-icon">🎤</div><div class="tc-name">Microphone</div><div class="tc-example">Sound vibrates a diaphragm/coil in a magnetic field, inducing an analogue current; a sound card's ADC digitises it.</div></div>
+    <div class="task-card"><div class="tc-icon">🖱️</div><div class="tc-name">Optical mouse</div><div class="tc-example">A red LED bounces light off the surface; a CMOS + DSP calculate coordinates from up to 1500 images/second. No moving parts, more reliable than mechanical.</div></div>
+    <div class="task-card"><div class="tc-icon">🖥️</div><div class="tc-name">Touch screen</div><div class="tc-example">Capacitive (electrostatic field, multi-touch, best in sunlight), infra-red (broken beams, multi-touch), or resistive (two layers make contact, works with gloves, no multi-touch).</div></div>
+  </div>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Paper 0478/12, June 2025).</strong> "Most candidates identified that a digital camera is an example of an input device. The most common incorrect answer given was storage device." Classify a device by its <em>function in the scenario</em> (capturing new data = input), not by whether it also happens to store data internally.</div>
+
+  <h3>Output devices</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">⚙️</div><div class="tc-name">Actuator</div><div class="tc-example">Converts electrical signals into physical movement (e.g. a solenoid moving a plunger to open a valve).</div></div>
+    <div class="task-card"><div class="tc-icon">🖨️</div><div class="tc-name">Inkjet / Laser printer</div><div class="tc-example">Inkjet sprays liquid ink through nozzles (thermal bubble/piezoelectric) — good for small colour batches. Laser uses a charged drum + toner + fuser — best for high-volume printing.</div></div>
+    <div class="task-card"><div class="tc-icon">🧊</div><div class="tc-name">3D printer</div><div class="tc-example">Builds objects layer by layer (additive manufacturing) — direct (inkjet-style, moves in x/y/z) or binder (powder + glue) methods.</div></div>
+    <div class="task-card"><div class="tc-icon">📺</div><div class="tc-name">LED / LCD / OLED screen</div><div class="tc-example">LED screens are made of tiny diodes. LCD screens need backlighting (often LED-backlit — not the same as a true LED screen). OLED emits its own light, no backlight needed.</div></div>
+    <div class="task-card"><div class="tc-icon">📽️</div><div class="tc-name">DLP / LCD projector</div><div class="tc-example">DLP uses millions of tilting micro-mirrors (higher contrast, quieter). LCD splits light through 3 colour panels then recombines it (sharper image, better colour saturation).</div></div>
+    <div class="task-card"><div class="tc-icon">🔊</div><div class="tc-name">Speaker</div><div class="tc-example">A DAC converts digital data to an analogue current, which is amplified; current in a coil vibrates a cone against a magnet to produce sound.</div></div>
+  </div>
+  <div class="teal-box">📌 <strong>Common trap:</strong> many TV screens marketed as "LED" are actually LCD screens that are merely <em>LED-backlit</em>, not true LED screens where each pixel is its own diode. Real examiner evidence (Paper 0478/12, June 2025): "Most candidates were able to give an appropriate printer" — device identification is usually well answered; the marks that separate top answers come from justifying the choice against the scenario's exact requirements (batch size, quality, cost).</div>
+
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th></th><th>Inkjet printer</th><th>Laser printer</th></tr></thead>
+    <tbody>
+      <tr><td>Medium</td><td>Liquid ink cartridges</td><td>Dry powdered toner (static electricity)</td></tr>
+      <tr><td>Best for</td><td>One-off photos, small batches of colour</td><td>High-volume, high-quality printing</td></tr>
+      <tr><td>Common step (both)</td><td colspan="2">Document → printer driver → printer buffer; if the buffer empties before the document ends, the printer sends an interrupt to the CPU requesting more data.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Sensors</h3>
+  <p>Sensors are input devices that read/measure physical properties from their surroundings. Real-world data is <strong>analogue</strong> (constantly changing); a computer needs an <strong>analogue-to-digital converter (ADC)</strong> to process it, and a <strong>digital-to-analogue converter (DAC)</strong> to drive an actuator in response. Sensors send out <strong>constant</strong> values — it's the microprocessor that decides what action to take.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Sensor</th><th>What it measures</th><th>Example application</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature</td><td>Temperature of surroundings</td><td>Central heating control</td></tr>
+      <tr><td>Moisture</td><td>Water level (electrical resistance)</td><td>Soil moisture in a greenhouse</td></tr>
+      <tr><td>Humidity</td><td>Water vapour in air (air conductivity)</td><td>Humidity in a microchip factory</td></tr>
+      <tr><td>Light</td><td>Brightness (photoelectric cells)</td><td>Automatic street lights</td></tr>
+      <tr><td>Infra-red (active)</td><td>A broken beam changes the reading</td><td>Rain-sensing windscreen wipers</td></tr>
+      <tr><td>Infra-red (passive)</td><td>Heat radiation given off an object</td><td>Security alarm detecting body heat</td></tr>
+      <tr><td>Pressure</td><td>Applied pressure (transducer)</td><td>Weighing lorries at a weigh station</td></tr>
+      <tr><td>Accelerometer</td><td>Acceleration/motion (piezoelectric cell)</td><td>Deploying airbags in a crash</td></tr>
+      <tr><td>Proximity</td><td>Presence of a nearby object</td><td>Switching off a phone screen during a call</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 <strong>"Select the most suitable sensor" rule.</strong> First identify the exact physical quantity named in the scenario (e.g. "detect an intruder's body heat" → passive infra-red, NOT active infra-red). Similar-sounding sensors (moisture vs humidity; active vs passive infra-red) measure genuinely different things — match the precise definition, not just the general topic.</div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — central heating control system (monitoring vs control)</div>
+    <div class="step"><span class="sn">1</span>The required (pre-set) temperature is stored in the microprocessor's memory.</div>
+    <div class="step"><span class="sn">2</span>A temperature sensor constantly sends readings via an ADC to the microprocessor.</div>
+    <div class="step"><span class="sn">3</span>The microprocessor compares the reading with the pre-set value.</div>
+    <div class="step"><span class="sn">4</span>If reading &lt; pre-set: a signal is sent via a DAC to an actuator, opening the gas valve and starting the pump.</div>
+    <div class="answer-line">➜ This is a <strong>control</strong> system (output affects the next input = a feedback loop) — a monitoring system would only raise an alarm, with no effect on what's being monitored.</div>
+  </div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — Input, Output and Sensors</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A shop assistant scans a product's barcode at checkout. Why is a barcode scanner a good choice here?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It stores the product permanently in the scanner, so staff must type in every price by hand, so staff must still check prices by hand later</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It requires a constant Wi-Fi connection to the supplier before it can read any barcode at all, otherwise the scanner shows an error message</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It can only be used once per product, because the barcode is wiped after the first scan, since the printed code is wiped after use</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It allows fast, low-error data entry and looks up price and stock in a database, so staff need not remember prices</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A librarian needs to print a small batch of colour photos for a noticeboard. Which printer type suits this best?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3D resin printer</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Inkjet printer</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Toner laser printer</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>DLP data projector</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A TV is advertised as an "LED screen" but is later found to have an LCD panel that is simply lit from behind by LEDs. What is the issue here?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>There is no real issue, as LED and LCD are exactly the same technology and the names are interchangeable</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>LCD screens never need any backlighting at all, because the liquid crystals produce their own light</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A true LED screen has each pixel as its own diode; this TV is an LCD that is only LED-backlit</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>LED backlighting means the screen is actually an OLED screen, because each pixel makes its own light</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A security system needs to detect an intruder's body heat in a dark room. Which sensor is most suitable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Active infra-red beam sensor</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Passive infra-red sensor</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Ambient light level sensor</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Soil moisture sensor</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">In a central heating <strong>control</strong> system, what makes it a "control" system rather than just "monitoring"?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It uses a sensor at all, because a monitoring system with no sensors can still respond, as it can raise an alarm without one</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It only runs once and then stops, because it ends as soon as the first reading is taken, because it ends after the first reading is taken</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The output (opening the valve) affects the next inputs, forming a feedback loop, rather than just raising an alarm</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It doesn't need an ADC, because pressure and temperature readings are already digital values, as the pressure readings are all digital already</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>3.3 Data Storage</h2><div class="unit-sub">Primary memory (RAM/ROM), secondary and off-line storage, magnetic/optical/solid-state technology, virtual memory and cloud storage</div></div>
+  </div>
+
+  <h3>Primary memory — RAM and ROM</h3>
+  <p><strong>Primary memory</strong> is directly accessible by the CPU: RAM and ROM.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Feature</th><th>RAM</th><th>ROM</th></tr></thead>
+    <tbody>
+      <tr><td>Persistence</td><td>Temporary</td><td>Permanent</td></tr>
+      <tr><td>Volatility</td><td>Volatile — lost on power-off</td><td>Non-volatile</td></tr>
+      <tr><td>Writable?</td><td>Can be written to and read from</td><td>Cannot be altered — read only</td></tr>
+      <tr><td>Typical use</td><td>Data, files, programs, part of the OS in use</td><td>BIOS/start-up instructions (bootstrap)</td></tr>
+      <tr><td>Effect of increasing size</td><td>Can improve computer speed</td><td>No effect on performance</td></tr>
+    </tbody>
+  </table></div>
+  <div class="teal-box">📌 <strong>DRAM vs SRAM.</strong> Dynamic RAM (DRAM) uses transistors + capacitors, must be refreshed roughly every 15 microseconds, is cheaper/higher capacity — used for main memory. Static RAM (SRAM) uses flip-flops, needs no refresh, is much faster (~25 ns vs ~60 ns) — used for CPU cache.</div>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Paper 0478/12, June 2025, Q1a).</strong> When RAM is already given in the question, "another example of primary storage" must be something else — ROM, cache or a register are all valid; repeating RAM earns no marks. For "why is data only temporary in RAM", the precise mark-scheme phrase is "it is volatile — data is lost when the power is turned off," not a vaguer "it just holds things for a while."</div>
+
+  <h3>Secondary and off-line storage</h3>
+  <p><strong>Secondary storage</strong> is <strong>not directly addressable by the CPU</strong>, unlike RAM/ROM. It is always <strong>non-volatile</strong>, holds far more data than primary memory, but has much longer access times. It stores the OS, applications, device drivers and general files, and can be internal (HDD/SSD) or external/off-line (DVD, Blu-ray, USB memory stick, removable HDD).</p>
+  <div class="note-box">💡 <strong>Why secondary storage is needed:</strong> RAM is volatile and limited in size, so a non-volatile store is needed to hold the OS, applications and files <em>permanently</em>, even when the computer is off. A full-mark answer justifying a device as "secondary storage" should give <strong>both</strong> defining features together — not directly addressable by the CPU, <em>and</em> non-volatile/permanent — since real mark schemes reward each as a separate point.</div>
+
+  <h3>Magnetic, optical and solid-state storage</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Technology</th><th>How it stores data</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Magnetic</td><td>Spinning <strong>platters</strong> (up to ~7000 rpm); electromagnet <strong>read-write heads</strong> move across <strong>tracks</strong> and <strong>sectors</strong>. Subject to <strong>latency</strong> and <strong>fragmentation</strong>.</td><td>HDD</td></tr>
+      <tr><td>Optical</td><td>A laser reads/writes <strong>pits</strong> and <strong>lands</strong> along a spiral track. Shorter laser wavelength = smaller pits = greater capacity.</td><td>CD, DVD, Blu-ray</td></tr>
+      <tr><td>Solid-state</td><td>NAND/NOR chips; a <strong>floating gate</strong> transistor traps electrons (charged = 1, uncharged = 0), insulated by a dielectric coating — no moving parts.</td><td>SSD, SD card, USB drive</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Paper 0478/13, June 2025).</strong> "Few candidates were able to provide accurate features of magnetic storage. The most common correct answer was that it has moving parts." Go beyond "has moving parts" — name a specific mechanism: platters, tracks, sectors, electromagnetic read-write heads, latency, fragmentation.</div>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Disk type</th><th>Laser</th><th>Track pitch</th><th>Typical capacity</th></tr></thead>
+    <tbody>
+      <tr><td>CD</td><td>Red, 780 nm</td><td>1.60 µm</td><td>Small</td></tr>
+      <tr><td>DVD (dual-layer)</td><td>Red, 650 nm</td><td>0.74 µm</td><td>~4.7 GB</td></tr>
+      <tr><td>Blu-ray (single-layer)</td><td>Blue, 405 nm</td><td>0.30 µm</td><td>~27 GB</td></tr>
+    </tbody>
+  </table></div>
+  <div class="teal-box">📌 <strong>SSD benefits:</strong> no moving parts, more reliable, lighter, faster, cooler, no spin-up delay. <strong>SSD drawback:</strong> limited write endurance (commonly rated ~20 GB/day over 3 years) — this is why SSDs aren't yet used in every very-high-write-volume server.</div>
+
+  <h3>Virtual memory</h3>
+  <p>If running processes exceed available RAM, the system could crash. <strong>Virtual memory</strong> solves this using the HDD/SSD as extra memory: <strong>RAM is the physical memory, while virtual memory is RAM + swap space on the HDD/SSD.</strong> Data is moved between RAM and disk in <strong>pages</strong> (fixed-length blocks) using <strong>paging</strong>, giving the illusion of more memory than physically exists.</p>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Paper 0478/11, June 2025, Q7c).</strong> "The most common mark awarded was for stating that secondary storage is partitioned to create the virtual memory" — but this earns only the <em>first, most basic</em> mark. A full-mark answer must continue: data/pages are actively swapped between RAM and this partition (oldest data moved out first) as programs compete for RAM, giving the illusion of unlimited memory.</div>
+  <div class="note-box">💡 <strong>Disk thrashing:</strong> if too much time is spent swapping data rather than processing it, speed drops badly — the extreme case, where execution halts entirely, is the <strong>thrash point</strong>. Reduce thrashing by: installing more RAM, running fewer programs, reducing swap file size, or using an SSD instead of an HDD.</div>
+
+  <h3>Cloud storage</h3>
+  <p><strong>Cloud storage</strong> stores data on remote servers rather than a local device, often duplicated across servers (<strong>data redundancy</strong>) for reliability. Types: <strong>public</strong> (client and provider are different companies), <strong>private</strong> (client and provider operate as one entity, behind a company firewall), <strong>hybrid</strong> (a mix of both).</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Benefits</th><th>Drawbacks</th></tr></thead>
+    <tbody>
+      <tr><td>Access from any device, anywhere, anytime</td><td>Slow/unstable internet makes access difficult</td></tr>
+      <tr><td>Remote back-up helps disaster recovery</td><td>Provider could fail — risking loss of backup data</td></tr>
+      <tr><td>Recovery still possible if own HDD fails</td><td>Company gives up direct control of its own data security</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Command word discipline.</strong> Cloud storage still requires <strong>real, physical servers</strong> owned by the hosting company — never describe it as "storage with no physical hardware." A full-mark "disadvantage" answer should reflect that a client has handed over physical control of their data to someone else's infrastructure.</div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — Data Storage</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A question already gives RAM as one example of primary storage and asks for "one other example". Which answer is valid?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>ROM</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>RAM again, described differently</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An HDD</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A USB memory stick</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is the strongest, most technical feature to give when describing magnetic storage (HDD)?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>"It has moving parts, so it is slower to start up and more easily damaged by being knocked or dropped"</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>"It uses a laser to read and write the data by burning microscopic pits and lands into a metal layer"</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>"It never wears out, because its platters and read-write heads are not subject to any physical wear"</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Data is stored on spinning platters, read and written by electromagnetic heads over tracks and sectors</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A candidate answers "virtual memory works because secondary storage is partitioned" and stops there. What is missing for full marks?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Nothing: that answer on its own is worth full marks because it names the correct component, because it names the right component</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>That ROM is used instead of RAM, because ROM is much faster and can be written to repeatedly, so programs run faster than before</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>That the CPU cache is increased, because the cache is used to hold the pages swapped out of RAM, which gives the CPU faster access</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>That data is swapped between RAM and the partition as programs compete for RAM, giving the illusion of more memory</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which statement about SSDs (solid-state drives) is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>They store data using spinning magnetic platters read by an electromagnetic head, like an HDD, so they are slower and more fragile</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>They use a laser to read pits and lands on the surface, like an optical disc drive, which makes them slower than HDDs</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>They have no moving parts and are usually faster and more reliable than HDDs, but have limited write endurance</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>They are volatile, like RAM, so all stored data is lost whenever the power is switched off, so data is lost when switched off</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which of these is a genuine disadvantage of cloud storage, correctly stated?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Cloud storage has no physical hardware at all, so it can never fail, be hacked or lose data, so there is nothing for staff to maintain</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The client gives up direct control of the physical security of their data, and needs a working internet connection</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Cloud storage cannot be accessed from more than one device, because each file is locked to its first device, so sharing files between phones is impossible</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Cloud storage is always slower than a local HDD regardless of connection, so it is never suitable, so it is never worth using for backups</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 4 ============================ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>3.4 Networking Hardware</h2><div class="unit-sub">NIC, MAC addresses, IP addresses and routers — the hardware that connects a computer to a network</div></div>
+  </div>
+
+  <h3>Network interface card (NIC)</h3>
+  <p>A device needs a <strong>network interface card (NIC)</strong> to connect to a network such as the internet. It is usually part of the device's hardware and contains the <strong>MAC address</strong>, generated at manufacture. A <strong>wireless NIC (WNIC)</strong> does the same job over an antenna, using microwaves, and typically plugs into USB or is built in.</p>
+  <div class="teal-box">📌 Do not confuse the NIC (the physical hardware component) with the addresses/protocols it enables (MAC address, IP address) — those are separate concepts, covered next.</div>
+
+  <h3>Media Access Control (MAC) address</h3>
+  <p>A MAC address is <strong>48 bits</strong>, shown as six groups of hex digits: the first three groups are the <strong>manufacturer's code</strong>, the last three are the <strong>device serial number</strong>. It is set at manufacture (a <strong>Universally Administered Address, UAA</strong>) — the most common type — though it can be user/organisation-changed (a <strong>Locally Administered Address, LAA</strong>), e.g. to bypass a MAC filter.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — reading a MAC address</div>
+    <div class="step"><span class="sn">1</span>MAC address: <code>00-1C-B3-4F-25-FF</code>.</div>
+    <div class="step"><span class="sn">2</span>First six hex digits (<code>00-1C-B3</code>) identify the manufacturer.</div>
+    <div class="step"><span class="sn">3</span>Second six hex digits (<code>4F-25-FF</code>) are the unique device serial number.</div>
+    <div class="answer-line">➜ If the NIC is replaced, the MAC address changes too — the address belongs to the hardware, not the device as a whole.</div>
+  </div>
+  <div class="note-box">💡 <strong>MAC vs IP rule.</strong> MAC = "who/what, physically" (identifies the physical device, assigned once by the manufacturer). IP = "where, on the network" (identifies a device's location on the internet; can be static or dynamic). Never conflate the two.</div>
+
+  <h3>Internet protocol (IP) address</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Version</th><th>Bits</th><th>Format</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>IPv4</td><td>32 bits</td><td>Four groups of 8 bits, in denary</td><td>254.25.28.77</td></tr>
+      <tr><td>IPv6</td><td>128 bits</td><td>Eight groups of hex digits, colon-separated</td><td>A8FB:7A88:FFF0:0FFF:...</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Type</th><th>Description</th><th>Typically used for</th></tr></thead>
+    <tbody>
+      <tr><td>Static</td><td>Permanently assigned by the ISP; never changes</td><td>Web servers, databases, FTP servers</td></tr>
+      <tr><td>Dynamic</td><td>Assigned by DHCP each time a device connects; can change</td><td>Typical home/personal devices</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — how a device finds a website</div>
+    <div class="step"><span class="sn">1</span>A device with a dynamic IP requests internet access; a <strong>DHCP server</strong> assigns a temporary IP address.</div>
+    <div class="step"><span class="sn">2</span>The required URL is sent to a <strong>Domain Name Server (DNS)</strong>, which looks up its database for the matching IP address and returns it.</div>
+    <div class="step"><span class="sn">3</span>The device sends a request to the website server's IP address; the server sends the webpage back.</div>
+    <div class="answer-line">➜ A static IP address skips step 1 (no DHCP request needed) since the address never changes.</div>
+  </div>
+  <div class="warn-box">⚠️ <strong>Real examiner evidence (Papers 0478/12 &amp; 0478/13, June 2025).</strong> "Few candidates were able to describe the role of the DNS. The most common correct answer given was for stating the DNS converts a URL into an IP address" — but the fuller, higher-mark description is that the DNS <strong>searches/looks up a database</strong> for the IP address matching the domain name/URL, not just "it converts" it.</div>
+
+  <h3>Routers</h3>
+  <p>A <strong>router</strong> enables data packets to be routed between different networks (e.g. joining a LAN to a WAN/the internet). It converts data from one network's protocol/format to another's, so the two can communicate. Inside a LAN, a <strong>switch</strong> passes data to the correct device using its <strong>MAC address</strong>; the router passes data between the LAN and the wider internet using <strong>IP addresses</strong>, and can assign private IP addresses to devices on the LAN.</p>
+  <div class="note-box">💡 <strong>Three-part router definition rule.</strong> A full-mark "describe the role of a router" answer covers all three points together: (1) routes/sends data to a specific destination between networks; (2) can assign IP addresses to devices on its network; (3) connects a local network (LAN) to the internet (WAN). Naming only one loses marks, since real 0478 mark schemes for multi-point definitions award one mark per distinct point up to a maximum.</div>
+
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Feature</th><th>MAC address</th><th>IP address</th></tr></thead>
+    <tbody>
+      <tr><td>Identifies</td><td>The physical device on the network</td><td>The global address on the internet</td></tr>
+      <tr><td>Assigned by</td><td>The manufacturer, part of the NIC</td><td>ISP (dynamic, via DHCP) or fixed (static)</td></tr>
+      <tr><td>Bit length</td><td>48 bits</td><td>32 bits (IPv4) or 128 bits (IPv6)</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- QUIZ 4 -->
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 check — Networking Hardware</h2><div class="quiz-score" id="score4">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Why does a device need a network interface card (NIC)?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To allow the device to connect to a network</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To store files permanently on the device so that they are kept when it is switched off</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>To increase the CPU's clock speed when sending large amounts of data across a network</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>To convert analogue data to digital data before the CPU can process it</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the MAC address 00-1C-B3-4F-25-FF, what does 4F-25-FF represent?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The IP address of the device</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The manufacturer's code</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The router's default gateway address</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The unique device serial number</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A web server needs an IP address that never changes, so anyone can reliably find it. Which type of IP address should it use?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Static IP address</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Dynamic IP address</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A MAC address instead of an IP address</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Any address assigned by DHCP</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">What is the fuller, higher-mark description of the DNS's role (rather than just "it converts a URL to an IP address")?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It assigns MAC addresses to new devices when they first connect, so each one has a unique identity</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It looks up a database for the IP address that matches the domain name/URL</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It encrypts data sent over the network so that it cannot be read by anyone intercepting it</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It compresses webpage data before sending it, so that pages load faster over slow connections</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which single statement most completely describes the role of a router?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It only connects devices within a single LAN using MAC addresses, and cannot reach the internet or other networks, as it handles MAC addresses only</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It only stores web pages for faster access, so that repeat visits to the same site load more quickly, so it never forwards any data packets</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It routes data between networks to a specific destination, can assign IP addresses, and connects a LAN to the internet</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It converts analogue sound into digital sound so that voice calls can be sent across the internet, for audio streaming on the web only</button>
+    </div><div class="q-feedback" id="fb4_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter2.html">← Chapter 2</a>
+  <a href="chapter3_easy.html">🍎 Easy version</a>
+  <a href="chapter4.html">Chapter 4 →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">CPU / Microprocessor</div><div class="term-def">Executes/processes all instructions and data; a microprocessor is a CPU on one chip.</div></div>
+    <div class="term-item"><div class="term-name">Von Neumann architecture</div><div class="term-def">The stored-program concept: CPU accesses memory directly, programs stored with data.</div></div>
+    <div class="term-item"><div class="term-name">Register (PC/MAR/MDR/CIR/ACC)</div><div class="term-def">Small, fast storage locations inside the CPU used during the FDE cycle.</div></div>
+    <div class="term-item"><div class="term-name">Cache</div><div class="term-def">Fast memory inside the CPU storing frequently used instructions/data.</div></div>
+    <div class="term-item"><div class="term-name">Instruction set</div><div class="term-def">The complete list of opcodes a CPU can process, in machine code.</div></div>
+    <div class="term-item"><div class="term-name">Embedded system</div><div class="term-def">Hardware + software built for one dedicated set of functions.</div></div>
+    <div class="term-item"><div class="term-name">Sensor / ADC / DAC</div><div class="term-def">Reads a physical property / converts analogue↔digital.</div></div>
+    <div class="term-item"><div class="term-name">RAM / ROM</div><div class="term-def">Volatile, writable working memory / non-volatile, read-only start-up memory.</div></div>
+    <div class="term-item"><div class="term-name">Secondary storage</div><div class="term-def">Non-volatile, not directly CPU-addressable; permanent storage (HDD/SSD/optical).</div></div>
+    <div class="term-item"><div class="term-name">Virtual memory</div><div class="term-def">RAM + swap space on disk; pages swapped to avoid running out of RAM.</div></div>
+    <div class="term-item"><div class="term-name">Cloud storage</div><div class="term-def">Data stored on remote servers, often duplicated (data redundancy).</div></div>
+    <div class="term-item"><div class="term-name">NIC</div><div class="term-def">Hardware needed to connect a device to a network; holds the MAC address.</div></div>
+    <div class="term-item"><div class="term-name">MAC address</div><div class="term-def">48-bit hardware address: manufacturer code + device serial number.</div></div>
+    <div class="term-item"><div class="term-name">IP address</div><div class="term-def">Identifies a device's location on the internet; static or dynamic.</div></div>
+    <div class="term-item"><div class="term-name">Router</div><div class="term-def">Routes data between networks, assigns IP addresses, links LAN to internet.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Never confuse a CPU <em>component</em> with a <em>measurement</em> of it — "clock" is a component, "clock speed" is not. This exact mix-up cost real candidates marks in June 2025.</p>
+    <p>For embedded systems, always give a <strong>second, independent</strong> point beyond "dedicated function vs many functions" — e.g. hardware type, ease of reprogramming, or standalone vs built-in.</p>
+    <p>For multi-point definitions (router, "why X is needed"), list every distinct point the mark scheme could be looking for — one mark is usually awarded per independent point, up to a maximum.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 3 · Hardware
+  &nbsp;·&nbsp; <a href="chapter3_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+/* Per-topic quizzes: each keyed by its data-quiz id */
+var QUIZ = {
+  1:{answers:[2, 1, 0, 3, 0], total:5, score:0, done:0, feedback:[
+    "The CPU executes/processes all the instructions and data in a computer application — vague analogies like \"brain\" earn no technical marks.",
+    "The PC holds the address of the next instruction; this address is copied into the MAR at the start of the fetch stage.",
+    "Overclocking beyond design limits risks instability and overheating, and clock speed is only one of several factors (cache, cores, bus width) affecting overall performance.",
+    "An instruction set is the complete set of machine code instructions (opcodes) a particular CPU can process — not a high-level language.",
+    "An embedded system is designed for one dedicated set of functions; a laptop is general-purpose and can run many different programs."]},
+  2:{answers:[3, 1, 2, 1, 2], total:5, score:0, done:0, feedback:[
+    "A barcode scanner gives fast, low-error data entry, automatically looking up price and stock details in a database.",
+    "An inkjet printer suits small batches of good-quality colour printing, unlike a laser printer (built for high-volume) or a 3D/DLP device.",
+    "Many \"LED\" TVs are actually LCD panels that are simply backlit by LEDs — a true LED screen has each pixel as its own diode.",
+    "A passive infra-red sensor detects heat radiation given off by an object (like a body) — an active infra-red sensor instead detects a broken beam.",
+    "A control system feeds its output back to affect the next set of inputs (a feedback loop) — a monitoring system only raises an alarm with no effect on what's being watched."]},
+  3:{answers:[0, 3, 3, 2, 1], total:5, score:0, done:0, feedback:[
+    "RAM was already given in the question, so it cannot be repeated — ROM, cache and registers are all valid \"other\" examples of primary storage.",
+    "The strongest technical description names the actual mechanism — spinning platters, electromagnetic read-write heads, tracks and sectors — not just \"it has moving parts\".",
+    "Stating that secondary storage is partitioned only earns the most basic mark; full marks need the swap mechanism and the \"illusion of unlimited memory\" explained too.",
+    "SSDs have no moving parts, so they're generally faster/more reliable/cooler than HDDs, but their write endurance (roughly 20 GB/day over 3 years) is limited.",
+    "Cloud storage still relies on real physical servers, so the genuine trade-off is giving up direct control of physical data security while depending on an internet connection."]},
+  4:{answers:[0, 3, 0, 1, 2], total:5, score:0, done:0, feedback:[
+    "A NIC is required to allow a device to connect to a network such as the internet.",
+    "The last six hex digits of a MAC address (4F-25-FF here) are the unique device serial number; the first six identify the manufacturer.",
+    "A static IP address is permanently assigned and never changes, which is exactly what's needed for a server that must always be found at the same address.",
+    "The higher-mark description is that the DNS searches/looks up its database for the IP address matching the domain name/URL — not just \"it converts\" it.",
+    "A full router definition needs all three points together: routing data between networks, assigning IP addresses, and connecting a LAN to the internet."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+/* Scroll reveal */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

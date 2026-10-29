@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 10 — Boolean Logic | G10 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G10 Computer Science <span>· Ch 10</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE CS 0478 · Boolean Logic</div>
+  <h1>Chapter 10 · Boolean Logic</h1>
+  <p>Six gates, one truth-table method, and nine conversions between problem statement ↔ logic expression ↔ truth table ↔ logic circuit. Almost every mark in this chapter comes from three things: drawing the symbol exactly as the syllabus shows it, listing every input combination in order, and translating the words of a scenario into the right AND/OR/NOT structure.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Logic gates</a>
+    <a href="#unit2">② Truth tables</a>
+    <a href="#unit3">③ Circuits & expressions</a>
+    <a href="#unit4">④ Problem statements & exam question</a>
+    <a href="chapter10_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter10.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============ UNIT 1 ============ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>10.1 Logic gates</h2><div class="unit-sub">the six gates</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">The gates and their truth tables (NOT: 0→1, 1→0)</div>
+    <svg viewBox="0 0 530 172" role="img" aria-label="AND OR NAND NOR XOR gate symbols with truth tables" style="width:100%;max-width:530px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><path d="M32 30 h18 a18 18 0 0 1 0 36 h-18 z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><text x="52" y="20" font-size="12" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >AND</text><line x1="20" y1="40" x2="34" y2="40" stroke="#475569" stroke-width="2"/><line x1="20" y1="56" x2="34" y2="56" stroke="#475569" stroke-width="2"/><line x1="68" y1="48" x2="80" y2="48" stroke="#475569" stroke-width="2"/><text x="52" y="88" font-size="10" text-anchor="middle" font-weight="700" fill="#64748b" stroke="none" >A  B   X</text><text x="52" y="104" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  0   0</text><text x="52" y="119" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  1   0</text><text x="52" y="134" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  0   0</text><text x="52" y="149" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  1   1</text><path d="M134 30 Q169 30 196 48 Q169 66 134 66 Q148 48 134 30 Z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><text x="154" y="20" font-size="12" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >OR</text><line x1="122" y1="40" x2="136" y2="40" stroke="#475569" stroke-width="2"/><line x1="122" y1="56" x2="136" y2="56" stroke="#475569" stroke-width="2"/><line x1="196" y1="48" x2="208" y2="48" stroke="#475569" stroke-width="2"/><text x="154" y="88" font-size="10" text-anchor="middle" font-weight="700" fill="#64748b" stroke="none" >A  B   X</text><text x="154" y="104" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  0   0</text><text x="154" y="119" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  1   1</text><text x="154" y="134" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  0   1</text><text x="154" y="149" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  1   1</text><path d="M236 30 h18 a18 18 0 0 1 0 36 h-18 z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><circle cx="277" cy="48" r="5" fill="#f8fafc" stroke="#475569" stroke-width="2"/><text x="256" y="20" font-size="12" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >NAND</text><line x1="224" y1="40" x2="238" y2="40" stroke="#475569" stroke-width="2"/><line x1="224" y1="56" x2="238" y2="56" stroke="#475569" stroke-width="2"/><line x1="282" y1="48" x2="294" y2="48" stroke="#475569" stroke-width="2"/><text x="256" y="88" font-size="10" text-anchor="middle" font-weight="700" fill="#64748b" stroke="none" >A  B   X</text><text x="256" y="104" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  0   1</text><text x="256" y="119" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  1   1</text><text x="256" y="134" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  0   1</text><text x="256" y="149" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  1   0</text><path d="M338 30 Q373 30 400 48 Q373 66 338 66 Q352 48 338 30 Z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><circle cx="405" cy="48" r="5" fill="#f8fafc" stroke="#475569" stroke-width="2"/><text x="358" y="20" font-size="12" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >NOR</text><line x1="326" y1="40" x2="340" y2="40" stroke="#475569" stroke-width="2"/><line x1="326" y1="56" x2="340" y2="56" stroke="#475569" stroke-width="2"/><line x1="410" y1="48" x2="422" y2="48" stroke="#475569" stroke-width="2"/><text x="358" y="88" font-size="10" text-anchor="middle" font-weight="700" fill="#64748b" stroke="none" >A  B   X</text><text x="358" y="104" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  0   1</text><text x="358" y="119" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  1   0</text><text x="358" y="134" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  0   0</text><text x="358" y="149" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  1   0</text><path d="M440 30 Q475 30 502 48 Q475 66 440 66 Q454 48 440 30 Z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><path d="M433 30 Q447 48 433 66" fill="none" stroke="#475569" stroke-width="2"/><text x="460" y="20" font-size="12" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >XOR</text><line x1="428" y1="40" x2="442" y2="40" stroke="#475569" stroke-width="2"/><line x1="428" y1="56" x2="442" y2="56" stroke="#475569" stroke-width="2"/><line x1="502" y1="48" x2="514" y2="48" stroke="#475569" stroke-width="2"/><text x="460" y="88" font-size="10" text-anchor="middle" font-weight="700" fill="#64748b" stroke="none" >A  B   X</text><text x="460" y="104" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  0   0</text><text x="460" y="119" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >0  1   1</text><text x="460" y="134" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  0   1</text><text x="460" y="149" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >1  1   0</text></svg>
+    <div class="viz-cap">NAND, NOR and XOR → remember: a bubble on the output means NOT. XOR is 1 only when the inputs differ.</div>
+  </div>
+<h3>10.1.1 What a Logic Gate Is</h3>
+
+<p>A <strong>logic gate</strong> is an electronic circuit using on/off (binary) logic: it takes one or two binary inputs (each 0 or 1) and produces a <strong>single</strong> binary output, following a fixed rule. Several gates connected together form a <strong>logic circuit</strong>. The behaviour of any gate or circuit is recorded in a <strong>truth table</strong>.</p>
+<div class="code-block no-ln"><span class="cl">The six 0478 gates:   NOT   AND   OR   NAND   NOR   XOR
+(XOR is sometimes written EOR — Exclusive OR)</span></div>
+<div class="note-box"><strong>💡 Two Structural Facts to Memorise.</strong> <ul>
+  <li><strong>NOT is the only single-input gate.</strong> One line going in ⇒ it must be a NOT gate. All five others have exactly two inputs and one output.</li>
+  <li><strong>Circuits are limited to a maximum of three inputs and one output</strong> at IGCSE.</li>
+</ul></div>
+
+
+<h3>10.1.1 The Six Symbols — and the Bubble Rule</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Gate</th><th>Inputs</th><th>Distinguishing shape feature</th></tr></thead>
+  <tr><td><strong>NOT</strong></td><td>1</td><td>Triangle pointing to a single small circle (bubble) on the output</td></tr>
+  <tr><td><strong>AND</strong></td><td>2</td><td>Flat back, rounded D-shaped front — <em>no</em> output bubble</td></tr>
+  <tr><td><strong>OR</strong></td><td>2</td><td>Curved back, pointed front — <em>no</em> output bubble</td></tr>
+  <tr><td><strong>NAND</strong></td><td>2</td><td>Same D-shaped body as AND, <strong>plus a bubble</strong> on the output</td></tr>
+  <tr><td><strong>NOR</strong></td><td>2</td><td>Same curved/pointed body as OR, <strong>plus a bubble</strong> on the output</td></tr>
+  <tr><td><strong>XOR</strong></td><td>2</td><td>OR body, <strong>plus an extra curved line</strong> in front of the two inputs — no bubble</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — The Missing Bubble.</strong> <p>The <strong>bubble</strong> (inversion circle) is what turns AND into NAND, OR into NOR, and a wire into NOT. Draw a NAND without its bubble and you have drawn an AND gate — the gate mark is lost even if the rest of the diagram is perfect. Equally, an XOR without its extra input curve is just an OR gate.</p></div>
+<div class="note-box"><strong>💡 Exam Tip — "As Shown on the Syllabus".</strong> <p>That exact phrase recurs across both June 2025 Paper 2 examiner reports. Drawings are checked directly against the syllabus diagram (Section 4), <em>not</em> against any textbook's house style or American ANSI shapes. Always show <strong>both inputs and the single output</strong> clearly, even when the question just says "draw the symbol" — the report specifically praises answers "with two inputs and one output".</p></div>
+
+
+<h3>10.1.1 Counting the Rows — 2ⁿ</h3>
+
+<div class="code-block no-ln"><span class="cl">number of rows  =  2 ^ (number of inputs)
+   2 inputs → 2² = 4 rows        3 inputs → 2³ = 8 rows</span></div>
+<p>Generate the rows by counting up in binary from all-zeros to all-ones, so nothing is missed:</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>C</th></tr></thead>
+  <tr><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>0</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>1</td><td>0</td></tr>
+  <tr><td>1</td><td>1</td><td>1</td></tr>
+</table></div>
+<p>The pattern: the <strong>right-most</strong> column alternates 0,1,0,1 every row; the next column left alternates in blocks of <strong>two</strong>; the next in blocks of <strong>four</strong> — the block size doubles each time you move left.</p>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — the six gates</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which best describes a logic gate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A device that converts denary values into binary numbers for storage</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A store holding one bit of data permanently</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A wire that carries a signal between components</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A circuit producing one binary output from binary inputs</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">You see a gate in a circuit with only one line going into it. Which gate must it be?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>An AND gate</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An OR gate</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A NOT gate</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A NAND gate</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">In the standard row order for a three-input truth table, what does the right-most column do?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Stays at 0 for the first four rows</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Alternates 0, 1 on every row</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Alternates in blocks of two rows</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Alternates in blocks of four rows</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A student draws the correct D-shaped body for a NAND gate but leaves off the output bubble. What have they drawn?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>An AND gate, so the mark is lost</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A valid NAND, since the body is correct</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A NOR gate, because of the shape</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>An XOR gate with a missing line</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which phrase correctly states the function of the AND gate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The output is 1 if either input is 1</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The output is 1 if neither input is 1</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The output is 1 if the inputs differ</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The output is 1 if both inputs are 1</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 2 ============ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>10.2 Truth tables</h2><div class="unit-sub">all six truth tables</div></div>
+  </div>
+
+<h3>10.2 All Six Truth Tables</h3>
+
+<div class="example-box"><div class="ex-title">📘 NOT — the inverter (X = NOT A)</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td></tr>
+</table></div>
+<p>Say it as: "<strong>the output, X, is 1 if the input, A, is 0</strong>." Boolean algebra: <code>Ā</code>.</p></div>
+<div class="example-box"><div class="ex-title">📘 AND (X = A AND B) · Boolean algebra A . B</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>1</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+</table></div>
+<p>"The output, X, is 1 if <strong>both</strong> inputs, A and B, are 1." The word <strong>both</strong> is the mark-scheme word.</p></div>
+<div class="example-box"><div class="ex-title">📘 OR (X = A OR B) · Boolean algebra A + B</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>0</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>1</td><td>1</td></tr>
+</table></div>
+<p>"The output, X, is 1 if <strong>either</strong> input, A or B, <strong>or both</strong>, are 1." Say "or both", or your answer reads like XOR.</p></div>
+<div class="example-box"><div class="ex-title">📘 NAND = AND then NOT (X = A NAND B)</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>0</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>1</td><td><strong>0</strong></td></tr>
+</table></div>
+<p>"The output, X, is 1 if A and B are <strong>NOT both</strong> 1." Shortcut: write the AND column (0,0,0,1) and flip every value.</p></div>
+<div class="example-box"><div class="ex-title">📘 NOR = OR then NOT (X = A NOR B)</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>0</td><td><strong>1</strong></td></tr>
+  <tr><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>1</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>1</td><td>0</td></tr>
+</table></div>
+<p>"The output, X, is 1 if <strong>neither</strong> input is 1." Shortcut: write the OR column (0,1,1,1) and flip every value.</p></div>
+<div class="example-box"><div class="ex-title">📘 XOR / EOR — the "differs from" gate (X = A XOR B)</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>0</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>1</td><td><strong>0</strong></td></tr>
+</table></div>
+<p>"The output, X, is 1 if the two inputs are <strong>different</strong>." Boolean algebra: <code>(A . B̄) + (Ā . B)</code>.</p></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — OR vs XOR.</strong> <p>OR and XOR agree on three of four rows (00→0, 01→1, 10→1). They differ <strong>only</strong> on the last row: for OR, A=1,B=1 gives <strong>1</strong>; for XOR it gives <strong>0</strong>. Check that one row separately, every time.</p></div>
+
+
+<h3>Memory Table — All Six at Once</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A B</th><th>NOT A</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th></tr></thead>
+  <tr><td><strong>0 0</strong></td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+  <tr><td><strong>0 1</strong></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td><strong>1 0</strong></td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td><strong>1 1</strong></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table></div>
+<p>Read down the columns: <strong>NAND is AND flipped</strong>, <strong>NOR is OR flipped</strong>, and XOR is OR with its last row changed to 0.</p>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — all six truth tables</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which phrase correctly states the function of the OR gate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The output is 1 if both of the inputs are 1, only</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The output is 1 if either input, or both, are 1</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The output is 1 if neither input is 1</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The output is 1 if exactly one of the inputs is 1, only</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">For a NAND gate, which single input combination gives an output of 0?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A=0, B=0</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A=0, B=1</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A=1, B=1</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A=1, B=0</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">For an XOR gate, when is the output 1?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>When the two inputs are different</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>When both inputs are 1</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>When both inputs are 0</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>When at least one of the inputs is 1</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">In Boolean algebra notation, how is the OR operation written?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A . B</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A + B</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Ā</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A / B</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which alternative name is sometimes used for the XOR gate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>EOR</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>NOR</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>INV</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>AOR</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 3 ============ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>10.3 Circuits & expressions</h2><div class="unit-sub">converting between forms</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Circuit ⇄ expression</div>
+    <svg viewBox="0 0 420 162" role="img" aria-label="Logic circuit for X = (A AND B) OR C" style="width:100%;max-width:420px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><text x="10" y="30" font-size="13" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >A</text><text x="10" y="78" font-size="13" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >B</text><text x="10" y="126" font-size="13" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >C</text><path d="M80 28 h18 a18 18 0 0 1 0 36 h-18 z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><path d="M230 70 Q265 70 292 88 Q265 106 230 106 Q244 88 230 70 Z" fill="#f8fafc" stroke="#475569" stroke-width="2"/><line x1="22" y1="26" x2="94" y2="40" stroke="#475569" stroke-width="2"/><line x1="22" y1="74" x2="94" y2="58" stroke="#475569" stroke-width="2"/><line x1="116" y1="46" x2="248" y2="86" stroke="#475569" stroke-width="2"/><line x1="22" y1="122" x2="248" y2="104" stroke="#475569" stroke-width="2"/><line x1="292" y1="96" x2="360" y2="96" stroke="#475569" stroke-width="2"/><text x="372" y="100" font-size="13" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >X</text><text x="190" y="150" font-size="13" text-anchor="middle" font-weight="700" fill="#7c3aed" stroke="none" >X = (A AND B) OR C</text></svg>
+    <div class="viz-cap">Work gate by gate: evaluate inner brackets first and add a column for each stage of the truth table.</div>
+  </div>
+<h3>10.3 The Nine Conversion Skills</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Given…</th><th>→ draw a circuit</th><th>→ complete a truth table</th><th>→ write an expression</th></tr></thead>
+  <tr><td><strong>A problem statement</strong></td><td>✔ 3(a)(i)</td><td>✔ 3(b)(i)</td><td>✔ 3(c)(i)</td></tr>
+  <tr><td><strong>A logic expression</strong></td><td>✔ 3(a)(ii)</td><td>✔ 3(b)(ii)</td><td>—</td></tr>
+  <tr><td><strong>A truth table</strong></td><td>✔ 3(a)(iii)</td><td>—</td><td>✔ 3(c)(iii)</td></tr>
+  <tr><td><strong>A logic circuit</strong></td><td>—</td><td>✔ 3(b)(iii)</td><td>✔ 3(c)(ii)</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Standing Rule — No Simplification.</strong> <p>Syllabus guidance is explicit: "<strong>Circuits must be drawn for the statement given, without simplification.</strong>" Draw every gate the statement or expression implies, even if a neater circuit exists. Never reduce it with Boolean algebra first.</p></div>
+
+
+<h3>Skill — Circuit → Truth Table (work in stages)</h3>
+
+<p>Split the circuit into stages, label each intermediate value (P, Q, R…), and complete a column for each before the final output.</p>
+<div class="example-box"><div class="ex-title">📘 Worked Example — A Three-Input, Four-Gate Circuit</div><div class="code-block no-ln"><span class="cl">P = A AND B        Q = B NOR C
+R = P OR Q         X = R XOR C</span></div>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>A</th><th>B</th><th>C</th><th>P</th><th>Q</th><th>R</th><th>X</th></tr></thead>
+  <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+  <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+</table></div>
+<p>All <strong>eight</strong> rows are carried through every column, even though P and Q each only depend on two of the three inputs.</p></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — The Junction Dot.</strong> <p>Where one wire splits (often drawn with a solid black dot) and feeds two different gates, the value is <strong>unchanged</strong> — the same signal is simply used twice. Splitting a wire does not alter the binary value it carries.</p></div>
+
+
+<h3>Skill — Circuit → Expression, and Expression → Circuit</h3>
+
+<div class="example-box"><div class="ex-title">📘 Circuit → Expression: work outward from the inputs</div><p>Gate 1 on A and B is AND → <code>(A AND B)</code>. Gate 2 on B and C is OR → <code>(B OR C)</code>. Gate 3 joins them with XOR:</p>
+<div class="code-block no-ln"><span class="cl">X = (A AND B) XOR (B OR C)</span></div>
+<p>If a later gate takes an original input as well as an earlier gate's output, substitute the earlier expression straight in — e.g. <code>((A NAND C) NOR A) OR (B AND C)</code> for a four-gate circuit.</p></div>
+<div class="example-box"><div class="ex-title">📘 Expression → Circuit: find the outermost operator first</div><p>Given <code>(A XOR C) OR (NOT C NAND B)</code>: the last-applied gate is the <strong>OR</strong>.</p>
+<ul>
+  <li>Left half: an XOR gate taking A and C.</li>
+  <li>Right half: a NOT gate inverting C, feeding a NAND gate with B.</li>
+  <li>Join both halves with the final OR gate to give X.</li>
+</ul></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — converting between forms</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">The NOT gate is also known by which other name?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A splitter</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A buffer</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An inverter</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A comparator</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A machine may start only when both safety guards are closed (A=1 and B=1). Which single gate does this?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>OR</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>NAND</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>XOR</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>AND</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What is the recommended method for completing a truth table from a multi-gate circuit?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Evaluate the whole circuit in a single step</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Fill in only the rows that give a 1</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Work backwards from the output towards the inputs, ignoring stages</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Split it into stages with intermediate columns</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">In the staged circuit P = A AND B, Q = B NOR C, what is Q when A=0, B=0, C=0?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>0</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It depends on P</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It cannot be found</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">To draw a circuit from the expression (A XOR C) OR (NOT C NAND B), which gate do you identify first?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The XOR gate on the left</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The outermost OR gate</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The NOT gate inverting C</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The NAND gate on the right</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 4 ============ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>10.3 Problem statements & exam question</h2><div class="unit-sub">a worked exam question</div></div>
+  </div>
+
+<h3>Skill — Truth Table → Expression</h3>
+
+<p>Look <strong>only at the rows where the output is 1</strong>. Each such row becomes one AND term, using <code>NOT</code> for every input that is 0 in that row. Then OR all the terms together.</p>
+<div class="example-box"><div class="ex-title">📘 Worked Example</div><p>Output is 1 on two rows: A=0,B=1 and A=1,B=1.</p>
+<div class="code-block no-ln"><span class="cl">Row A=0, B=1  →  (NOT A AND B)
+Row A=1, B=1  →  (A AND B)
+X = (NOT A AND B) OR (A AND B)</span></div>
+<p>The same method scales to three inputs — each 1-row becomes a three-term AND. Check your answer by building a fresh truth table from your expression and matching every row.</p></div>
+
+
+<h3>Skill — Problem Statement → Expression → Circuit → Truth Table</h3>
+
+<p>Scan the wording for the joining words <strong>AND</strong>, <strong>OR</strong> and <strong>NOT</strong> — including their everyday forms ("either…or", "as well as", "is not") — and turn each condition into a labelled binary input first.</p>
+<div class="example-box"><div class="ex-title">📘 Worked Example — A Safety Alarm</div><p>"An alarm, X, sounds if A is ON and B is OFF; or if B is ON and C is OFF." With ON = 1 and OFF = 0:</p>
+<div class="code-block no-ln"><span class="cl">X = (A AND NOT B) OR (B AND NOT C)</span></div>
+<p>Circuit: an AND gate on A and NOT B; a second AND gate on B and NOT C; a final OR gate joining the two.</p></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — Assuming 0 Means "Off".</strong> <p>0 is <strong>not</strong> automatically "off", "false" or "safe". Always read the parameter table in the question: some conditions are defined the opposite way round (e.g. "1: ignition key <em>not</em> present"). Getting this backwards inverts your whole expression.</p></div>
+
+
+<h3>Real Exam Question — June 2025 Paper 22 Q8 (the crane)</h3>
+
+<div class="example-box"><div class="ex-title">📘 Part (a) [2 marks]</div><p>"Draw the symbol for an XOR logic gate and complete the truth table for it." — <strong>one mark for the gate, one mark for the truth table</strong>, awarded independently. Attempt both even if unsure of one.</p>
+<p><em>Examiner:</em> "Most candidates drew the correct XOR logic gate symbol, as shown on the syllabus, with two inputs and one output, and then correctly completed its truth table for it."</p></div>
+<div class="example-box"><div class="ex-title">📘 Part (b)(i) [2 marks] — the crane</div><p>Inputs: <strong>A</strong> 0 = operator not present, 1 = operator present. <strong>B</strong> 0 = ignition key present, 1 = ignition key <em>not</em> present. <strong>C</strong> 0 = operator code correct, 1 = operator code <em>not</em> correct.</p>
+<p>"The crane will only move if the operator is present <strong>and</strong> either the ignition key is present <strong>or</strong> the operator code is correct."</p>
+<div class="code-block no-ln"><span class="cl">X = A AND (NOT B OR NOT C)
+
+All of these were also accepted:
+X = A AND NOT (B AND C)
+X = A AND (B NAND C)
+X = A AND NOT B OR A AND NOT C</span></div>
+<p>Note that B = 1 means the key is <em>absent</em>, so "the ignition key is present" is <code>NOT B</code> — this is exactly the trap from section ⑩.</p></div>
+<div class="note-box"><strong>💡 The Five A* Rules for This Chapter.</strong> <ul>
+  <li><strong>Label every condition</strong> as a binary variable, with its meaning, before writing any expression. The examiner's word for the typical answer was "<em>partially</em> correct" — usually one condition right, the other mis-negated.</li>
+  <li><strong>Use brackets</strong> so the AND/OR grouping is unambiguous, exactly as the mark scheme does: <code>A AND (NOT B OR NOT C)</code>.</li>
+  <li><strong>Any logically equivalent form earns the mark</strong> — the mark scheme accepted four different versions above.</li>
+  <li><strong>Derive the circuit from your own expression</strong>, never straight from the words. Examiner report, Paper 21: "Use of the original logic expression is recommended to answer this question."</li>
+  <li><strong>Use the truth table as a check</strong> on your expression. The two parts are marked independently, so a correct table can still score even when the expression is shaky.</li>
+</ul></div>
+<div class="note-box"><strong>💡 Out of Scope.</strong> <p>Half adders, full adders and building circuits from NAND gates only are <strong>extension material, not on the 0478 syllabus</strong>. Do not revise them for this exam.</p></div>
+
+    
+
+</div>
+
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 check — a worked exam question</h2><div class="quiz-score" id="score4">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">In the right half of (A XOR C) OR (NOT C NAND B), what order are the gates in?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A NAND on C and B, then a NOT gate</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Two NOT gates, then a NAND gate</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A NOT gate on C, then a NAND with B</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A NAND with B only, with no NOT gate</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In a problem-statement question, what should you do before writing any logic expression?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Draw the circuit diagram roughly first</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Simplify the wording into fewer conditions</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Complete the eight-row truth table</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Label each condition as a binary input</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Why must you read the parameter table in a problem-statement question carefully?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It lists which gates you are allowed to use</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It gives the number of truth-table rows</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>0 does not always mean off, false or safe</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It states the maximum marks available</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which of these was ALSO accepted by the crane question's mark scheme?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A OR (B NAND C)</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A AND (B NAND C)</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A AND (B AND C)</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>NOT A AND (B NOR C)</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which of these topics is NOT on the 0478 syllabus?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Half adders and full adders</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Completing a truth table from a circuit</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Writing a logic expression from a statement</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Drawing the six standard gate symbols</button>
+    </div><div class="q-feedback" id="fb4_5"></div></div>
+
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Logic gate</div><div class="term-def">A component that takes one or more binary inputs and produces one binary output.</div></div>
+    <div class="term-item"><div class="term-name">NOT</div><div class="term-def">Single-input gate: the output is the opposite of the input.</div></div>
+    <div class="term-item"><div class="term-name">AND</div><div class="term-def">Output is 1 only if both inputs are 1.</div></div>
+    <div class="term-item"><div class="term-name">OR</div><div class="term-def">Output is 1 if at least one input is 1.</div></div>
+    <div class="term-item"><div class="term-name">NAND</div><div class="term-def">NOT AND: output is 0 only if both inputs are 1.</div></div>
+    <div class="term-item"><div class="term-name">NOR</div><div class="term-def">NOT OR: output is 1 only if both inputs are 0.</div></div>
+    <div class="term-item"><div class="term-name">XOR (EOR)</div><div class="term-def">Exclusive OR: output is 1 only if the two inputs are different.</div></div>
+    <div class="term-item"><div class="term-name">Truth table</div><div class="term-def">Lists every possible combination of binary inputs and the output each produces.</div></div>
+    <div class="term-item"><div class="term-name">Logic circuit</div><div class="term-def">Gates connected to represent a problem; limited to three inputs and one output.</div></div>
+    <div class="term-item"><div class="term-name">Logic expression</div><div class="term-def">A written form of a circuit using gate names, e.g. X = (A AND B) OR C.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Use the exact command-word wording from the question.</p>
+    <p>Show working: trace tables, truth-table columns, SQL on separate lines.</p>
+    <p>Check each answer against the marks available.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G10 Computer Science · Chapter 10 Boolean Logic · Study guide (regular).
+  &nbsp;·&nbsp; <a href="chapter10_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[3, 2, 1, 0, 3], total:5, score:0, done:0, feedback:[
+    "A logic gate is an electronic circuit using binary logic that produces a single binary output from one or more binary inputs.",
+    "Every gate except NOT has two inputs, so a single-input gate symbol must be a NOT gate.",
+    "The right-most column alternates 0, 1 on every row; each column to the left doubles the block size.",
+    "The bubble is what makes it NAND — without it the symbol is an AND gate, and the gate mark is lost.",
+    "The output, X, is 1 only if both inputs, A and B, are 1 — 'both' is the word the mark scheme rewards."]},
+  2:{answers:[1, 2, 0, 1, 0], total:5, score:0, done:0, feedback:[
+    "The output is 1 if either input, A or B, or both, are 1 — the phrase 'or both' is what separates OR from XOR.",
+    "NAND outputs 1 in every case except A=1, B=1, where the AND result of 1 is inverted to 0.",
+    "XOR outputs 1 only when its two inputs are different — one 1 and one 0.",
+    "OR is represented by a plus sign: A + B.",
+    "XOR is also written EOR, short for Exclusive OR."]},
+  3:{answers:[2, 3, 3, 0, 1], total:5, score:0, done:0, feedback:[
+    "A NOT gate is called an inverter because it inverts its single input.",
+    "An AND gate outputs 1 only when both inputs are 1, exactly matching a two-guard safety interlock.",
+    "Split the circuit into parts and build an intermediate truth table column for each stage before combining them.",
+    "B=0 and C=0, and a NOR gate outputs 1 when neither input is 1, so Q = 1.",
+    "Identify the outermost (last-applied) operator first, then work inwards building each half as its own sub-circuit."]},
+  4:{answers:[2, 3, 2, 1, 0], total:5, score:0, done:0, feedback:[
+    "First a NOT gate inverts C, then a NAND gate combines that inverted value with B.",
+    "Translate each individual condition into a labelled input variable, checking what 1 and 0 mean for each.",
+    "Some scenarios define a value the opposite way round, e.g. '1: ignition key not present' — misreading this inverts the whole expression.",
+    "A AND (B NAND C) is logically equivalent, since NOT B OR NOT C is the same as NOT(B AND C).",
+    "Half adders, full adders and NAND-only circuits are extension material that the textbook itself states are not on the syllabus."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7 — Algorithm Design &amp; Problem Solving | G10 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G10 Computer Science <span>· Ch 7</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE CS 0478 · Algorithm Design &amp; Problem Solving</div>
+  <h1>Chapter 7 · Algorithm Design &amp; Problem Solving</h1>
+  <p>This chapter is about turning a messy real-world problem into a clean, testable algorithm: Analyse → Design → Code → Test. You'll use decomposition and abstraction to break problems down, flowcharts and pseudocode to design solutions, five standard algorithms as reusable building blocks, and validation/verification/test data/trace tables to prove your algorithm actually works.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Designing a solution</a>
+    <a href="#unit2">② Flowcharts & pseudocode</a>
+    <a href="#unit3">③ Selection, loops & reading algorithms</a>
+    <a href="#unit4">④ Standard algorithms</a>
+    <a href="#unit5">⑤ Validation & test data</a>
+    <a href="#unit6">⑥ Trace tables & debugging</a>
+    <a href="chapter7_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter7.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============ UNIT 1 ============ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>7.1–7.2 Designing a solution</h2><div class="unit-sub">life cycle, abstraction, decomposition</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Program development life cycle</div>
+    <svg viewBox="0 0 430 218" role="img" aria-label="Cycle: analyse, design, code, test" style="width:100%;max-width:430px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="150" y="10" width="120" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="210.0" y="37.9" font-size="14" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Analyse</text><rect x="290" y="85" width="120" height="46" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="350.0" y="112.9" font-size="14" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Design</text><rect x="150" y="160" width="120" height="46" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="210.0" y="187.9" font-size="14" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Code</text><rect x="10" y="85" width="120" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/><text x="70.0" y="112.9" font-size="14" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Test</text><path d="M270 33 L300 85" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><path d="M330 131 L280 168" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><path d="M150 183 L100 135" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><path d="M60 85 L150 40" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><text x="210" y="120" font-size="10" text-anchor="middle" font-weight="400" fill="#dc2626" stroke="none" >bugs found?</text><text x="210" y="134" font-size="10" text-anchor="middle" font-weight="400" fill="#dc2626" stroke="none" >back round again</text></svg>
+    <div class="viz-cap">Always in this order — and testing often sends you back to an earlier stage.</div>
+  </div>
+<h3>7.1 Program Development Life Cycle</h3>
+
+<p>Every program is built in <strong>four stages</strong>, always in this order:</p>
+<div class="code-block no-ln"><span class="cl">ANALYSE  →  DESIGN  →  CODE  →  TEST</span></div>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Stage</th><th>What happens</th></tr></thead>
+  <tr><td><strong>Analyse</strong></td><td>Understand and break the problem down — what is it really asking?</td></tr>
+  <tr><td><strong>Design</strong></td><td>Plan the solution using structure diagrams, flowcharts or pseudocode — before any code is written.</td></tr>
+  <tr><td><strong>Code</strong></td><td>Write the program in a programming language, following the design.</td></tr>
+  <tr><td><strong>Test</strong></td><td>Run the program with test data to find and fix errors.</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake.</strong> <p>Students most often skip <strong>Analyse/Design</strong> and jump straight to Code. Result: bugs, poor structure, or a program that solves the wrong problem entirely.</p></div>
+<div class="note-box"><strong>💡 Key Term — Abstraction.</strong> <p>Keeping only the details needed to solve the problem, and discarding the rest.</p></div>
+
+
+<h3>7.2 Abstraction vs Decomposition</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th></th><th>Abstraction</th><th>Decomposition</th></tr></thead>
+  <tr><td><strong>What it does</strong></td><td>Keeps what matters, removes the rest</td><td>Breaks a big problem into small sub-problems</td></tr>
+  <tr><td><strong>Example</strong></td><td>A subway map shows only stations and lines — not real road shapes or building heights</td><td>"Get dressed" → select items → remove clothes being worn → put items on in order</td></tr>
+</table></div>
+<div class="note-box"><strong>💡 Exam Tip.</strong> <p>Each decomposed sub-part can be broken down <em>again</em> until it's simple enough to solve — this repeated breakdown is called <strong>stepwise refinement</strong>.</p></div>
+
+
+<h3>7.2 Systems & Sub-systems</h3>
+
+<p>Any computer system breaks into four parts:</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Part</th><th>Meaning</th><th>Alarm clock example</th></tr></thead>
+  <tr><td><strong>Input</strong></td><td>Data entered while active</td><td>Set/cancel the alarm, snooze</td></tr>
+  <tr><td><strong>Process</strong></td><td>Tasks using input + stored data</td><td>Check time vs. alarm time</td></tr>
+  <tr><td><strong>Output</strong></td><td>Information shown to users</td><td>Sound/tune when time matches</td></tr>
+  <tr><td><strong>Storage</strong></td><td>Data saved for later</td><td>The alarm time(s) that were set</td></tr>
+</table></div>
+<div class="example-box"><div class="ex-title">📘 Design Tool 1 — Structure Diagrams</div><p>Show <strong>top-down</strong> design: how a system splits into sub-systems <em>hierarchically</em>. Each level is a more detailed breakdown, and any sub-system can be split further if it's still too complex.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — life cycle, abstraction, decomposition</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is the correct order of the program development life cycle?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Design, Analyse, Test, Code</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Code, Analyse, Design, Test</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Analyse, Design, Code, Test</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Test, Design, Analyse, Code</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which term means keeping only the details needed to solve a problem, and discarding the rest?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Iteration</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Decomposition</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Validation</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Abstraction</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Repeatedly breaking sub-systems into smaller sub-systems until each does one action is called...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Stepwise refinement</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Bubble sort</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Check digit</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Boundary value testing</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">In an alarm clock system, saving the alarm time that was set is an example of which part?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Process</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Storage</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Output</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Input</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Comparing the current time against the stored alarm time is an example of which system part?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Storage</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Process</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Output</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Input</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 2 ============ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>7.2 Flowcharts & pseudocode</h2><div class="unit-sub">design tools</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Flowchart symbols in action</div>
+    <svg viewBox="0 0 350 220" role="img" aria-label="Flowchart with start, input, decision, output" style="width:100%;max-width:350px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="130" y="5" width="100" height="30" rx="15" fill="#f1f5f9" stroke="#64748b" stroke-width="1.8"/><text x="180.0" y="24.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >START</text><line x1="180" y1="35" x2="180" y2="50" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><polygon points="130,50 230,50 220,80 120,80" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="175" y="69" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >INPUT age</text><line x1="175" y1="80" x2="175" y2="98" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><polygon points="175,98 235,128 175,158 115,128" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/><text x="175" y="132" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >age &gt;= 18?</text><path d="M235 128 L290 128 L290 175" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ah)"/><text x="262" y="122" font-size="10" text-anchor="middle" font-weight="700" fill="#059669" stroke="none" >YES</text><path d="M115 128 L60 128 L60 175" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#ah)"/><text x="88" y="122" font-size="10" text-anchor="middle" font-weight="700" fill="#dc2626" stroke="none" >NO</text><rect x="10" y="175" width="100" height="34" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="60.0" y="188.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >OUTPUT</text><text x="60.0" y="202.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >"Child"</text><rect x="240" y="175" width="100" height="34" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="290.0" y="188.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >OUTPUT</text><text x="290.0" y="202.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >"Adult"</text></svg>
+    <div class="viz-cap">Oval = start/end · parallelogram = input/output · rectangle = process · diamond = decision.</div>
+  </div>
+<h3>7.2 Flowcharts (Design Tool 2)</h3>
+
+<p>Flow lines are arrows, usually top-to-bottom / left-to-right. A <strong>decision box (diamond)</strong> must always have its two exits both labelled — yes/no or true/false.</p>
+<div class="warn-box"><strong>⚠️ Spot the Error.</strong> <p>A decision diamond with only <strong>one</strong> arrow leaving it is broken — a decision always has two possible outcomes, so one result would have no defined path and the flowchart cannot handle that case.</p></div>
+<div class="example-box"><div class="ex-title">📘 Worked Example</div><p>Rule: $20/ticket. Buy 10+ → 10% off. Buy 20+ → 20% off. Max 25 tickets. For N = 15: Cost = 15 × 20 × 0.9 = <strong>$270</strong>.</p>
+<p>The input check must be <strong>N ≥ 1 AND N &lt; 26</strong> — using only one of those conditions would let invalid values (0, negative, or over 25) slip through.</p></div>
+
+
+<h3>7.2 Pseudocode Rules (Design Tool 3)</h3>
+
+<ul>
+  <li>Keywords in <strong>CAPITALS</strong>: INPUT, OUTPUT, IF, FOR …</li>
+  <li>Data (variable) names start with a <strong>Capital</strong> letter: <code>StudentMark</code></li>
+  <li>Selection/loop bodies indented by <strong>two spaces</strong></li>
+  <li>Assignment uses the <strong>← arrow</strong>, never <code>=</code></li>
+</ul>
+<div class="code-block no-ln"><span class="cl">Operators:  +  add    −  subtract    *  multiply    /  divide    ^  power    ( )  group</span></div>
+<div class="warn-box"><strong>⚠️ Trick Question.</strong> <p><code>Amount ← 100</code> then <code>TotalPrice ← Amount * 3.5</code> then <code>Discount ← 0.2</code> then <code>FinalPrice ← TotalPrice − TotalPrice * Discount</code>.<br>TotalPrice = 350, so <strong>FinalPrice = 350 − 70 = 280</strong> (not 100 − 0.2!).</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — design tools</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which design tool shows how a system splits into sub-systems hierarchically?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Trace table of values</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Pseudocode listing</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Check digit</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Structure diagram</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A decision (diamond) box in a flowchart must always have...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Exactly one labelled exit</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>No exits at all</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Two labelled exits</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Three unlabelled exits</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Tickets cost $20 each, with 10% off for 10+ and 20% off for 20+, max 25 tickets. For N=15, what is Cost?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>$270</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>$240</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>$300</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>$200</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">For the same ticket system, why must the input check be 'N ≥ 1 AND N < 26' rather than just one condition?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Using AND makes the program run noticeably faster</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The system does not need any input check</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>OR should always replace AND in conditions</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>One condition alone lets invalid data through</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which symbol is used for assignment in pseudocode?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>=</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>→</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>←</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>==</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 3 ============ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>7.2–7.3 Selection, loops & reading algorithms</h2><div class="unit-sub">selection and iteration</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">The three loops</div>
+    <svg viewBox="0 0 520 112" role="img" aria-label="FOR, WHILE and REPEAT loops" style="width:100%;max-width:520px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="10" width="160" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="90.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >FOR … NEXT</text><rect x="10" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="90.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >count-controlled</text><text x="90" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >known number of repeats</text><rect x="180" y="10" width="160" height="36" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="260.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >WHILE … ENDWHILE</text><rect x="180" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="260.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >pre-condition</text><text x="260" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >test first — may run 0 times</text><rect x="350" y="10" width="160" height="36" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="430.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >REPEAT … UNTIL</text><rect x="350" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="430.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >post-condition</text><text x="430" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >test last — runs at least once</text></svg>
+    
+  </div>
+<h3>7.2 Selection: IF vs CASE</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th></th><th>IF … THEN … ELSE … ENDIF</th><th>CASE OF … OTHERWISE … ENDCASE</th></tr></thead>
+  <tr><td><strong>Best for</strong></td><td>A condition that is true or false, or a range</td><td>Choosing between several fixed values</td></tr>
+  <tr><td><strong>Example use</strong></td><td>Grading by score range (A/B/C by ranges)</td><td>Matching an exact grade letter already stored</td></tr>
+</table></div>
+<p>A <strong>nested IF</strong> is an IF inside another IF; the inner IF only runs if the outer condition was met. Every IF needs its own ENDIF.</p>
+<div class="example-box"><div class="ex-title">📘 Nested IF Walkthrough</div><p>Validate <code>PercentageMark</code> (0–100 range check) first, <em>then</em> test Pass/Fail (&gt; 49) only if it passed validation.</p>
+<p>PercentageMark = 105 → <strong>"Invalid Mark"</strong> (fails the range check first). PercentageMark = 49 → <strong>"Fail"</strong> (49 is not greater than 49).</p></div>
+
+
+<h3>7.2 Iteration: Three Loops</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Loop</th><th>Type</th><th>Runs body …</th></tr></thead>
+  <tr><td><strong>FOR … TO … NEXT</strong></td><td>Count-controlled</td><td>An exact known number of times</td></tr>
+  <tr><td><strong>REPEAT … UNTIL</strong></td><td>Post-condition</td><td>At least once (test is AFTER the body)</td></tr>
+  <tr><td><strong>WHILE … DO … ENDWHILE</strong></td><td>Pre-condition</td><td>Possibly zero times (test is BEFORE the body)</td></tr>
+</table></div>
+<div class="note-box"><strong>💡 Exam Tip — Password Loop.</strong> <p>Asking a user to re-enter a password until it's correct needs <strong>REPEAT…UNTIL</strong> — you must ask for input at least once before there's anything to test.</p></div>
+<div class="warn-box"><strong>⚠️ Spot the Error.</strong> <p>REPEAT and WHILE need their counter <strong>initialised and updated manually</strong> — miss a step and you get an infinite loop or an off-by-one error. FOR manages its counter automatically.</p></div>
+
+
+<h3>7.3 Reading Algorithms</h3>
+
+<p>To explain what an algorithm does, always answer two things:</p>
+<ul>
+  <li><strong>Purpose</strong> — what problem does it solve overall? (e.g. "finds which of two numbers is larger")</li>
+  <li><strong>Processes</strong> — what individual steps does it perform? (input two numbers, compare them, print the larger)</li>
+</ul>
+<div class="note-box"><strong>💡 Why Exam Questions Use A, B, C….</strong> <p>Single-letter variable names remove clues — you have to work out the algorithm's purpose from its <em>logic</em>, not guess it from a meaningful variable name.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — selection and iteration</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Amount ← 100, TotalPrice ← Amount * 3.5, Discount ← 0.2, FinalPrice ← TotalPrice − TotalPrice * Discount. What is FinalPrice?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>70</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>280</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>350</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>80</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A validated mark (0–100) is then tested with 'IF PercentageMark > 49'. What is output if PercentageMark = 105?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Invalid Mark</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Pass, since 105 > 49</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Fail, since 105 is too big</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>105 is printed</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which loop always runs its body at least once, because the test comes after the body?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>FOR...TO...NEXT</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>WHILE...DO...ENDWHILE</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>IF...THEN...ELSE</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>REPEAT...UNTIL</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A program keeps asking a user to re-enter a password until it is typed correctly. Which loop fits best?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>WHILE...DO...ENDWHILE</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>REPEAT...UNTIL</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>FOR...TO...NEXT</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>CASE OF...ENDCASE</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">To fully explain what an algorithm does, you should state its...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Variable names and colours</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>File size and author</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Purpose and processes</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Loop type and indentation</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 4 ============ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>7.4 Standard algorithms</h2><div class="unit-sub">five standard algorithms</div></div>
+  </div>
+
+<h3>7.4 Five Standard Algorithms</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Algorithm</th><th>How it works</th></tr></thead>
+  <tr><td><strong>Totalling</strong></td><td>Running sum: <code>Total ← 0</code> before the loop, then <code>Total ← Total + value</code> each pass</td></tr>
+  <tr><td><strong>Counting</strong></td><td>Running count of how many times something happens, also initialised to 0</td></tr>
+  <tr><td><strong>Maximum/Minimum/Average</strong></td><td>Start Max and Min at the <strong>first real value</strong> (loop from item 2) — never a fixed guess like 0 or 100</td></tr>
+  <tr><td><strong>Linear search</strong></td><td>Checks each item in order until a match or the end of the list; uses a <strong>flag</strong> variable (Found = TRUE/FALSE)</td></tr>
+  <tr><td><strong>Bubble sort</strong></td><td>Repeatedly compares neighbours and swaps if in the wrong order; each pass bubbles the largest value to the end; stops early once a pass makes no swaps</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Why NOT Start Max/Min at 0 and 100.</strong> <p>Fixed guesses fail on data outside that range — e.g. all marks negative, or all marks above 100. Starting Max and Min at the <strong>first real value</strong> is always safe, whatever the data.</p></div>
+<div class="example-box"><div class="ex-title">📘 Linear Search Worst Case</div><p>A class list of 30 names, with the match at position 30 (the very last spot): the search makes <strong>30 comparisons</strong> — the worst case checks every single item.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 check — five standard algorithms</h2><div class="quiz-score" id="score4">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">INPUT Num1, Num2; IF Num1 > Num2 THEN PRINT Num1 'is largest' ELSE PRINT Num2 'is largest'. If 7 and 18 are entered, what prints?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>18 is largest</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>7 is largest</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Error</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Num1 is largest</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the totalling algorithm, where must 'Total ← 0' be placed?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Inside the loop, on every pass</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Before the loop starts</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>After the loop finishes</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It does not matter where</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">In the Maximum/Minimum algorithm that starts Max and Min at StudentMark[1], why does the loop start at Counter ← 2?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Counter must always start above 1 in every loop</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It skips invalid data automatically</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It matches array indexing rules only</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Item 1 is already used as the starting value</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A class list has 30 names, and the match is at position 30 (the very last spot). How many comparisons does a linear search make?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>15</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>30</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>29</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">In bubble sort, what happens on each full pass through the list?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The largest unsorted value bubbles to the end</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The list is reversed completely</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The smallest value moves to the front of the list</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>All values are randomly shuffled</button>
+    </div><div class="q-feedback" id="fb4_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 5 ============ -->
+<div class="unit" id="unit5">
+  <div class="unit-header">
+    <div class="unit-num">⑤</div>
+    <div><h2>7.5–7.6 Validation & test data</h2><div class="unit-sub">checking data</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Validation vs verification</div>
+    <svg viewBox="0 0 510 160" role="img" aria-label="Validation checks sensible; verification checks accurate copy" style="width:100%;max-width:510px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="20" width="130" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="75.0" y="44.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >User types 15</text><line x1="140" y1="40" x2="180" y2="40" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><rect x="180" y="10" width="150" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/><text x="255.0" y="29.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >VALIDATION</text><text x="255.0" y="43.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >is the value sensible?</text><text x="255.0" y="57.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >(range check 1–10)</text><line x1="330" y1="40" x2="370" y2="40" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><rect x="370" y="20" width="130" height="40" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/><text x="435.0" y="44.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Rejected ✗</text><rect x="10" y="100" width="130" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="75.0" y="124.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Copy data again</text><line x1="140" y1="120" x2="180" y2="120" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><rect x="180" y="90" width="150" height="60" rx="8" fill="#cffafe" stroke="#0891b2" stroke-width="1.8"/><text x="255.0" y="109.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >VERIFICATION</text><text x="255.0" y="123.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >is it the same as the</text><text x="255.0" y="137.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >original? (double entry)</text><line x1="330" y1="120" x2="370" y2="120" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><rect x="370" y="100" width="130" height="40" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="435.0" y="124.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Match ✓</text></svg>
+    <div class="viz-cap">Validation = reasonable? Verification = copied correctly? Neither proves the data is actually true.</div>
+  </div>
+<h3>7.5 Validation vs Verification</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th></th><th>Validation</th><th>Verification</th></tr></thead>
+  <tr><td><strong>Who/what checks</strong></td><td>The PROGRAM, automatically</td><td>The PERSON (or system) doing the copying</td></tr>
+  <tr><td><strong>Question asked</strong></td><td>"Is this a SENSIBLE answer?"</td><td>"Did I COPY it correctly?"</td></tr>
+  <tr><td><strong>Example</strong></td><td>A mark of 150 fails — impossible</td><td>Typed 85 but meant 58 — both look sensible!</td></tr>
+</table></div>
+<p>Six validation checks: <strong>range</strong> (0≤Mark≤100), <strong>length</strong> (password = 8 characters), <strong>type</strong> (must be a whole number), <strong>presence</strong> (field cannot be blank), <strong>format</strong> (matches a pattern, e.g. CUB9999), and <strong>check digit</strong> (an extra digit calculated from the others, e.g. ISBN/barcodes).</p>
+<div class="example-box"><div class="ex-title">📘 Check Digits Catch 4 Error Types</div><p>Incorrect digit, <strong>transposition</strong> (two digits swapped), omitted/extra digit, and phonetic errors ("thirteen" instead of "thirty"). A check digit must be <em>calculated from</em> the other digits — a random extra digit wouldn't catch anything.</p></div>
+<p>Two verification methods: <strong>double entry</strong> (typed twice, system compares both — used for "confirm password") and <strong>screen/visual check</strong> (data displayed on screen, user checks it against the original document — used for confirming an order before checkout).</p>
+<div class="warn-box"><strong>⚠️ Trick Question.</strong> <p>'name@gnail.com' instead of 'name@gmail.com' — would <strong>validation</strong> catch it? <strong>No</strong> (it's still a valid email format). Would <strong>verification</strong>? <strong>Possibly</strong> (comparing against the original document could catch the copying error).</p></div>
+
+
+<h3>7.6 Test Data</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Type</th><th>Meaning</th><th>Example (Mark, 0–100)</th></tr></thead>
+  <tr><td><strong>Normal</strong></td><td>Data the program SHOULD accept</td><td>75</td></tr>
+  <tr><td><strong>Abnormal</strong></td><td>Data the program SHOULD reject</td><td>−12, "eleven"</td></tr>
+  <tr><td><strong>Extreme</strong></td><td>The largest/smallest value that IS accepted</td><td>0, 100</td></tr>
+  <tr><td><strong>Boundary</strong></td><td>A pair straddling a limit — one accepted, one rejected</td><td>−1 (reject), 0 (accept)</td></tr>
+</table></div>
+<div class="note-box"><strong>💡 Key Term — Boundary Data.</strong> <p>Always comes in a <strong>pair</strong> at each limit: one value that is accepted, and one that is rejected, right next to each other.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz5" data-quiz="5">
+  <div class="quiz-header"><h2>📝 Topic 5 check — checking data</h2><div class="quiz-score" id="score5">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">In bubble sort, why check 'NOT Swap OR Last = 1' instead of just 'Last = 1'?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To stop early once a pass makes no swaps, saving time</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To make the sort run in a fixed number of passes only</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Because Last = 1 is never actually reached</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>To force the loop to repeat one extra time</button>
+    </div><div class="q-feedback" id="fb5_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A mark of 150 is entered for a test out of 100. Which check rejects it as impossible?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Presence check</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Length check</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Range check</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Double entry</button>
+    </div><div class="q-feedback" id="fb5_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A check digit is best described as...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A random extra digit added purely for style</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A digit calculated from the others, to catch errors</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A digit that is always fixed as the number 9</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A digit that is only ever used in long phone numbers</button>
+    </div><div class="q-feedback" id="fb5_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">'Thirteen' entered instead of 'thirty' is an example of which check-digit error type?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Transposition error</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Omitted digit error</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Format error</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Phonetic error</button>
+    </div><div class="q-feedback" id="fb5_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">For a mark field accepting 0–100, which of these is EXTREME test data?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>75</button>
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>−12</button>
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>"eleven"</button>
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>100</button>
+    </div><div class="q-feedback" id="fb5_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 6 ============ -->
+<div class="unit" id="unit6">
+  <div class="unit-header">
+    <div class="unit-num">⑥</div>
+    <div><h2>7.7–7.9 Trace tables & debugging</h2><div class="unit-sub">proving the algorithm works</div></div>
+  </div>
+
+<h3>7.7 Trace Tables</h3>
+
+<p>A trace table records a <strong>dry run</strong> step by step: one column per variable, plus one column for OUTPUT. Only write a <strong>new</strong> value in a column when it actually changes.</p>
+<div class="example-box"><div class="ex-title">📘 Worked Example</div><p>An algorithm starts <code>B ← 0</code>, <code>C ← 100</code>, then updates B to the largest and C to the smallest value seen. With data 9, 7, 3, 12, 6, 4, 15, 2, 8, 5 it outputs <strong>15, 2</strong> — it finds the <strong>largest and smallest</strong> of 10 numbers.</p></div>
+<div class="warn-box"><strong>⚠️ The Flaw in This Algorithm.</strong> <p>Because it starts <code>B ← 0</code> and <code>C ← 100</code>, it gives the <strong>wrong answer</strong> for data that is all negative (largest wrong) or all above 100 (smallest wrong) — exactly the fixed-starting-value trap from 7.4.</p></div>
+
+
+<h3>7.8 Debugging Algorithms</h3>
+
+<p>Fixing the max/min algorithm to work for <strong>any</strong> data, in three attempts:</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Version</th><th>Starting values</th><th>Problem</th></tr></thead>
+  <tr><td>1</td><td>B ← 0, C ← 100</td><td>Fails for negative numbers or numbers over 100</td></tr>
+  <tr><td>2</td><td>B ← −1,000,000, C ← 1,000,000</td><td>Better, but still fails outside that huge range</td></tr>
+  <tr><td>3 (best)</td><td>B and C set to the <strong>first value input</strong></td><td>Always safe — loop then runs through the remaining 9 values only</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Off-by-One Error.</strong> <p>Version 3's loop is <code>FOR Counter ← 1 TO 9</code> (not 10), because the first value was already read separately. Changing it back to <strong>TO 10</strong> would try to read <strong>11 numbers total</strong> for a 10-item list — a classic off-by-one error.</p></div>
+
+
+<h3>7.9 Writing Your Own Algorithms — Checklist</h3>
+
+<ul>
+  <li>Understand the problem clearly</li>
+  <li>Break it into sub-problems (input, process, storage, output)</li>
+  <li>Decide how data is obtained, stored &amp; displayed</li>
+  <li>Design the structure (a structure diagram)</li>
+  <li>Choose a flowchart or pseudocode</li>
+  <li>Construct it — use <strong>meaningful names</strong> and precise conditions</li>
+  <li>Test with normal, abnormal, extreme and boundary data + trace tables</li>
+  <li>Find errors → fix → repeat until correct</li>
+</ul>
+<div class="note-box"><strong>💡 Why Precision Matters.</strong> <p>Write <code>Counter &gt;= 10</code>, not "Counter ten or over" — a computer needs an exact, unambiguous condition it can evaluate. Vague conditions can't be coded.</p></div>
+
+
+<h3>Key Terms Recap</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+  <tr><td><strong>Abstraction</strong></td><td>Keep key elements, discard unneeded detail</td></tr>
+  <tr><td><strong>Decomposition</strong></td><td>Break a problem into smaller, manageable parts</td></tr>
+  <tr><td><strong>Algorithm</strong></td><td>An ordered set of steps to solve a problem</td></tr>
+  <tr><td><strong>Validation</strong></td><td>Automated check that data is reasonable</td></tr>
+  <tr><td><strong>Verification</strong></td><td>Check that data was copied accurately</td></tr>
+  <tr><td><strong>Linear search</strong></td><td>Checks each item in turn for a match</td></tr>
+  <tr><td><strong>Bubble sort</strong></td><td>Repeatedly compares &amp; swaps neighbours</td></tr>
+  <tr><td><strong>Normal data</strong></td><td>Data that SHOULD be accepted</td></tr>
+  <tr><td><strong>Boundary data</strong></td><td>Pair of values straddling an accept/reject limit</td></tr>
+  <tr><td><strong>Trace table</strong></td><td>Records variable values during a dry run</td></tr>
+</table></div>
+
+    
+
+</div>
+
+<div class="quiz-section" id="quiz6" data-quiz="6">
+  <div class="quiz-header"><h2>📝 Topic 6 check — proving the algorithm works</h2><div class="quiz-score" id="score6">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Boundary data always comes in what form?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A pair — one accepted, one rejected</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only a single accepted value</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Three values spread across the range</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Only a single rejected value</button>
+    </div><div class="q-feedback" id="fb6_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In a trace table, when should you write a new value in a variable's column?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>On every single row, no matter what</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only when that variable's value changes</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Only in the very first row of the table</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Only in the very last row of the table</button>
+    </div><div class="q-feedback" id="fb6_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">An algorithm starts B ← 0 and C ← 100 to find the largest (B) and smallest (C) of some numbers. For which data would it give a WRONG answer?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Data that is all between 1 and 99</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Data containing exactly ten numbers in a row</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Data that is all negative, or all above 100</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Data entered in ascending order</button>
+    </div><div class="q-feedback" id="fb6_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A fixed version 3 algorithm loops 'FOR Counter ← 1 TO 9' after reading one value first. What error happens if a student changes it to 'TO 10'?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It reads 11 numbers in total for a 10-item list</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The loop skips the last value of the list entirely</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The program stops running immediately</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Nothing changes — the output stays fully correct anyway</button>
+    </div><div class="q-feedback" id="fb6_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which of these should happen LAST when writing your own algorithm, according to the checklist?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Understand the problem clearly before anything</button>
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Design the structure diagram</button>
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Test, fix errors, and repeat until correct</button>
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Decide how data is obtained and stored</button>
+    </div><div class="q-feedback" id="fb6_5"></div></div>
+
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Program development life cycle</div><div class="term-def">The stages analysis, design, coding and testing, carried out in order to produce a working program.</div></div>
+    <div class="term-item"><div class="term-name">Abstraction</div><div class="term-def">Keeping only the details needed to solve a problem and removing unnecessary detail.</div></div>
+    <div class="term-item"><div class="term-name">Decomposition</div><div class="term-def">Breaking a problem down into smaller component parts: inputs, processes, outputs and storage.</div></div>
+    <div class="term-item"><div class="term-name">Structure diagram</div><div class="term-def">A design method showing a problem broken into a hierarchy of sub-systems.</div></div>
+    <div class="term-item"><div class="term-name">Flowchart</div><div class="term-def">A diagram that uses standard symbols to show the steps of an algorithm.</div></div>
+    <div class="term-item"><div class="term-name">Pseudocode</div><div class="term-def">Structured, language-independent text used to design and write an algorithm precisely.</div></div>
+    <div class="term-item"><div class="term-name">Linear search</div><div class="term-def">Checking each item in turn, from the start, until the target is found or the list ends.</div></div>
+    <div class="term-item"><div class="term-name">Bubble sort</div><div class="term-def">Repeatedly comparing adjacent items and swapping them if out of order until the list is sorted.</div></div>
+    <div class="term-item"><div class="term-name">Totalling / counting</div><div class="term-def">Totalling adds values into a running sum; counting adds 1 each time something happens.</div></div>
+    <div class="term-item"><div class="term-name">Validation</div><div class="term-def">An automatic check that input data is reasonable: range, length, type, presence, format and check digit.</div></div>
+    <div class="term-item"><div class="term-name">Verification</div><div class="term-def">A check that data has been entered correctly: visual check or double entry check.</div></div>
+    <div class="term-item"><div class="term-name">Test data</div><div class="term-def">Normal, abnormal, extreme (largest/smallest acceptable) and boundary (acceptable value plus the nearest rejected value).</div></div>
+    <div class="term-item"><div class="term-name">Trace table</div><div class="term-def">A table used to dry-run an algorithm, recording variables, outputs and user prompts at each step.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Use the exact command-word wording from the question.</p>
+    <p>Show working: trace tables, truth-table columns, SQL on separate lines.</p>
+    <p>Check each answer against the marks available.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G10 Computer Science · Chapter 7 Algorithm Design &amp; Problem Solving · Study guide (regular).
+  &nbsp;·&nbsp; <a href="chapter7_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[2, 3, 0, 1, 1], total:5, score:0, done:0, feedback:[
+    "The four stages always run in this order: Analyse, Design, Code, Test.",
+    "Abstraction keeps the key elements and removes unnecessary detail, like a subway map showing only stations and lines.",
+    "Stepwise refinement is decomposition repeated until every part is a single, simple action.",
+    "Storage is data saved for later use, such as the alarm times a user has set.",
+    "Process uses input and stored data to make decisions, such as comparing times."]},
+  2:{answers:[3, 2, 0, 3, 2], total:5, score:0, done:0, feedback:[
+    "A structure diagram shows top-down design: each level is a more detailed breakdown of the level above.",
+    "A decision box has two possible outcomes, so it must have two exits, both labelled yes/no or true/false.",
+    "15 tickets qualify for 10% off: Cost = 15 × 20 × 0.9 = $270.",
+    "Checking only one condition would let values like 0, negative numbers, or numbers over 25 slip through undetected.",
+    "Pseudocode uses the ← arrow for assignment, never the = sign."]},
+  3:{answers:[1, 0, 3, 1, 2], total:5, score:0, done:0, feedback:[
+    "TotalPrice = 100 × 3.5 = 350, so FinalPrice = 350 − (350 × 0.2) = 350 − 70 = 280.",
+    "105 fails the 0–100 range validation first, so 'Invalid Mark' is output before the pass/fail check even runs.",
+    "REPEAT…UNTIL tests after the body runs, so the body always executes at least once.",
+    "REPEAT…UNTIL is correct because input must be requested at least once before there is anything to test.",
+    "A complete explanation states the algorithm's purpose (what problem it solves) and its processes (the individual steps)."]},
+  4:{answers:[0, 1, 3, 2, 0], total:5, score:0, done:0, feedback:[
+    "Since 18 > 7 is false the other way round, the ELSE branch runs and prints '18 is largest'.",
+    "Total must be set to 0 once, before the loop, otherwise it resets to 0 on every pass and the running total is wrong.",
+    "Since StudentMark[1] is already used to initialise Max and Min, the loop only needs to check the remaining items from Counter ← 2.",
+    "In the worst case, linear search checks every single item, so a match at position 30 takes 30 comparisons.",
+    "Each pass compares neighbours and swaps them if needed, which bubbles the largest remaining value to the end of the checked range."]},
+  5:{answers:[0, 2, 1, 3, 3], total:5, score:0, done:0, feedback:[
+    "Checking NOT Swap lets the loop exit as soon as a pass makes no swaps, meaning the list is already sorted — no need to keep going.",
+    "A range check confirms a value is between an upper and lower limit — 150 fails 0 ≤ Mark ≤ 100.",
+    "A check digit is calculated from the other digits using a formula, which is exactly why it can catch typing or scanning errors.",
+    "A phonetic error happens when similar-sounding numbers are confused, such as thirteen (13) for thirty (30).",
+    "Extreme data is the largest or smallest value that IS accepted — for 0–100, that includes 100."]},
+  6:{answers:[0, 1, 2, 0, 2], total:5, score:0, done:0, feedback:[
+    "Boundary data is a pair of values straddling a limit — one just inside (accepted) and one just outside (rejected).",
+    "A trace table only records a new value when it changes — this keeps the table clear and shows exactly where each update happens.",
+    "Because B starts at 0 and C starts at 100, all-negative data breaks the largest calculation and all-above-100 data breaks the smallest.",
+    "With one value already read before the loop, changing TO 9 to TO 10 makes it read 11 numbers total — one too many for a 10-item list.",
+    "The checklist ends with testing (normal/abnormal/boundary data + trace tables) and then finding and fixing errors until it's correct."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7 Mock Exam — Algorithm Design and Problem Solving | IGCSE Computer Science</title>
+<link rel="stylesheet" href="style.css">
+<style>.q-text,.option-btn{white-space:pre-wrap}.set-tab.active-tab{background:#fff;color:var(--primary);}[hidden]{display:none !important}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Computer Science <span>· Mock exam · Ch 7</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science (0478) · Mock exam MCQs</div>
+  <h1>Chapter 7 Mock Exam · Algorithm Design and Problem Solving</h1>
+  <p>Three sets of 10 exam-level multiple-choice questions on this chapter, written in the style of the real 0478 papers. Pick a set, answer every question, and read the mark-scheme style explanation after each one.</p>
+  <div class="unit-nav">
+    <a href="#setA" class="set-tab active-tab" data-set="1">Set A</a><a href="#setB" class="set-tab" data-set="2">Set B</a><a href="#setC" class="set-tab" data-set="3">Set C</a>
+    <a href="chapter7.html" class="easy-pill">📘 Back to Chapter 7</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout" style="grid-template-columns:1fr;max-width:860px">
+<main>
+<div class="quiz-section mock-set" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Mock set A — 10 questions</h2><div class="quiz-score" id="score1">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A company asks a developer to build a stock-control program. The developer interviews staff, lists what the program must do and ignores details that are not relevant. Which stage of the program development life cycle is this?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Design, because the structure of the solution is being planned</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Analysis</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Coding, because the program is being prepared for writing</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Testing, because staff feedback is being collected</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A library system is decomposed into parts. Which part is a STORAGE component?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Scanning the barcode on a book as it is borrowed</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Calculating the fine for a late book return</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Saving each loan record in a file</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Displaying the fine on the screen for the member</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">In a flowchart, which symbol should contain the test Count &gt; 5 that has two exits labelled Yes and No?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Diamond (decision)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Parallelogram (input or output)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Rectangle (process)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Rounded rectangle (start or end)</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A program rejects the entry 'ten' typed into a field that must hold the number of tickets ordered. Which validation check rejected it?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Range check, because ten is outside the allowed limits</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Presence check, because the field was left empty</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Length check, because ten has too few characters</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Type check</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which is an example of a double entry check?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A new user types their email address twice and the two entries are compared</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The program displays the email address and the user confirms it is correct by clicking OK</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The program checks the email address contains an @ symbol and a full stop</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The program checks the email address is no longer than 50 characters</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">A program accepts whole numbers from 1 to 50 inclusive. Which pair of values is boundary test data for the upper limit?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>49 and 50, the two highest accepted values</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>1 and 50, the lowest and highest accepted values</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>50 and 51</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>51 and 52, the two lowest rejected values</button>
+    </div><div class="q-feedback" id="fb1_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">The following algorithm is run with the inputs 4, 12, 10, 15, 7, 11 in that order.
+Total ← 0
+Count ← 0
+FOR i ← 1 TO 6
+  INPUT Num
+  IF Num &gt; 10 THEN
+    Total ← Total + Num
+    Count ← Count + 1
+  ENDIF
+NEXT i
+OUTPUT Total, Count
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Total = 48, Count = 4</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Total = 38, Count = 3</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Total = 59, Count = 6 (all six values added)</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Total = 38, Count = 6</button>
+    </div><div class="q-feedback" id="fb1_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">The array Data[1:6] holds 8, 3, 9, 3, 5, 7 in that order. What is output by this linear search?
+Index ← 1
+Found ← FALSE
+WHILE Found = FALSE AND Index &lt;= 6
+  IF Data[Index] = 3 THEN
+    Found ← TRUE
+  ELSE
+    Index ← Index + 1
+  ENDIF
+ENDWHILE
+OUTPUT Index</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>4, because the loop finds the last 3 in the list</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>1, because the loop stops before it reaches the 3</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3, because the number being searched for is 3</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2</button>
+    </div><div class="q-feedback" id="fb1_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">A bubble sort arranges the list 6, 2, 9, 4, 1 into ascending order. Which shows the list after the FIRST complete pass?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>6, 2, 9, 4, 1 (unchanged)</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>2, 6, 4, 9, 1 (last pair not compared)</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>1, 2, 4, 6, 9 (fully sorted)</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2, 6, 4, 1, 9</button>
+    </div><div class="q-feedback" id="fb1_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">This algorithm should count how many of 8 marks are 50 or more. For the marks 45, 60, 72, 38, 55, 49, 81, 50 it outputs 1 instead of 5.
+FOR i ← 1 TO 8
+  Count ← 0
+  IF Mark[i] &gt;= 50 THEN
+    Count ← Count + 1
+  ENDIF
+NEXT i
+OUTPUT Count
+Which change corrects the algorithm?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Change &gt;= to &gt; in the IF statement so that 50 is not counted</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Move Count ← 0 to before the FOR statement</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Move Count ← Count + 1 to before the IF statement</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Move OUTPUT Count inside the loop, before NEXT i</button>
+    </div><div class="q-feedback" id="fb1_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz2" data-quiz="2" hidden>
+  <div class="quiz-header"><h2>📝 Mock set B — 10 questions</h2><div class="quiz-score" id="score2">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which task is carried out during the design stage of the program development life cycle?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Drawing a flowchart of the planned solution</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Writing the solution in a high-level programming language</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Running the program with normal and abnormal test data</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Listing the inputs and outputs the users have asked for</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A structure diagram for a school-trip booking system has the top box 'Book trip' with three boxes beneath it: 'Take payment', 'Record student' and 'Print ticket'. What do the lower boxes represent?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The inputs, processes and outputs of the system, in that order</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The loops that repeat until the ticket has been printed</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The sub-tasks that the main task is decomposed into</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The test data used to check the booking system works</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which pseudocode statement is precise enough to be used in an algorithm that outputs a warning when Speed is above Limit?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>IF Speed is greater than Limit THEN OUTPUT "Warning"</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>IF Speed &gt; Limit THEN OUTPUT "Warning"</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>IF Speed is too fast THEN OUTPUT "Warning"</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>IF Speed is over the limit THEN show a warning</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A website rejects the date 12-05-2026 because it must be entered as 12/05/2026. Which validation check rejected it?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Range check, as 2026 may be too large a year</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Check digit, as the date has an incorrect final number</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Length check, since the date has too many characters</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Format check</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which statement describes a visual check?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The program compares the data with the same data typed in a second time</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The program tests whether the data lies between a lower and an upper limit</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The program calculates a value from the digits and compares it with the last digit</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The user compares the data on screen with the original source</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">A program accepts ages from 12 to 18 inclusive. Which value is extreme test data?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>19, the lowest rejected age above the range</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>11, the highest rejected age below the range</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>18, the highest accepted age</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>15, a typical age in the middle of the range</button>
+    </div><div class="q-feedback" id="fb2_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">What is output by this algorithm?
+x ← 27
+Steps ← 0
+WHILE x &gt; 5
+  x ← x - 6
+  Steps ← Steps + 1
+ENDWHILE
+OUTPUT x, Steps</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3 and 4</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>9 and 3, because the loop stops one repetition early</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3 and 5, because the value 3 also takes a step</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>27 and 0, because the condition is false at the start</button>
+    </div><div class="q-feedback" id="fb2_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">A bubble sort puts the list 4, 3, 1, 2 into ascending order. How many swaps are made in total?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3, the number of swaps in the first pass only</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>5</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>6, one swap for every pair of values in the list</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>4, one swap for every value in the list</button>
+    </div><div class="q-feedback" id="fb2_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">The array Names[1:10] holds 10 names and Target is stored in position 4. What is output, and what correction is needed?
+Index ← 1
+Found ← FALSE
+WHILE Found = FALSE AND Index &lt;= 10
+  IF Names[Index] = Target THEN
+    Found ← TRUE
+  ENDIF
+  Index ← Index + 1
+ENDWHILE
+IF Found = TRUE THEN
+  OUTPUT "Found at ", Index
+ENDIF</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Found at 4; change Index &lt;= 10 to Index &lt; 10 in the loop</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Found at 5; put Index ← Index + 1 in an ELSE part</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Found at 3; start Index at 0 instead of at 1 in the first line</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Found at 10; add a NEXT statement at the end of the loop</button>
+    </div><div class="q-feedback" id="fb2_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">An algorithm must count how many of 30 inputs, Num, are from 10 to 20 inclusive. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>IF Num &gt; 10 AND Num &lt; 20 THEN Count ← Count + 1</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>IF Num &gt;= 10 OR Num &lt;= 20 THEN Count ← Count + 1</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>IF Num &gt;= 10 AND Num &lt;= 20 THEN Count ← Count + 1</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>IF Num &gt;= 10 AND Num &lt;= 20 THEN Count ← Count + Num</button>
+    </div><div class="q-feedback" id="fb2_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz3" data-quiz="3" hidden>
+  <div class="quiz-header"><h2>📝 Mock set C — 10 questions</h2><div class="quiz-score" id="score3">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which statement best describes abstraction?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Breaking a large problem down into smaller sub-problems that are easier to manage</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Running a program with test data to check that it produces the expected results</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Writing the solution in a programming language so that a computer can execute it</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Removing unnecessary detail so only what is needed remains</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which statement about the sub-systems of a computer system is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A sub-system cannot be split up once it has been identified in the design</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Each sub-system can itself be made up of smaller sub-systems</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Sub-systems must always be hardware, because software cannot be decomposed</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A computer system has only one level, so it contains no sub-systems</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which flowchart symbol should contain the instruction Count ← Count + 1?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Rectangle (process)</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Parallelogram (input or output), as a variable is changed</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Diamond (decision), as a calculation is carried out</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Rounded rectangle (terminator), as it marks a step in the loop</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">The last digit of a product code is calculated from the other digits. A scanner misreads one digit and the program rejects the code. Which check did this?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Format check, because the digits are in the wrong pattern</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Presence check, because a digit appears to be missing</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Check digit</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Range check, since the code lies outside numeric limits</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A clerk types the mark 58 from a paper form instead of 85. Marks must be from 0 to 100. Which check could detect this error?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Validation, with a range check from 0 to 100</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Validation, with a presence check on the mark field</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Verification, by comparing the entry with the form</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Validation, with a type check that the mark is a number</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">A password must be 8 to 12 characters long. Which set correctly identifies test data lengths?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Normal 10, extreme 7, abnormal 3 characters</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Normal 10, extreme 8, abnormal 3</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Normal 8, extreme 13, abnormal 3 characters</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Normal 12, extreme 9, abnormal 10 characters</button>
+    </div><div class="q-feedback" id="fb3_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">The array Temp[1:6] holds 12, 7, 15, 7, 9, 11. What is output?
+Low ← Temp[1]
+Pos ← 1
+FOR i ← 2 TO 6
+  IF Temp[i] &lt; Low THEN
+    Low ← Temp[i]
+    Pos ← i
+  ENDIF
+NEXT i
+OUTPUT Pos, Low</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Pos = 4, Low = 7 (the later 7 replaces the first)</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Pos = 1, Low = 12 (no value is ever replaced)</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Pos = 6, Low = 11 (the last value is kept)</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Pos = 2, Low = 7</button>
+    </div><div class="q-feedback" id="fb3_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">A bubble sort is used to arrange 5, 8, 3, 7, 2 into ascending order. Which shows the list after the SECOND complete pass?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3, 5, 2, 7, 8</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>5, 3, 7, 2, 8 (after the first pass only)</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3, 5, 7, 2, 8 (only one swap in pass two)</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2, 3, 5, 7, 8 (fully sorted already)</button>
+    </div><div class="q-feedback" id="fb3_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">The inputs 10, 20, 30, -1 are entered, where -1 is the end value, and the average of the three numbers should be output.
+Total ← 0
+Count ← 0
+REPEAT
+  INPUT Num
+  Total ← Total + Num
+  Count ← Count + 1
+UNTIL Num = -1
+OUTPUT Total / Count
+What is output and why is it wrong?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>14.75, because -1 is included in Total and in Count</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>20, because the end value -1 is ignored by the loop</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>14.75, because Count should have been set to 1 at the start</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>19.67, because Total should be divided by the number of inputs less one</button>
+    </div><div class="q-feedback" id="fb3_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">Which statement outputs only the numbers that are multiples of 3, where Num is a whole number from 0 to 12?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>IF (Num DIV 3) = 0 THEN OUTPUT Num</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>IF Num MOD 3 = 3 THEN OUTPUT Num</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>IF Num / 3 = 0 THEN OUTPUT Num</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>IF Num MOD 3 = 0 THEN OUTPUT Num</button>
+    </div><div class="q-feedback" id="fb3_10"></div></div>
+</div>
+
+</main>
+</div>
+
+<footer>
+  Computer Science · Chapter 7 · Mock exam MCQs (3 sets × 10)
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[1, 2, 0, 3, 0, 2, 1, 3, 3, 1], total:10, score:0, done:0, feedback:[
+    "Analysis identifies the problem and requirements, using abstraction to ignore irrelevant detail. Design is where the solution is planned with flowcharts or pseudocode.",
+    "Storage is where data is kept for later use. Scanning is an input, calculating is a process and displaying is an output.",
+    "A decision with two exits is drawn in a diamond. A rectangle is used for a process such as an assignment.",
+    "A type check makes sure the data is of the correct data type, here a whole number. 'ten' is text, so it fails; it is not empty, so a presence check would pass it.",
+    "Double entry verification means the data is entered twice and the two copies are compared. Displaying it for the user to read is a visual check.",
+    "Boundary data is the largest accepted value and the smallest rejected value next to it: 50 (accepted) and 51 (rejected). 1 and 50 are extreme values.",
+    "Only 12, 15 and 11 are greater than 10, so Total = 38 and Count = 3. 10 is not greater than 10, so it is not counted (48 and 4 would need >=).",
+    "The search stops at the first match, which is at position 2, so Index is not increased again. 4 would only be output if the search carried on past the first 3.",
+    "Pass 1 compares each adjacent pair: swaps 6/2, no swap 6/9, swaps 9/4, swaps 9/1, so the largest value 9 has bubbled to the end. The list is not yet fully sorted.",
+    "Count is reset to 0 on every repetition, so only the last mark (50) is counted. The counter must be initialised once, before the loop."]},
+  2:{answers:[0, 2, 1, 3, 3, 2, 0, 1, 1, 2], total:10, score:0, done:0, feedback:[
+    "Design uses structure diagrams, flowcharts and pseudocode to plan the solution. Listing requirements is analysis, writing code is coding and running test data is testing.",
+    "A structure diagram shows a problem decomposed into smaller sub-problems. It does not show loops, decisions or test data.",
+    "Algorithms need precise, symbolic conditions such as Speed > Limit. Written descriptions like 'is greater than' cannot be coded directly.",
+    "A format check tests that data follows a set pattern (dd/mm/yyyy). Both dates have 10 characters, so a length check would accept it.",
+    "A visual check is verification: the user reads the entered data and compares it with the source. Typing it twice is double entry; the other two are validation checks.",
+    "Extreme data is the largest or smallest ACCEPTED value, so 18 (or 12). 19 and 11 are rejected values next to the limits, and 15 is normal data.",
+    "x goes 27, 21, 15, 9, 3 after 4 repetitions; 3 is not greater than 5, so the loop stops. Output is 3 and 4.",
+    "Pass 1: 3 swaps giving 3,1,2,4. Pass 2: 2 swaps giving 1,2,3,4. Pass 3: no swaps. Total 3 + 2 = 5.",
+    "Index is still increased after Found becomes TRUE, so the position output is one too high (5). Increasing Index only when there is no match (ELSE) fixes this.",
+    "Inclusive limits need >= and <=, joined with AND. OR accepts every number; Count + Num adds the value (totalling) instead of counting."]},
+  3:{answers:[3, 1, 0, 2, 2, 1, 3, 0, 0, 3], total:10, score:0, done:0, feedback:[
+    "Abstraction keeps only the details relevant to the problem. Breaking a problem into parts is decomposition.",
+    "A system is made up of sub-systems, which are in turn made up of further sub-systems, and this applies to software as well as hardware.",
+    "Assignments and calculations are processes, drawn in rectangles. Rounded rectangles only mark the start and end.",
+    "A check digit is calculated from the other digits, so a misread or mistyped digit gives a different result and the code is rejected.",
+    "58 is a sensible whole number in range, so every validation check passes it. Only verification (visual or double entry) compares it with the source.",
+    "Extreme data must be accepted (8 or 12), normal is typical accepted data (10) and abnormal data is rejected (3). 7 and 13 are rejected, and 10 is accepted.",
+    "7 at position 2 replaces 12. The second 7 is not less than 7, so with < the position stays 2. (<= would give position 4.)",
+    "Pass 1 gives 5,3,7,2,8. Pass 2: swap 5/3, no swap 5/7, swap 7/2, giving 3,5,2,7,8. A third pass is still needed.",
+    "-1 is added to Total (59) and counted (4), so 59 / 4 = 14.75 instead of 60 / 3 = 20. The end value must not be processed.",
+    "MOD gives the remainder, which is 0 for multiples of 3. DIV 3 = 0 is true only for 0, 1 and 2; a remainder can never be 3; Num / 3 = 0 is true only for 0."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+
+document.querySelectorAll('.set-tab').forEach(function(a){a.addEventListener('click',function(e){
+  e.preventDefault();
+  document.querySelectorAll('.set-tab').forEach(function(x){x.classList.toggle('active-tab',x===a);});
+  document.querySelectorAll('.mock-set').forEach(function(s){s.hidden=(s.dataset.quiz!==a.dataset.set);});
+});});
+</script>
+</body>
+</html>

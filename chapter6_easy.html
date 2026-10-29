@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6 — Automated and Emerging Technologies (Easy) | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Ch 6 🍎</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy active" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Easy version · take it slowly</div>
+  <h1>Chapter 6 · Automated and Emerging Technologies 🍎</h1>
+  <p>The same three topics as the regular guide, but in plainer words with everyday comparisons. Do the mini-quiz after each topic before moving on.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Automatic systems</a>
+    <a href="#unit2">② Robots</a>
+    <a href="#unit3">③ Artificial intelligence (AI)</a>
+    <a href="chapter6.html" class="easy-pill">📘 Ready for the full version?</a>
+    <a href="mock_chapter6.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>6.1 Automatic systems</h2><div class="unit-sub">Machines that sense, decide and act — all by themselves</div></div>
+  </div>
+
+  <p>An <strong>automated system</strong> is a machine made of software and hardware that runs by itself, with no person needed to operate it. A human supervisor usually still keeps an eye on it from a distance, ready to step in if something goes wrong.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Think of a self-flushing toilet or an automatic hand-dryer. Nobody presses a button — a sensor notices you, and a machine reacts.</p>
+  </div>
+
+  <h3>The three-step loop</h3>
+  <p>Every automated system uses the same three steps, in the same order, every time:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Step</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>1. Sensor</td><td>Takes a reading from the world around it (temperature, light, pressure…)</td></tr>
+      <tr><td>2. Microprocessor</td><td>Compares that reading with a stored value and decides what to do</td></tr>
+      <tr><td>3. Actuator</td><td>Carries out the physical action — moving a motor, opening a valve</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Sensor = eyes and ears. Microprocessor = brain. Actuator = hands and feet. If a reading is analogue (like a smooth temperature change), a device called an <strong>ADC</strong> turns it into digital numbers first, because the "brain" only understands digital data.</p>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Example — an automatic drinks bottling plant</div>
+    <div class="step"><span class="sn">1</span>Sensors check the right amount of each ingredient has gone into the mixing tank.</div>
+    <div class="step"><span class="sn">2</span>A stirrer (actuator) automatically mixes it.</div>
+    <div class="step"><span class="sn">3</span>Sensors check each bottle gets the right amount of drink and gas.</div>
+    <div class="answer-line">➜ The whole thing — from mixing to labelling — happens with no human touching it.</div>
+  </div>
+
+  <h3>Automatic systems are everywhere</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🏭</div><div class="tc-name">Industry</div><div class="tc-example">A nuclear power station's computer keeps everything at a safe temperature and pressure.</div></div>
+    <div class="task-card"><div class="tc-icon">🚗</div><div class="tc-name">Transport</div><div class="tc-example">Self-parking cars use sensors to steer themselves into a space.</div></div>
+    <div class="task-card"><div class="tc-icon">🌾</div><div class="tc-name">Agriculture</div><div class="tc-example">Sensors in the soil tell the system when to turn a water pump on.</div></div>
+    <div class="task-card"><div class="tc-icon">🌦️</div><div class="tc-name">Weather</div><div class="tc-example">A weather station measures temperature, wind, rain and daylight automatically.</div></div>
+  </div>
+
+  <h3>Good and bad points</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Advantages</th><th>Disadvantages</th></tr></thead>
+    <tbody>
+      <tr><td>Much faster than a person; safer for humans; runs 24 hours a day</td><td>Expensive to build and test; can still be hacked; needs a lot of maintenance</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn-box">⚠️ If a question asks for an advantage <strong>to the employee</strong>, don't write things that actually help the <strong>employer</strong>, like "the robot never needs a break" — that only helps the company, not the worker.</div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 mini-quiz</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What does an ADC do?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Turns a digital signal into an analogue one</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Moves the actuator</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Turns an analogue signal into digital</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In an automated system, what does the microprocessor do?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Takes the reading from the environment around it</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Decides what to do from the sensor's reading</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Moves the motor to do the task</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which of these does an anemometer measure?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Wind speed</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Temperature</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Rainfall</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A question asks for an advantage "to the employee". Which answer would score ZERO marks?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>"The employee is safer because the robot does the dangerous parts"</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>"The robot doesn't need breaks, which helps the employer"</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>"The employee has more free time since the robot does repetitive work"</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">What is the correct order of the three-step loop?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Sensor → microprocessor → actuator</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Actuator → sensor → microprocessor</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Microprocessor → sensor → actuator</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>6.2 Robots</h2><div class="unit-sub">What actually makes something a "robot"?</div></div>
+  </div>
+
+  <p><strong>Robotics</strong> is the branch of science about designing, building and running robots. The word "robot" comes from a Czech word meaning "forced labour".</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Not every machine is a robot — a toaster isn't a robot, but a robot vacuum cleaner is. What's the difference? Read on.</p>
+  </div>
+
+  <h3>Robots show up in three places</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🏭</div><div class="tc-name">Factories</div><div class="tc-example">Welding, spray-painting, and warehouse robots.</div></div>
+    <div class="task-card"><div class="tc-icon">🏠</div><div class="tc-name">At home</div><div class="tc-example">Robot floor-sweepers and lawn mowers.</div></div>
+    <div class="task-card"><div class="tc-icon">🚁</div><div class="tc-name">Drones</div><div class="tc-example">Flying robots for photos or deliveries.</div></div>
+  </div>
+
+  <h3>The three things every robot needs</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Characteristic</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td>1. Can sense</td><td>Uses sensors to notice light, pressure, temperature, etc.</td></tr>
+      <tr><td>2. Can move</td><td>Has a body (wheels, arms, motors) that can move or grip</td></tr>
+      <tr><td>3. Is programmable</td><td>Has a "brain" (controller) that can be given instructions</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn-box">⚠️ A robot does <strong>not</strong> need artificial intelligence (AI) to be a robot! Most robots just repeat the same task over and over — that's not the same as being "intelligent".</div>
+
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A chatbot that talks to you on a website is not a real robot — it has no body, so it can't sense or move in the physical world. It's just a program.</p>
+  </div>
+
+  <h3>Two kinds of robot</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Independent (autonomous)</th><th>Dependent</th></tr></thead>
+    <tbody>
+      <tr><td>No human controls it — it works completely on its own</td><td>A human directly controls or guides it</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Example — a doctor controls a surgery robot remotely</div>
+    <div class="step"><span class="sn">1</span>Good: a specialist doctor anywhere in the world can operate on the patient.</div>
+    <div class="step"><span class="sn">2</span>Good: smaller cuts can mean a faster recovery.</div>
+    <div class="step"><span class="sn">3</span>Bad: if the internet connection drops, the operation might have to stop.</div>
+    <div class="answer-line">➜ Careful — since a human is controlling the robot, "the robot never gets tired" is NOT a good answer here!</div>
+  </div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 mini-quiz</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Is artificial intelligence one of the three characteristics of a robot?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Yes, every robot needs AI</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Yes, but only industrial robots really need AI</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>No — AI is not one of the three features</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A robot that works with no direct human control is called…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A dependent robot</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A chatbot</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Autonomous</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Is a website chatbot a true robot?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Yes, it has a mechanical body and moves</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>No — it's only a software "robot"</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Yes, it's an expert system</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A doctor remotely controls a surgery robot. Which is the BEST advantage to give?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A specialist doctor can operate from anywhere in the world</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The robot never gets tired, so the doctor can work longer hours</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The robot doesn't need paying, which saves the hospital money</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Robots that pick only ripe fruit and vegetables are used in which sector?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Agriculture</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Entertainment</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Lighting</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>6.3 Artificial intelligence (AI)</h2><div class="unit-sub">Getting computers to act a bit more like humans</div></div>
+  </div>
+
+  <p><strong>Artificial intelligence</strong> means getting a computer to copy intelligent human behaviour — the kind of thinking humans do using thought, experience and their senses.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A normal computer program only ever does exactly what it's told. An AI system can also learn from experience and handle situations nobody programmed it for — a bit like how you learn to ride a bike by practising, not by reading an instruction manual.</p>
+  </div>
+
+  <h3>Three levels of AI compared to a human</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Type</th><th>How good compared to a human</th></tr></thead>
+    <tbody>
+      <tr><td>Narrow AI</td><td>Better than a human at ONE task</td></tr>
+      <tr><td>General AI</td><td>About the same as a human at a task</td></tr>
+      <tr><td>Strong AI</td><td>Better than a human at MANY tasks</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Example — teaching an AI to make the perfect cup of tea</div>
+    <div class="step"><span class="sn">1</span>The AI tries different water temperatures and steeping times, and learns which combination works best.</div>
+    <div class="step"><span class="sn">2</span>It builds its own set of rules from what it learned.</div>
+    <div class="step"><span class="sn">3</span>Next time it's asked to make coffee, it reuses and tweaks those same rules instead of starting from zero.</div>
+    <div class="answer-line">➜ That's learning and adapting — two key things AI can do that a normal program can't.</div>
+  </div>
+
+  <h3>Everyday AI</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🔊</div><div class="tc-name">Smart speakers</div><div class="tc-example">Alexa or Siri listen and get better at understanding you over time.</div></div>
+    <div class="task-card"><div class="tc-icon">💬</div><div class="tc-name">Chatbots</div><div class="tc-example">Copy the pattern of a human conversation, in text or voice.</div></div>
+    <div class="task-card"><div class="tc-icon">🙂</div><div class="tc-name">Face recognition</div><div class="tc-example">Looks at your eyebrows and mouth to guess your emotion.</div></div>
+  </div>
+
+  <h3>Expert systems — a computer that acts like a specialist</h3>
+  <p>An <strong>expert system</strong> asks you questions and gives you an expert answer, like a doctor would. It's built from four parts:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Part</th><th>Job</th></tr></thead>
+    <tbody>
+      <tr><td>User interface</td><td>Asks you the questions (usually Yes/No)</td></tr>
+      <tr><td>Inference engine</td><td>Compares your answers to the facts and works out the answer</td></tr>
+      <tr><td>Knowledge base</td><td>All the stored facts</td></tr>
+      <tr><td>Rules base</td><td>The "IF this, THEN that" rules</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Example — guessing an animal</div>
+    <div class="step"><span class="sn">1</span>Is it a mammal? Yes. Can it be a pet? No.</div>
+    <div class="step"><span class="sn">2</span>Does it live in water? Yes. Does it have legs? No.</div>
+    <div class="answer-line">➜ Conclusion: it's a WHALE!</div>
+  </div>
+
+  <div class="warn-box">⚠️ If asked "how does the expert system decide?", don't just list the four parts — explain HOW they work together: the inference engine checks your answers against the knowledge base, then follows the rules base to reach a conclusion.</div>
+
+  <h3>Machine learning</h3>
+  <p><strong>Machine learning</strong> is when a computer gets better at a task just by looking at lots of examples — without a person rewriting its code.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Think of a spam filter. Nobody programs in every possible spam email — instead, the computer looks at thousands of past emails marked "spam" or "not spam" and learns the pattern itself.</p>
+  </div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 mini-quiz</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is artificial intelligence?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A type of robot</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A branch of computer science that simulates human intelligence</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Something that always uses neural networks and huge amounts of data</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A machine that's better than a human at ONE specific task is called…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>General AI</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Strong AI</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Narrow AI</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">An expert system's four parts are knowledge base, rules base, inference engine and…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>An actuator</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A neural network</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A user interface</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">The inference engine's job is to…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Store all the raw facts</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Compare the input to the knowledge base and apply the rules</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Display the diagnosis on screen and ask the user more questions</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Machine learning lets a computer…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Learn from data and improve without being reprogrammed</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only ever follow fixed rules that a programmer wrote, forever</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Replace the knowledge base entirely</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter5_easy.html">← Chapter 5 (easy)</a>
+  <a href="chapter6.html">📘 Full regular version</a>
+  <a href="index.html">🏠 Overview</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key words</h3>
+    <div class="term-item"><div class="term-name">Automated system</div><div class="term-def">A machine that runs by itself, with no person needed.</div></div>
+    <div class="term-item"><div class="term-name">Sensor / Actuator</div><div class="term-def">Notices the world / carries out the physical action.</div></div>
+    <div class="term-item"><div class="term-name">Microprocessor</div><div class="term-def">The "brain" that decides what to do.</div></div>
+    <div class="term-item"><div class="term-name">Robotics</div><div class="term-def">The science of designing, building and running robots.</div></div>
+    <div class="term-item"><div class="term-name">Autonomous</div><div class="term-def">Works on its own, with no human control.</div></div>
+    <div class="term-item"><div class="term-name">Artificial intelligence (AI)</div><div class="term-def">A computer copying intelligent human behaviour.</div></div>
+    <div class="term-item"><div class="term-name">Narrow / General / Strong AI</div><div class="term-def">Better at one task / about the same / better at many tasks.</div></div>
+    <div class="term-item"><div class="term-name">Expert system</div><div class="term-def">A computer that gives expert answers, like a specialist doctor.</div></div>
+    <div class="term-item"><div class="term-name">Inference engine</div><div class="term-def">Compares your answers to the facts and works out the result.</div></div>
+    <div class="term-item"><div class="term-name">Machine learning</div><div class="term-def">A computer getting better at a task just by seeing lots of examples.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>🍎 How to use this</h4>
+    <p>Read one topic, do its mini-quiz, then move on. Don't rush all three at once.</p>
+    <p>When you're comfortable, try the full <a href="chapter6.html" style="color:#065f46;font-weight:700">regular version</a> for exam-level detail.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 6 · Automated and Emerging Technologies · Study guide (easy version).
+  &nbsp;·&nbsp; <a href="chapter6.html">📘 Switch to the regular version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[2, 1, 0, 1, 0], total:5, score:0, done:0, feedback:[
+    "An ADC (analogue-to-digital converter) turns an analogue signal into digital data the microprocessor can use.",
+    "The microprocessor decides what to do, based on the reading it gets from the sensor.",
+    "An anemometer measures wind speed.",
+    "\"The robot doesn't need breaks, which helps the employer\" benefits the employer, not the employee — it earns zero marks for a question about the employee.",
+    "The correct order is sensor → microprocessor → actuator."]},
+  2:{answers:[2, 2, 1, 0, 0], total:5, score:0, done:0, feedback:[
+    "AI is not one of the three characteristics of a robot — most robots just repeat tasks without needing to be 'intelligent'.",
+    "A robot with no direct human control is called autonomous.",
+    "A chatbot has no physical body, so it's a software 'robot', not a true one.",
+    "Since a human is controlling the robot, the best advantage is that a specialist can operate remotely — not that the robot never gets tired.",
+    "Picking only ripe produce is a robot role used in agriculture."]},
+  3:{answers:[1, 2, 2, 1, 0], total:5, score:0, done:0, feedback:[
+    "AI is a branch of computer science that simulates intelligent human behaviour.",
+    "Narrow AI beats a human at one specific task.",
+    "The four parts of an expert system are knowledge base, rules base, inference engine and user interface.",
+    "The inference engine compares the input to the knowledge base and applies the rules base to reach a conclusion.",
+    "Machine learning lets a computer learn from data and improve without being reprogrammed every time."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

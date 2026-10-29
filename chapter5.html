@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5 — The Internet and its Uses | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Study Guide</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science 0478 · The Internet and its Uses</div>
+  <h1>Chapter 5 · The Internet and its Uses</h1>
+  <p>How the internet and web really work — URLs, HTTP/HTTPS, browsers, DNS lookup and cookies — plus digital currency and blockchain, and the cyber security threats and defences examiners test most, with a quick quiz after every topic.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① The internet and the web</a>
+    <a href="#unit2">② Digital currency</a>
+    <a href="#unit3">③ Cyber security</a>
+    <a href="chapter5_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter5.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>5.1 The Internet and the Web</h2><div class="unit-sub">Internet vs WWW, URLs, HTTP/HTTPS, browsers, DNS lookup and cookies</div></div>
+  </div>
+
+  <h3>The internet vs. the World Wide Web</h3>
+  <p>The word <strong>internet</strong> comes from <em>INTER</em>connected <em>NET</em>work — a worldwide collection of interconnected networks and devices. It is more of a concept than something tangible, relying on physical infrastructure to connect devices around the world. The internet uses <strong>transmission control protocol (TCP)</strong> and <strong>internet protocol (IP)</strong> to move data, and supports many services beyond web browsing — email, and text/audio/video chat.</p>
+  <p>The <strong>World Wide Web (WWW)</strong> is only <em>part</em> of the internet — the part accessed with web browser software. It is a massive collection of multimedia web pages, based on the hypertext transfer protocol (http/https), located using <strong>uniform resource locators (URLs)</strong>. So the internet is the infrastructure, and the web is a service that runs on top of it.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Internet</th><th>World Wide Web (WWW)</th></tr></thead>
+    <tbody>
+      <tr><td>A worldwide collection of interconnected networks and devices</td><td>A collection of multimedia web pages and other information on websites</td></tr>
+      <tr><td>Makes use of TCP and IP</td><td>Uses http(s) protocols, written using HTML</td></tr>
+      <tr><td>Users can send and receive emails</td><td>URLs are used to specify the location of web pages</td></tr>
+      <tr><td>Allows online chatting (text, audio, video)</td><td>Web resources are accessed by web browsers</td></tr>
+      <tr><td>The physical/logical infrastructure underneath</td><td>Uses the internet to access information from web servers</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 <strong>Exam wording that scores marks:</strong> internet = "the infrastructure"; World Wide Web = "the collection of web pages" (accessed <em>using</em> the internet). Never treat the two terms as interchangeable in a technical answer — examiners specifically test that you know they are not the same thing.</div>
+
+  <h3>Uniform resource locators (URLs)</h3>
+  <p>A <strong>URL</strong> is a text-based address for a web page, typed into a browser's address bar. It follows the standard format <code>protocol://website address/path/file name</code>.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>URL part</th><th>What it contains</th></tr></thead>
+    <tbody>
+      <tr><td>Protocol</td><td>Usually <code>http</code> or <code>https</code></td></tr>
+      <tr><td>Domain host</td><td><code>www</code></td></tr>
+      <tr><td>Domain name</td><td>The website's name, e.g. <code>hoddereducation</code></td></tr>
+      <tr><td>Domain type (+ country code)</td><td>e.g. <code>.com</code>, <code>.org</code>, <code>.gov</code> (optionally <code>.uk</code>, <code>.de</code>)</td></tr>
+      <tr><td>Path / file name</td><td>The web page or item requested; if omitted, defaults to the root directory</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example-box">
+    <div class="ex-title">🧮 Example — breaking down a URL</div>
+    <div class="step"><span class="sn">1</span>Take <code>https://www.hoddereducation.co.uk/ict</code>.</div>
+    <div class="step"><span class="sn">2</span>Protocol: <code>https</code>. Domain host: <code>www</code>. Domain name: <code>hoddereducation</code>.</div>
+    <div class="step"><span class="sn">3</span>Domain type + country code: <code>.co.uk</code>. Path/file name: <code>ict</code>.</div>
+    <div class="answer-line">➜ Always use the three category names: protocol, domain name, file name — not "www" or ".com" alone as a full "part."</div>
+  </div>
+  <div class="warn-box">⚠️ A URL must always be defined as a "text-based address for a website/web page" — not just "a website link," which is too vague to be credited in the exam.</div>
+
+  <h3>HTTP and HTTPS</h3>
+  <p><strong>Hypertext transfer protocol (http)</strong> is a set of rules obeyed when transferring web files across the internet, defining how a browser requests pages and how a web server responds. When security (SSL/TLS) protects the data being transferred, the protocol becomes <strong>https</strong> — the "s" stands for <strong>secure</strong>. A green padlock symbol in the address bar confirms an https connection is encrypted.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Feature</th><th>HTTP</th><th>HTTPS</th></tr></thead>
+    <tbody>
+      <tr><td>Security</td><td>No encryption applied</td><td>Data encrypted (e.g. SSL/TLS)</td></tr>
+      <tr><td>Visual indicator</td><td>No padlock symbol</td><td>Green padlock symbol shown</td></tr>
+      <tr><td>Typical use</td><td>General, non-sensitive browsing</td><td>Banking, shopping, login pages</td></tr>
+    </tbody>
+  </table></div>
+  <div class="teal-box">📌 <strong>HTTPS is not a separate protocol</strong> — it is http <em>with an added security layer</em>. Never confuse http/https (a protocol for transferring pages) with HTML (the mark-up language used to structure the content of those pages) — this pairing is frequently tested.</div>
+
+  <h3>Web browsers</h3>
+  <p>A <strong>web browser</strong> is software that lets a user access and display web pages, by <strong>interpreting (rendering) HTML</strong> sent from websites — this rendering is the browser's main purpose. Beyond that, browsers share a set of separately creditable <strong>functions</strong>:</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">⭐</div><div class="tc-name">Bookmarks/favourites</div><div class="tc-example">Stores favourite pages for quick access later</div></div>
+    <div class="task-card"><div class="tc-icon">🕓</div><div class="tc-name">User history</div><div class="tc-example">Keeps a record of websites visited</div></div>
+    <div class="task-card"><div class="tc-icon">🗂️</div><div class="tc-name">Multiple tabs</div><div class="tc-example">Allows many pages open at once</div></div>
+    <div class="task-card"><div class="tc-icon">◀️</div><div class="tc-name">Navigation tools</div><div class="tc-example">Move forwards/backwards through opened pages</div></div>
+    <div class="task-card"><div class="tc-icon">🍪</div><div class="tc-name">Cookies</div><div class="tc-example">Stores cookies to remember user/site data</div></div>
+    <div class="task-card"><div class="tc-icon">🔗</div><div class="tc-name">Address bar</div><div class="tc-example">Where a URL is typed to navigate</div></div>
+  </div>
+  <div class="note-box">💡 Once "displays web pages by rendering HTML" has answered a question's <em>purpose</em> part, do not repeat it when asked for <em>other</em> functions — the mark scheme treats it as already used. Draw remaining answers from the list above.</div>
+
+  <h3>Retrieval and location of web pages — DNS lookup</h3>
+  <p>All websites are written in <strong>HTML</strong> and hosted on a web server that has its own <strong>IP address</strong>. The <strong>Domain Name Server (DNS)</strong> is a system that finds the IP address matching the domain name in a URL, so users never need to memorise IP addresses.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Step</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>The browser asks a DNS server for the IP address of the URL typed in</td></tr>
+      <tr><td>2</td><td>If that DNS server cannot find it, the request is passed on to another DNS server</td></tr>
+      <tr><td>3</td><td>The IP address is found and sent back; the first DNS server caches the URL/IP pair</td></tr>
+      <tr><td>4</td><td>The IP address is returned to the user's computer</td></tr>
+      <tr><td>5</td><td>The computer contacts the web server directly (using the IP address) and requests the page; the web server sends back HTML files</td></tr>
+      <tr><td>6</td><td>The browser renders the HTML and displays the page</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Real June 2025 examiner evidence:</strong> in Paper 0478/12 Q5(c)(i), "some candidates found this question challenging... some candidates lacked the level of technical understanding required." Most only picked up marks for the DNS→computer and web server→computer steps, losing marks on the DNS lookup/re-routing detail and the outbound request steps. Name every component precisely — web browser, DNS, web server, IP address, URL, HTML — and always include the fallback step ("if the first DNS server can't find it, it is sent to another DNS server").</div>
+
+  <h3>Cookies</h3>
+  <p><strong>Cookies</strong> are small text files sent by a web server to a browser, storing (key, data) pairs such as (language, English). There are two types:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Feature</th><th>Session cookie</th><th>Persistent (permanent) cookie</th></tr></thead>
+    <tbody>
+      <tr><td>Storage location</td><td>Temporary memory</td><td>Hard drive</td></tr>
+      <tr><td>Lifespan</td><td>Lost when the browser/session closes</td><td>Remains until expiry or user deletion</td></tr>
+      <tr><td>Typical use</td><td>Keeping items in a shopping basket during one visit</td><td>Remembering login details between visits</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 Uses of cookies: saving personal details, tracking user preferences, holding items in an online shopping cart, storing login details. A cookie is a small <strong>text</strong> file — not an image or executable, a common wrong-word trap. Many countries require persistent cookies to deactivate after six months, even before their expiry date.</div>
+  <div class="teal-box">📌 <strong>June 2025 examiner report:</strong> "Some candidates referred to it being used to store items in a shopping cart. This response could not be awarded as this was already given in the question." Never repeat a use already stated in the question stem when asked for "other" functions — the same rule that applies to browser functions applies here.</div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — The internet and the web</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which statement correctly distinguishes the internet from the World Wide Web?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>They are two names for exactly the same thing, used interchangeably by all users</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The World Wide Web only supports email and messaging, not web pages or websites</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The internet only exists inside web browsers and cannot be used without one</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The internet is the infrastructure; the web is the pages accessed using it</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the URL <code>https://www.hoddereducation.co.uk/ict</code>, what is <code>hoddereducation</code>?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The domain name</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The protocol</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The file name</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The domain host</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What does the "s" in https actually indicate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A separate, unrelated protocol that replaces http on all web servers</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A faster connection speed provided by a better broadband service</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Http with an added security layer (e.g. SSL/TLS encryption)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>That cookies have been disabled in the browser for this website</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A user types a URL into their browser. What is the correct order of events in locating and retrieving the page?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Web server sends HTML → browser asks DNS → DNS finds IP address → browser then displays the page</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Browser asks DNS for IP address → DNS returns it → browser requests page → server sends HTML</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Browser stores a cookie → cookie contacts the web server directly → server sends back the HTML</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>DNS renders the HTML directly onto the screen → browser then requests the IP address from DNS</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which of these is true of a session cookie, but not a persistent cookie?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It is stored on the hard drive until its set expiry date is reached</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It is held in temporary memory and lost when the browser closes</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It remembers login details and preferences across many later visits</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It must be manually deleted by the user before it will disappear</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>5.2 Digital Currency</h2><div class="unit-sub">Digital vs. fiat currency, cryptocurrency, and how blockchain resists tampering</div></div>
+  </div>
+
+  <h3>Digital currency vs. fiat currency</h3>
+  <p><strong>Digital currency</strong> exists purely in digital format — it has <strong>no physical form</strong>, unlike conventional <strong>fiat currency</strong> ($, £, €, ¥), which is backed by governments and banks. Digital currency is an accepted form of payment; it can be transferred between accounts (e.g. PayPal, Apple Pay) because it only exists as data on a computer system, though it can be converted into physical cash if needed.</p>
+  <div class="note-box">💡 <strong>Exam wording that scores marks:</strong> lead with "exists only electronically / has no physical form" as the defining feature — this is the specific fact the mark scheme rewards, not a vague "it's different because it's online."</div>
+
+  <h3>Centralised digital currency vs. decentralised cryptocurrency</h3>
+  <p>Traditional digital currency relies on a <strong>central banking system</strong> — a transaction between two people using different banks is routed through both banks and a central bank, which raises confidentiality/security concerns. <strong>Cryptocurrency</strong> overcomes this through <strong>decentralisation</strong>: transactions move directly between wallets, secured by cryptography and a blockchain network, with no central authority.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Feature</th><th>Traditional digital currency</th><th>Cryptocurrency</th></tr></thead>
+    <tbody>
+      <tr><td>Control</td><td>Central banks and governments</td><td>No state control — rules set by the community</td></tr>
+      <tr><td>Structure</td><td>Centralised</td><td>Decentralised (peer-to-peer)</td></tr>
+      <tr><td>Transaction visibility</td><td>Not publicly available</td><td>Publicly available and trackable</td></tr>
+      <tr><td>Security mechanism</td><td>Central bank's own security</td><td>Cryptography + blockchain</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ Don't confuse "digital currency" (the general category) with "cryptocurrency" (a specific, decentralised type of digital currency that uses blockchain) — a question may ask about one specifically, and conflating them loses marks.</div>
+
+  <h3>Blockchain — a tamper-resistant digital ledger</h3>
+  <p><strong>Blockchain</strong> is a decentralised database: all transactions of networked members are stored across many interconnected computers with no central server. Whenever a new transaction happens, every networked computer gets a copy, so it cannot be changed without the consent of the whole network. Each new <strong>block</strong> contains three parts:</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">📄</div><div class="tc-name">Data</div><div class="tc-example">Transaction details — sender, recipient, amount</div></div>
+    <div class="task-card"><div class="tc-icon">🔑</div><div class="tc-name">Hash value</div><div class="tc-example">A unique "fingerprint" (e.g. SHA-256) plus a timestamp</div></div>
+    <div class="task-card"><div class="tc-icon">⛓️</div><div class="tc-name">Previous hash value</div><div class="tc-example">Points back to the block before it, linking the chain</div></div>
+  </div>
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — why changing one block breaks the chain</div>
+    <div class="step"><span class="sn">1</span>Block 1 is the <strong>genesis block</strong> — it points to no previous block.</div>
+    <div class="step"><span class="sn">2</span>Suppose a hacker alters the transaction amount stored in block 2. This changes block 2's hash value.</div>
+    <div class="step"><span class="sn">3</span>Block 3's stored "previous hash" no longer matches block 2's new hash — block 3, and every block after it, becomes invalid.</div>
+    <div class="answer-line">➜ The tampering is immediately detectable, because the chain has been broken.</div>
+  </div>
+  <div class="teal-box">📌 A fast computer could try to quickly rebuild a whole new valid chain to hide tampering — this is prevented by <strong>proof-of-work</strong>, which forces a fixed delay (~10 minutes) before a block can be added, policed by <strong>miners</strong> who earn a commission for verifying blocks. Explaining "how blockchain protects against hackers" needs the full causal chain: change data → change hash → break link to next block → tampering detected → proof-of-work stops a fast rebuild. Simply asserting "it's secure" earns no marks.</div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — Digital currency</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is the key defining feature of digital currency, compared with fiat currency?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It can never be exchanged for physical cash at any exchange</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It is always backed by gold reserves held by a central bank</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It can only be used inside one country's banking system</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It exists only electronically, with no physical form</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What makes cryptocurrency different from traditional (centralised) digital currency?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Cryptocurrency is decentralised, using peer-to-peer transactions secured by a blockchain</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Cryptocurrency has a physical form such as coins that are kept in a secure vault</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Cryptocurrency transactions always go through a central bank, which must approve each one</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Cryptocurrency cannot be tracked at all, because no record of any transaction is ever kept</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What three parts does a new block in a blockchain contain?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Username, password, and a timestamp for each login attempt</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An IP address, a URL, and a domain name for the miner</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Data, a hash value, and the previous block's hash value</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A cookie, a session ID, and a cache entry for the browser</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">If a hacker changes the data stored in block 2 of a blockchain, what happens?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Nothing happens, because the blocks are stored independently of each other in the ledger</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Block 1 (the genesis block) is automatically deleted and the whole chain restarts from scratch</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Block 2's hash changes, so it no longer matches the previous hash stored in block 3</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Only the hacker's own copy of the blockchain is affected, so all other copies stay the same</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">What is the purpose of "proof-of-work" and miners in a blockchain network?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To speed up transactions as much as possible by skipping the checking of all of the earlier blocks</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To encrypt fiat currency so that banks cannot read the balances stored inside any customer account</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>To generate new URLs for websites so that every page can be found easily by search engines</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>To force a fixed delay before a block is added, so a hacker cannot quickly rebuild a fake chain</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>5.3 Cyber Security</h2><div class="unit-sub">Threats — brute-force, malware, phishing, pharming, DDoS, social engineering — and their defences</div></div>
+  </div>
+
+  <h3>Common cyber security threats</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🔓</div><div class="tc-name">Brute-force attack</div><div class="tc-example">Systematic trial and error of password combinations; sped up by checking common passwords first, then a word list</div></div>
+    <div class="task-card"><div class="tc-icon">📡</div><div class="tc-name">Data interception</div><div class="tc-example">Tapping a wired link (packet sniffing) or Wi-Fi signal (wardriving) to steal data in transit</div></div>
+    <div class="task-card"><div class="tc-icon">🌊</div><div class="tc-name">DDoS attack</div><div class="tc-example">A botnet of infected computers floods a web server with requests until it crashes</div></div>
+    <div class="task-card"><div class="tc-icon">🕵️</div><div class="tc-name">Hacking</div><div class="tc-example">Gaining illegal access to a system without permission; ethical hacking is authorised by the company itself</div></div>
+    <div class="task-card"><div class="tc-icon">🎣</div><div class="tc-name">Phishing</div><div class="tc-example">Legitimate-looking emails trick the user into clicking a link or replying — the user must take an action</div></div>
+    <div class="task-card"><div class="tc-icon">🚜</div><div class="tc-name">Pharming</div><div class="tc-example">Malicious code redirects the browser to a fake site automatically — no user action needed</div></div>
+    <div class="task-card"><div class="tc-icon">🎭</div><div class="tc-name">Social engineering</div><div class="tc-example">Manipulating people (via fear, curiosity or trust) into breaking normal security procedures</div></div>
+    <div class="task-card"><div class="tc-icon">🦠</div><div class="tc-name">Malware</div><div class="tc-example">Virus, worm, Trojan horse, spyware, adware, ransomware — see table below</div></div>
+  </div>
+
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Malware type</th><th>Process and aim</th></tr></thead>
+    <tbody>
+      <tr><td>Virus</td><td>Replicates itself; needs an active host program to run (e.g. an infected email attachment)</td></tr>
+      <tr><td>Worm</td><td>Stand-alone, self-replicating; spreads across a network with <strong>no</strong> host program or end-user action needed</td></tr>
+      <tr><td>Trojan horse</td><td>Disguised as legitimate software; must be executed by the end-user; often installs spyware/ransomware</td></tr>
+      <tr><td>Spyware</td><td>Monitors user activity (e.g. key-logging) and sends data back to the cybercriminal</td></tr>
+      <tr><td>Adware</td><td>Floods the user with unwanted advertising; not always harmful but hard to remove</td></tr>
+      <tr><td>Ransomware</td><td>Encrypts the user's data and demands a ransom for the decryption key</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — the process of a DDoS attack</div>
+    <div class="step"><span class="sn">1</span>An attacker sends malware to a large number of computers.</div>
+    <div class="step"><span class="sn">2</span>Malware turns each infected computer into a "bot," together forming a "botnet."</div>
+    <div class="step"><span class="sn">3</span>The attacker initiates the attack — all bots send requests to a target web server at once.</div>
+    <div class="answer-line">➜ The web server cannot handle the volume of simultaneous requests and crashes.</div>
+  </div>
+
+  <div class="warn-box">⚠️ <strong>Phishing vs. pharming — the fact examiners test most:</strong> phishing needs the user to <strong>take an action</strong> (click a link, reply); pharming needs <strong>no user action</strong> at all — redirection happens automatically via infected code or DNS cache poisoning. If a question describes a user redirected without clicking anything, that's pharming, not phishing.</div>
+
+  <h3>Keeping data safe — defences and countermeasures</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Threat</th><th>Main countermeasures</th></tr></thead>
+    <tbody>
+      <tr><td>Brute-force attack</td><td>Strong/complex passwords, login attempt limits, two-step verification, biometrics</td></tr>
+      <tr><td>Data interception</td><td>Encryption, SSL, avoiding public Wi-Fi, firewall on wireless routers</td></tr>
+      <tr><td>DDoS attack</td><td>Firewalls, proxy servers, up-to-date malware checkers</td></tr>
+      <tr><td>Hacking</td><td>Firewalls, strong/frequently-changed passwords, intrusion-detection software</td></tr>
+      <tr><td>Malware (all types)</td><td>Up-to-date anti-malware software, automatic software updates</td></tr>
+      <tr><td>Phishing / pharming</td><td>Checking spelling/tone/URLs, checking for https/padlock, up-to-date browser and firewall</td></tr>
+      <tr><td>Social engineering</td><td>Security awareness training, verifying identity before acting on requests</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Authentication</h3>
+  <p><strong>Authentication</strong> proves who a user is, using one or more of three factors: something you know (password/PIN), something you have (a phone/tablet), or something you are (biometrics).</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Method</th><th>How it works</th></tr></thead>
+    <tbody>
+      <tr><td>Fingerprint scan</td><td>Compares ridge/valley patterns; very hard to replicate, but relatively expensive</td></tr>
+      <tr><td>Retina scan</td><td>Scans blood-vessel patterns using infrared light; very high accuracy but slow and intrusive</td></tr>
+      <tr><td>Face recognition</td><td>Non-intrusive, inexpensive, but affected by lighting or ageing</td></tr>
+      <tr><td>Voice recognition</td><td>Fast and cheap, but low accuracy — disrupted by illness or recordings</td></tr>
+      <tr><td>Two-step verification</td><td>Step 1: username/password ("something you know"); Step 2: a one-time code sent to a registered device ("something you have")</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>SSL — how a secure connection is established</h3>
+  <p><strong>Secure Sockets Layer (SSL)</strong> is a security protocol used to encrypt data sent over a network. A user knows SSL is applied when they see <code>https</code> or a padlock symbol.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Worked example — the SSL handshake</div>
+    <div class="step"><span class="sn">1</span>The browser sends a message to connect with the SSL-secured website, and asks the web server to identify itself.</div>
+    <div class="step"><span class="sn">2</span>The web server responds by sending its digital certificate.</div>
+    <div class="step"><span class="sn">3</span>The browser authenticates this certificate.</div>
+    <div class="answer-line">➜ If authenticated, the browser confirms this to the server, and SSL-encrypted two-way data transfer begins.</div>
+  </div>
+  <div class="teal-box">📌 <strong>Real June 2025 examiner evidence (Paper 0478/12, Q5(c)(ii), 6 marks):</strong> "Candidates found this question challenging. The most common marks awarded were for referring to the data being encrypted and referring to digital certificates being used in the process." Give the <strong>full four-step handshake in order</strong> — browser asks server to identify itself → server sends its digital certificate → browser authenticates the certificate → encrypted transmission begins if valid — rather than only saying "SSL encrypts data," which is where most candidates stopped.</div>
+  <div class="note-box">💡 A <strong>proxy server</strong> sits between a user and a web server: it can hide the user's IP address, cache pages, and take the hit if an attack is launched (protecting the real web server) — a function the June 2025 report confirms candidates often fail to distinguish from a plain firewall. A <strong>firewall</strong> filters traffic in/out of a network but cannot stop a user bypassing it with their own hardware, employee carelessness, or a user simply disabling it.</div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — Cyber security</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A user is redirected to a fake banking website without clicking any link at all — the redirection happens automatically via infected code. This is an example of…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Phishing</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Pharming</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A brute-force attack</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A DDoS attack</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which type of malware needs an active host program before it can run?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Virus</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Worm</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Adware</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Ransomware</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What is the correct order of steps in establishing an SSL-secured connection?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Browser asks server to identify itself → server sends certificate → browser authenticates it → encryption begins</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Data is sent unencrypted first, then the browser checks the URL afterwards and may warn the user at a later stage</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The firewall generates a certificate for the DNS server and then passes it back to the browser for the user to approve</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The proxy server encrypts the user's password only, and every other item is still sent across the network in plain text</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which function is performed by a proxy server, but NOT by a plain firewall?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Blocking all incoming email from unknown senders</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Encrypting fiat currency held in online banks</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Hiding or keeping secret the user's IP address</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Storing session cookies on the user's device</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A DDoS attack is best described as…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A single computer trying every password combination until the correct one is finally found</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A fake email pretending to be from a bank, asking the user to click on a link to log in</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Software that encrypts a user's files and demands a payment before it will unlock them again</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A botnet of infected computers flooding a target server with requests until it crashes</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter4.html">← Chapter 4</a>
+  <a href="chapter5_easy.html">🍎 Easy version</a>
+  <a href="chapter6.html">Chapter 6 →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Internet / World Wide Web</div><div class="term-def">Worldwide infrastructure (TCP/IP) / the collection of web pages accessed using it.</div></div>
+    <div class="term-item"><div class="term-name">URL</div><div class="term-def">Text-based web page address: protocol, domain name, file name.</div></div>
+    <div class="term-item"><div class="term-name">HTTP / HTTPS</div><div class="term-def">Rules for transferring web pages / http with SSL/TLS encryption added.</div></div>
+    <div class="term-item"><div class="term-name">DNS</div><div class="term-def">Converts a domain name into the matching IP address.</div></div>
+    <div class="term-item"><div class="term-name">Cookie</div><div class="term-def">Small text file storing (key, data) pairs about a user/site.</div></div>
+    <div class="term-item"><div class="term-name">Digital currency</div><div class="term-def">Currency existing only electronically, with no physical form.</div></div>
+    <div class="term-item"><div class="term-name">Blockchain</div><div class="term-def">Decentralised ledger; each block links to the previous block's hash.</div></div>
+    <div class="term-item"><div class="term-name">Phishing / Pharming</div><div class="term-def">User must click a link / redirection happens with no user action.</div></div>
+    <div class="term-item"><div class="term-name">DDoS attack</div><div class="term-def">A botnet floods a server with requests until it crashes.</div></div>
+    <div class="term-item"><div class="term-name">Malware</div><div class="term-def">Virus, worm, Trojan horse, spyware, adware, ransomware.</div></div>
+    <div class="term-item"><div class="term-name">SSL</div><div class="term-def">Protocol that encrypts data using a digital certificate handshake.</div></div>
+    <div class="term-item"><div class="term-name">Firewall / Proxy server</div><div class="term-def">Filters traffic in/out / intermediary that also hides the user's IP.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Real June 2025 evidence (Paper 0478/12, Q5c): DNS/web-server diagram questions and the SSL handshake explanation are where candidates "lacked the level of technical understanding required" — name every component (browser, DNS, web server, digital certificate) and every step in both directions, not just the final delivery step.</p>
+    <p>Never treat phishing and pharming, or internet and WWW, as interchangeable — examiners specifically test the precise technical distinction each time.</p>
+    <p>When asked for "other functions" (of a browser, or uses of a cookie), never repeat something already given in the question stem — it will not be credited again.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 5 · The Internet and its Uses
+  &nbsp;·&nbsp; <a href="chapter5_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+/* Per-topic quizzes: each keyed by its data-quiz id */
+var QUIZ = {
+  1:{answers:[3, 0, 2, 1, 1], total:5, score:0, done:0, feedback:[
+    "The internet is the infrastructure; the World Wide Web is the collection of web pages accessed using that infrastructure.",
+    "hoddereducation is the domain name — the website's own name, distinct from the protocol, domain host (www) and file name.",
+    "https is simply http with an added security layer (SSL/TLS encryption applied) — not a separate protocol.",
+    "The browser asks DNS for the IP address, DNS returns it, the browser requests the page from the web server using that IP address, and the web server sends back the HTML.",
+    "A session cookie is stored in temporary memory and disappears once the browser or session closes; a persistent cookie survives on the hard drive until its expiry date."]},
+  2:{answers:[3, 0, 2, 2, 3], total:5, score:0, done:0, feedback:[
+    "Digital currency's defining feature is that it exists only electronically, with no physical form.",
+    "Cryptocurrency is decentralised — transactions move directly between wallets, secured by cryptography and a blockchain, with no central authority.",
+    "Each block contains transaction data, its own hash value (fingerprint), and the previous block's hash value, which links the chain together.",
+    "Changing a block's data changes its hash value, so the next block's stored 'previous hash' no longer matches — breaking the chain from that point onward and revealing the tampering.",
+    "Proof-of-work forces a fixed delay before a new block can be added, so a hacker cannot quickly regenerate a fake valid chain before the tampering is noticed."]},
+  3:{answers:[1, 0, 0, 2, 3], total:5, score:0, done:0, feedback:[
+    "Pharming redirects a user to a fake website automatically, with no action (like clicking a link) required from the user — unlike phishing.",
+    "A virus needs an active host program (or infected OS) to run; a worm, by contrast, is stand-alone and needs no host or user action.",
+    "The correct SSL handshake order is: browser asks server to identify itself, server sends its digital certificate, browser authenticates the certificate, then encrypted transmission begins if it's valid.",
+    "A proxy server can hide/keep secret the user's IP address — a function the June 2025 examiner report confirms candidates often fail to attribute correctly, distinguishing it from a plain firewall.",
+    "A DDoS attack uses a botnet — many infected computers commanded at once — to flood a target server with requests until it crashes."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+/* Scroll reveal */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

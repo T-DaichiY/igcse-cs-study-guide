@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8 Mock Exam — Programming | IGCSE Computer Science</title>
+<link rel="stylesheet" href="style.css">
+<style>.q-text,.option-btn{white-space:pre-wrap}.set-tab.active-tab{background:#fff;color:var(--primary);}[hidden]{display:none !important}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Computer Science <span>· Mock exam · Ch 8</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science (0478) · Mock exam MCQs</div>
+  <h1>Chapter 8 Mock Exam · Programming</h1>
+  <p>Three sets of 10 exam-level multiple-choice questions on this chapter, written in the style of the real 0478 papers. Pick a set, answer every question, and read the mark-scheme style explanation after each one.</p>
+  <div class="unit-nav">
+    <a href="#setA" class="set-tab active-tab" data-set="1">Set A</a><a href="#setB" class="set-tab" data-set="2">Set B</a><a href="#setC" class="set-tab" data-set="3">Set C</a>
+    <a href="chapter8.html" class="easy-pill">📘 Back to Chapter 8</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout" style="grid-template-columns:1fr;max-width:860px">
+<main>
+<div class="quiz-section mock-set" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Mock set A — 10 questions</h2><div class="quiz-score" id="score1">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A program stores the telephone number 0912345678 typed in by a user. Which data type should be used so that the leading zero is kept?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>INTEGER</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>STRING</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>REAL</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>BOOLEAN</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which item should be declared as a constant rather than a variable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The number of items a customer has currently added to a basket</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The total mark, which increases as each answer is checked</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The username that the user types in when the program starts</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The number of days in a week used in several calculations</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Total &lt;- 94
+Count &lt;- 7
+Avg &lt;- ROUND(Total / Count, 1)
+Rem &lt;- Total MOD Count
+OUTPUT Avg + Rem
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>16.43</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>26.4</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>16.4</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>13.4</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Mark &lt;- 45
+Attendance &lt;- 88
+Mark &lt;- Mark + 15
+IF Mark &gt;= 80 THEN
+   Grade &lt;- "A"
+ELSE
+   IF Mark &gt;= 60 AND Attendance &gt; 90 THEN
+      Grade &lt;- "B"
+   ELSE
+      IF Mark &gt;= 40 THEN
+         Grade &lt;- "C"
+      ELSE
+         Grade &lt;- "D"
+      ENDIF
+   ENDIF
+ENDIF
+OUTPUT Grade
+
+What is output and why?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>C</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>B, because Mark is 60 after the addition</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>D, because Attendance is below 90</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A, because Mark is greater than 40</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">RANDOM() returns a random real number from 0 to 1 inclusive. Which expression always gives a whole number from 1 to 10 inclusive?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>ROUND(RANDOM() * 10, 0)</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>ROUND(RANDOM() * 10, 0) + 1</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>ROUND(RANDOM() * 11, 0) - 1</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>ROUND(RANDOM() * 9, 0) + 1</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">Word &lt;- "Computing"
+Part &lt;- SUBSTRING(Word, 4, 3)
+OUTPUT UPPER(Part) &amp; "-" &amp; LENGTH(Word)
+
+What is output? (SUBSTRING(string, start, length) with the first character at position 1.)</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>MPU-9</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>PUT-9</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>PUT-3</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>PUTI-9</button>
+    </div><div class="q-feedback" id="fb1_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">PROCEDURE Show()
+   DECLARE Total : INTEGER
+   Total &lt;- 50
+   OUTPUT Total
+ENDPROCEDURE
+
+Total &lt;- 10
+CALL Show()
+OUTPUT Total
+
+Which statement describes the output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>50 is output, then 10 is output</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>50 is output, then 50 is output because Total was changed</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>10 is output, then 10 is output because Total is global</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>10 is output, then 50 is output, in the order of the statements</button>
+    </div><div class="q-feedback" id="fb1_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">Data[1] to Data[5] hold 6, 3, 8, 3 and 9.
+Min &lt;- Data[1]
+Pos &lt;- 1
+i &lt;- 2
+WHILE i &lt;= 5 DO
+   IF Data[i] &lt; Min THEN
+      Min &lt;- Data[i]
+      Pos &lt;- i
+   ENDIF
+   i &lt;- i + 1
+ENDWHILE
+
+What are the final values of Min and Pos?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Min = 3 and Pos = 4 as the last 3 replaces the first</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Min = 3 and Pos = 3</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Min = 3 and Pos = 2</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Min = 6 and Pos = 1</button>
+    </div><div class="q-feedback" id="fb1_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">DECLARE Seats : ARRAY[1:6, 1:8] OF STRING
+
+Which statement about this array is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It has 14 elements because the two dimensions are added together</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It has 48 elements and Seats[8, 6] is the last element</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It has 35 elements because the indexes run from 0 in each dimension</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It has 48 elements and Seats[6, 8] is the last element</button>
+    </div><div class="q-feedback" id="fb1_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">Which sequence correctly replaces the old contents of the existing file Names.txt with the value in Name?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>OPEN "Names.txt" FOR READ
+WRITEFILE "Names.txt", Name
+CLOSEFILE "Names.txt"</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>WRITEFILE "Names.txt", Name
+OPEN "Names.txt" FOR APPEND
+CLOSEFILE "Names.txt"</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>OPEN "Names.txt" FOR WRITE
+WRITEFILE "Names.txt", Name
+CLOSEFILE "Names.txt"</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>OPEN "Names.txt" FOR WRITE
+CLOSEFILE "Names.txt"
+WRITEFILE "Names.txt", Name</button>
+    </div><div class="q-feedback" id="fb1_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz2" data-quiz="2" hidden>
+  <div class="quiz-header"><h2>📝 Mock set B — 10 questions</h2><div class="quiz-score" id="score2">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A program stores the average of three marks, for example 67.33. Which declaration is the most appropriate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>DECLARE Average : REAL</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>DECLARE Average : INTEGER</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>DECLARE Average : BOOLEAN</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>DECLARE Average : CHAR</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A program uses the tax rate 0.15 in many calculations and declares CONSTANT TaxRate &lt;- 0.15. What is the main advantage?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The program runs faster because constants are held in the CPU cache</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>If the rate changes, only one line needs to be edited</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The value is checked each time it is used in a calculation</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The program no longer needs a variable for the result of a calculation</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Price &lt;- 12.4
+Qty &lt;- 3
+Cost &lt;- ROUND(Price * Qty * 1.07, 1)
+OUTPUT Cost
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>39.9</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>40.0</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>39.8</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>39.804</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">IF Score &gt; 50 AND (Time &lt; 30 OR NOT Passed) THEN
+   OUTPUT "Alert"
+ENDIF
+
+Which set of values causes Alert to be output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Score = 100, Time = 100, Passed = TRUE</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Score = 40, Time = 20, Passed = FALSE</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Score = 50, Time = 20, Passed = FALSE</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Score = 51, Time = 40, Passed = FALSE</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">N &lt;- 240
+Steps &lt;- 0
+WHILE N MOD 2 = 0 DO
+   N &lt;- N DIV 2
+   Steps &lt;- Steps + 1
+ENDWHILE
+OUTPUT Steps, N
+
+What are the values of Steps and N?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Steps = 4, N = 15</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Steps = 4, N = 30</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Steps = 5, N = 7</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Steps = 1, N = 120</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">X &lt;- 10
+REPEAT
+   X &lt;- X + 5
+UNTIL X &gt; 8
+OUTPUT X
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>10, because X &gt; 8 is already true so the loop is skipped</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>20, because the body runs twice before the condition is met</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>15, because the body runs once before the test</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Nothing, because the condition is true before the loop starts</button>
+    </div><div class="q-feedback" id="fb2_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">First &lt;- "Maria"
+Last &lt;- "GOMEZ"
+Login &lt;- LOWER(SUBSTRING(First, 1, 1)) &amp; LOWER(Last) &amp; LENGTH(First)
+OUTPUT Login
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>MGOMEZ5</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>mgomez5</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>mGOMEZ5</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>magomez5</button>
+    </div><div class="q-feedback" id="fb2_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">FUNCTION Double(X : INTEGER) RETURNS INTEGER
+   RETURN X * 2
+ENDFUNCTION
+
+A &lt;- 4
+B &lt;- Double(A) + Double(A + 1)
+OUTPUT A, B
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A = 8, B = 18, as A was doubled</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A = 4, B = 16, as A + 1 is ignored</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A = 8, B = 20, as A is doubled first</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A = 4, B = 18</button>
+    </div><div class="q-feedback" id="fb2_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">DECLARE Grid : ARRAY[1:3, 1:4] OF INTEGER
+FOR Row &lt;- 1 TO 3
+   FOR Col &lt;- 1 TO 4
+      Grid[Row, Col] &lt;- Row * Col
+   NEXT Col
+NEXT Row
+
+What is the total of all the values stored in row 2?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>12, which is the sum of 2, 4 and 6</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>30, which is the sum of 3, 6, 9 and 12</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>10, which is the sum of 1, 2, 3 and 4</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>20, which is the sum of 2, 4, 6 and 8</button>
+    </div><div class="q-feedback" id="fb2_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">The file Marks.txt contains four lines: 12, 7, 30, 5.
+Count &lt;- 0
+OPEN "Marks.txt" FOR READ
+WHILE NOT EOF("Marks.txt") DO
+   READFILE "Marks.txt", Mark
+   IF Mark &gt; 10 THEN
+      Count &lt;- Count + 1
+      Scores[Count] &lt;- Mark
+   ENDIF
+ENDWHILE
+CLOSEFILE "Marks.txt"
+
+What are the final value of Count and the value of Scores[2]?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Count = 4 and Scores[2] = 7</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Count = 2 and Scores[2] = 7 as the second line is stored</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Count = 2 and Scores[2] = 30</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Count = 2 and Scores[2] = 12 as the first value is repeated</button>
+    </div><div class="q-feedback" id="fb2_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz3" data-quiz="3" hidden>
+  <div class="quiz-header"><h2>📝 Mock set C — 10 questions</h2><div class="quiz-score" id="score3">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which value can be stored in a variable declared with the data type CHAR?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A word such as Zebra with up to ten letters</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A whole number such as 26 and nothing else</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The values TRUE or FALSE only, as a logic value</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A single character such as Z</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A menu stores the user's choice, a whole number from 1 to 4, in the variable Choice. When is a CASE statement the most appropriate selection construct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>When two conditions must both be true before one block of code runs</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>When one variable is compared with several separate fixed values</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>When a block of statements must be repeated until a condition is true</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>When the same calculation is needed in several places in a program</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Num &lt;- 3856
+Digit &lt;- Num MOD 10
+Num &lt;- Num DIV 10
+Digit &lt;- Digit + Num MOD 10
+OUTPUT Digit, Num
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Digit = 11, Num = 385</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Digit = 11, Num = 38</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Digit = 9, Num = 385</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Digit = 11, Num = 3856</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Count &lt;- 0
+FOR i &lt;- 1 TO 20
+   IF i MOD 3 = 0 AND i MOD 2 &lt;&gt; 0 THEN
+      Count &lt;- Count + 1
+   ENDIF
+NEXT i
+OUTPUT Count
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>6, because every multiple of 3 up to 18 is counted</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>13, because OR was used instead of AND in the test</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3, because only 3, 9 and 15 are counted</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>10, because every odd number up to 20 is counted</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">DECLARE Grid : ARRAY[1:3, 1:4] OF INTEGER
+FOR Row &lt;- 1 TO 3
+   FOR Col &lt;- 1 TO 4
+      IF Row = Col THEN
+         Grid[Row, Col] &lt;- 1
+      ELSE
+         Grid[Row, Col] &lt;- 0
+      ENDIF
+   NEXT Col
+NEXT Row
+
+How many elements of Grid contain the value 1?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>4, one for each column of the array</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>12, because every element is assigned a value</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3, one on each row where Row equals Col</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>9, because Row = Col in a 3 by 3 block of the array</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">Word &lt;- "stack"
+Rev &lt;- ""
+FOR i &lt;- 1 TO LENGTH(Word)
+   Rev &lt;- SUBSTRING(Word, i, 1) &amp; Rev
+NEXT i
+OUTPUT UPPER(SUBSTRING(Rev, 1, 2))
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>TS</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>KC</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>CK</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>KCATS</button>
+    </div><div class="q-feedback" id="fb3_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">PROCEDURE Change(BYVAL Num : INTEGER)
+   Total &lt;- Total + Num
+   Num &lt;- 0
+ENDPROCEDURE
+
+Total &lt;- 5
+Value &lt;- 3
+CALL Change(Value)
+CALL Change(Value)
+OUTPUT Total, Value
+
+What is output? (Total is a global variable.)</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Total = 11, Value = 3</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Total = 8, Value = 0</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Total = 11, Value = 0</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Total = 5, Value = 3 because Total is only changed inside the procedure</button>
+    </div><div class="q-feedback" id="fb3_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">Names holds Ann, Bo, Cy, Di, Ed and Scores holds 55, 72, 64, 72, 40 (same index for the same student).
+Max &lt;- 0
+FOR i &lt;- 1 TO 5
+   IF Scores[i] &gt;= Max THEN
+      Max &lt;- Scores[i]
+      Best &lt;- Names[i]
+   ENDIF
+NEXT i
+OUTPUT Best
+
+The teacher wants the first student with the highest score. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Bo is output; the loop should end at 4</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Ed is output; the last element is always stored</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Di is output; the Names array should be searched backwards</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Di is output; use &gt; instead of &gt;= to keep Bo</button>
+    </div><div class="q-feedback" id="fb3_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">OPEN "Data.txt" FOR WRITE
+FOR i &lt;- 1 TO 3
+   WRITEFILE "Data.txt", i * i
+NEXT i
+CLOSEFILE "Data.txt"
+OPEN "Data.txt" FOR READ
+READFILE "Data.txt", Line
+READFILE "Data.txt", Line
+CLOSEFILE "Data.txt"
+OUTPUT Line
+
+What is output?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1, because the first line read is kept in Line</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>14, because both values read are joined together</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>9, because each READFILE reads the last line in the file</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>4, because the second READFILE replaces the first value</button>
+    </div><div class="q-feedback" id="fb3_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">Which version of the statement is the most maintainable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>// Calculate the VAT on an item (Price multiplied by Quantity multiplied by 0.2)
+V &lt;- P * Q * 0.2</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>// Calculate the VAT on an item
+VatAmount &lt;- Price * Quantity * VatRate</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>VatAmount &lt;- Price * Quantity * 0.2</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Calc1 &lt;- Value1 * Value2 * Value3 // VAT</button>
+    </div><div class="q-feedback" id="fb3_10"></div></div>
+</div>
+
+</main>
+</div>
+
+<footer>
+  Computer Science · Chapter 8 · Mock exam MCQs (3 sets × 10)
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[1, 3, 2, 0, 3, 1, 0, 2, 3, 2], total:10, score:0, done:0, feedback:[
+    "STRING keeps the leading zero and the number is not used in calculations; an INTEGER would store 912345678 and lose the zero.",
+    "A constant is a named value that does not change while the program runs; the other values all change during execution.",
+    "94 / 7 = 13.43 which ROUNDs to 13.4; 94 MOD 7 = 3 (the remainder), so 13.4 + 3 = 16.4.",
+    "Mark is 60 but Attendance is not above 90, so the AND condition is false; the next test Mark >= 40 is true so Grade is C.",
+    "ROUND(RANDOM() * 9, 0) gives 0 to 9, and adding 1 gives 1 to 10; the others produce 0-10, 1-11 or -1 to 10.",
+    "Starting at character 4 and taking 3 characters gives PUT, UPPER leaves it in capitals, and LENGTH(Word) is 9.",
+    "Total inside Show is a local variable that exists only while the procedure runs, so the global Total stays 10.",
+    "Data[2] is the first 3 and is less than 6; Data[4] is equal to Min, not less than it, so Pos is not updated.",
+    "A 2D array has rows x columns = 6 x 8 = 48 elements, and the index order is [row, column], so the last element is Seats[6, 8].",
+    "A file is opened in WRITE mode, written to, then closed; writing to a file opened for READ, or before opening or after closing, is an error."]},
+  2:{answers:[0, 1, 2, 3, 0, 2, 1, 3, 3, 2], total:10, score:0, done:0, feedback:[
+    "An average can have a fractional part, so REAL is needed; INTEGER would lose the decimal part.",
+    "A named constant is defined once and used everywhere, which makes the program easier to maintain; it has no effect on speed or validation.",
+    "12.4 x 3 x 1.07 = 39.804, which ROUNDed to 1 decimal place is 39.8.",
+    "Score = 51 is greater than 50 and NOT Passed is TRUE, so the bracket is TRUE; Score = 50 fails Score > 50 because it is not greater.",
+    "N becomes 120, 60, 30, 15 and the loop stops when N is odd, so Steps is 4; 15 MOD 2 = 1, so no further halving.",
+    "REPEAT...UNTIL tests the condition after the loop body, so the body always runs at least once; X becomes 15 and 15 > 8 ends the loop.",
+    "The first letter m, then gomez in lower case, then 5 (the length of Maria); LOWER must be applied to both parts.",
+    "Double(4) = 8 and Double(5) = 10, so B = 18; the function returns a value and does not change A.",
+    "Row 2 holds 2 x 1, 2 x 2, 2 x 3 and 2 x 4, which add up to 20; row 2 has 4 columns, not 3.",
+    "Only 12 and 30 are greater than 10, so Count is 2 and they are stored in Scores[1] and Scores[2]; the loop stops at end of file."]},
+  3:{answers:[3, 1, 0, 2, 2, 1, 0, 3, 3, 1], total:10, score:0, done:0, feedback:[
+    "CHAR holds exactly one character; a word needs STRING, a whole number needs INTEGER and TRUE/FALSE needs BOOLEAN.",
+    "CASE selects one of several branches according to the value of a single variable, such as menu choices 1 to 4.",
+    "3856 MOD 10 = 6; 3856 DIV 10 = 385; 385 MOD 10 = 5, so Digit = 6 + 5 = 11 and Num stays 385.",
+    "Both conditions must be true: odd multiples of 3 are 3, 9 and 15. Counting all multiples of 3 gives 6, which ignores the second test.",
+    "Row = Col is true only for (1,1), (2,2) and (3,3); column 4 never matches a row number, and the other elements are set to 0.",
+    "Each new character is placed in front of Rev, so Rev becomes kcats; the first two characters are kc, which UPPER turns into KC.",
+    "Total is global so each call adds 3 (5 + 3 + 3 = 11); BYVAL passes a copy, so setting Num to 0 does not change Value.",
+    "With >= the equal score of Di replaces Bo; using > only replaces Max when a strictly higher score is found, so Bo is kept.",
+    "The file holds 1, 4 and 9 on separate lines; each READFILE reads the next line, so after two reads Line holds 4.",
+    "Meaningful identifiers, a comment and a named constant (VatRate) make the code easier to understand and update; short names and fixed values do not."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+
+document.querySelectorAll('.set-tab').forEach(function(a){a.addEventListener('click',function(e){
+  e.preventDefault();
+  document.querySelectorAll('.set-tab').forEach(function(x){x.classList.toggle('active-tab',x===a);});
+  document.querySelectorAll('.mock-set').forEach(function(s){s.hidden=(s.dataset.quiz!==a.dataset.set);});
+});});
+</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8 — Programming (Easy) | G10 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G10 Computer Science <span>· Ch 8</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy active" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Easy version · take it slowly</div>
+  <h1>Chapter 8 · Programming 🍎</h1>
+  <p>The same topics in plainer words with everyday comparisons and a short mini-quiz after each one.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Variables, types & I/O</a>
+    <a href="#unit2">② Sequence, selection & iteration</a>
+    <a href="#unit3">③ Totals, strings & operators</a>
+    <a href="#unit4">④ Nesting, subroutines & libraries</a>
+    <a href="#unit5">⑤ Arrays</a>
+    <a href="#unit6">⑥ Files & examiner messages</a>
+    <a href="chapter8.html" class="easy-pill">📘 Ready for the full version?</a>
+    <a href="mock_chapter8.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============ UNIT 1 ============ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>8.1.1–8.1.3 Variables, types & I/O</h2><div class="unit-sub">storing data</div></div>
+  </div>
+
+<div class="simple-box"><div class="simple-title">🍎 In plain words</div><p>A <strong>variable</strong> is a labelled box whose contents can change; a <strong>constant</strong> never changes. Five data types: INTEGER, REAL, CHAR, STRING, BOOLEAN.</p></div>
+</div>
+
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 mini-quiz</h2><div class="quiz-score" id="score1">0 / 4</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is a variable in a computer program?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A named store whose value can never be changed at all</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A named store whose value may change while running</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A command that repeats a section of code</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A file used to keep data after shutdown</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A program calculates the volume of a cylinder using pi = 3.142. How should PI be declared?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>As a constant, since its value never changes</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>As a variable, since it is written as a decimal</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>As a string, since it contains a point</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>As an array, since it has several digits</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What is meant by an EXPLICIT declaration?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The variable is declared inside a procedure</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The variable is given its first value straight away</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The variable name is written in capitals</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The programmer states the data type directly</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which language requires no separate declaration statement and does not distinguish constants in its syntax?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Visual Basic</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Java</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Python</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Pseudocode</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+</div>
+
+<!-- ============ UNIT 2 ============ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>8.1.4 Sequence, selection & iteration</h2><div class="unit-sub">control structures</div></div>
+  </div>
+
+<div class="simple-box"><div class="simple-title">🍎 In plain words</div><p>A program runs <strong>in order</strong> (sequence). <strong>IF/CASE</strong> choose a path. <strong>Loops</strong> repeat steps.</p></div><div class="viz">
+    <div class="viz-title">The three loops</div>
+    <svg viewBox="0 0 520 112" role="img" aria-label="FOR, WHILE and REPEAT loops" style="width:100%;max-width:520px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="10" width="160" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="90.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >FOR … NEXT</text><rect x="10" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="90.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >count-controlled</text><text x="90" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >known number of repeats</text><rect x="180" y="10" width="160" height="36" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="260.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >WHILE … ENDWHILE</text><rect x="180" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="260.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >pre-condition</text><text x="260" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >test first — may run 0 times</text><rect x="350" y="10" width="160" height="36" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="430.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >REPEAT … UNTIL</text><rect x="350" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="430.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >post-condition</text><text x="430" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >test last — runs at least once</text></svg>
+    
+  </div>
+</div>
+
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 mini-quiz</h2><div class="quiz-score" id="score2">0 / 4</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A user enters 25, which is stored as a string. What must happen before it is used in arithmetic?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It must be output to the screen first</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It must be stored inside an array</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It must be cast to an integer or real</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Nothing, since it looks like a number</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">All inputs in a programming language default to which data type?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Integer</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Real</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Boolean</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>String</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">An array is to store 500 people's names. Which declaration is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>DECLARE Names : ARRAY[1:500] OF STRING</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>DECLARE Names : ARRAY[1:500] OF REAL</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>DECLARE Names : ARRAY[1:500] OF CHAR</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>DECLARE Names : ARRAY[1:500] OF INTEGER</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">In the cylinder-volume program, why are Radius and Length declared as REAL?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Because they are typed in by the user</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Because they can have fractional values</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Because they are used in a multiplication</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Because they are stored in an array</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+</div>
+
+<!-- ============ UNIT 3 ============ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>8.1.4 Totals, strings & operators</h2><div class="unit-sub">common operations</div></div>
+  </div>
+
+<div class="simple-box"><div class="simple-title">🍎 In plain words</div><p><strong>Totalling</strong> adds numbers up; <strong>counting</strong> adds 1 each time. Strings can be cut with LEFT, RIGHT, MID, LENGTH. Operators: + − * / DIV MOD.</p></div>
+</div>
+
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 mini-quiz</h2><div class="quiz-score" id="score3">0 / 4</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">In the corrected marks algorithm, why does Counter start at −1?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>So the sentinel's extra iteration is not counted</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>So the total is doubled before the average is found</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Because counters must start below zero</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>So the loop runs one extra time</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the corrected version, where is the average calculated?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Inside the loop, on every pass</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Inside an IF statement testing for 999</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Before the loop begins</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Once, after the loop has finished</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">When tracing an algorithm, what should you do?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Skip ahead once the pattern is clear</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Trace only the lines that are inside the loop</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Trace line by line in execution order</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Record every variable on every row</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">What is a sentinel value?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The largest value that an array is able to store</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A special input signalling the end of input</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The first value read into a loop</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A value used to check for errors</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+</div>
+
+<!-- ============ UNIT 4 ============ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>8.1.5–8.1.8 Nesting, subroutines & libraries</h2><div class="unit-sub">structured programming</div></div>
+  </div>
+
+<div class="simple-box"><div class="simple-title">🍎 In plain words</div><p>Put code into <strong>procedures</strong> and <strong>functions</strong> so you can reuse it. A function gives back a value. Add comments and good names to make code <strong>maintainable</strong>.</p></div><div class="viz">
+    <div class="viz-title">Calling a function with parameters</div>
+    <svg viewBox="0 0 530 120" role="img" aria-label="Function call with arguments and return value" style="width:100%;max-width:530px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="30" width="120" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="70.0" y="56.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Main program</text><rect x="220" y="30" width="140" height="44" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="290.0" y="55.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >FUNCTION Area(w, h)</text><rect x="410" y="30" width="100" height="44" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="460.0" y="55.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >RETURN w × h</text><line x1="130" y1="45" x2="220" y2="45" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><text x="175" y="38" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >w=4, h=5</text><line x1="360" y1="55" x2="410" y2="55" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><path d="M460 74 L460 105 L70 105 L70 76" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ah)"/><text x="265" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#059669" stroke="none" >result 20 sent back</text></svg>
+    <div class="viz-cap">Procedure: does a job. Function: does a job AND returns a value.</div>
+  </div>
+</div>
+
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 mini-quiz</h2><div class="quiz-score" id="score4">0 / 4</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What does LENGTH("Computer Science") return?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>16</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>15</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>17</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In pseudocode, what does the third parameter of SUBSTRING(MyString, 10, 7) give?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The end position of the wanted substring</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The length of the substring wanted</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The number of times to repeat it</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The position to insert the result</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Pseudocode strings start counting at position 1. Where do Python, Visual Basic and Java start?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Also at position 1</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>At position −1</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It varies by string length</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>At position 0</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which pair of string-handling functions changes the case of a string?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>LENGTH and SUBSTRING</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>ROUND and RANDOM</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>UCASE and LCASE</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>MOD and DIV</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+</div>
+
+<!-- ============ UNIT 5 ============ -->
+<div class="unit" id="unit5">
+  <div class="unit-header">
+    <div class="unit-num">⑤</div>
+    <div><h2>8.2 Arrays</h2><div class="unit-sub">lists of data</div></div>
+  </div>
+
+<div class="simple-box"><div class="simple-title">🍎 In plain words</div><p>An <strong>array</strong> is a row of boxes sharing one name, found by <strong>index</strong>. A 2-D array is a grid. Use a loop to fill or read all of it.</p></div><div class="viz">
+    <div class="viz-title">One- and two-dimensional arrays</div>
+    <svg viewBox="0 0 520 150" role="img" aria-label="1D array with indexes and 2D grid" style="width:100%;max-width:520px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><text x="10" y="20" font-size="12" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >1-D array  Scores[0..4]</text><rect x="10" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="35.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >12</text><text x="35" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >0</text><rect x="60" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="85.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >7</text><text x="85" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >1</text><rect x="110" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="135.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >19</text><text x="135" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >2</text><rect x="160" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="185.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >4</text><text x="185" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >3</text><rect x="210" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="235.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >15</text><text x="235" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >4</text><text x="300" y="20" font-size="12" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >2-D array  Grid[0..2, 0..2]  (row, col)</text><rect x="300" y="28" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="322.0" y="49.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >1</text><rect x="344" y="28" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="366.0" y="49.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >2</text><rect x="388" y="28" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="410.0" y="49.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >3</text><rect x="300" y="62" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="322.0" y="83.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >4</text><rect x="344" y="62" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="366.0" y="83.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >5</text><rect x="388" y="62" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="410.0" y="83.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >6</text><rect x="300" y="96" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="322.0" y="117.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >7</text><rect x="344" y="96" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="366.0" y="117.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >8</text><rect x="388" y="96" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="410.0" y="117.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >9</text><text x="430" y="140" font-size="11" text-anchor="middle" font-weight="700" fill="#059669" stroke="none" >Grid[1,2] = 6</text></svg>
+    <div class="viz-cap">Array indexes usually start at 0 (or as stated in the question).</div>
+  </div>
+</div>
+
+<div class="quiz-section" id="quiz5" data-quiz="5">
+  <div class="quiz-header"><h2>📝 Topic 5 mini-quiz</h2><div class="quiz-score" id="score5">0 / 4</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">When tracing nested loops, what is the correct approach?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Complete the inner loop fully for each outer pass</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Alternate between the levels each row</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Trace the outer loop fully first, then the inner loop</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Trace only the innermost loop</button>
+    </div><div class="q-feedback" id="fb5_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is the key difference between a procedure and a function?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A procedure can take parameters, a function cannot</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A function must be declared before a procedure</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A procedure is faster to execute than a function</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A function returns a value to the main program</button>
+    </div><div class="q-feedback" id="fb5_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">According to the current 2026–2028 syllabus, how many parameters may a function have?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Up to two</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Up to four</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Up to three</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Any number at all</button>
+    </div><div class="q-feedback" id="fb5_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A variable is declared inside a procedure. What is its scope?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The whole program, once the procedure runs</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only the procedure it was declared in</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Every procedure but not the main program</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It has no scope until it is given a value</button>
+    </div><div class="q-feedback" id="fb5_4"></div></div>
+
+</div>
+
+<!-- ============ UNIT 6 ============ -->
+<div class="unit" id="unit6">
+  <div class="unit-header">
+    <div class="unit-num">⑥</div>
+    <div><h2>8.3 Files & examiner messages</h2><div class="unit-sub">reading and writing files</div></div>
+  </div>
+
+<div class="simple-box"><div class="simple-title">🍎 In plain words</div><p>To use a file: <strong>OPEN</strong> it (READ / WRITE / APPEND), read or write, then <strong>CLOSE</strong> it.</p></div><div class="viz">
+    <div class="viz-title">File handling</div>
+    <svg viewBox="0 0 360 118" role="img" aria-label="Program reading and writing a file" style="width:100%;max-width:360px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="30" width="120" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="70.0" y="56.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Program</text><rect x="220" y="30" width="120" height="44" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/><text x="280.0" y="56.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >data.txt</text><line x1="130" y1="40" x2="220" y2="40" stroke="#059669" stroke-width="2" marker-end="url(#ah)"/><text x="175" y="32" font-size="10" text-anchor="middle" font-weight="400" fill="#059669" stroke="none" >WRITE / APPEND</text><line x1="220" y1="66" x2="130" y2="66" stroke="#2563eb" stroke-width="2" marker-end="url(#ah)"/><text x="175" y="82" font-size="10" text-anchor="middle" font-weight="400" fill="#2563eb" stroke="none" >READ</text><text x="175" y="108" font-size="11" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >OPEN → read/write → CLOSE</text></svg>
+    
+  </div>
+</div>
+
+<div class="quiz-section" id="quiz6" data-quiz="6">
+  <div class="quiz-header"><h2>📝 Topic 6 mini-quiz</h2><div class="quiz-score" id="score6">0 / 4</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A question asks for a method to make an algorithm maintainable. What earns full marks?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Naming as many features as possible</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Rewriting the algorithm in Python</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Adding a comment to the very first line</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Naming a feature and showing it applied</button>
+    </div><div class="q-feedback" id="fb6_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is an array?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A named store holding only one value of any type</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Several elements of the same type under one name</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A loop that repeats a fixed number of times</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A file used for permanent storage</button>
+    </div><div class="q-feedback" id="fb6_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">DECLARE MyTable : ARRAY[0:9,0:2] OF INTEGER. How many elements does it hold?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>12</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>27</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>30</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>90</button>
+    </div><div class="q-feedback" id="fb6_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">In MyTable[2,1], which index refers to the column?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The 1, since columns come second</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The 2, since columns come first</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Both, since they are interchangeable</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Neither, since 2D arrays use one index</button>
+    </div><div class="q-feedback" id="fb6_4"></div></div>
+
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Variable / constant</div><div class="term-def">A named memory location whose value can change (variable) or stays fixed (constant).</div></div>
+    <div class="term-item"><div class="term-name">Data types</div><div class="term-def">integer, real, char, string and Boolean.</div></div>
+    <div class="term-item"><div class="term-name">Sequence</div><div class="term-def">Statements executed one after another in order.</div></div>
+    <div class="term-item"><div class="term-name">Selection</div><div class="term-def">Choosing which statements to run using IF or CASE statements.</div></div>
+    <div class="term-item"><div class="term-name">Iteration</div><div class="term-def">Repeating statements: count-controlled, pre-condition or post-condition loops.</div></div>
+    <div class="term-item"><div class="term-name">Totalling and counting</div><div class="term-def">Keeping a running total, or a count, as a program loops.</div></div>
+    <div class="term-item"><div class="term-name">String handling</div><div class="term-def">Operations on text: length, substring, upper and lower.</div></div>
+    <div class="term-item"><div class="term-name">Operators</div><div class="term-def">Arithmetic (+ - * / ^ MOD DIV), relational (= &lt; &lt;= &gt; &gt;= &lt;&gt;) and logical (AND, OR, NOT).</div></div>
+    <div class="term-item"><div class="term-name">Nested statements</div><div class="term-def">A selection or iteration placed inside another; no more than three levels are required.</div></div>
+    <div class="term-item"><div class="term-name">Procedure / function</div><div class="term-def">A named subroutine; a function returns a value, a procedure does not. Both may take up to three parameters.</div></div>
+    <div class="term-item"><div class="term-name">Local / global variable</div><div class="term-def">A local variable exists only inside its subroutine; a global variable can be used throughout the program.</div></div>
+    <div class="term-item"><div class="term-name">Library routine</div><div class="term-def">A ready-made subroutine such as MOD, DIV, ROUND or RANDOM.</div></div>
+    <div class="term-item"><div class="term-name">Maintainable program</div><div class="term-def">One that uses meaningful identifiers, comments, and procedures and functions so it is easy to understand and change.</div></div>
+    <div class="term-item"><div class="term-name">Array (1D / 2D)</div><div class="term-def">A data structure holding several items of the same type under one name, accessed by an index.</div></div>
+    <div class="term-item"><div class="term-name">File handling</div><div class="term-def">Opening, reading or writing (a single item or a line of text) and closing a file so data is stored outside the program.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Use the exact command-word wording from the question.</p>
+    <p>Show working: trace tables, truth-table columns, SQL on separate lines.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G10 Computer Science · Chapter 8 Programming · Study guide (easy).
+  &nbsp;·&nbsp; <a href="chapter8.html">📘 Switch to the full version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[1, 0, 3, 2], total:4, score:0, done:0, feedback:[
+    "A variable is a named data store containing a value that may change during the execution of a program.",
+    "Pi never changes during or between runs, so it should be declared as a constant: CONSTANT PI ← 3.142.",
+    "An explicit declaration states the data type of the variable or constant directly, rather than letting the language infer it.",
+    "Python needs no declaration statement and does not differentiate constants — programmers manage this themselves, often with capital names."]},
+  2:{answers:[2, 3, 0, 1], total:4, score:0, done:0, feedback:[
+    "A number stored as a string cannot be used directly in a calculation — it must be cast, e.g. with int() or float() in Python.",
+    "All inputs default to strings, so a casting command is needed whenever an integer or real is required.",
+    "Names are text, so the array must be declared OF STRING — declaring it OF REAL is a documented real exam error.",
+    "Real holds a positive or negative number with a fractional part, which a measurement such as 4.5 cm needs."]},
+  3:{answers:[0, 3, 2, 1], total:4, score:0, done:0, feedback:[
+    "Starting at −1 cancels out the extra iteration caused by entering the sentinel, giving the correct count of real marks.",
+    "Calculating the average once outside the loop removes the need to test for the last input inside the loop at all.",
+    "Complete a full trace table line by line in the exact order statements execute — sequencing bugs are designed to defeat shortcuts.",
+    "A sentinel value is a special input value used to signal the end of a sequence of inputs to a loop."]},
+  4:{answers:[0, 1, 3, 2], total:4, score:0, done:0, feedback:[
+    "LENGTH counts every character including spaces, so \"Computer Science\" has a length of 16.",
+    "Pseudocode SUBSTRING takes the string, the start position and the LENGTH of the substring required.",
+    "Those three languages all start at position zero, so a pseudocode substring translated directly will be off by one character.",
+    "UCASE converts a string to all uppercase and LCASE converts it to all lowercase."]},
+  5:{answers:[0, 3, 2, 1], total:4, score:0, done:0, feedback:[
+    "Work through the innermost construct completely for each pass of the outer one — jumping between levels causes most trace-table errors.",
+    "Both group statements under one name, but a function returns a value back to the main program.",
+    "The syllabus was updated to allow up to three parameters — confirmed by the June 2025 report explaining why Q10 was withdrawn.",
+    "A local variable can only be used by the part of the program it was declared in — its scope is restricted to that part."]},
+  6:{answers:[3, 1, 2, 0], total:4, score:0, done:0, feedback:[
+    "The examiner report shows full marks go to answers that identify a method AND give a correct example using the algorithm in the question.",
+    "An array is a data structure containing several elements of the same data type, accessed using the same identifier name.",
+    "It has 10 rows (0 to 9) and 3 columns (0 to 2), giving 30 elements in total.",
+    "The declaration is ARRAY[first row : last row, first column : last column], so the second index is the column."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

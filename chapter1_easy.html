@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1 — Data Representation (Easy) | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Ch 1 🍎</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy active" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Easy version · take it slowly</div>
+  <h1>Chapter 1 · Data Representation 🍎</h1>
+  <p>The same three topics as the regular guide, but in plainer words with everyday comparisons and everything broken into small steps. Do the mini-quiz after each topic before moving on.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Number systems</a>
+    <a href="#unit2">② Text, sound &amp; pictures</a>
+    <a href="#unit3">③ Storing &amp; squeezing files</a>
+    <a href="chapter1.html" class="easy-pill">📘 Ready for the full version?</a>
+    <a href="mock_chapter1.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>1.1 Number systems</h2><div class="unit-sub">How computers count, add, shift and store negative numbers using only 0s and 1s</div></div>
+  </div>
+
+  <p>A computer is really just millions of tiny switches. Each switch is either <strong>ON</strong> or <strong>OFF</strong> — nothing in between. So computers use <strong>binary</strong> (just 0s and 1s) instead of our normal counting system (denary, 0–9).</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Think of a row of light switches. Each one is either <strong>off (0)</strong> or <strong>on (1)</strong>. A binary number just describes which switches are on.</p>
+  </div>
+
+  <h3>Reading binary numbers</h3>
+  <p>Each position in a binary number is worth double the one before it: 128, 64, 32, 16, 8, 4, 2, 1. To turn binary into denary, just <strong>add up the columns where there's a 1</strong>.</p>
+  <div class="bits">
+    <div class="bit-group"><div class="bit-label">Binary place values</div>
+      <div class="bit-row head"><div class="cell">128</div><div class="cell">64</div><div class="cell">32</div><div class="cell">16</div><div class="cell">8</div><div class="cell">4</div><div class="cell">2</div><div class="cell">1</div></div>
+      <div class="bit-row"><div class="cell on">1</div><div class="cell">0</div><div class="cell on">1</div><div class="cell on">1</div><div class="cell">0</div><div class="cell on">1</div><div class="cell">0</div><div class="cell on">1</div></div>
+    </div>
+  </div>
+  <div class="example-box">
+    <div class="ex-title">🧮 Converting 142 into binary</div>
+    <div class="step"><span class="sn">1</span>Divide 142 by 2 repeatedly, writing down the remainder each time: 142÷2=71 r<strong>0</strong>, 71÷2=35 r<strong>1</strong>, 35÷2=17 r<strong>1</strong>.</div>
+    <div class="step"><span class="sn">2</span>Keep going: 17÷2=8 r<strong>1</strong>, 8÷2=4 r<strong>0</strong>, 4÷2=2 r<strong>0</strong>, 2÷2=1 r<strong>0</strong>, 1÷2=0 r<strong>1</strong>.</div>
+    <div class="step"><span class="sn">3</span>Read the remainders from <strong>bottom to top</strong>.</div>
+    <div class="answer-line">➜ 142 = 1 0 0 0 1 1 1 0</div>
+  </div>
+
+  <h3>Hexadecimal — a shortcut for binary</h3>
+  <p><strong>Hexadecimal</strong> (hex) counts 0–9 then A–F (A=10 up to F=15). Every hex digit stands for exactly <strong>4 binary bits</strong>, so hex is a short, easy-to-read way of writing long binary numbers — much easier for people to copy without mistakes.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Writing out a long binary number like <code>1000011111110 1</code> is easy to get wrong. Its hex shorthand <code>21FD</code> is about a quarter the length and much easier to read correctly.</p>
+  </div>
+
+  <h3>Adding binary numbers, and overflow</h3>
+  <p>Adding works just like normal column addition, carrying when a column adds to more than 1.</p>
+  <div class="warn-box">⚠️ An 8-bit "box" can only hold values from 0 to 255. If you add two positive numbers and the true answer is bigger than 255, the extra bit doesn't fit and gets thrown away — this is called <strong>overflow</strong>, and the answer that's left behind is wrong (too small).</div>
+
+  <h3>Logical shifts — sliding the bits along</h3>
+  <p>A <strong>logical shift</strong> slides every bit one or more places left or right. Shifting <strong>left</strong> multiplies the number by 2; shifting <strong>right</strong> divides it by 2. The empty space left behind is always filled with a <strong>0</strong> — a bit that falls off the end is lost for good.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Imagine a line of people holding number cards. Shifting left means everyone takes one step left; whoever falls off the front edge is gone, and a new person holding "0" joins at the back.</p>
+  </div>
+
+  <h3>Storing negative numbers — two's complement</h3>
+  <p>To store a negative number, computers use a trick called <strong>two's complement</strong>: flip every bit (0↔1), then add 1. The <strong>first bit</strong> is now worth <strong>−128</strong> instead of +128, which is how the computer knows the number is negative.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Turning +79 into −79</div>
+    <div class="step"><span class="sn">1</span>+79 = 0 1 0 0 1 1 1 1.</div>
+    <div class="step"><span class="sn">2</span>Flip every digit: 1 0 1 1 0 0 0 0.</div>
+    <div class="step"><span class="sn">3</span>Add 1 to the end: 1 0 1 1 0 0 0 1.</div>
+    <div class="answer-line">➜ −79 = 1 0 1 1 0 0 0 1</div>
+  </div>
+  <div class="warn-box">⚠️ A common mistake: working out the number correctly but forgetting to make the final answer <strong>negative</strong>. Always check the first bit is 1 whenever the original number was negative.</div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 mini-quiz</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Computers use binary because each tiny switch inside them can only be…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>One of ten positions</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>On or off</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Hot or cold</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">One hexadecimal digit is equal to how many binary bits?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>4 bits</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>2 bits</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>8 bits</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A logical left shift on a binary number…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Divides it by 2 and keeps the remainder</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Leaves it unchanged and just moves the bits</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Multiplies it by 2</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">To find the two's complement (negative) form of a number, you…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Flip every bit, then add 1</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Add 1 only, without flipping any bits at all</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Just flip every bit, no addition needed at all</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">If a binary addition's true answer needs more bits than the box has room for, what happens?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The computer automatically adds more bits to fit the answer</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Overflow: the extra bit is lost and the answer is wrong</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Nothing, the answer is always still correct and exact</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>1.2 Text, sound and pictures</h2><div class="unit-sub">How letters, sound and images get turned into 0s and 1s</div></div>
+  </div>
+
+  <h3>Storing text — ASCII and Unicode</h3>
+  <p>Every character on a keyboard needs a number the computer can store. <strong>ASCII</strong> gives every English letter, digit and symbol a 7-bit code (0–127). <strong>Unicode</strong> does the same job but for <strong>every language in the world</strong> (plus emojis), using up to 4 bytes per character. Unicode's first 128 codes are identical to ASCII.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>ASCII is like a phone book that only has English names. Unicode is a phone book big enough for every name in every country — but it keeps the exact same first page as the English one.</p>
+  </div>
+
+  <h3>Sound files — turning sound waves into numbers</h3>
+  <p>Sound is a wave (of air pressure) — it's <strong>analogue</strong>, not digital. A computer measures ("samples") the wave many times per second and stores each measurement as a binary number.</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">⏱️</div><div class="tc-name">Sample rate</div><div class="tc-example">How many measurements are taken <strong>each second</strong> (in Hz)</div></div>
+    <div class="task-card"><div class="tc-icon">📏</div><div class="tc-name">Sample resolution</div><div class="tc-example">How many bits are used to store <strong>each</strong> measurement — more bits = more accurate</div></div>
+  </div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Imagine tracing a wavy line by marking dots on it at fixed time gaps, then joining the dots. More dots per second (sample rate) and more precise dot positions (sample resolution) give a truer copy of the original wave — but also a bigger file. Don't mix up "sample rate" (Hz, dots per second) with "sample resolution" (bits per dot) — they're two different things!</p>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Tracing dots along a wavy line</div>
+    <svg viewBox="0 0 340 150" role="img" aria-label="Analogue sound wave with sample points taken at regular intervals" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="15" y1="75" x2="325" y2="75" stroke-dasharray="2 3" stroke-width="1"/>
+      <path d="M15 75 C 45 20, 75 20, 105 75 S 165 130, 195 75 S 255 20, 285 75 S 315 100, 325 90" stroke-width="2"/>
+      <g stroke-width="1">
+        <line x1="45" y1="75" x2="45" y2="27"/><line x1="75" y1="75" x2="75" y2="27"/>
+        <line x1="105" y1="75" x2="105" y2="75"/><line x1="135" y1="75" x2="135" y2="103"/>
+        <line x1="165" y1="75" x2="165" y2="128"/><line x1="195" y1="75" x2="195" y2="75"/>
+        <line x1="225" y1="75" x2="225" y2="27"/><line x1="255" y1="75" x2="255" y2="20"/>
+        <line x1="285" y1="75" x2="285" y2="75"/>
+      </g>
+      <circle cx="45" cy="27" r="3" fill="currentColor"/><circle cx="75" cy="27" r="3" fill="currentColor"/>
+      <circle cx="105" cy="75" r="3" fill="currentColor"/><circle cx="135" cy="103" r="3" fill="currentColor"/>
+      <circle cx="165" cy="128" r="3" fill="currentColor"/><circle cx="195" cy="75" r="3" fill="currentColor"/>
+      <circle cx="225" cy="27" r="3" fill="currentColor"/><circle cx="255" cy="20" r="3" fill="currentColor"/>
+      <circle cx="285" cy="75" r="3" fill="currentColor"/>
+      <text x="20" y="90" font-size="9" stroke="none" fill="currentColor">← equal time gaps (sample rate) →</text>
+    </svg>
+    <div class="viz-cap">Each dot is one sample — a measurement of the wave's height, taken at a regular time gap, then stored as a number.</div>
+  </div>
+
+  <h3>Bitmap images — a grid of pixels</h3>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A bitmap image is like a <strong>mosaic</strong> made of tiny coloured tiles (pixels). Zoom in far enough on any digital photo and you'll see the individual squares.</p>
+  </div>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🎨</div><div class="tc-name">Colour depth</div><div class="tc-example">How many bits describe the colour of <strong>one</strong> pixel. More bits = more possible colours.</div></div>
+    <div class="task-card"><div class="tc-icon">🖼️</div><div class="tc-name">Resolution</div><div class="tc-example">How many pixels make up the whole picture — fewer pixels can look blurry ("pixelated").</div></div>
+  </div>
+  <div class="viz">
+    <div class="viz-title">Zoom in on any photo and you see the pixels</div>
+    <svg viewBox="0 0 320 150" role="img" aria-label="Zoomed-in pixel grid of a bit-map image, like a mosaic of tiles" fill="none" stroke="currentColor" stroke-width="2">
+      <g stroke-width="1">
+        <rect x="10" y="10" width="40" height="30" fill="#93c5fd"/><rect x="50" y="10" width="40" height="30" fill="#93c5fd"/><rect x="90" y="10" width="40" height="30" fill="#fca5a5"/><rect x="130" y="10" width="40" height="30" fill="#fca5a5"/><rect x="170" y="10" width="40" height="30" fill="#fde047"/><rect x="210" y="10" width="40" height="30" fill="#fde047"/>
+        <rect x="10" y="40" width="40" height="30" fill="#93c5fd"/><rect x="50" y="40" width="40" height="30" fill="#86efac"/><rect x="90" y="40" width="40" height="30" fill="#86efac"/><rect x="130" y="40" width="40" height="30" fill="#fca5a5"/><rect x="170" y="40" width="40" height="30" fill="#fde047"/><rect x="210" y="40" width="40" height="30" fill="#e5e7eb"/>
+        <rect x="10" y="70" width="40" height="30" fill="#86efac"/><rect x="50" y="70" width="40" height="30" fill="#86efac"/><rect x="90" y="70" width="40" height="30" fill="#e5e7eb"/><rect x="130" y="70" width="40" height="30" fill="#e5e7eb"/><rect x="170" y="70" width="40" height="30" fill="#93c5fd"/><rect x="210" y="70" width="40" height="30" fill="#93c5fd"/>
+        <rect x="10" y="100" width="40" height="30" fill="#fde047"/><rect x="50" y="100" width="40" height="30" fill="#fde047"/><rect x="90" y="100" width="40" height="30" fill="#fca5a5"/><rect x="130" y="100" width="40" height="30" fill="#fca5a5"/><rect x="170" y="100" width="40" height="30" fill="#86efac"/><rect x="210" y="100" width="40" height="30" fill="#86efac"/>
+      </g>
+      <rect x="10" y="10" width="240" height="120" stroke="currentColor" stroke-width="2"/>
+      <line x1="270" y1="10" x2="270" y2="130" stroke-dasharray="3 3"/>
+      <text x="280" y="55" font-size="11" stroke="none" fill="currentColor">1 tile =</text>
+      <text x="280" y="72" font-size="11" stroke="none" fill="currentColor">1 pixel's</text>
+      <text x="280" y="89" font-size="11" stroke="none" fill="currentColor">colour code</text>
+    </svg>
+    <div class="viz-cap">Every little square (pixel) has its own colour, stored as a binary number.</div>
+  </div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 mini-quiz</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">ASCII gives each keyboard character a…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Colour of a pixel in an image</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Sound that is played aloud</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Binary number code</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Unicode is different from ASCII mainly because Unicode…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Only works for numbers, so it cannot show any letters at all</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Covers every language in the world, using more bits per character</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Is exactly the same as ASCII and uses just 7 bits for each character</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">The sample rate tells you…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>How loud the sound is when it plays back to us</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The colour depth of an image, in bits per pixel</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>How many measurements are taken per second</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Colour depth is…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The number of bits used to store one pixel's colour</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The number of pixels in an image, counted across and down</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The screen's physical size, measured in inches across</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">What is a bitmap image made up of?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A single sound wave that is played aloud</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A grid of coloured pixels</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A list of ASCII codes for letters</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>1.3 Storing and squeezing files</h2><div class="unit-sub">Measuring storage, working out file size, and compression</div></div>
+  </div>
+
+  <h3>Measuring data storage</h3>
+  <p>A <strong>bit</strong> is one 0 or 1. A <strong>nibble</strong> is 4 bits. A <strong>byte</strong> is 8 bits (2 nibbles). Bigger amounts are measured in <strong>kibibytes (KiB)</strong>, <strong>mebibytes (MiB)</strong>, <strong>gibibytes (GiB)</strong> and so on — and each one is exactly <strong>1024</strong> times the one before it, not 1000.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Computers count in powers of 2, so storage sizes jump in steps of 1024, not the neat 1000 we're used to from kilograms or kilometres. Always multiply/divide by 1024 for these units.</p>
+  </div>
+
+  <h3>Working out a file's size</h3>
+  <p>Rule for images: file size (bits) = <strong>resolution (pixels) × colour depth (bits)</strong>. Rule for sound: file size (bits) = <strong>sample rate × sample resolution × seconds</strong> (× 2 for stereo).</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Working out a sound file's size</div>
+    <p style="margin-top:.2rem">A 10-second, mono (1 channel) recording at 8000 Hz, 16-bit resolution.</p>
+    <div class="step"><span class="sn">1</span>8000 × 16 = 128 000 bits per second.</div>
+    <div class="step"><span class="sn">2</span>× 10 seconds = 1 280 000 bits, ÷ 8 = 160 000 bytes.</div>
+    <div class="answer-line">➜ 160 000 bytes (about 156 KiB)</div>
+  </div>
+
+  <h3>Why do we compress files?</h3>
+  <p>Big files are slow to send and take up lots of space, so we <strong>compress</strong> them — this saves storage space, uses less bandwidth, and makes files quicker to upload, download or stream.</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🔓</div><div class="tc-name">Lossless</div><div class="tc-example">You get the <strong>exact original file back</strong> when you decompress it. Nothing is lost.</div></div>
+    <div class="task-card"><div class="tc-icon">🔒</div><div class="tc-name">Lossy</div><div class="tc-example">Some data is <strong>thrown away for good</strong>, to make the file much smaller (e.g. MP3, JPEG).</div></div>
+  </div>
+
+  <h3>Run-length encoding (RLE) — a lossless trick</h3>
+  <p>RLE spots <strong>runs of the same value repeated</strong> and stores just "how many, and what" instead of writing the value out every time.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 RLE on "aaaaabbbbccddddd"</div>
+    <div class="step"><span class="sn">1</span>Original: 17 characters = 17 bytes.</div>
+    <div class="step"><span class="sn">2</span>Count each run: 5 a's, 4 b's, 2 c's, 5 d's.</div>
+    <div class="step"><span class="sn">3</span>Store as 4 pairs of (count, character) = 8 bytes.</div>
+    <div class="answer-line">➜ 17 bytes → 8 bytes (under half the size!)</div>
+  </div>
+  <div class="warn-box">⚠️ RLE only helps when there are <strong>long runs</strong> of the same thing. A string like "cdcdcdcdcd" (no repeats) barely compresses at all — sometimes it can even get bigger!</div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Instead of writing "white, white, white, white, white" you just write "5 whites". If the colours keep changing every square, that shortcut doesn't save you anything.</p>
+  </div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 mini-quiz</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">1 kibibyte (KiB) equals how many bytes?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1000</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>500</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>1024</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">1 byte is made up of how many nibbles?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>2</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>4</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>8</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">One good reason to compress a file is…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It uses less storage space and less bandwidth</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It makes the file a different colour on the screen</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It deletes the file after it has been sent</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Lossless compression means…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Some data is lost forever and cannot be got back</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The file always gets bigger when it is opened</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>You get the exact original file back</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">RLE compression works best when a file has…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>No repeated values at all in the whole file</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Long runs of the same repeated value</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Only one single character in the whole file</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="index.html">← Overview</a>
+  <a href="chapter1.html">📘 Full regular version</a>
+  <a href="chapter2_easy.html">Chapter 2 (easy) →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key words</h3>
+    <div class="term-item"><div class="term-name">Binary</div><div class="term-def">Numbers made only of 0s and 1s.</div></div>
+    <div class="term-item"><div class="term-name">Hexadecimal</div><div class="term-def">Base-16 shorthand for binary; 1 digit = 4 bits.</div></div>
+    <div class="term-item"><div class="term-name">Overflow</div><div class="term-def">When a result is too big to fit in the bits available.</div></div>
+    <div class="term-item"><div class="term-name">Logical shift</div><div class="term-def">Slides bits left/right; empty spaces filled with 0.</div></div>
+    <div class="term-item"><div class="term-name">Two's complement</div><div class="term-def">Flip every bit, add 1 — makes a number negative.</div></div>
+    <div class="term-item"><div class="term-name">ASCII / Unicode</div><div class="term-def">Codes for English text / codes for every language.</div></div>
+    <div class="term-item"><div class="term-name">Sample rate</div><div class="term-def">How many sound measurements per second.</div></div>
+    <div class="term-item"><div class="term-name">Pixel / Colour depth</div><div class="term-def">One tiny coloured square / bits used to store its colour.</div></div>
+    <div class="term-item"><div class="term-name">Nibble / Byte</div><div class="term-def">4 bits / 8 bits (2 nibbles).</div></div>
+    <div class="term-item"><div class="term-name">Lossless / Lossy</div><div class="term-def">Nothing lost / some data thrown away for good.</div></div>
+    <div class="term-item"><div class="term-name">RLE</div><div class="term-def">Stores repeats as "how many, what" instead of writing them all out.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>🍎 How to use this</h4>
+    <p>Read one topic, do its mini-quiz, then move on. Don't rush all three at once.</p>
+    <p>Always use 1024 (not 1000) for KiB/MiB/GiB, and double-check the sign whenever you work out a negative binary number.</p>
+    <p>When you're comfortable, try the full <a href="chapter1.html" style="color:#065f46;font-weight:700">regular version</a> for exam-level detail.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 1 · Data Representation · Study guide (easy version).
+  &nbsp;·&nbsp; <a href="chapter1.html">📘 Switch to the regular version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[1, 0, 2, 0, 1], total:5, score:0, done:0, feedback:[
+    "Every tiny switch inside a computer can only be on or off — that's why it uses binary (0/1).",
+    "One hex digit always stands for exactly 4 binary bits.",
+    "A logical left shift multiplies the value by 2, shifting a 0 in on the right.",
+    "Two's complement: flip every bit, then add 1.",
+    "This is overflow — the extra bit doesn't fit, so it's thrown away and the answer left behind is wrong."]},
+  2:{answers:[2, 1, 2, 0, 1], total:5, score:0, done:0, feedback:[
+    "ASCII gives each character its own binary number code.",
+    "Unicode covers every language using more bits per character, while still keeping ASCII's first 128 characters.",
+    "The sample rate is how many times per second the sound wave is measured.",
+    "Colour depth is the number of bits used to store one pixel's colour.",
+    "A bitmap image is a grid of coloured pixels, like a mosaic."]},
+  3:{answers:[2, 0, 0, 2, 1], total:5, score:0, done:0, feedback:[
+    "This syllabus uses 1 KiB = 1024 bytes, not 1000.",
+    "1 byte = 8 bits = 2 nibbles (each nibble is 4 bits).",
+    "Compressing a file uses less storage space and less bandwidth to transmit.",
+    "Lossless compression means the exact original file can always be rebuilt.",
+    "RLE saves the most space when the same value repeats over and over — no repeats means barely any saving."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

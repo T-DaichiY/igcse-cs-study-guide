@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 9 Mock Exam — Databases | IGCSE Computer Science</title>
+<link rel="stylesheet" href="style.css">
+<style>.q-text,.option-btn{white-space:pre-wrap}.set-tab.active-tab{background:#fff;color:var(--primary);}[hidden]{display:none !important}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Computer Science <span>· Mock exam · Ch 9</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science (0478) · Mock exam MCQs</div>
+  <h1>Chapter 9 Mock Exam · Databases</h1>
+  <p>Three sets of 10 exam-level multiple-choice questions on this chapter, written in the style of the real 0478 papers. Pick a set, answer every question, and read the mark-scheme style explanation after each one.</p>
+  <div class="unit-nav">
+    <a href="#setA" class="set-tab active-tab" data-set="1">Set A</a><a href="#setB" class="set-tab" data-set="2">Set B</a><a href="#setC" class="set-tab" data-set="3">Set C</a>
+    <a href="chapter9.html" class="easy-pill">📘 Back to Chapter 9</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout" style="grid-template-columns:1fr;max-width:860px">
+<main>
+<div class="quiz-section mock-set" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Mock set A — 10 questions</h2><div class="quiz-score" id="score1">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">In a database table, what is a record?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>One column, holding a single kind of data for every item in the table</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A unique value that is used to tell the rows of a table apart</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>One row, holding all the data about a single item</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The heading that names the type of data stored in a column</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is the purpose of a primary key field in a table?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To arrange the records into alphabetical order automatically</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To make sure every field in the table has the correct data type</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>To allow the same value to be stored in several records</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>To identify each record uniquely</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A vet's table has a field that stores whether each pet has been vaccinated (Yes or No). Which data type is most appropriate?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Boolean (true or false)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Integer (whole number)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Real (decimal number)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Date/Time (day and time)</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">State the output of this query.
+Table PET - fields: PetID | Name | Species | Age | Weight. Records: 1, Milo, Cat, 3, 4.5 | 2, Rex, Dog, 5, 20.0 | 3, Luna, Cat, 7, 3.8 | 4, Bella, Dog, 2, 12.5 | 5, Coco, Rabbit, 4, 2.0 | 6, Max, Dog, 6, 25.0.
+SELECT Name FROM PET WHERE Species = 'Dog';</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Rex | Bella | Max | Coco</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Rex | Bella | Max</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Milo | Luna | Coco | Rex</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Dog | Dog | Dog | Dog</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">State the output of this query.
+Table PET - fields: PetID | Name | Species | Age | Weight. Records: 1, Milo, Cat, 3, 4.5 | 2, Rex, Dog, 5, 20.0 | 3, Luna, Cat, 7, 3.8 | 4, Bella, Dog, 2, 12.5 | 5, Coco, Rabbit, 4, 2.0 | 6, Max, Dog, 6, 25.0.
+SELECT COUNT(*) FROM PET WHERE Age &gt; 3;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>4</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>27</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>5</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>3</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">State the output of this query.
+Table PET - fields: PetID | Name | Species | Age | Weight. Records: 1, Milo, Cat, 3, 4.5 | 2, Rex, Dog, 5, 20.0 | 3, Luna, Cat, 7, 3.8 | 4, Bella, Dog, 2, 12.5 | 5, Coco, Rabbit, 4, 2.0 | 6, Max, Dog, 6, 25.0.
+SELECT SUM(Weight) FROM PET WHERE Species = 'Dog';</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>20.0 | 12.5 | 25.0</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>57.5</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>67.8</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>3 records</button>
+    </div><div class="q-feedback" id="fb1_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">State the output of this query.
+Table PET - fields: PetID | Name | Species | Age | Weight. Records: 1, Milo, Cat, 3, 4.5 | 2, Rex, Dog, 5, 20.0 | 3, Luna, Cat, 7, 3.8 | 4, Bella, Dog, 2, 12.5 | 5, Coco, Rabbit, 4, 2.0 | 6, Max, Dog, 6, 25.0.
+SELECT Name FROM PET WHERE Species = 'Cat' OR Age &lt; 3 ORDER BY Name;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Milo | Luna | Bella | Coco</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Milo | Luna | Bella</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Luna | Milo</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Bella | Luna | Milo</button>
+    </div><div class="q-feedback" id="fb1_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">A query must show the Name and Weight of cats that weigh more than 4 kg, with the heaviest first. Which query is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>SELECT Name, Weight FROM PET WHERE Species = 'Cat' OR Weight &gt; 4 ORDER BY Weight DESCENDING;</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>SELECT Name, Weight FROM PET WHERE Species = 'Cat' AND Weight &gt; 4 ORDER BY Weight ASC;</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>SELECT Name, Weight FROM PET WHERE Species = 'Cat' AND Weight &gt; 4 ORDER BY Weight DESC;</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>SELECT Name, Weight FROM PET WHERE Species = Cat AND Weight &gt; 4 ORDER BY Weight DESC;</button>
+    </div><div class="q-feedback" id="fb1_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">A vet's clinic stores PetID, Name, Species and Age in one table. Which field is the best primary key?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Name, because every owner chooses a different name for their pet</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Species, because it describes what kind of animal each record holds</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>PetID, as each pet is given its own different number</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Age, because it is a number and so cannot contain any repeated values</button>
+    </div><div class="q-feedback" id="fb1_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">A clinic stores each owner's phone number, such as 07700 900123, in a field. Which data type is best?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Integer, because a phone number is made up only of digits</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Real, because the number is too large for a whole number</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Boolean, because each owner either has a phone or does not</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Alphanumeric, so that the leading zero is kept</button>
+    </div><div class="q-feedback" id="fb1_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz2" data-quiz="2" hidden>
+  <div class="quiz-header"><h2>📝 Mock set B — 10 questions</h2><div class="quiz-score" id="score2">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is a field in a database table?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>One column, which stores one kind of data about every item</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>One row, which stores all of the data about a single item in the table</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The unique value used to identify one record from all the others</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The complete collection of related data that is stored in the database</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which description matches a single-table database?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The data is split into several tables that are linked by key fields</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Each field is stored in its own table and joined when needed</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Every record is stored in a separate table of its own</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>All the data is held in one table of records and fields</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A garage stores the price of each car in dollars and cents, for example 8000.50. Which data type should the Price field use?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Integer (whole number)</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Real (decimal number)</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Boolean (true or false)</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Alphanumeric (text)</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">State the output of this query.
+Table CAR - fields: Reg | Make | Colour | Seats | Price. Records: C01, Ford, Red, 5, 8000 | C02, Audi, Blue, 4, 21000 | C03, Fiat, Red, 4, 6500 | C04, Ford, Black, 7, 15500 | C05, Kia, Blue, 5, 9000 | C06, Audi, Red, 2, 32000.
+SELECT Reg FROM CAR WHERE Colour = 'Red' AND Seats &gt; 2;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>C01 | C03 | C06</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>C01 | C02 | C03</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>C01 | C03</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>C01 | C03 | C05 | C06</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">State the output of this query.
+Table CAR - fields: Reg | Make | Colour | Seats | Price. Records: C01, Ford, Red, 5, 8000 | C02, Audi, Blue, 4, 21000 | C03, Fiat, Red, 4, 6500 | C04, Ford, Black, 7, 15500 | C05, Kia, Blue, 5, 9000 | C06, Audi, Red, 2, 32000.
+SELECT COUNT(*) FROM CAR WHERE Make = 'Ford' OR Colour = 'Blue';</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>2</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>3</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>4</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>6</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">State the output of this query.
+Table CAR - fields: Reg | Make | Colour | Seats | Price. Records: C01, Ford, Red, 5, 8000 | C02, Audi, Blue, 4, 21000 | C03, Fiat, Red, 4, 6500 | C04, Ford, Black, 7, 15500 | C05, Kia, Blue, 5, 9000 | C06, Audi, Red, 2, 32000.
+SELECT SUM(Price) FROM CAR WHERE Colour = 'Red';</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>92000</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>46500</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>30000</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>3 records</button>
+    </div><div class="q-feedback" id="fb2_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">State the output of this query.
+Table CAR - fields: Reg | Make | Colour | Seats | Price. Records: C01, Ford, Red, 5, 8000 | C02, Audi, Blue, 4, 21000 | C03, Fiat, Red, 4, 6500 | C04, Ford, Black, 7, 15500 | C05, Kia, Blue, 5, 9000 | C06, Audi, Red, 2, 32000.
+SELECT Make, Price FROM CAR WHERE Seats &gt;= 5 ORDER BY Price DESC;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Ford, 15500 | Kia, 9000 | Ford, 8000</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Ford, 8000 | Kia, 9000 | Ford, 15500</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Ford, 15500 | Audi, 21000 | Kia, 9000 | Ford, 8000</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Ford, 15500 | Ford, 8000 | Kia, 9000</button>
+    </div><div class="q-feedback" id="fb2_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">Which query shows only the Make and Price of every car in the table?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>SELECT Make AND Price FROM CAR;</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>SELECT * FROM CAR WHERE Make, Price;</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>SELECT Make, Price FROM CAR WHERE Make = Price;</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>SELECT Make, Price FROM CAR;</button>
+    </div><div class="q-feedback" id="fb2_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">The CAR table has the fields Make, Colour and Price. Why is Make unsuitable as a primary key?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Text fields cannot be used as keys because they cannot be sorted</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A primary key must be the field containing the largest values</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Several cars can have the same make</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The make of a car is likely to change every time it is sold</button>
+    </div><div class="q-feedback" id="fb2_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">A garage wants to store the date each car was last serviced so that the cars can be sorted by it. Which data type is best?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Date/Time</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Alphanumeric, typed in the same way as 5 March 2026</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Integer, using only the day of the month as the value</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Boolean, so each service is stored as true or false</button>
+    </div><div class="q-feedback" id="fb2_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz3" data-quiz="3" hidden>
+  <div class="quiz-header"><h2>📝 Mock set C — 10 questions</h2><div class="quiz-score" id="score3">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">The FILM table has 5 columns and 6 rows of data (not counting the row of field names). How many fields and records does it have?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>6 fields and 5 records</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>30 fields and 1 record</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>11 fields and 30 records</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>5 fields and 6 records</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which two keywords must appear in every SQL query that retrieves data from a table?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>SELECT and WHERE</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>FROM and ORDER BY</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>SELECT and FROM</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>WHERE and ORDER BY</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">State the output of this query.
+Table FILM - fields: FilmID | Title | Genre | Length | Rating. Records: 1, Orbit, SciFi, 120, 8 | 2, Harbor, Drama, 95, 7 | 3, Comet, SciFi, 140, 9 | 4, Garden, Drama, 110, 6 | 5, Rally, Action, 100, 7 | 6, Vortex, SciFi, 90, 5.
+SELECT * FROM FILM WHERE Genre = 'Drama';</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>2, Harbor, Drama, 95, 7 | 4, Garden, Drama, 110, 6 | 5, Rally, Action, 100, 7</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>2, Harbor, Drama, 95, 7 | 4, Garden, Drama, 110, 6</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Harbor, Drama | Garden, Drama</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Harbor | Garden</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">State the output of this query.
+Table FILM - fields: FilmID | Title | Genre | Length | Rating. Records: 1, Orbit, SciFi, 120, 8 | 2, Harbor, Drama, 95, 7 | 3, Comet, SciFi, 140, 9 | 4, Garden, Drama, 110, 6 | 5, Rally, Action, 100, 7 | 6, Vortex, SciFi, 90, 5.
+SELECT COUNT(Title) FROM FILM WHERE Genre &lt;&gt; 'SciFi';</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Harbor | Garden | Rally</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>6</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">State the output of this query.
+Table FILM - fields: FilmID | Title | Genre | Length | Rating. Records: 1, Orbit, SciFi, 120, 8 | 2, Harbor, Drama, 95, 7 | 3, Comet, SciFi, 140, 9 | 4, Garden, Drama, 110, 6 | 5, Rally, Action, 100, 7 | 6, Vortex, SciFi, 90, 5.
+SELECT SUM(Length) FROM FILM WHERE Rating &gt;= 7;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>455</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>655</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>260</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>4 records</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">State the output of this query.
+Table FILM - fields: FilmID | Title | Genre | Length | Rating. Records: 1, Orbit, SciFi, 120, 8 | 2, Harbor, Drama, 95, 7 | 3, Comet, SciFi, 140, 9 | 4, Garden, Drama, 110, 6 | 5, Rally, Action, 100, 7 | 6, Vortex, SciFi, 90, 5.
+SELECT Title FROM FILM WHERE Genre = 'SciFi' ORDER BY Length;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Comet | Orbit | Vortex</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Vortex | Orbit | Comet</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Orbit | Comet | Vortex</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Vortex | Orbit</button>
+    </div><div class="q-feedback" id="fb3_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">State the output of this query.
+Table FILM - fields: FilmID | Title | Genre | Length | Rating. Records: 1, Orbit, SciFi, 120, 8 | 2, Harbor, Drama, 95, 7 | 3, Comet, SciFi, 140, 9 | 4, Garden, Drama, 110, 6 | 5, Rally, Action, 100, 7 | 6, Vortex, SciFi, 90, 5.
+SELECT Title FROM FILM WHERE Genre = 'Drama' OR Rating = 9;</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Comet</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Harbor | Garden</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Harbor | Comet | Garden | Orbit</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Harbor | Comet | Garden</button>
+    </div><div class="q-feedback" id="fb3_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">Which SQL statement is written correctly to list the title and rating of Drama films, in order of rating?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>SELECT Title, Rating FROM FILM ORDER BY Rating WHERE Genre = 'Drama';</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>SELECT Title, Rating FROM FILM WHERE Genre = Drama ORDER BY Rating;</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>SELECT Title, Rating FROM FILM WHERE Genre = 'Drama' ORDER BY Rating;</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>SELECT Title, Rating WHERE Genre = 'Drama' FROM FILM ORDER BY Rating;</button>
+    </div><div class="q-feedback" id="fb3_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">A sports club stores Name, DateOfBirth and Team for each member. Two members can share the same name and date of birth. What is the best way to provide a primary key?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Add a new field that gives each member a different number</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Combine the Name and Team fields into one field and use that as the key</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Use the DateOfBirth field and ask members to choose a different date</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Use the Team field, since each team has its own fixed name</button>
+    </div><div class="q-feedback" id="fb3_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">The FILM table stores Title, Length (whole minutes), Rating (whole number 1 to 10) and InStock (yes or no). Which list shows the best data types for these fields in order?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Integer, Integer, Integer, Boolean</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Text, Real, Real, Boolean</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Text, Integer, Integer, Text</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Text, Integer, Integer, Boolean</button>
+    </div><div class="q-feedback" id="fb3_10"></div></div>
+</div>
+
+</main>
+</div>
+
+<footer>
+  Computer Science · Chapter 9 · Mock exam MCQs (3 sets × 10)
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[2, 3, 0, 1, 0, 1, 3, 2, 2, 3], total:10, score:0, done:0, feedback:[
+    "A record is one row of the table. A field is a column, which is the tempting wrong answer.",
+    "A primary key holds a value that is different in every record so each record can be identified; it does not sort data or check types.",
+    "A field with only two possible values, Yes/No, is a Boolean. Integer would waste storage and allow invalid values.",
+    "WHERE keeps only the three records with Species Dog and SELECT outputs only the Name field.",
+    "COUNT returns the number of records meeting the condition (ages 5, 7, 4 and 6 = 4 records); 27 is the total of all ages, which is what SUM would give.",
+    "SUM adds the Weight values of the three dogs: 20.0 + 12.5 + 25.0 = 57.5. 67.8 would include the non-dogs.",
+    "OR accepts either condition (Milo and Luna are cats, Bella is under 3) and ORDER BY Name sorts alphabetically; Milo, Luna, Bella is the table order, not sorted.",
+    "Both conditions must be true so AND is needed, the text value needs quotation marks, and DESC puts the largest weight first.",
+    "Only PetID is guaranteed to be unique for each pet. Names, species and ages can all be shared by different pets.",
+    "A phone number is not used in calculations and starts with 0, so it is stored as text; an integer would drop the leading zero."]},
+  2:{answers:[0, 3, 1, 2, 2, 1, 0, 3, 2, 0], total:10, score:0, done:0, feedback:[
+    "A field is a column such as Price. A row is a record, which is the tempting wrong answer.",
+    "A single-table (flat-file) database keeps all records and fields in just one table.",
+    "Prices with cents have a fractional part, so Real is needed; Integer would not store the cents.",
+    "AND needs both conditions: C06 is red but has only 2 seats, so it is excluded.",
+    "OR counts records that match either condition: two Fords (C01, C04) and two blue cars (C02, C05) = 4.",
+    "SUM adds the prices of the three red cars: 8000 + 6500 + 32000 = 46500. The value 3 would be the result of COUNT.",
+    "Seats >= 5 selects C01, C04 and C05 and DESC lists the highest price first. Ascending order would reverse the list.",
+    "The fields to display are listed after SELECT, separated by commas, and no WHERE is needed because every record is wanted.",
+    "A primary key must be unique in every record, and many cars share the same make, so the values would repeat.",
+    "A Date/Time field stores dates in a form that can be sorted and compared correctly."]},
+  3:{answers:[3, 2, 1, 0, 0, 1, 3, 2, 0, 3], total:10, score:0, done:0, feedback:[
+    "Columns are fields and rows are records, so 5 fields and 6 records.",
+    "Only SELECT (what to show) and FROM (which table) are mandatory; WHERE and ORDER BY are optional.",
+    "The asterisk selects every field, and WHERE keeps only the two Drama records.",
+    "<> means not equal to, so Harbor, Garden and Rally are counted. COUNT outputs a number, not the titles.",
+    "Ratings of 7 or more are Orbit, Harbor, Comet and Rally: 120 + 95 + 140 + 100 = 455. 655 is the total for every film.",
+    "ORDER BY Length sorts ascending by default: 90, 120, 140. Comet, Orbit, Vortex would be descending order.",
+    "OR returns records matching either condition: the Drama films and Comet, which is rated 9, in table order.",
+    "The clause order is SELECT, FROM, WHERE, ORDER BY, and the text value must be in quotation marks.",
+    "None of the existing fields is guaranteed to be unique, so a new field such as MemberID is added to act as the primary key.",
+    "Title is text, Length and Rating are whole numbers (integer) and a yes/no field is Boolean."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+
+document.querySelectorAll('.set-tab').forEach(function(a){a.addEventListener('click',function(e){
+  e.preventDefault();
+  document.querySelectorAll('.set-tab').forEach(function(x){x.classList.toggle('active-tab',x===a);});
+  document.querySelectorAll('.mock-set').forEach(function(s){s.hidden=(s.dataset.quiz!==a.dataset.set);});
+});});
+</script>
+</body>
+</html>

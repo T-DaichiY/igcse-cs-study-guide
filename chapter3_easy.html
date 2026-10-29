@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 — Hardware (Easy) | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Ch 3 🍎</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy active" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Easy version · take it slowly</div>
+  <h1>Chapter 3 · Hardware 🍎</h1>
+  <p>The same four topics as the regular guide, but in plainer words with everyday comparisons. Do the mini-quiz after each topic before moving on.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① The CPU, simply</a>
+    <a href="#unit2">② Getting data in and out</a>
+    <a href="#unit3">③ Where data lives</a>
+    <a href="#unit4">④ Getting online</a>
+    <a href="chapter3.html" class="easy-pill">📘 Ready for the full version?</a>
+    <a href="mock_chapter3.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>3.1 The CPU, simply</h2><div class="unit-sub">What the CPU does, how it fetches and runs instructions, and what "embedded system" means</div></div>
+  </div>
+
+  <p>The <strong>CPU (central processing unit)</strong> is the chip that actually runs your programs. It's sometimes called a <strong>microprocessor</strong>. Without it, nothing on the computer would work at all.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Don't just say the CPU is "the brain" — say what it actually does: it <strong>processes/executes instructions and data</strong>. That's the exact phrase examiners look for.</p>
+  </div>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Part of the CPU</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>Control unit (CU)</td><td>Bosses the CPU around — sends signals telling other parts what to do</td></tr>
+      <tr><td>Arithmetic and logic unit (ALU)</td><td>Does the maths (+, −) and logic (AND, OR)</td></tr>
+      <tr><td>Registers</td><td>Tiny, super-fast storage spots inside the CPU</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>How the CPU actually runs an instruction</h3>
+  <p>Every single instruction goes through three steps, over and over, thousands of times a second — this is the <strong>fetch–decode–execute cycle</strong>:</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Fetch, decode, execute</div>
+    <div class="step"><span class="sn">1</span><strong>Fetch:</strong> grab the next instruction from memory.</div>
+    <div class="step"><span class="sn">2</span><strong>Decode:</strong> work out what the instruction actually means.</div>
+    <div class="step"><span class="sn">3</span><strong>Execute:</strong> actually do it.</div>
+    <div class="answer-line">➜ Then it goes back to step 1 and fetches the next instruction — non-stop, all the time the computer is on.</div>
+  </div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>It's like reading a recipe one line at a time: read the line (fetch), work out what it means (decode), then actually do it (execute) — then move to the next line.</p>
+  </div>
+
+  <h3>What makes a CPU fast</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">⏱️</div><div class="tc-name">Clock speed</div><div class="tc-example">How many times per second the CPU "ticks". Faster clock = faster processing, but pushing it too far (overclocking) can cause overheating and crashes.</div></div>
+    <div class="task-card"><div class="tc-icon">📦</div><div class="tc-name">Cache</div><div class="tc-example">A small, super-fast storage area inside the CPU holding things it uses <strong>often</strong>, so it doesn't have to fetch them from slower memory every time.</div></div>
+    <div class="task-card"><div class="tc-icon">🧩</div><div class="tc-name">Number of cores</div><div class="tc-example">More cores can work on more things at once — but doubling the cores does NOT double the speed, because the cores have to talk to each other.</div></div>
+  </div>
+  <div class="warn-box">⚠️ Watch out: <strong>"clock" and "clock speed" are not the same thing</strong>. The clock is the actual part; clock speed is just a number describing how fast it ticks. Real students lost marks in 2025 for mixing these up.</div>
+
+  <h3>Instruction set</h3>
+  <p>A CPU can only understand a fixed, limited list of commands — this list is called the <strong>instruction set</strong>. It's written in low-level machine code, not a normal programming language like Python.</p>
+
+  <h3>Embedded systems</h3>
+  <p>An <strong>embedded system</strong> is hardware + software built to do <strong>just one job</strong> — unlike a computer, which can run all sorts of different programs.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A washing machine's controller only ever does one thing: run wash cycles. A laptop can do <em>anything</em> depending on what software you install. That's the key difference between an embedded system and a general-purpose computer.</p>
+  </div>
+  <div class="warn-box">⚠️ If asked "why isn't a computer an embedded system?", don't just say "it does more than one job" — also give a <strong>second</strong> reason, like: its hardware isn't dedicated to one task, or its software is easy to update. Giving only one reason loses marks.</div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 mini-quiz</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What does the CPU actually do?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It processes the instructions and data of a program</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It is just "the brain" and controls everything vaguely</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It only stores files, programs and photos for a long time</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Put these fetch-decode-execute steps in the right order.</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Execute → Fetch → Decode</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Fetch → Decode → Execute</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Decode → Execute → Fetch</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Cache memory inside the CPU is used to store...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Only the CPU's clock speed setting, which the user changes by hand</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Backup copies of the whole hard disk, kept safe in case it breaks</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Data and instructions used often, for very fast access</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">"Clock speed" is...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A CPU component, just like the clock itself, that sits inside the processor</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>How many cycles the clock completes per second, not a component</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The amount of RAM installed, which also decides how fast the clock ticks</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Why is a smart thermostat an embedded system but a laptop is not?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A thermostat does one dedicated job; a laptop is general-purpose and runs many programs</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Laptops don't have a CPU, so they need a thermostat to do their processing, so they use a thermostat instead</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Thermostats are always more expensive than laptops because they are so small, so people do not buy them</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>3.2 Getting data in and out</h2><div class="unit-sub">Input devices, output devices, and sensors that read the real world</div></div>
+  </div>
+
+  <p>A computer needs ways to get data <strong>in</strong> (input devices), send results <strong>out</strong> (output devices), and read the physical world around it (sensors).</p>
+
+  <h3>Input devices</h3>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">📊</div><div class="tc-name">Barcode / QR scanner</div><div class="tc-example">Reads dark/light patterns with a laser or camera — fast, and no need to remember prices</div></div>
+    <div class="task-card"><div class="tc-icon">📷</div><div class="tc-name">Digital camera</div><div class="tc-example">Light hits a sensor chip and gets turned into a digital picture</div></div>
+    <div class="task-card"><div class="tc-icon">⌨️</div><div class="tc-name">Keyboard</div><div class="tc-example">Detects which key you pressed and looks up its character code</div></div>
+    <div class="task-card"><div class="tc-icon">🖱️</div><div class="tc-name">Optical mouse</div><div class="tc-example">A tiny camera and LED track how the mouse moves — no moving parts, so it's reliable</div></div>
+  </div>
+  <div class="warn-box">⚠️ A digital camera is an <strong>input</strong> device (it captures new data) — not a storage device, even though it can also hold photos. Lots of real students got this wrong in 2025!</div>
+
+  <h3>Output devices</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Device</th><th>Best used for</th></tr></thead>
+    <tbody>
+      <tr><td>Inkjet printer</td><td>A few good-quality colour photos</td></tr>
+      <tr><td>Laser printer</td><td>A big batch of documents, fast and cheap per page</td></tr>
+      <tr><td>3D printer</td><td>Building a solid object, layer by layer</td></tr>
+      <tr><td>Speaker</td><td>Turning digital sound back into something you can hear</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 Watch out</div>
+    <p>A TV labelled "LED" might actually be an <strong>LCD</strong> screen that's just lit up by LEDs from behind — a true LED screen has each pixel as its own tiny light. These are not quite the same thing!</p>
+  </div>
+
+  <h3>Sensors — the computer's senses</h3>
+  <p>Sensors measure something in the real world (temperature, light, pressure...) and send that reading to the computer. The real world is <strong>analogue</strong> (smoothly changing), so an <strong>ADC (analogue-to-digital converter)</strong> turns it into digital numbers the computer can use.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Sensor</th><th>Good example use</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature</td><td>Central heating switching on/off</td></tr>
+      <tr><td>Light</td><td>Street lights turning on at night</td></tr>
+      <tr><td>Passive infra-red</td><td>Detecting a person's body heat for a security alarm</td></tr>
+      <tr><td>Pressure</td><td>Weighing a lorry as it drives over a sensor</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Pick the sensor that matches <strong>exactly</strong> what's being measured. "Detect body heat" means passive infra-red — not just any motion or infra-red sensor. Similar-sounding sensors often measure different things (like moisture vs humidity)!</p>
+  </div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 mini-quiz</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A digital camera is best described as a...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Storage device</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Output device</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Input device</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A shop wants to print a large batch of flyers, cheaply and quickly. Which printer should they use?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3D printer</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Laser printer</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Inkjet printer</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Why do we need an ADC (analogue-to-digital converter) with a sensor?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To make the sensor cheaper to build and so that it uses less power, and so that it uses less power</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To print the reading on paper so that people can read it later, so a person can read it later on</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Real-world readings are analogue, and computers only process digital data</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which sensor should you pick to detect a person's body heat in a dark room?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Passive infra-red sensor</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Ambient light-level sensor</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Pressure plate sensor</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A TV marketed as "LED" but which needs backlighting to work is actually...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A true LED screen, with a diode for every pixel</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An input device that sends data to the computer</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An LCD screen that is LED-backlit</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>3.3 Where data lives</h2><div class="unit-sub">RAM, ROM, hard disks, SSDs, virtual memory and cloud storage — in plain terms</div></div>
+  </div>
+
+  <h3>RAM and ROM — memory the CPU can reach directly</h3>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p><strong>RAM</strong> is like a desk — you can put things on it and take them off, but when you leave (power off), the desk gets cleared. <strong>ROM</strong> is like words engraved in stone — permanent, and can't be changed, even when the power is off.</p>
+  </div>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th></th><th>RAM</th><th>ROM</th></tr></thead>
+    <tbody>
+      <tr><td>Can you change it?</td><td>Yes</td><td>No — read only</td></tr>
+      <tr><td>Loses data when off?</td><td>Yes (volatile)</td><td>No (non-volatile)</td></tr>
+      <tr><td>Used for</td><td>Programs currently running</td><td>Start-up instructions</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ If a question already says "RAM" as one example of primary storage and asks for another, don't repeat RAM! Say ROM, cache, or a register instead.</div>
+
+  <h3>Secondary storage — the permanent stuff</h3>
+  <p>RAM is too small and clears itself, so we need <strong>secondary storage</strong> to keep files, apps and the operating system permanently, even with the power off. Secondary storage is <strong>not</strong> directly reachable by the CPU (unlike RAM/ROM) and is always non-volatile.</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">💽</div><div class="tc-name">Magnetic (HDD)</div><div class="tc-example">Spinning disks with a magnetic surface, read by a moving arm — like a tiny record player</div></div>
+    <div class="task-card"><div class="tc-icon">💿</div><div class="tc-name">Optical (CD/DVD/Blu-ray)</div><div class="tc-example">A laser reads tiny bumps and flat spots on a spinning disc</div></div>
+    <div class="task-card"><div class="tc-icon">🔌</div><div class="tc-name">Solid-state (SSD/USB)</div><div class="tc-example">No moving parts at all — data stored in tiny electronic switches, so it's fast and tough</div></div>
+  </div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Don't just say a hard drive "has moving parts" — say <em>what</em> moves: spinning platters and a read-write head, organised in tracks and sectors. That's the detail examiners actually want.</p>
+  </div>
+
+  <h3>Virtual memory — borrowing space from the hard disk</h3>
+  <p>If too many programs need RAM at once, the computer could crash. <strong>Virtual memory</strong> fixes this by using part of the hard disk/SSD as "extra RAM" — data is swapped back and forth as needed.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>It's like a small desk (RAM) with a filing cabinet nearby (the hard disk). If the desk is full, you put the oldest paperwork in the cabinet to make room for what you need right now. This gives the <strong>illusion</strong> that you have way more desk space than you really do.</p>
+  </div>
+  <div class="warn-box">⚠️ Saying "secondary storage is partitioned" only earns the first, easiest mark. To get full marks, also explain that data is actively <strong>swapped</strong> between RAM and the disk as programs compete for space.</div>
+
+  <h3>Cloud storage</h3>
+  <p>Your data is stored on someone else's servers, somewhere else, and you reach it over the internet.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Cloud storage isn't magic with no hardware — it still lives on real, physical servers owned by a company. The trade-off is: you can get your files from anywhere, but you also hand over control of where and how your data is kept safe.</p>
+  </div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 mini-quiz</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which type of memory loses everything when the power is switched off?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>RAM</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>ROM</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>An SSD</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which type of secondary storage has NO moving parts?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Magnetic hard disk (HDD)</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Solid-state drive (SSD)</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>DVD</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Virtual memory works by...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Deleting old files automatically to make more room in the RAM, which gives the CPU more room</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Using part of the hard disk or SSD as extra RAM, swapping data in and out</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Making the CPU run faster by giving it a bigger cache, by giving it a bigger cache</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Secondary storage (like a hard disk) is different from RAM/ROM because...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Not directly reachable by the CPU, and always non-volatile</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It's always faster than RAM, so the CPU uses it first, before any other memory</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It always loses its data when it is powered off, like RAM, so nothing is kept</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A real drawback of cloud storage is...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It doesn't use any physical hardware at all, so it can never go wrong or run out of space, so it never goes wrong or fills up</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>You can only access it from one single device, because every file is locked to that device, because files are locked to that one device</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>You give up direct control of the physical security of your data, and need a working internet connection</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 4 ============================ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>3.4 Getting online</h2><div class="unit-sub">NIC, MAC address, IP address and routers — how a device actually connects to a network</div></div>
+  </div>
+
+  <p>To connect to the internet, a device needs a few pieces working together.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Think of it like sending a letter: the <strong>NIC</strong> is your letterbox, the <strong>MAC address</strong> is your house's permanent name plaque, the <strong>IP address</strong> is your changeable postal address, and the <strong>router</strong> is the local post office sorting where things go.</p>
+  </div>
+
+  <h3>Network interface card (NIC)</h3>
+  <p>A device needs a <strong>NIC</strong> to be able to connect to a network at all. It holds the device's <strong>MAC address</strong>, set at the factory.</p>
+
+  <h3>MAC address — your device's permanent name tag</h3>
+  <p>A MAC address is a 48-bit code, written as six pairs of hex digits, e.g. <code>00-1C-B3-4F-25-FF</code>. The first half identifies the <strong>manufacturer</strong>; the second half is the device's own <strong>serial number</strong>. It's set once, at the factory, and (usually) never changes.</p>
+
+  <h3>IP address — your device's current location online</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Type</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>Static IP</td><td>Never changes — good for servers/websites</td></tr>
+      <tr><td>Dynamic IP</td><td>Can change each time you connect — used for most home devices</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>MAC address = <strong>who</strong> the device physically is (never changes). IP address = <strong>where</strong> it is on the internet right now (can change). Don't mix these two up!</p>
+  </div>
+
+  <h3>Router — the traffic director</h3>
+  <p>A <strong>router</strong> connects your home network to the wider internet. It has three jobs: sends data to the right destination between networks, can hand out (private) IP addresses to your devices, and connects your home network (LAN) to the internet (WAN).</p>
+  <div class="warn-box">⚠️ If asked to describe a router's role, give <strong>all three</strong> jobs, not just one — exam mark schemes usually give one mark for each separate point.</div>
+</div>
+
+<!-- QUIZ 4 -->
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 mini-quiz</h2><div class="quiz-score" id="score4">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Why does a device need a NIC?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To connect to a network</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To store files for a long time</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>To speed up the CPU when it is busy</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A MAC address is best described as...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A changeable address that shows where you are on the internet right now</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A password for logging onto Wi-Fi</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A permanent hardware "name tag" set at the factory</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A website's server needs an address that never changes. It should use...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A dynamic IP address</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A static IP address</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Its MAC address instead of an IP address</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">What does a router do?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Only stores backup copies of your files so that they can be restored if you lose them, which you can restore later on</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Sends data between networks, can give out IP addresses, and links your home network to the internet</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Only converts sound into digital data, so that you can make calls across the internet, which is sent across the internet</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which pair is correctly matched?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>MAC address = where it is on the internet; IP address = who the device is</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>They are exactly the same thing</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>MAC address = who the device is; IP address = where it is on the internet</button>
+    </div><div class="q-feedback" id="fb4_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter2_easy.html">← Chapter 2 (easy)</a>
+  <a href="chapter3.html">📘 Full regular version</a>
+  <a href="chapter4_easy.html">Chapter 4 (easy) →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key words</h3>
+    <div class="term-item"><div class="term-name">CPU</div><div class="term-def">The chip that processes/executes all instructions and data.</div></div>
+    <div class="term-item"><div class="term-name">Fetch-decode-execute</div><div class="term-def">The cycle every instruction goes through: get it, work it out, do it.</div></div>
+    <div class="term-item"><div class="term-name">Cache</div><div class="term-def">Super-fast memory inside the CPU for frequently-used data.</div></div>
+    <div class="term-item"><div class="term-name">Embedded system</div><div class="term-def">Hardware + software built for just one dedicated job.</div></div>
+    <div class="term-item"><div class="term-name">Sensor</div><div class="term-def">Measures something in the real world (light, heat, pressure...).</div></div>
+    <div class="term-item"><div class="term-name">RAM / ROM</div><div class="term-def">Changeable, temporary memory / permanent, read-only memory.</div></div>
+    <div class="term-item"><div class="term-name">Secondary storage</div><div class="term-def">Permanent storage the CPU can't reach directly (HDD/SSD/DVD).</div></div>
+    <div class="term-item"><div class="term-name">Virtual memory</div><div class="term-def">Using part of the hard disk as "extra RAM" when RAM is full.</div></div>
+    <div class="term-item"><div class="term-name">MAC address</div><div class="term-def">A device's permanent, factory-set hardware address.</div></div>
+    <div class="term-item"><div class="term-name">IP address</div><div class="term-def">A device's current address on the internet — static or dynamic.</div></div>
+    <div class="term-item"><div class="term-name">Router</div><div class="term-def">Connects your home network to the internet and directs data.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>🍎 How to use this</h4>
+    <p>Read one topic, do its mini-quiz, then move on. Don't rush all four at once.</p>
+    <p>When you're comfortable, try the full <a href="chapter3.html" style="color:#065f46;font-weight:700">regular version</a> for exam-level detail.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 3 · Hardware (easy version)
+  &nbsp;·&nbsp; <a href="chapter3.html">📘 Switch to the regular version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[0, 1, 2, 1, 0], total:5, score:0, done:0, feedback:[
+    "The CPU processes/executes instructions and data — that's the exact technical phrase to use, not just \"the brain\".",
+    "The order is always Fetch, then Decode, then Execute.",
+    "Cache stores frequently-used data and instructions so the CPU can access them very fast.",
+    "Clock speed measures how fast the clock ticks — it is not a physical component itself.",
+    "A smart thermostat only does one dedicated job, while a laptop is general-purpose and can run all kinds of different programs."]},
+  2:{answers:[2, 1, 2, 0, 2], total:5, score:0, done:0, feedback:[
+    "A digital camera captures new data from the real world, which makes it an input device.",
+    "An inkjet printer is best for small-batch, good-quality colour prints; a laser printer suits large, fast, cheap batches.",
+    "Real-world data is analogue, but computers can only work with digital data, so an ADC is needed to convert it.",
+    "A passive infra-red sensor detects heat radiation given off by a warm object, like a person.",
+    "Many \"LED\" TVs are really LCD screens simply lit up by LEDs from behind, not true LED screens."]},
+  3:{answers:[0, 1, 1, 0, 2], total:5, score:0, done:0, feedback:[
+    "RAM is volatile, so it loses everything the moment the power is switched off. ROM and SSDs keep their data.",
+    "An SSD has no moving parts at all — data is stored electronically, unlike a spinning HDD or DVD.",
+    "Virtual memory uses part of the hard disk/SSD as extra RAM, swapping data in and out as programs need it.",
+    "Secondary storage isn't directly reachable by the CPU and is always non-volatile, unlike RAM (which is volatile) or ROM.",
+    "Cloud storage still relies on real, physical servers — the real trade-off is losing direct control of your data's physical security and needing an internet connection."]},
+  4:{answers:[0, 2, 1, 1, 2], total:5, score:0, done:0, feedback:[
+    "A NIC is needed to let a device connect to a network, such as the internet.",
+    "A MAC address is a permanent hardware address set at the factory, unlike an IP address which can change.",
+    "A static IP address never changes, which is exactly what a website server needs so it can always be found.",
+    "A router does three things together: routes data between networks, can assign IP addresses, and connects your home network to the internet.",
+    "MAC address identifies who the device physically is; IP address identifies where it currently is on the internet."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1 Mock Exam — Data Representation | IGCSE Computer Science</title>
+<link rel="stylesheet" href="style.css">
+<style>.q-text,.option-btn{white-space:pre-wrap}.set-tab.active-tab{background:#fff;color:var(--primary);}[hidden]{display:none !important}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Computer Science <span>· Mock exam · Ch 1</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science (0478) · Mock exam MCQs</div>
+  <h1>Chapter 1 Mock Exam · Data Representation</h1>
+  <p>Three sets of 10 exam-level multiple-choice questions on this chapter, written in the style of the real 0478 papers. Pick a set, answer every question, and read the mark-scheme style explanation after each one.</p>
+  <div class="unit-nav">
+    <a href="#setA" class="set-tab active-tab" data-set="1">Set A</a><a href="#setB" class="set-tab" data-set="2">Set B</a><a href="#setC" class="set-tab" data-set="3">Set C</a>
+    <a href="chapter1.html" class="easy-pill">📘 Back to Chapter 1</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout" style="grid-template-columns:1fr;max-width:860px">
+<main>
+<div class="quiz-section mock-set" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Mock set A — 10 questions</h2><div class="quiz-score" id="score1">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which statement explains why computers use binary to represent all forms of data?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Binary needs fewer digits than denary, so every value takes less memory to store</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Electronic components such as transistors have two states, which map onto 1 and 0</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Logic gates can only process characters that have first been converted into hexadecimal</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Binary is a base 10 system, which matches the way that people count values</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is the denary value of the 8-bit binary integer 10110110?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>182</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>183</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>174</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>218</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A programmer views a memory dump showing the values 3F 7A C0. Why is hexadecimal used instead of binary?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Hexadecimal values need less storage in memory than the same values in binary, so the dump is smaller</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Computers execute hexadecimal directly, so no conversion to binary is needed when the program runs</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Each hex digit represents four bits, so values are shorter and easier to read without error</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Hexadecimal uses only the digits 0 and 1, which removes the chance of a person mistyping a value</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Two positive 8-bit binary integers are added: 00101101 + 01011011. What is the 8-bit result?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>10001001</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>10000110</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>10011000</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>10001000</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A logical left shift of two places is performed on the 8-bit binary integer 00010110. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The result is 01011000, so the value has been multiplied by 4</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The result is 01011000, so the value has been multiplied by 2 for each place shifted twice over</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The result is 00000101, so the value has been divided by 4 as the bits move along</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The result is 00101100, so the value has been multiplied by 2 as only one bit moves</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">What is -45 represented as an 8-bit two's complement integer?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>10101101</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>11010010</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>11010011</button>
+      <button class="option-btn" data-quiz="1" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>11010100</button>
+    </div><div class="q-feedback" id="fb1_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">In ASCII the capital letter 'B' is stored as the 7-bit code 1000010 (denary 66). What is the code for 'E'?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1000100</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>1000101</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>1000110</button>
+      <button class="option-btn" data-quiz="1" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>1001010</button>
+    </div><div class="q-feedback" id="fb1_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">A photographer reduces the colour depth of a picture from 24 bits to 8 bits without changing its resolution. What is the effect?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The picture has fewer pixels so it appears smaller, and the file is half of the size it was</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The picture shows the same colours but with less detail, and the file is one eighth of the size</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Fewer colours can be shown but the file size stays the same because the pixels are unchanged</button>
+      <button class="option-btn" data-quiz="1" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Fewer colours can be shown and the file is one third of the size</button>
+    </div><div class="q-feedback" id="fb1_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">A mono sound is sampled at 16000 Hz with a sample resolution of 16 bits for 64 seconds. What is the uncompressed file size?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>16000 KiB</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>2048 KiB</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>250 KiB</button>
+      <button class="option-btn" data-quiz="1" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2000 KiB</button>
+    </div><div class="q-feedback" id="fb1_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">A hospital stores X-ray images that doctors may need to examine in exact detail. Which compression method is most suitable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Lossless, because the original file can be fully restored</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Lossy, because removing detail the eye cannot notice makes the file much smaller to store</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Lossy, because the original data can be rebuilt exactly from the stored compressed file</button>
+      <button class="option-btn" data-quiz="1" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Lossless, because it permanently deletes repeated data to give the smallest possible file</button>
+    </div><div class="q-feedback" id="fb1_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz2" data-quiz="2" hidden>
+  <div class="quiz-header"><h2>📝 Mock set B — 10 questions</h2><div class="quiz-score" id="score2">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">How many mebibytes (MiB) are there in 3 gibibytes (GiB)?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>3072</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>3000</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3145728</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>1536</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is the denary integer 150 as an 8-bit binary number?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>10010101</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>10100110</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>10010110</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>01101001</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which statement correctly identifies a use of hexadecimal and the reason for it?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Web page colours are written in hexadecimal because hexadecimal pixel data uses fewer bits than binary</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>IPv4 addresses are written in hexadecimal because routers can only compare hexadecimal values</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Error codes are shown in hexadecimal because computers cannot store binary values in their memory</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A MAC address is written as hex pairs because this is a compact, readable form of the binary</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">The 8-bit binary integers 11001000 and 01100100 are added in an 8-bit register. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The sum, 300, is stored correctly because the register adds a ninth bit when it is needed</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The sum, 300, is greater than 255 so an overflow error occurs</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The sum, 156, is stored correctly because the two values are each less than 255</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The sum, 300, is greater than 128 so an overflow error occurs in the sign bit</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A logical right shift of three places is performed on 10110100. What is the result?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>00010110</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>11110110</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>10100000</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>00010100</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">An 8-bit two's complement integer is 11100110. What is its denary value?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>-102</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>230</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>-26</button>
+      <button class="option-btn" data-quiz="2" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>-25</button>
+    </div><div class="q-feedback" id="fb2_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">A character set uses 7 bits for each character. What is the maximum number of different characters it can represent?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>127</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>256</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>49</button>
+      <button class="option-btn" data-quiz="2" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>128</button>
+    </div><div class="q-feedback" id="fb2_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">A sound is re-recorded for the same length of time. The sample rate is doubled from 22 kHz to 44 kHz and the sample resolution is unchanged. What is the effect?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The wave is measured with twice as many bits each time, so the file size doubles and the sound is deeper</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The wave is measured twice as often, so the recording is more accurate and the file size doubles</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The wave is measured twice as often, so the recording is more accurate but the file stays the same size</button>
+      <button class="option-btn" data-quiz="2" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The wave is measured twice as often, so the file size doubles but the accuracy of the recording is unchanged</button>
+    </div><div class="q-feedback" id="fb2_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">An uncompressed image is 1024 pixels wide and 768 pixels high with a colour depth of 24 bits. What is its file size?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>2.25 MiB</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>0.75 MiB</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>18 MiB</button>
+      <button class="option-btn" data-quiz="2" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2.36 MiB</button>
+    </div><div class="q-feedback" id="fb2_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">A row of pixels is stored using run-length encoding as W4B2W3, where each letter is a colour followed by the number of consecutive pixels. What is the original row?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>WWWWWBBWWW</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>WWWWBBBWWW</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>WWWWBBWWW</button>
+      <button class="option-btn" data-quiz="2" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>WWWBBWWWW</button>
+    </div><div class="q-feedback" id="fb2_10"></div></div>
+</div>
+<div class="quiz-section mock-set" id="quiz3" data-quiz="3" hidden>
+  <div class="quiz-header"><h2>📝 Mock set C — 10 questions</h2><div class="quiz-score" id="score3">0 / 10</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which list shows data storage units in order from smallest to largest?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>nibble, byte, mebibyte, gibibyte</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>byte, nibble, kibibyte, gibibyte</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>nibble, kibibyte, byte, mebibyte</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>byte, kibibyte, tebibyte, mebibyte</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A 16-bit register holds 0001101011110011. What is this value in hexadecimal?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1FA3</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A1F3</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>1AE3</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>1AF3</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A web designer writes a colour as #FF0000, with two hex digits for each of red, green and blue. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The red value FF is 256 in denary, the maximum for 2 digits, and green and blue are 0</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The red value FF is 255 in denary, the maximum for 2 digits, and green and blue are 0</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The red value FF is 15 in denary, so the colour is a very dark shade of red</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The red value FF is 255 in denary, so green and blue are also at their maximum values</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which pair of 8-bit binary integers causes an overflow error when added?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>01111111 and 10000000</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>11000000 and 00111111</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>10000000 and 10000000</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>10101010 and 01010101</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A logical left shift of three places is performed on 10110101. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The result is 10101000 and the value is exactly 8 times larger because the register stores extra bits</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The result is 10110101000 and the value is 8 times larger because no bits are ever discarded</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The result is 00010110 and the value is divided by 8 because bits are removed on the right</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The result is 10101000 because the leftmost three bits are lost, so the value is not 8 times larger</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 6</div>
+    <div class="q-text">What is the range of denary values that can be stored as an 8-bit two's complement integer?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>-127 to 127</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>-128 to 128</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>-128 to 127</button>
+      <button class="option-btn" data-quiz="3" data-q="6" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>-256 to 255</button>
+    </div><div class="q-feedback" id="fb3_6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 7</div>
+    <div class="q-text">An app must store usernames written in Japanese, Thai and emojis. Which character set is most suitable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Unicode, because it supports many more characters, although each needs more bits</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>ASCII, because 7 bits per character is enough to give every Japanese and Thai character a code</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>ASCII, because it uses more bits per character and so can hold a larger range of symbols</button>
+      <button class="option-btn" data-quiz="3" data-q="7" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Unicode, because it uses fewer bits per character than ASCII and so reduces the file size</button>
+    </div><div class="q-feedback" id="fb3_7"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 8</div>
+    <div class="q-text">Which statement correctly defines sample rate and colour depth?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Sample rate is the number of bits for each sample; colour depth is the number of pixels in an image</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Sample rate is the samples taken per second; colour depth is the bits used for each pixel</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Sample rate is the bits used for each sample; colour depth is the pixels in each row of the image</button>
+      <button class="option-btn" data-quiz="3" data-q="8" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Sample rate is the number of seconds recorded; colour depth is the total number of pixels shown</button>
+    </div><div class="q-feedback" id="fb3_8"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 9</div>
+    <div class="q-text">A mono sound is sampled at 8192 Hz with a sample resolution of 16 bits and lasts 4 minutes. What is the uncompressed file size?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>30 MiB</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>0.47 MiB</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>3.93 MiB</button>
+      <button class="option-btn" data-quiz="3" data-q="9" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>3.75 MiB</button>
+    </div><div class="q-feedback" id="fb3_9"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 10</div>
+    <div class="q-text">Which statement describes how lossy compression reduces the size of a file?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It replaces repeated data with a count, so the original can be restored exactly when decompressed</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It rewrites every byte using fewer bits, so the original can be restored when the file is opened</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It permanently removes data that is less noticeable, so the original cannot be restored</button>
+      <button class="option-btn" data-quiz="3" data-q="10" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It stores a copy of the file in a second location, so the original data is kept when decompressed</button>
+    </div><div class="q-feedback" id="fb3_10"></div></div>
+</div>
+
+</main>
+</div>
+
+<footer>
+  Computer Science · Chapter 1 · Mock exam MCQs (3 sets × 10)
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[1, 0, 2, 3, 0, 2, 1, 3, 3, 0], total:10, score:0, done:0, feedback:[
+    "Digital circuits have two states (on/off), so all data must be converted to binary to be processed. Binary does not use fewer digits than denary; it uses more.",
+    "128 + 32 + 16 + 4 + 2 = 182. 183 results from wrongly counting the least significant bit.",
+    "Hexadecimal is a shorter representation of binary for humans (one digit per 4 bits). The computer still stores and processes the data in binary.",
+    "45 + 91 = 136 = 10001000. The other answers come from a wrong carry between columns.",
+    "22 becomes 88: each left shift multiplies by 2, so two shifts multiply by 4. Zeros are shifted in at the right.",
+    "45 = 00101101; invert to 11010010 and add 1 gives 11010011. 11010010 is only the inverted (one's complement) value; 10101101 is sign-and-magnitude.",
+    "E is three letters after B, so 66 + 3 = 69 = 1000101. 1000100 is 'D'.",
+    "Colour depth is bits per pixel, so 8/24 = one third of the data. Resolution (the number of pixels) is unchanged.",
+    "16000 x 16 x 64 = 16 384 000 bits = 2 048 000 bytes; divided by 1024 = 2000 KiB. 16000 KiB forgets to divide by 8.",
+    "Lossless compression keeps all data so nothing is lost. Lossy compression permanently removes data and cannot be reversed."]},
+  2:{answers:[0, 2, 3, 1, 0, 2, 3, 1, 0, 2], total:10, score:0, done:0, feedback:[
+    "1 GiB = 1024 MiB, so 3 x 1024 = 3072. Using 1000 is the denary (SI) mistake.",
+    "128 + 16 + 4 + 2 = 150. 01101001 is the inverse of the correct answer.",
+    "Hex is used for MAC addresses, colour codes and memory addresses because it is a shorter, human-friendly form of binary. It does not change how the data is stored.",
+    "200 + 100 = 300, which exceeds the largest 8-bit value of 255, so the result cannot be stored and an overflow error occurs.",
+    "Zeros enter at the left and the three least significant bits (100) are lost: 00010110. 11110110 would be an arithmetic shift that copies the sign bit.",
+    "Invert to 00011001, add 1 gives 00011010 = 26, so the value is -26. -102 comes from treating the leading 1 as a sign-and-magnitude sign bit.",
+    "2^7 = 128. This is the size of the ASCII character set; 256 would need 8 bits.",
+    "Sample rate is samples per second; more samples give a closer match to the original wave and a proportionally bigger file. Sample resolution (bits per sample) is the unchanged factor.",
+    "1024 x 768 x 24 = 18 874 368 bits = 2 359 296 bytes = 2.25 MiB (divide by 1024 twice). 18 MiB forgets to convert bits to bytes.",
+    "W4 gives four W, B2 gives two B and W3 gives three W: WWWWBBWWW. Run-length encoding is lossless, so the exact pixels are restored."]},
+  3:{answers:[0, 3, 1, 2, 3, 2, 0, 1, 3, 2], total:10, score:0, done:0, feedback:[
+    "A nibble is 4 bits, a byte is 8 bits, and each later unit is 1024 times the previous one: kibibyte, mebibyte, gibibyte, tebibyte.",
+    "Split into nibbles: 0001 = 1, 1010 = A, 1111 = F, 0011 = 3. 1FA3 swaps two digits.",
+    "FF = 15 x 16 + 15 = 255, the largest value of two hex digits, so red is at full strength with no green or blue.",
+    "128 + 128 = 256, which is greater than 255. The other pairs add up to exactly 255, which still fits in 8 bits.",
+    "Bits shifted past the end of the register are lost, so 181 does not become 1448; the result is 168. Multiplication by 2 per shift only holds if no 1s are lost.",
+    "The most significant bit has a weight of -128, so the range is -128 to +127. There is only one zero, so -127 to 127 is wrong.",
+    "Unicode allows a greater range of characters and emojis, but needs more bits per character than ASCII. ASCII only has 128 codes.",
+    "Sample rate = samples per second (Hz). Colour depth = bits per pixel. Sample resolution and image resolution are the other two terms often confused with them.",
+    "8192 x 16 x 240 s = 31 457 280 bits = 3 932 160 bytes = 3.75 MiB when divided by 1024 twice. 3.93 uses 1 000 000 instead of 1024 x 1024.",
+    "Lossy compression discards some data permanently. Replacing repeats with counts describes run-length encoding, which is lossless."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+
+document.querySelectorAll('.set-tab').forEach(function(a){a.addEventListener('click',function(e){
+  e.preventDefault();
+  document.querySelectorAll('.set-tab').forEach(function(x){x.classList.toggle('active-tab',x===a);});
+  document.querySelectorAll('.mock-set').forEach(function(s){s.hidden=(s.dataset.quiz!==a.dataset.set);});
+});});
+</script>
+</body>
+</html>

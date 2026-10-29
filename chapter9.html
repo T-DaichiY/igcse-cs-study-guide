@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 9 — Databases | G10 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G10 Computer Science <span>· Ch 9</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE CS 0478 · Databases</div>
+  <h1>Chapter 9 · Databases</h1>
+  <p>At IGCSE you only study the single-table database. Four things are examined: how a table is built from fields and records, choosing the right data type for each field, picking a primary key, and reading, completing and predicting the output of SQL queries. SQL is the part that carries the most marks — and the part where the most marks are thrown away.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Tables, records & fields</a>
+    <a href="#unit2">② Data types & primary keys</a>
+    <a href="#unit3">③ SQL</a>
+    <a href="#unit4">④ Exam question & table design</a>
+    <a href="chapter9_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter9.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============ UNIT 1 ============ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>9.1.1 Tables, records & fields</h2><div class="unit-sub">what a database is</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Table, records and fields</div>
+    <svg viewBox="0 0 560 150" role="img" aria-label="Database table with a record and a field highlighted" style="width:100%;max-width:560px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="20" y="24" width="110" height="30" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="75.0" y="43.025" font-size="11.5" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >StudentID 🔑</text><rect x="130" y="24" width="110" height="30" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="185.0" y="43.025" font-size="11.5" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Name</text><rect x="240" y="24" width="110" height="30" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="295.0" y="43.025" font-size="11.5" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Year</text><rect x="20" y="54" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="75.0" y="73.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >S01</text><rect x="130" y="54" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="185.0" y="73.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >Ana</text><rect x="240" y="54" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="295.0" y="73.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >10</text><rect x="20" y="84" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="75.0" y="103.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >S02</text><rect x="130" y="84" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="185.0" y="103.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >Raj</text><rect x="240" y="84" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="295.0" y="103.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >10</text><rect x="20" y="114" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="75.0" y="133.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >S03</text><rect x="130" y="114" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="185.0" y="133.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >Mei</text><rect x="240" y="114" width="110" height="30" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="295.0" y="133.2" font-size="12" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >11</text><text x="75" y="14" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >field names →</text><rect x="20" y="84" width="330" height="30" rx="4" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 3"/><text x="440" y="103" font-size="11" text-anchor="start" font-weight="700" fill="#dc2626" stroke="none" >← one record (row)</text><rect x="20" y="24" width="110" height="96" rx="4" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="5 3"/><text x="75" y="140" font-size="11" text-anchor="middle" font-weight="700" fill="#059669" stroke="none" >one field (column)</text></svg>
+    <div class="viz-cap">The primary key (🔑) uniquely identifies each record.</div>
+  </div>
+<h3>9.1.1 What a Database Is, and Why We Use One</h3>
+
+<p>A <strong>database</strong> is a structured collection of data that lets people extract information in a way that meets their needs. A <strong>single-table database</strong> contains only one table; relational (multi-table) databases are A Level.</p>
+<div class="note-box"><strong>💡 Exam Tip — Never Answer With One Word.</strong> <p>Three reasons to use a database, each with its <em>mechanism</em>:</p>
+<ul>
+  <li><strong>Consistency</strong> — a change or addition only has to be made once, so the data cannot disagree with itself.</li>
+  <li><strong>Shared access</strong> — the same data can be used by everyone who needs it.</li>
+  <li><strong>No duplication</strong> — data is only stored once (in relational databases).</li>
+</ul>
+<p>"Consistent" on its own scores nothing. "Consistent, <em>because an update only needs to be made in one place</em>" scores the mark.</p></div>
+<p>Databases typically store <strong>people</strong> (patients, pupils), <strong>things</strong> (cars, books) or <strong>events</strong> (bookings, race results).</p>
+
+
+<h3>9.1.1 Tables, Records and Fields</h3>
+
+<div class="code-block no-ln"><span class="cl">TABLE  =  the whole grid
+RECORD =  one ROW      (one person / thing / event)
+FIELD  =  one COLUMN   (one piece of data about it)</span></div>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Term</th><th>Definition</th><th>PATIENT example</th></tr></thead>
+  <tr><td><strong>Table</strong></td><td>A named collection of records about one type of item, person or event</td><td>The table called <code>PATIENT</code></td></tr>
+  <tr><td><strong>Record</strong></td><td>A collection of fields describing one single item, person or event</td><td>All the details of Winnie Sing</td></tr>
+  <tr><td><strong>Field</strong></td><td>One specific piece of data within a record, with a meaningful name</td><td><code>FamilyName</code></td></tr>
+</table></div>
+<div class="example-box"><div class="ex-title">📘 Worked Example — The PATIENT Table</div><div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>FirstName</th><th>FamilyName</th><th>DateOfAdmission</th><th>Consultant</th><th>WardNumber</th><th>BedNumber</th></tr></thead>
+  <tr><td>Winnie</td><td>Sing</td><td>12/10/2022</td><td>Mr Smith</td><td>6</td><td>8</td></tr>
+  <tr><td>Steve</td><td>Chow</td><td>23/10/2022</td><td>Miss Abebe</td><td>6</td><td>3</td></tr>
+  <tr><td>Chin</td><td>Wee</td><td>30/10/2022</td><td>Mr Jones</td><td>7</td><td>1</td></tr>
+</table></div>
+<p>Six fields, three records shown. The <strong>number of records varies</strong> (records are added and deleted); the <strong>number of fields is fixed</strong>, so every record has the same fields.</p></div>
+<div class="note-box"><strong>💡 Field-Naming Rule.</strong> <p>Field names are a <strong>single word with no spaces</strong>, written in CamelCase to stay readable: <code>BedNumber</code>, not "Bed Number" or "bed number".</p></div>
+
+
+<h3>9.1.1 Validation Inside a Database</h3>
+
+<p>Validation is an <strong>automated check by software</strong> that entered data is reasonable or within allowed limits. It does <em>not</em> check the data is actually correct — that is verification's job (Chapter 7).</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Provided automatically by the software</th><th>Must be set up by the developer</th></tr></thead>
+  <tr><td>A <code>Date/Time</code> field will only accept a valid date</td><td>A range check on <code>WardNumber</code> to allow only 1–10</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — "The Data Type Is the Validation".</strong> <p>Choosing <code>integer</code> is <strong>not</strong> validation. A data type restricts the <em>kind</em> of value (whole numbers only); it does nothing about <em>range</em> or <em>format</em>. A <code>WardNumber</code> field typed as integer will happily accept <strong>999</strong> until you add a separate range-check rule of 1 to 10.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — what a database is</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which definition of a database is the one the syllabus expects?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A structured collection of data for extracting information</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Any file that stores numbers and text, however it is arranged</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A spreadsheet with more than one sheet of linked figures</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A program that sorts all of your data into order</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which statement about the size of a database table is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Both fields and records are fixed in number</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The number of records varies; fields are fixed</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The number of fields varies; records are fixed</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Both fields and records can vary freely</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A table storing details of hotel bookings is storing data about...</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>People</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Things</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Events</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Fields</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which validation check does the database software provide automatically?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A range check on a ward number field only</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A format check on a hospital number field</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A presence check on a gender field only</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A valid-date check on a Date/Time field</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A Gender field stores only the single letter M or F. Which data type fits best?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Character</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Boolean</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Text/alphanumeric</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Integer</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 2 ============ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>9.1.2–9.1.3 Data types & primary keys</h2><div class="unit-sub">types and keys</div></div>
+  </div>
+
+<h3>9.1.2 The Six Basic Data Types</h3>
+
+<p>Every field needs a data type. It decides how the value is stored and displayed, and what operations can be performed on it. These six are the exact syllabus terms — learn them, and their Access equivalents.</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Syllabus type</th><th>Holds</th><th>Example field</th><th>In Access</th></tr></thead>
+  <tr><td><strong>text/alphanumeric</strong></td><td>A number of characters: letters, digits, symbols</td><td><code>FamilyName</code>, <code>Address</code></td><td>short/long text</td></tr>
+  <tr><td><strong>character</strong></td><td>A single character only</td><td><code>Gender</code> (M/F)</td><td>short text, size 1</td></tr>
+  <tr><td><strong>Boolean</strong></td><td>One of two values: True/False, 1/0, Yes/No</td><td><code>Subway</code></td><td>Yes/No</td></tr>
+  <tr><td><strong>integer</strong></td><td>A whole number</td><td><code>WardNumber</code>, <code>Population</code></td><td>number, 0 d.p.</td></tr>
+  <tr><td><strong>real</strong></td><td>A decimal number</td><td><code>AverageIncome</code>, price</td><td>number, decimal</td></tr>
+  <tr><td><strong>date/time</strong></td><td>A date and/or a time</td><td><code>DateOfAdmission</code></td><td>Date/Time</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — character vs text.</strong> <p><code>character</code> holds <strong>exactly one</strong> character; <code>text/alphanumeric</code> holds a string of one or more. If a field could <em>ever</em> need more than one character, character is wrong — even if every value entered so far happens to be a single letter.</p></div>
+<div class="note-box"><strong>💡 Exam Tip — Always Give a Reason.</strong> <p>Data-type questions carry reason marks. Write "<strong>Boolean, because Subway can only ever be one of two states</strong>", never just "Boolean". The deciding factor is <strong>what operations the value must support</strong>, not what it looks like — a numeric-looking ID code can be text if you never do arithmetic on it.</p></div>
+
+
+<h3>9.1.2 Real Exam Question — June 2025 Paper 22 Q9(a)</h3>
+
+<div class="example-box"><div class="ex-title">📘 Worked Example — CapitalCity</div><p>Table <code>CapitalCity</code> has fields: <code>Identification</code> (unique identifier), <code>Name</code>, <code>Country</code>, <code>Continent</code>, <code>Population</code>, <code>Founded</code> (year), <code>AverageIncome</code> ($, 2 d.p.), <code>Subway</code> (has one or not). Give one field for each data type. <strong>[2 marks]</strong></p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Data type</th><th>Mark scheme answer</th><th>Why</th></tr></thead>
+  <tr><td>Boolean</td><td><code>Subway</code></td><td>Only two possible states</td></tr>
+  <tr><td>integer</td><td><code>Population</code> // <code>Founded</code> // <code>Identification</code></td><td>Whole numbers, no fractions</td></tr>
+  <tr><td>real</td><td><code>AverageIncome</code></td><td>Needs decimal places (currency)</td></tr>
+  <tr><td>text</td><td><code>Name</code> // <code>Country</code> // <code>Continent</code></td><td>Strings, not used in calculations</td></tr>
+</table></div>
+<p><strong>Examiner report:</strong> "This question was generally answered well, with most candidates able to correctly identify at least two fields to match the given data types."</p></div>
+<div class="warn-box"><strong>⚠️ Spot the Trap.</strong> <p>Each field used must be <strong>different</strong> across the four answers. Reusing <code>Identification</code> for both integer and text loses a mark, even though either would be defensible on its own.</p></div>
+
+
+<h3>9.1.3 Primary Keys</h3>
+
+<p>A <strong>primary key</strong> is a field that uniquely identifies each record. There is exactly one test to apply:</p>
+<div class="code-block no-ln"><span class="cl">A field can be the primary key ONLY IF its values are NEVER repeated.</span></div>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Route</th><th>When to use it</th><th>Example</th></tr></thead>
+  <tr><td><strong>Reuse an existing field</strong></td><td>One field the table already needs is guaranteed unique</td><td><code>ISBN</code> in a BOOK table</td></tr>
+  <tr><td><strong>Add a new field</strong></td><td>No existing field is guaranteed unique</td><td>Add <code>HospitalNumber</code> to PATIENT</td></tr>
+</table></div>
+<div class="example-box"><div class="ex-title">📘 Worked Example — Adding a Key to PATIENT</div><p>None of <code>FirstName</code>, <code>FamilyName</code>, <code>DateOfAdmission</code>, <code>Consultant</code>, <code>WardNumber</code> or <code>BedNumber</code> is guaranteed unique — two patients could share a name, or be admitted by the same consultant on the same day. So:</p>
+<ul>
+  <li>Add a new field <code>HospitalNumber</code></li>
+  <li>Data type <strong>text</strong> — it has a fixed format, and is never used in calculations</li>
+  <li>Validation: exactly 8 characters, "HN" followed by 6 digits, e.g. <code>HN123456</code></li>
+</ul></div>
+<div class="warn-box"><strong>⚠️ Exam Technique — "State, With a Reason".</strong> <p>Primary-key questions are always phrased "state, <strong>with a reason</strong>". Never just name the field. Before answering "yes", actually <strong>scan the sample data for duplicates</strong> — a field that looks unique in three rows may repeat further down. If nothing is unique, say so explicitly and propose a new field rather than forcing an unsuitable one.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — types and keys</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A Subway field records whether a city has an underground railway. Which data type fits?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Character</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Text/alphanumeric</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Boolean</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Integer</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A student picks 'character' for a FamilyName field. Why is this wrong?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Names must always be stored as Boolean values</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Family names can be longer than one character</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Character fields cannot be sorted at all</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Character is only allowed for numeric codes</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What decides whether a numeric-looking ID field should be integer or text?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The number of digits it contains when printed</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Whether it appears first in the table or not</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Whether the database software used is Microsoft Access</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Whether it needs to support numeric operations</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">What is the single test for whether a field can serve as a primary key?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Its values must never be repeated</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It must be the first field in the table</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It must use the integer data type</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It must have a validation rule set</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A new HospitalNumber field has the format HN123456. Which data type is most suitable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Integer</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Real</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Text</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Boolean</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 3 ============ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>9.1.4 SQL</h2><div class="unit-sub">SELECT, FROM, WHERE</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Anatomy of an SQL query</div>
+    <svg viewBox="0 0 490 108" role="img" aria-label="SELECT FROM WHERE ORDER BY" style="width:100%;max-width:490px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="10" width="110" height="34" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="65.0" y="31.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >SELECT</text><text x="65" y="62" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >which fields</text><rect x="130" y="10" width="110" height="34" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="185.0" y="31.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >FROM</text><text x="185" y="62" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >which table</text><rect x="250" y="10" width="110" height="34" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="305.0" y="31.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >WHERE</text><text x="305" y="62" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >which records</text><rect x="370" y="10" width="110" height="34" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/><text x="425.0" y="31.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >ORDER BY</text><text x="425" y="62" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >sort order</text><text x="240" y="96" font-size="11.5" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >SELECT Name, Year FROM Students WHERE Year = 10 ORDER BY Name;</text></svg>
+    <div class="viz-cap">Text values in a WHERE condition need quotes; numbers do not.</div>
+  </div>
+<h3>9.1.4 SQL — The Commands You Need</h3>
+
+<p><strong>Structured Query Language (SQL)</strong> is the standard language for writing scripts that pull useful information out of a database. An <strong>SQL script</strong> is a list of SQL commands that perform a given task, often saved so it can be reused.</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Command</th><th>Purpose</th><th>Required?</th></tr></thead>
+  <tr><td><code>SELECT</code></td><td>Fetches the specified fields (columns); every query begins here</td><td><strong>Mandatory</strong></td></tr>
+  <tr><td><code>FROM</code></td><td>Identifies which table to use</td><td><strong>Mandatory</strong></td></tr>
+  <tr><td><code>WHERE</code></td><td>Includes only records (rows) matching a condition</td><td>Optional</td></tr>
+  <tr><td><code>ORDER BY</code></td><td>Sorts results by a column — ascending by default, <code>DESC</code> for descending</td><td>Optional</td></tr>
+  <tr><td><code>SUM</code></td><td>Returns the total of all values in a numeric field</td><td>Optional</td></tr>
+  <tr><td><code>COUNT</code></td><td>Counts the records where the field matches a condition</td><td>Optional</td></tr>
+</table></div>
+<div class="code-block no-ln"><span class="cl">SELECT Field1, Field2      ← the columns to display (or * for all)
+FROM   TableName           ← which table
+WHERE  Condition           ← which rows
+ORDER BY Field DESC;       ← sort order, then a SEMICOLON</span></div>
+
+
+<h3>9.1.4 Quoting Values in a WHERE Condition</h3>
+
+<p>The literal value in a condition must be written in a form that matches the field's data type:</p>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Field type</th><th>Written as</th><th>Quotes?</th></tr></thead>
+  <tr><td>text</td><td><code>'Mr Smith'</code></td><td><strong>Yes</strong></td></tr>
+  <tr><td>character</td><td><code>'M'</code></td><td><strong>Yes</strong></td></tr>
+  <tr><td>date/time</td><td><code>'22/11/2022'</code></td><td><strong>Yes</strong> (Access uses #hashes#)</td></tr>
+  <tr><td>Boolean</td><td><code>TRUE</code></td><td>No</td></tr>
+  <tr><td>integer</td><td><code>12</code></td><td>No</td></tr>
+  <tr><td>real</td><td><code>12.01</code></td><td>No</td></tr>
+</table></div>
+<p>Operators available: <code>=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>&lt;&gt;</code> (not equal), <code>BETWEEN</code>, <code>LIKE</code>, <code>IN</code>, <code>AND</code>, <code>OR</code>, <code>NOT</code>.</p>
+<div class="warn-box"><strong>⚠️ Common Mistake — The #1 Way Marks Are Lost.</strong> <p>Examiner report, June 2025 Paper 22 Q9(b): "A common mistake seen was candidates <strong>missing off the quotation marks</strong> around the search criteria 'Asia', which was a string." Every keyword can be right and you still drop the mark. Quote every text and date value.</p></div>
+
+
+<h3>9.1.4 Worked SQL Examples</h3>
+
+<div class="example-box"><div class="ex-title">📘 1 — Filter With WHERE</div><p>List the hospital number, first name and family name of Mr Smith's patients:</p>
+<div class="code-block no-ln"><span class="cl">SELECT HospitalNumber, FirstName, FamilyName
+FROM PATIENT
+WHERE Consultant = 'Mr Smith';</span></div></div>
+<div class="example-box"><div class="ex-title">📘 2 — Add a Sort With ORDER BY</div><p>The same list, alphabetically by family name (ascending is the default, so no keyword needed):</p>
+<div class="code-block no-ln"><span class="cl">SELECT HospitalNumber, FirstName, FamilyName
+FROM PATIENT
+WHERE Consultant = 'Mr Smith'
+ORDER BY FamilyName;</span></div></div>
+<div class="example-box"><div class="ex-title">📘 3 — SUM and COUNT</div><div class="code-block no-ln"><span class="cl">SELECT SUM(Badges) FROM CUB;
+   → one number: the total badges of all cubs
+
+SELECT COUNT(Six) FROM CUB WHERE Six = 'Red';
+   → one number: how many cubs are in the red six</span></div>
+<p><code>SUM</code> adds up values; <code>COUNT</code> counts rows. They return a single figure, not a list of records.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — SELECT, FROM, WHERE</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Primary-key exam questions almost always use which command-word pattern?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Describe, in detail</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Calculate and show working</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Complete the table shown</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>State, with a reason</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which validation rule best enforces a hospital number of the form HN123456?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A range check between 1 and 999999 inclusive</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A format check: two letters, six digits</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A presence check on the field and nothing else</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A type check for whole numbers only</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which two SQL commands are mandatory in every query?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>SELECT and WHERE</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>FROM and ORDER BY</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>WHERE and COUNT</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>SELECT and FROM</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Every complete SQL statement must end with which symbol?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A full stop</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A closing bracket</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A semicolon</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A single quotation mark</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which WHERE condition is written correctly for an integer field?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>WHERE Population > 500000</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>WHERE Population = 'large'</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>WHERE Population = #500000#</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>WHERE Population > '500000'</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 4 ============ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>9.1.4 Exam question & table design</h2><div class="unit-sub">applying it</div></div>
+  </div>
+
+<h3>9.1.4 Real Exam Question — June 2025 Paper 22 Q9(b)</h3>
+
+<div class="example-box"><div class="ex-title">📘 Worked Example — 4 Marks</div><p>"Complete the SQL statement to list only the name, country and population of all the cities in <code>CapitalCity</code> from the continent of Asia. <strong>[4]</strong>"</p>
+<div class="code-block no-ln"><span class="cl">SELECT Name, Country, Population
+FROM CapitalCity
+WHERE Continent = 'Asia';</span></div>
+<p>One mark each for: all correct fields in SELECT · correct use of FROM · correct field in WHERE (<code>Continent</code>) · correct quoted criterion (<code>'Asia'</code>).</p></div>
+<div class="note-box"><strong>💡 The Four A* Rules for SQL.</strong> <ul>
+  <li><strong>Quote</strong> every text and date literal in a WHERE condition.</li>
+  <li>List <strong>only the fields asked for</strong>, in the order requested — never <code>SELECT *</code> when specific fields are named.</li>
+  <li>Match the field name's <strong>exact spelling and capitalisation</strong> from the table definition.</li>
+  <li>When asked to give the <strong>output</strong> of a query, write the data only — <strong>no quotation marks</strong> or query punctuation in the results.</li>
+</ul></div>
+
+
+<h3>Designing a Table From a Scenario — The 5-Step Method</h3>
+
+<ul>
+  <li><strong>1.</strong> List every distinct piece of information to be stored about each person/thing/event.</li>
+  <li><strong>2.</strong> Turn each one into a field with a single-word, meaningful name (<code>DateOfBirth</code>).</li>
+  <li><strong>3.</strong> Give the table a meaningful name (<code>CUB</code>).</li>
+  <li><strong>4.</strong> Check whether any field is guaranteed unique; if not, add a primary-key field (<code>CubNumber</code>).</li>
+  <li><strong>5.</strong> Choose a data type for every field, and add the validation rules each one needs.</li>
+</ul>
+<div class="note-box"><strong>💡 Examiner's Key Message (June 2025, Paper 0478/22).</strong> <p>"Candidates who read the questions carefully before answering, then ensured that they fully answered the questions that were asked, <strong>in an appropriate context</strong>, achieved better marks than candidates who gave generic responses."</p></div>
+
+    
+
+</div>
+
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 check — applying it</h2><div class="quiz-score" id="score4">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What does the operator <> mean in an SQL condition?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Between two values</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Not equal to</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Search for a pattern</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Greater than or equal to</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Complete: list the name, country and population of Asian cities from CapitalCity. Which is fully correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>SELECT * FROM CapitalCity WHERE Continent = 'Asia';</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>SELECT Name, Country, Population FROM CapitalCities WHERE Continent = Asia;</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>SELECT Name, Country FROM CapitalCity WHERE Asia = Continent;</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>SELECT Name, Country, Population FROM CapitalCity WHERE Continent = 'Asia';</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">You are asked to give the OUTPUT of an SQL statement. Which is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Show only the data, with no query punctuation</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Include the SELECT line above the results table</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Wrap every text value in quotation marks</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>List every field in the table for context</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which SQL condition correctly finds records with a date of 22/11/2022 in standard SQL?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>WHERE DateOfAdmission = 22/11/2022</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>WHERE DateOfAdmission = TRUE OR FALSE</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>WHERE DateOfAdmission = '22/11/2022'</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>WHERE DateOfAdmission LIKE 2022</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Why is an SQL script often saved to a file?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>So the database can be deleted afterwards</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>So the same task can be reused later</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>So it converts automatically into a table</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>So the results are stored permanently</button>
+    </div><div class="q-feedback" id="fb4_5"></div></div>
+
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Database</div><div class="term-def">A structured collection of data. At IGCSE you study a single-table database.</div></div>
+    <div class="term-item"><div class="term-name">Field</div><div class="term-def">A single column of a table: one item of data about each record.</div></div>
+    <div class="term-item"><div class="term-name">Record</div><div class="term-def">A single row of a table: all the data about one item.</div></div>
+    <div class="term-item"><div class="term-name">Validation (database)</div><div class="term-def">A check that data entered in a field is sensible, e.g. range or type.</div></div>
+    <div class="term-item"><div class="term-name">Data types</div><div class="term-def">Text/alphanumeric, character, Boolean, integer, real and date/time.</div></div>
+    <div class="term-item"><div class="term-name">Primary key</div><div class="term-def">A field whose value is unique for every record and so identifies it.</div></div>
+    <div class="term-item"><div class="term-name">SQL</div><div class="term-def">Structured query language, used to query data stored in a database table.</div></div>
+    <div class="term-item"><div class="term-name">SELECT … FROM … WHERE</div><div class="term-def">SELECT chooses the fields, FROM names the table and WHERE gives the condition for records.</div></div>
+    <div class="term-item"><div class="term-name">ORDER BY</div><div class="term-def">Sorts the results in ASC (ascending) or DESC (descending) order.</div></div>
+    <div class="term-item"><div class="term-name">SUM / COUNT</div><div class="term-def">SUM adds the values in a field; COUNT gives the number of records.</div></div>
+    <div class="term-item"><div class="term-name">AND / OR</div><div class="term-def">Combine conditions in WHERE: AND needs both true, OR needs at least one true.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Use the exact command-word wording from the question.</p>
+    <p>Show working: trace tables, truth-table columns, SQL on separate lines.</p>
+    <p>Check each answer against the marks available.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G10 Computer Science · Chapter 9 Databases · Study guide (regular).
+  &nbsp;·&nbsp; <a href="chapter9_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[0, 1, 2, 3, 0], total:5, score:0, done:0, feedback:[
+    "A database is a structured collection of data that allows people to extract information in a way that meets their needs.",
+    "Records can be added and deleted so their number varies, but the number of fields is fixed, so every record has the same fields.",
+    "Databases store people, things or events — a hotel booking is an event, like a race result.",
+    "A Date/Time field is automatically checked for a valid date; range, format and presence checks must be set up by the developer.",
+    "Character holds a single character only — text/alphanumeric would be used if the field could hold more than one."]},
+  2:{answers:[2, 1, 3, 0, 2], total:5, score:0, done:0, feedback:[
+    "Boolean holds one of two values — True/False, 1/0 or Yes/No — which is exactly what 'has one or does not' needs.",
+    "Character holds exactly one character; a family name is a string of several, so text/alphanumeric is required.",
+    "The deciding factor is whether the value needs to support numeric operations, not whether it merely looks like a number.",
+    "A field is only suitable as a primary key if it must contain values that are never repeated in the table.",
+    "Text is suitable because the value has a fixed structural format including letters, and is not used in calculations."]},
+  3:{answers:[3, 1, 3, 2, 0], total:5, score:0, done:0, feedback:[
+    "The standard phrasing is 'State, with a reason, if any of the fields are suitable to use as a primary key'.",
+    "A format check enforces the pattern — exactly 8 characters, 'HN' followed by six digits.",
+    "Only SELECT and FROM are mandatory; WHERE, ORDER BY, SUM and COUNT are optional.",
+    "A semicolon marks the end of an SQL statement.",
+    "Integer and real values are written as plain numbers with no quotation marks."]},
+  4:{answers:[1, 3, 0, 2, 1], total:5, score:0, done:0, feedback:[
+    "The <> operator means 'not equal to'.",
+    "Marks go for the three named fields, correct FROM, the field Continent in WHERE, and the quoted criterion 'Asia'.",
+    "Quotation marks and other query punctuation should not appear in the output — that punctuation belongs to the query itself.",
+    "Date/time values are enclosed in single quotation marks in standard SQL; Access uses hashes instead.",
+    "An SQL script is a list of commands performing a given task, often stored in a file so it can be reused."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

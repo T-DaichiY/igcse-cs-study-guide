@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 2 — Data Transmission (Easy) | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Ch 2 🍎</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy active" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Easy version · take it slowly</div>
+  <h1>Chapter 2 · Data Transmission 🍎</h1>
+  <p>The same three topics as the regular guide, but in plainer words with everyday comparisons. Do the mini-quiz after each topic before moving on.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Sending data</a>
+    <a href="#unit2">② Spotting errors</a>
+    <a href="#unit3">③ Keeping data safe</a>
+    <a href="chapter2.html" class="easy-pill">📘 Ready for the full version?</a>
+    <a href="mock_chapter2.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>2.1 Sending data between devices</h2><div class="unit-sub">Packets, routes, one-wire vs many-wire sending, and USB</div></div>
+  </div>
+
+  <p>When you send a big file, the computer chops it into small chunks called <strong>data packets</strong> before sending it. Each packet can even take a <strong>different path</strong> to get there.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Think of moving house by putting your things into lots of small boxes instead of one giant crate. Each box (packet) can go in a different van (route) if needed, and gets a label so it can be put back in the right room (reassembled) once it arrives.</p>
+  </div>
+
+  <h3>What's inside a packet</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Part</th><th>What it holds</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Header</strong></td><td>Who it's from, who it's going to, and its number in the sequence</td></tr>
+      <tr><td><strong>Payload</strong></td><td>The actual data being sent</td></tr>
+      <tr><td><strong>Trailer</strong></td><td>A marker for "packet ends here", plus a check value (CRC) to test for errors</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 The CRC works by counting the 1s in the payload before sending, and counting them again after it arrives — if the two counts don't match, something went wrong.</div>
+
+  <h3>Packet switching — different routes, same destination</h3>
+  <p>Machines called <strong>routers</strong> pass each packet along, deciding the next step based on which paths are free right now. Because packets can take different routes, they might arrive in the <strong>wrong order</strong> — the receiving computer uses each packet's number to sort them back out.</p>
+
+  <h3>Sending in one direction, or both?</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Mode</th><th>Meaning</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Simplex</strong></td><td>One direction only</td><td>Computer → printer</td></tr>
+      <tr><td><strong>Half-duplex</strong></td><td>Both directions, but one at a time</td><td>A walkie-talkie</td></tr>
+      <tr><td><strong>Full-duplex</strong></td><td>Both directions at once</td><td>A phone call over broadband</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>One wire, or many wires?</h3>
+  <p><strong>Serial</strong> sends bits one at a time down <strong>one</strong> wire — slower, but reliable over long distances. <strong>Parallel</strong> sends several bits at once down <strong>several</strong> wires — faster, but over a long cable the bits can arrive muddled up (this is called <strong>skewing</strong>).</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Serial is like people filing through a single doorway one at a time — orderly but slow. Parallel is like everyone rushing through eight doors at once — fast, but if the doors are far apart, people can get mixed up before they regroup.</p>
+  </div>
+
+  <h3>USB — the everyday serial connector</h3>
+  <p><strong>USB</strong> is a type of serial connection. Plug something in, and the computer <strong>automatically detects it</strong> and loads the right software (driver) to talk to it.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Good things about USB</th><th>Not-so-good things about USB</th></tr></thead>
+    <tbody>
+      <tr><td>Auto-detects devices, loads drivers itself</td><td>Cable can only run 5 m before needing a hub</td></tr>
+      <tr><td>Only fits one way — hard to plug in wrong</td><td>Slower than some other connections (e.g. Ethernet)</td></tr>
+      <tr><td>Supplies its own power — no extra plug needed</td><td>Very old USB devices might not work on new computers</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>USB-C is the newer connector on most phones and laptops — it's symmetrical, so you never have to flip it over to make it fit.</p>
+  </div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 mini-quiz</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Data is broken into small chunks before being sent. What are these chunks called?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Single bytes of data</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Pixels on a screen</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Checksum codes</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Data packets</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A router's job is to…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Store all the data for ever on the router</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Decide which way a packet should travel next</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Encrypt the payload so that nobody at all can read it</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Count the pixels in an image shown on screen</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Sending bits one after another down a single wire is called…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Serial transmission</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Parallel transmission</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Packet switching</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Encryption</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which mode lets data travel both ways at exactly the same time?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Simplex</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Half-duplex</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Full-duplex</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Parallel</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">When you plug a USB device into a computer, what usually happens automatically?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The device is detected and its driver is loaded</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The computer restarts</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The file is automatically encrypted</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Nothing — you must install software manually every time</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>2.2 Spotting errors</h2><div class="unit-sub">Why mistakes happen, and how computers catch them</div></div>
+  </div>
+
+  <p>Sometimes data gets muddled on its journey — this can happen because of electrical <strong>interference</strong>, problems while packets are being routed, or bits arriving <strong>skewed</strong> (out of sync). A computer can't just guess what the data should have said, so it needs ways to check.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A human can still read "Cmabridge Uinervtisy" because our brains recognise whole words. A computer can't do that trick — it needs the data to be exactly right, or clearly flagged as wrong.</p>
+  </div>
+
+  <h3>Parity check — counting 1s</h3>
+  <p>Sender and receiver agree in advance: every byte should have an <strong>even</strong> number of 1s, or an <strong>odd</strong> number. One extra bit (the <strong>parity bit</strong>) is added to make this true. If the count is wrong when it arrives, an error is flagged.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Spotting the error</div>
+    <div class="step"><span class="sn">1</span>Byte sent (even parity agreed): 0 1011100 — that's 4 ones. Correct!</div>
+    <div class="step"><span class="sn">2</span>Byte received: 0 1001100 — that's only 3 ones. Odd, when it should be even.</div>
+    <div class="answer-line">➜ The receiver knows something went wrong.</div>
+  </div>
+  <div class="warn-box">⚠️ If exactly <strong>two</strong> bits flip by accident, the count of 1s stays the same — so parity checking misses it completely!</div>
+
+  <h3>Checksum</h3>
+  <p>Before sending a block of data, the sender does a calculation on it and attaches the answer (the checksum). The receiver redoes the same calculation — if the two answers match, nothing went wrong.</p>
+
+  <h3>Echo check</h3>
+  <p>The receiver sends the data straight back to the sender, who compares it with what they originally sent.</p>
+  <div class="warn-box">⚠️ This isn't perfect — if the two copies don't match, you can't tell whether the mistake happened going out, or coming back!</div>
+
+  <h3>Check digits — catching typing mistakes</h3>
+  <p>A <strong>check digit</strong> is a bit different: it's not about transmission at all, it's about catching mistakes when a <strong>human types</strong> a number or a scanner <strong>misreads</strong> a barcode, like ISBNs on books.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 A quick taste of the ISBN-13 rule</div>
+    <div class="step"><span class="sn">1</span>Add up digits in odd positions.</div>
+    <div class="step"><span class="sn">2</span>Add up digits in even positions and multiply by 3.</div>
+    <div class="step"><span class="sn">3</span>Add both totals, divide by 10, and use the remainder to work out the final check digit.</div>
+    <div class="answer-line">➜ You won't need to memorise this — in the exam, the steps are given to you.</div>
+  </div>
+
+  <h3>ARQ — "please send that again"</h3>
+  <p><strong>Automatic Repeat reQuest (ARQ)</strong> uses two ideas: an <strong>acknowledgement</strong> message (says "got it fine" or "that was wrong, resend") and a <strong>timeout</strong> (if no message arrives in time, resend anyway, just in case).</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>It's like texting a friend and waiting for a "seen" tick. No tick after a while? You just send it again, to be safe.</p>
+  </div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 mini-quiz</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which of these can cause a transmission error?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Choosing a strong password</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Interference on a cable</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Using an ISBN barcode</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Turning on full-duplex mode</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In a parity check, sender and receiver agree in advance on…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The colour of the data being sent over the wire</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The screen resolution of the device that receives it</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Whether a byte has an odd or even number of 1s</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The length of the USB cable used to connect it</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Parity checking can miss an error if…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Only one bit changes</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The parity bit is removed</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The byte is sent twice</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Exactly two bits change</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A check digit mainly catches mistakes made by…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A router choosing the wrong path for a packet</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An encryption key being lost on the way across</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Parallel wires being too short to carry the signal</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A person typing or a scanner misreading a code</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">In ARQ, what happens if no acknowledgement arrives before the timeout?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The data is automatically re-sent</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The message is deleted</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Nothing happens at all</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The receiver's device switches off</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 3 ============================ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>2.3 Keeping data safe</h2><div class="unit-sub">Encryption — scrambling data so only the right person can read it</div></div>
+  </div>
+
+  <p>Anything sent over the internet could be intercepted by a hacker (an <strong>eavesdropper</strong>). <strong>Encryption</strong> can't stop someone grabbing the data — but it can stop it making any sense to them.</p>
+  <div class="warn-box">⚠️ Careful with your wording: encryption doesn't make data "unreadable" — you can still see the characters. It makes the data <strong>meaningless</strong> without the right key.</div>
+
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>It's like writing a note in a made-up code. Anyone can still see the squiggles on the page — they just have no idea what it says unless they know the code.</p>
+  </div>
+
+  <h3>Plaintext and ciphertext</h3>
+  <p>The original message is <strong>plaintext</strong>. After encryption, it becomes <strong>ciphertext</strong> — meaningless without the matching decryption key.</p>
+
+  <h3>Symmetric encryption — one key for both jobs</h3>
+  <p><strong>Symmetric encryption</strong> uses the <strong>same key</strong> to lock (encrypt) and unlock (decrypt) the message.</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 A simple shift example</div>
+    <p style="margin-top:.2rem">Key <code>4291362856</code> shifts each letter forward by that many places.</p>
+    <div class="step"><span class="sn">1</span>C shifted forward 4 → G. O shifted forward 2 → Q.</div>
+    <div class="step"><span class="sn">2</span>"COMPUTER" becomes "GQVQXZGZ".</div>
+    <div class="answer-line">➜ To undo it, shift each letter back by the same amount.</div>
+  </div>
+  <div class="warn-box">⚠️ The tricky part isn't cracking the key — it's getting the <strong>same secret key</strong> safely to both people without anyone else seeing it on the way.</div>
+
+  <h3>Asymmetric encryption — two keys</h3>
+  <p><strong>Asymmetric encryption</strong> uses two different but linked keys: a <strong>public key</strong> (anyone can have it) and a <strong>private key</strong> (only the owner keeps it, and it's never sent anywhere).</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Tom sends Jane a secret document</div>
+    <div class="step"><span class="sn">1</span>Jane makes a public key and a private key.</div>
+    <div class="step"><span class="sn">2</span>Jane gives Tom her public key.</div>
+    <div class="step"><span class="sn">3</span>Tom uses it to lock (encrypt) the document and sends it.</div>
+    <div class="step"><span class="sn">4</span>Only Jane's private key can unlock (decrypt) it.</div>
+    <div class="answer-line">➜ Jane's private key never travels anywhere, so nobody can intercept it.</div>
+  </div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>It's like a padlock and key. Jane hands out open padlocks (public key) to anyone. Anyone can click one shut on a box — but only Jane's own key (private key) can open it again.</p>
+  </div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 mini-quiz</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Encryption makes data…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Physically invisible to the eye</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Impossible to intercept on the way</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Meaningless without the right key</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Smaller in file size than before</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What do we call the original, readable message before it's encrypted?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Ciphertext</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Plaintext</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A checksum</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A packet</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Symmetric encryption's biggest problem is…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Sharing the one secret key safely</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It uses two different keys instead of just one</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It cannot be used on the internet at all</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It needs a printer to work properly at all</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">In asymmetric encryption, who is allowed to see the public key?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Only the owner</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Anyone</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>No one, ever</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Only routers</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Why is asymmetric encryption thought to be safer than symmetric?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It uses a much shorter key than other methods</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It doesn't use any keys at all, so nothing is sent</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The private key never has to be sent to anyone</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It only works on USB devices and cables</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter1_easy.html">← Chapter 1 (easy)</a>
+  <a href="chapter2.html">📘 Full regular version</a>
+  <a href="chapter3_easy.html">Chapter 3 (easy) →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key words</h3>
+    <div class="term-item"><div class="term-name">Data packet</div><div class="term-def">A small chunk of data sent over a network.</div></div>
+    <div class="term-item"><div class="term-name">Router</div><div class="term-def">Decides which way a packet travels next.</div></div>
+    <div class="term-item"><div class="term-name">Simplex / Duplex</div><div class="term-def">One way / both ways (at once or taking turns).</div></div>
+    <div class="term-item"><div class="term-name">Serial / Parallel</div><div class="term-def">One wire, in order / many wires, at once.</div></div>
+    <div class="term-item"><div class="term-name">USB</div><div class="term-def">The common plug-and-play serial connector.</div></div>
+    <div class="term-item"><div class="term-name">Parity check</div><div class="term-def">Counts 1s in a byte to spot an error.</div></div>
+    <div class="term-item"><div class="term-name">Checksum</div><div class="term-def">A calculated value that's checked again after sending.</div></div>
+    <div class="term-item"><div class="term-name">Echo check</div><div class="term-def">Data is sent back to the sender to compare.</div></div>
+    <div class="term-item"><div class="term-name">Check digit</div><div class="term-def">Catches typing/scanning mistakes, e.g. in an ISBN.</div></div>
+    <div class="term-item"><div class="term-name">ARQ</div><div class="term-def">Resend the data if no "got it" message arrives in time.</div></div>
+    <div class="term-item"><div class="term-name">Plaintext / Ciphertext</div><div class="term-def">Original message / scrambled, encrypted message.</div></div>
+    <div class="term-item"><div class="term-name">Symmetric / Asymmetric</div><div class="term-def">One shared key / a public key + a private key.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>🍎 How to use this</h4>
+    <p>Read one topic, do its mini-quiz, then move on. Don't rush all three at once.</p>
+    <p>When you're comfortable, try the full <a href="chapter2.html" style="color:#065f46;font-weight:700">regular version</a> for exam-level detail.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 2 · Data Transmission (easy version).
+  &nbsp;·&nbsp; <a href="chapter2.html">📘 Switch to the regular version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[3, 1, 0, 2, 0], total:5, score:0, done:0, feedback:[
+    "Data is chopped up into data packets before being sent.",
+    "A router looks at where a packet needs to go and decides which way it should travel next.",
+    "Serial transmission sends bits one after another down a single wire.",
+    "Full-duplex allows data to flow in both directions at exactly the same time.",
+    "Plugging in a USB device usually gets it automatically detected, with its driver software loaded straight away."]},
+  2:{answers:[1, 2, 3, 3, 0], total:5, score:0, done:0, feedback:[
+    "Electrical interference on a cable can corrupt or lose data during transmission.",
+    "Sender and receiver agree in advance whether each byte should have an odd or even number of 1-bits.",
+    "If exactly two bits flip, the total count of 1s stays the same, so the error slips through unnoticed.",
+    "A check digit catches mistakes made when a person types a number or a scanner misreads a barcode.",
+    "If the timeout runs out with no acknowledgement received, the sender automatically re-sends the data, just in case."]},
+  3:{answers:[2, 1, 0, 1, 2], total:5, score:0, done:0, feedback:[
+    "Encryption turns data into something meaningless without the correct key — it doesn't hide the data or shrink it.",
+    "Plaintext is the original, readable message before it goes through encryption.",
+    "The hard part of symmetric encryption is safely getting the one shared secret key to the other person.",
+    "The public key is meant to be shared with anyone who might want to send an encrypted message.",
+    "Asymmetric encryption is safer because the private key never has to travel anywhere, so it can't be intercepted."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

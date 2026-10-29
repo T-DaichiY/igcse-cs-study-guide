@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4 — Software (Easy) | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Ch 4 🍎</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy active" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Easy version · take it slowly</div>
+  <h1>Chapter 4 · Software 🍎</h1>
+  <p>The same two topics as the regular guide, but in plainer words with everyday comparisons. Do the mini-quiz after each topic before moving on.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① The OS and its helpers</a>
+    <a href="#unit2">② Turning code into machine code</a>
+    <a href="chapter4.html" class="easy-pill">📘 Ready for the full version?</a>
+    <a href="mock_chapter4.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>4.1 System Software and Operating Systems</h2><div class="unit-sub">What runs a computer behind the scenes, and how it juggles many jobs at once</div></div>
+  </div>
+
+  <p>Software comes in two kinds. <strong>System software</strong> looks after the computer itself. <strong>Application software</strong> is what you actually use to get a task done.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Think of a restaurant. <strong>System software</strong> is the kitchen, cleaning staff and electricity — things the restaurant needs to even open. <strong>Application software</strong> is the menu — what the customer (the user) actually orders and uses.</p>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🦠</div><div class="tc-name">Anti-virus</div><div class="tc-example">Checks files against known viruses and watches for suspicious behaviour</div></div>
+    <div class="task-card"><div class="tc-icon">🧩</div><div class="tc-name">Defragmenter</div><div class="tc-example">Tidies up scattered file pieces on a hard disk so it runs faster</div></div>
+    <div class="task-card"><div class="tc-icon">💾</div><div class="tc-name">Back-up software</div><div class="tc-example">Automatically copies your files somewhere safe</div></div>
+    <div class="task-card"><div class="tc-icon">🖨️</div><div class="tc-name">Device driver</div><div class="tc-example">Lets a printer, mouse or other gadget "talk" to the computer</div></div>
+  </div>
+
+  <h3>The operating system — the computer's manager</h3>
+  <p>The <strong>operating system (OS)</strong> — like Windows or Mac OS — is the big program that runs everything else. It does nine jobs, but here are the important ones to know:</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Job</th><th>In simple terms</th></tr></thead>
+    <tbody>
+      <tr><td>Interface</td><td>Lets you talk to the computer (typing commands, or clicking icons)</td></tr>
+      <tr><td>Memory management</td><td>Shares out memory so programs don't clash with each other</td></tr>
+      <tr><td>Security</td><td>Keeps your account and data safe with passwords</td></tr>
+      <tr><td>Managing devices</td><td>Talks to printers, mice, etc. through drivers</td></tr>
+      <tr><td>File management</td><td>Lets you create, open, delete and rename files</td></tr>
+      <tr><td>Multitasking</td><td>Makes several programs seem to run "at once"</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Multitasking is like a chef cooking three dishes at once — really, they're just switching quickly between pans. The computer's single processor does the same thing, switching between programs so fast it feels simultaneous.</p>
+  </div>
+
+  <h3>Command line vs clicking icons</h3>
+  <p>A <strong>command line interface</strong> means typing instructions. A <strong>graphical user interface (GUI)</strong> means clicking icons with a mouse, or tapping a touch screen. Most people use a GUI; programmers sometimes use the command line for extra control.</p>
+
+  <h3>Starting up a computer</h3>
+  <p>An application can't just run by itself — it needs the OS, and the OS needs a program called <strong>firmware</strong> to get everything going first.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>It's like a relay race: <strong>hardware</strong> gets switched on → <strong>firmware</strong> (the BIOS) wakes it up and finds the operating system → the <strong>OS</strong> loads → your <strong>app</strong> finally runs on top of all of that.</p>
+  </div>
+  <div class="example-box">
+    <div class="ex-title">🧮 Starting up, step by step</div>
+    <div class="step"><span class="sn">1</span>You press the power button.</div>
+    <div class="step"><span class="sn">2</span>The BIOS (firmware) checks the hardware and finds where the OS is stored.</div>
+    <div class="step"><span class="sn">3</span>A small program loads the OS into memory.</div>
+    <div class="step"><span class="sn">4</span>Now apps like your browser or games can run.</div>
+    <div class="answer-line">➜ hardware → firmware → operating system → application</div>
+  </div>
+
+  <h3>Interrupts — "excuse me, computer!"</h3>
+  <p>An <strong>interrupt</strong> is a signal that tells the processor "stop what you're doing — I need attention now."</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>Imagine you're reading a book and someone knocks on the door. You put your finger in the page (save your place), answer the door (deal with the interrupt), then go back to reading exactly where you left off.</p>
+  </div>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">⌨️</div><div class="tc-name">Hardware interrupt</div><div class="tc-example">Pressing a key, moving the mouse, a printer jamming</div></div>
+    <div class="task-card"><div class="tc-icon">💻</div><div class="tc-name">Software interrupt</div><div class="tc-example">Trying to divide a number by zero, or a program error</div></div>
+  </div>
+  <div class="warn-box">⚠️ Just saying "mouse" or "keyboard" isn't enough — you need to say what <strong>happened</strong> on it, like "a key being pressed".</div>
+  <p>A <strong>buffer</strong> is a small waiting area in memory. It lets a fast computer and a slow device (like a printer) work together without the computer just sitting there waiting.</p>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 mini-quiz</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which of these is application software, not system software?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Operating system</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Device driver</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Word processor</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Anti-virus software</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Multitasking means the computer…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Switches quickly between programs so they seem to run together</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Deletes old files automatically to free up space on the disk</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Only runs one program forever and never lets you open another</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Prints documents faster by sending them straight to the printer</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What runs first when you turn a computer on?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The application (like a game you have installed)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The firmware (BIOS)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The operating system (like Windows or macOS)</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The web browser (like Chrome or Safari)</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which is a correct example of a hardware interrupt?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Just saying "keyboard" without any event</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Dividing a number by zero in a program</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Two programs using the same memory at once</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A key being pressed on the keyboard</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A buffer is best described as…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A waiting area in memory for a fast computer and slow device</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A type of virus that slows down the printer and the computer</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A part of the keyboard that holds all of the keys</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A type of operating system used only for printers</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>4.2 Languages and Translators</h2><div class="unit-sub">How the code you write becomes something the computer can actually run</div></div>
+  </div>
+
+  <p>Computers only understand <strong>machine code</strong> — plain 0s and 1s. Programmers usually don't write in that directly, so their code needs to be translated first.</p>
+
+  <h3>High-level vs low-level languages</h3>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A <strong>high-level language</strong> (like Python) reads almost like English — easy for humans, but it needs translating before the computer can run it. A <strong>low-level language</strong> (like assembly language) is written much closer to what the computer's hardware actually understands — harder for humans to read, but it can control the hardware directly and run very fast.</p>
+  </div>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>High-level language</th><th>Low-level language</th></tr></thead>
+    <tbody>
+      <tr><td>Easy to read and write</td><td>Hard to read — uses short codes (mnemonics) or raw numbers</td></tr>
+      <tr><td>Works on different types of computer</td><td>Tied to one specific type of computer/hardware</td></tr>
+      <tr><td>Quicker to write and fix</td><td>Can control hardware directly, and runs fast</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Assembly language</h3>
+  <p>Assembly language uses <strong>mnemonics</strong> — short codes like <code>LDA</code> (load), <code>ADD</code>, and <code>STO</code> (store) — instead of writing raw binary numbers. An <strong>assembler</strong> turns it into machine code.</p>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p><code>LDA First</code>, <code>ADD Second</code>, <code>STO Sum</code> is just a very low-level way of saying "add two numbers together" — the same idea as <code>Sum = First + Second</code>, just spelled out in tiny hardware-level steps.</p>
+  </div>
+
+  <h3>Compilers and interpreters</h3>
+  <p>Both turn high-level code into machine code — but in different ways.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Compiler</th><th>Interpreter</th></tr></thead>
+    <tbody>
+      <tr><td>Translates the <strong>whole</strong> program first, then it can run</td><td>Translates and runs the code <strong>one line at a time</strong></td></tr>
+      <tr><td>Makes a finished file you can run any time, without needing the compiler again</td><td>Needs to be there every single time the program runs</td></tr>
+      <tr><td>Shows you <strong>all</strong> the errors at once, in one report</td><td>Stops at the very <strong>first</strong> error it finds</td></tr>
+      <tr><td>Best for the finished program</td><td>Best while you're still writing and testing</td></tr>
+    </tbody>
+  </table></div>
+  <div class="simple-box"><div class="simple-title">🍎 In plain words</div>
+    <p>A compiler is like translating a whole book into another language before handing it over. An interpreter is like a live translator at a meeting — translating sentence by sentence, on the spot, stopping the moment something doesn't make sense.</p>
+  </div>
+
+  <h3>IDEs — a programmer's toolkit</h3>
+  <p>An <strong>IDE</strong> (Integrated Development Environment) is a program that bundles together everything a programmer needs to write and test code — e.g. PyCharm, Visual Studio.</p>
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">✍️</div><div class="tc-name">Code editor</div><div class="tc-example">A place to type and change your code</div></div>
+    <div class="task-card"><div class="tc-icon">🔎</div><div class="tc-name">Error diagnostics</div><div class="tc-example">Spots likely mistakes as you type, before you even run the program</div></div>
+    <div class="task-card"><div class="tc-icon">⌨️</div><div class="tc-name">Auto-completion</div><div class="tc-example">Suggests the rest of a word as you start typing it</div></div>
+    <div class="task-card"><div class="tc-icon">🎨</div><div class="tc-name">Prettyprint</div><div class="tc-example">Colours the code so it's easier to read</div></div>
+  </div>
+  <div class="warn-box">⚠️ Don't just say "auto-completion completes the code" — that's just repeating the name! Explain <strong>how</strong> it works: as you start typing a word, the IDE offers to finish it for you.</div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 mini-quiz</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which best describes a high-level language?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Written in raw 0s and 1s only, with no words at all in it</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only used for embedded systems like washing machines</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Easy to read, like English, and works on many computers</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Impossible to translate into machine code at all</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In assembly language, LDA is an example of a…</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Compiler</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Mnemonic</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Interrupt</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Operating system</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which translator stops at the very first error it finds?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Compiler</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Assembler</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Device driver</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Interpreter</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">You've just finished and tested your whole program, and want a fast, standalone file to share. Which translator fits best?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Interpreter</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Screensaver</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Compiler</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Defragmenter</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">What's wrong with describing auto-completion as "it completes the code"?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Auto-completion doesn't exist in real IDEs, so it is wrong</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It just repeats the feature's name, not how it works</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It's a perfect answer worth full marks from the examiner</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Auto-completion is a hardware feature, not a software one</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter3.html">← Chapter 3</a>
+  <a href="chapter4.html">📘 Full regular version</a>
+  <a href="chapter5.html">Chapter 5 →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key words</h3>
+    <div class="term-item"><div class="term-name">System software</div><div class="term-def">Software the computer itself needs to work.</div></div>
+    <div class="term-item"><div class="term-name">Application software</div><div class="term-def">Software you use to do a specific task.</div></div>
+    <div class="term-item"><div class="term-name">Operating system</div><div class="term-def">The manager program that runs everything else.</div></div>
+    <div class="term-item"><div class="term-name">Firmware / BIOS</div><div class="term-def">The program that starts the computer up and finds the OS.</div></div>
+    <div class="term-item"><div class="term-name">Interrupt</div><div class="term-def">A signal telling the processor to stop and deal with something.</div></div>
+    <div class="term-item"><div class="term-name">Buffer</div><div class="term-def">A waiting area in memory between a fast and a slow part.</div></div>
+    <div class="term-item"><div class="term-name">High-level language</div><div class="term-def">Easy-to-read code, e.g. Python.</div></div>
+    <div class="term-item"><div class="term-name">Low-level language</div><div class="term-def">Code close to the hardware, e.g. assembly.</div></div>
+    <div class="term-item"><div class="term-name">Mnemonic</div><div class="term-def">A short code like LDA or ADD.</div></div>
+    <div class="term-item"><div class="term-name">Compiler / Interpreter</div><div class="term-def">Translates all-at-once / translates line by line.</div></div>
+    <div class="term-item"><div class="term-name">IDE</div><div class="term-def">A toolkit for writing and testing programs.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>🍎 How to use this</h4>
+    <p>Read one topic, do its mini-quiz, then move on. Don't rush both at once.</p>
+    <p>When you're comfortable, try the full <a href="chapter4.html" style="color:#065f46;font-weight:700">regular version</a> for exam-level detail.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 4 · Software (easy version)
+  &nbsp;·&nbsp; <a href="chapter4.html">📘 Switch to the regular version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[2, 0, 1, 3, 0], total:5, score:0, done:0, feedback:[
+    "A word processor helps you do a task — that makes it application software.",
+    "Multitasking is the OS switching quickly between programs so they seem to run at the same time.",
+    "The firmware (BIOS) runs first — it checks the hardware and finds the operating system.",
+    "'A key being pressed' names the actual event — just saying 'keyboard' names the device, not the interrupt.",
+    "A buffer is a temporary waiting area in memory so a fast computer and a slow device can work together smoothly."]},
+  2:{answers:[2, 1, 3, 2, 1], total:5, score:0, done:0, feedback:[
+    "High-level languages are easy to read, close to English, and can run on different types of computer.",
+    "LDA is a mnemonic — a short code standing in for a machine-level instruction.",
+    "An interpreter stops as soon as it hits the first error, which is why it's great for testing as you go.",
+    "A compiler makes a finished, fast, standalone file — perfect once your program is complete.",
+    "Just restating the name doesn't explain the mechanism — a good answer says it suggests options as you start typing."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8 — Programming | G10 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G10 Computer Science <span>· Ch 8</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE CS 0478 · Programming</div>
+  <h1>Chapter 8 · Programming</h1>
+  <p>This is the biggest chapter on Paper 2 and the one that carries the long questions. It covers 8.1 Programming concepts (variables, data types, input/output, sequence, selection, iteration, totalling, string handling, operators, nesting, procedures and functions, library routines, maintainability), 8.2 Arrays, and 8.3 File handling. The examiner's Key Message for this paper is blunt: candidates who knew the syllabus pseudocode syntax answered accurately; those who improvised did not.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① Variables, types & I/O</a>
+    <a href="#unit2">② Sequence, selection & iteration</a>
+    <a href="#unit3">③ Totals, strings & operators</a>
+    <a href="#unit4">④ Nesting, subroutines & libraries</a>
+    <a href="#unit5">⑤ Arrays</a>
+    <a href="#unit6">⑥ Files & examiner messages</a>
+    <a href="chapter8_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter8.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============ UNIT 1 ============ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>8.1.1–8.1.3 Variables, types & I/O</h2><div class="unit-sub">storing data</div></div>
+  </div>
+
+<h3>8.1.1 Variables and Constants</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+  <tr><td><strong>Variable</strong></td><td>A named data store containing a value that <strong>may change</strong> during execution</td></tr>
+  <tr><td><strong>Constant</strong></td><td>A named data store containing a value that <strong>does not change</strong> during execution</td></tr>
+  <tr><td><strong>Identifier</strong></td><td>The meaningful name given to a variable, constant, array, procedure or function</td></tr>
+  <tr><td><strong>Declaration</strong></td><td>Stating a name and (usually) a data type before the identifier is used</td></tr>
+</table></div>
+<div class="code-block no-ln"><span class="cl">DECLARE FirstVar : INTEGER      ← explicit: the type is stated
+CONSTANT PI ← 3.142             ← implicit: the type comes from the value</span></div>
+<p><strong>Explicit</strong> declaration states the data type; <strong>implicit</strong> declaration lets the language work it out from the assigned value. Python has no declaration statement at all and does not distinguish constants — programmers signal them with ALL-CAPITAL names. Java uses <code>final</code>; Visual Basic uses <code>Dim</code> and <code>Const</code>.</p>
+<div class="example-box"><div class="ex-title">📘 Worked Example — Cylinder Volume</div><p>π never changes → <code>CONSTANT PI ← 3.142</code>. Radius and Length are typed in each run → <strong>variables</strong>. Volume changes with the inputs → also a <strong>variable</strong>.</p></div>
+<div class="note-box"><strong>💡 Meaningful Identifiers Rule.</strong> <p>Name things after what they store — <code>Total</code>, <code>Counter</code>, <code>Radius</code> — never single letters. This is expected in <em>every</em> pseudocode answer, not just maintainability questions.</p></div>
+
+
+<h3>8.1.2 The Five Basic Data Types</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Type</th><th>Definition</th><th>Example</th></tr></thead>
+  <tr><td><strong>INTEGER</strong></td><td>A positive or negative whole number, usable with mathematical operators</td><td><code>25</code></td></tr>
+  <tr><td><strong>REAL</strong></td><td>A positive or negative number with a fractional part</td><td><code>25.0</code></td></tr>
+  <tr><td><strong>CHAR</strong></td><td>A single character</td><td><code>'F'</code></td></tr>
+  <tr><td><strong>STRING</strong></td><td>Several characters; may be empty; letters, digits or symbols</td><td><code>"Emma"</code></td></tr>
+  <tr><td><strong>BOOLEAN</strong></td><td>Only two values: TRUE or FALSE</td><td><code>TRUE</code></td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — "25" Is Not 25.</strong> <p>A number stored as a <strong>string</strong> cannot be used in a calculation, however much it looks like a digit. It must be <strong>cast</strong> first (Python: <code>int()</code>, <code>float()</code>). All inputs default to strings, so an input needing arithmetic always needs casting.</p></div>
+<div class="example-box"><div class="ex-title">📘 Real Exam Error — June 2025 Paper 22 Q5</div><p>Line 01: <code>DECLARE Names : ARRAY[1:500] OF REAL</code> → should be <code>OF STRING</code>. A person's name is text, not a number. <strong>Write out the whole corrected line</strong> — "change REAL to STRING" does not score; the mark is for the exact corrected statement.</p></div>
+
+
+<h3>8.1.3 Input and Output</h3>
+
+<p>Every <strong>INPUT needs a prompt</strong> saying what to enter, and every <strong>OUTPUT needs a message</strong> saying what the value is. Parts of an output are joined by a separator: a comma in Python, <code>&amp;</code> in Visual Basic, <code>+</code> in Java.</p>
+<div class="code-block no-ln"><span class="cl">OUTPUT "Please enter the radius of the cylinder "
+INPUT Radius
+Volume ← Radius * Radius * Length * PI
+OUTPUT "Volume of the cylinder is ", Volume</span></div>
+<div class="warn-box"><strong>⚠️ Real Exam Error — Outputting the Wrong Thing.</strong> <p>Line 20: <code>OUTPUT "The shortest height is ", Heights</code> → outputs the <em>whole array</em>. It should be <code>Shortest</code> (or <code>Heights[Index]</code>). Always output the specific variable holding the required result.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — storing data</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What is a variable in a computer program?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A named store whose value can never be changed at all</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A command that repeats a section of code</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A file used to keep data after shutdown</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A named store whose value may change while running</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which language requires no separate declaration statement and does not distinguish constants in its syntax?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Visual Basic</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Java</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Python</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Pseudocode</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which is the correct pseudocode to declare a whole-number variable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>DECLARE FirstVar : INTEGER</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>DIM FirstVar AS INTEGER</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>INTEGER FirstVar = 0</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>CONSTANT FirstVar : INTEGER</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Where may declarations be placed in a program?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Only on the very first line of the program</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>At the start, or just before first use</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Only inside a procedure or function</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Only after all inputs have been taken</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">How many values can a Boolean variable hold?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>One only</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Two only</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Any whole number</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Up to 256</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 2 ============ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>8.1.4 Sequence, selection & iteration</h2><div class="unit-sub">control structures</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">The three loops</div>
+    <svg viewBox="0 0 520 112" role="img" aria-label="FOR, WHILE and REPEAT loops" style="width:100%;max-width:520px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="10" width="160" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="90.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >FOR … NEXT</text><rect x="10" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="90.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >count-controlled</text><text x="90" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >known number of repeats</text><rect x="180" y="10" width="160" height="36" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="260.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >WHILE … ENDWHILE</text><rect x="180" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="260.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >pre-condition</text><text x="260" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >test first — may run 0 times</text><rect x="350" y="10" width="160" height="36" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="430.0" y="32.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >REPEAT … UNTIL</text><rect x="350" y="52" width="160" height="28" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.8"/><text x="430.0" y="69.85" font-size="11" text-anchor="middle" font-weight="400" fill="#1e293b" stroke="none" >post-condition</text><text x="430" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >test last — runs at least once</text></svg>
+    
+  </div>
+<h3>8.1.4(a) Sequence — Order Changes Everything</h3>
+
+<div class="example-box"><div class="ex-title">📘 Worked Example — Two Lines Swapped, Three Wrong Answers</div><p>A REPEAT loop totals marks until the sentinel 999 is entered. In the <strong>broken</strong> version the sentinel is added to <code>Total</code> before the loop tests for it, and <code>Counter</code> increments after the test — traced with 25, 27, 23, 999 it gives Total = 1074, Average = 358, Counter = 4.</p>
+<div class="code-block no-ln"><span class="cl">Corrected:
+Counter ← -1
+REPEAT
+  Total ← Total + Mark      ← add BEFORE the next input
+  INPUT Mark
+  Counter ← Counter + 1
+UNTIL Mark = 999
+Average ← Total / Counter    ← calculated ONCE, outside the loop</span></div>
+<p>Same data now gives Total = 75, Average = 25, Counter = 3. Every individual line was already "correct" — only the <strong>order</strong> was wrong.</p></div>
+<div class="note-box"><strong>💡 Sequence-Checking Rule.</strong> <p>When debugging, check not just what a line does but <strong>where it sits</strong> relative to the condition test — before or after, inside or outside the loop. And check any variable used in a calculation was given a value earlier.</p></div>
+
+
+<h3>8.1.4(b) Selection — IF and CASE</h3>
+
+<div class="code-block no-ln"><span class="cl">IF Age > 17
+  THEN
+    OUTPUT "You are an adult"
+  ELSE
+    OUTPUT "You are a child"
+ENDIF
+
+CASE OF OpValue
+  "+" : Answer ← Number1 + Number2
+  "-" : Answer ← Number1 - Number2
+  OTHERWISE OUTPUT "Please enter a valid choice"
+ENDCASE</span></div>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th></th><th>IF … THEN … ELSE</th><th>CASE OF … ENDCASE</th></tr></thead>
+  <tr><td><strong>Use for</strong></td><td>Two routes, or comparisons and ranges</td><td>Several routes from a set of exact fixed values</td></tr>
+  <tr><td><strong>Closes with</strong></td><td><code>ENDIF</code></td><td><code>OTHERWISE</code> then <code>ENDCASE</code></td></tr>
+  <tr><td><strong>In Python</strong></td><td><code>if / else</code></td><td>No native CASE — an <code>elif</code> chain</td></tr>
+</table></div>
+
+
+<h3>8.1.4(c) Iteration — The Three Loops</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Loop type</th><th>Pseudocode</th><th>Key property</th></tr></thead>
+  <tr><td><strong>Count-controlled</strong></td><td><code>FOR … TO … NEXT</code></td><td>Runs a set, known number of times</td></tr>
+  <tr><td><strong>Pre-condition</strong></td><td><code>WHILE … DO … ENDWHILE</code></td><td>Tested <em>before</em> each pass — may run <strong>zero</strong> times</td></tr>
+  <tr><td><strong>Post-condition</strong></td><td><code>REPEAT … UNTIL</code></td><td>Tested <em>after</em> each pass — always runs <strong>at least once</strong></td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Exam Tip — Get the Exit Condition Right.</strong> <p>A <strong>WHILE</strong> loop stops as soon as its condition becomes <strong>false</strong>; a <strong>REPEAT</strong> loop stops as soon as its condition becomes <strong>true</strong>. Confusing the two gives a trace table with one row too many or too few.</p>
+<p>Examiner report on the flowchart question: candidates who "were consistent with their use of the same variables throughout achieved the highest marks" — never switch variable names partway through.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — control structures</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A user enters 25, which is stored as a string. What must happen before it is used in arithmetic?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It must be cast to an integer or real</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It must be output to the screen first</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>It must be stored inside an array</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Nothing, since it looks like a number</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In the cylinder-volume program, why are Radius and Length declared as REAL?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Because they are typed in by the user</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Because they are used in a multiplication</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Because they can have fractional values</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Because they are stored in an array</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What is casting?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Copying a variable's value into an array element</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Declaring several variables in one line</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Passing a value into a procedure as a parameter</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Converting a value from one data type to another</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A program should output the shortest height found. Which statement is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>OUTPUT "The shortest height is ", Shortest</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>OUTPUT "The shortest height is ", Heights[1]</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>OUTPUT "The shortest height is ", Counter</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>OUTPUT "The shortest height is ", Total</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">In the marks-totalling loop, why is the sentinel 999 wrongly included in the total?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Because 999 is too large for the variable to store</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Because it is added before the loop tests for it</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Because Total was never initialised</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Because the loop uses REPEAT not WHILE</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 3 ============ -->
+<div class="unit" id="unit3">
+  <div class="unit-header">
+    <div class="unit-num">③</div>
+    <div><h2>8.1.4 Totals, strings & operators</h2><div class="unit-sub">common operations</div></div>
+  </div>
+
+<h3>8.1.4(d) Totalling and Counting</h3>
+
+<div class="code-block no-ln"><span class="cl">Total ← 0                      ← initialise BEFORE the loop
+Counter ← 0
+  Total ← Total + Value        ← total on BOTH sides
+  Counter ← Counter + 1</span></div>
+<div class="warn-box"><strong>⚠️ Two Real Exam Errors — June 2025 Paper 22 Q5.</strong> <ul>
+  <li>Line 09: <code>Total ← 100</code> → should be <code>Total ← 0</code>. A total must start at zero.</li>
+  <li>Line 13: <code>Total ← Counter + Heights[Counter]</code> → should be <code>Total ← Total + Heights[Counter]</code>. The accumulator must appear on both sides — using the loop counter instead breaks the pattern entirely.</li>
+</ul>
+<p>Totalling and counting are almost always tested <strong>together</strong>, with a termination condition based on the count (e.g. "Count = 50").</p></div>
+
+
+<h3>8.1.4(e) String Handling</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Method</th><th>Does</th><th>Example</th></tr></thead>
+  <tr><td><code>LENGTH</code></td><td>Number of characters, <strong>spaces included</strong></td><td>LENGTH("Computer Science") = <strong>16</strong></td></tr>
+  <tr><td><code>SUBSTRING</code></td><td>Extracts part of a string</td><td>SUBSTRING("Computer Science", 10, 7) = "Science"</td></tr>
+  <tr><td><code>UCASE</code></td><td>Converts to uppercase</td><td>"COMPUTER SCIENCE"</td></tr>
+  <tr><td><code>LCASE</code></td><td>Converts to lowercase</td><td>"computer science"</td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — Where Position 1 Is.</strong> <p>Pseudocode strings start at position <strong>1</strong>. Python, Visual Basic and Java all start at <strong>0</strong>. A substring correct in pseudocode is off by one if translated straight into code.</p>
+<p>Pseudocode <code>SUBSTRING(str, start, <strong>length</strong>)</code> takes a <em>length</em> as its third parameter. Java's <code>substring(9,17)</code> takes an <em>end position</em>. Different conventions — check which one the question uses.</p></div>
+<div class="example-box"><div class="ex-title">📘 Real Exam Question — Paper 22 Q6(c), the palindrome checker [3]</div><p>"Explain how the algorithm knows when all the letters have been checked." Three mark points:</p>
+<ul>
+  <li>Two indexes mark the start (V1) and the end (V2) of the word.</li>
+  <li>After each check V1 is <strong>incremented</strong> and V2 is <strong>decremented</strong>.</li>
+  <li>When the indexes <strong>meet or cross</strong> (V1 = V2, or V1 &gt; V2), the whole word has been checked.</li>
+</ul>
+<p>Note from Paper 21: a candidate who answered an <em>explain</em> question with pseudocode alone scored nothing. Explain means write prose.</p></div>
+
+
+<h3>8.1.4(f) Operators</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Arithmetic</th><th>Relational</th><th>Logical</th></tr></thead>
+  <tr><td><code>+ − * / ^ MOD DIV</code></td><td><code>= &lt; &lt;= &gt; &gt;= &lt;&gt;</code></td><td><code>AND OR NOT</code></td></tr>
+</table></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — One Equals Sign.</strong> <p>Python and Java use <code>==</code> to <em>test</em> equality; a single <code>=</code> is <strong>assignment</strong>. Only pseudocode and Visual Basic compare with a single <code>=</code>. Pseudocode's "not equal" is <code>&lt;&gt;</code>; Python and Java use <code>!=</code>.</p></div>
+<div class="example-box"><div class="ex-title">📘 Worked Example — Combining Operator Types</div><div class="code-block no-ln"><span class="cl">IF Value <= -20 OR Value >= 50   → reject: outside the allowed range
+IF Value > 0 AND Value < 100     → accept: strictly inside the range</span></div>
+<p>Each side is a <strong>relational</strong> comparison; the <strong>logical</strong> operator joins them.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz3" data-quiz="3">
+  <div class="quiz-header"><h2>📝 Topic 3 check — common operations</h2><div class="quiz-score" id="score3">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">In the corrected marks algorithm, why does Counter start at −1?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>So the total is doubled before the average is found</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Because counters must start below zero</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>So the loop runs one extra time</button>
+      <button class="option-btn" data-quiz="3" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>So the sentinel's extra iteration is not counted</button>
+    </div><div class="q-feedback" id="fb3_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is a sentinel value?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The largest value that an array is able to store</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The first value read into a loop</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A special input signalling the end of input</button>
+      <button class="option-btn" data-quiz="3" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A value used to check for errors</button>
+    </div><div class="q-feedback" id="fb3_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">How does Python handle a multi-way choice, since it has no CASE construct here?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>With a nested FOR loop</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>With an if/elif/else chain</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>With a Select Case block</button>
+      <button class="option-btn" data-quiz="3" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>With a separate procedure per case</button>
+    </div><div class="q-feedback" id="fb3_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which loop type is used when the number of iterations is known in advance?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Pre-condition loop</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Post-condition loop</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Condition-controlled loop</button>
+      <button class="option-btn" data-quiz="3" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Count-controlled loop</button>
+    </div><div class="q-feedback" id="fb3_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which is the correct form of a totalling statement?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Total ← Total + Heights[Counter]</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Total ← Counter + Heights[Counter]</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Total ← Heights[Counter]</button>
+      <button class="option-btn" data-quiz="3" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Total ← Total + 1</button>
+    </div><div class="q-feedback" id="fb3_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 4 ============ -->
+<div class="unit" id="unit4">
+  <div class="unit-header">
+    <div class="unit-num">④</div>
+    <div><h2>8.1.5–8.1.8 Nesting, subroutines & libraries</h2><div class="unit-sub">structured programming</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">Calling a function with parameters</div>
+    <svg viewBox="0 0 530 120" role="img" aria-label="Function call with arguments and return value" style="width:100%;max-width:530px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="30" width="120" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="70.0" y="56.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Main program</text><rect x="220" y="30" width="140" height="44" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/><text x="290.0" y="55.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >FUNCTION Area(w, h)</text><rect x="410" y="30" width="100" height="44" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="460.0" y="55.85" font-size="11" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >RETURN w × h</text><line x1="130" y1="45" x2="220" y2="45" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><text x="175" y="38" font-size="10" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >w=4, h=5</text><line x1="360" y1="55" x2="410" y2="55" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/><path d="M460 74 L460 105 L70 105 L70 76" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ah)"/><text x="265" y="100" font-size="10" text-anchor="middle" font-weight="400" fill="#059669" stroke="none" >result 20 sent back</text></svg>
+    <div class="viz-cap">Procedure: does a job. Function: does a job AND returns a value.</div>
+  </div>
+<h3>8.1.5 Nested Statements</h3>
+
+<p>Selection and iteration can be placed one inside another. You will never be asked for more than <strong>three levels</strong> of nesting. Identify which loop is outermost, middle and innermost <em>before</em> writing any code.</p>
+<div class="example-box"><div class="ex-title">📘 Worked Example — 20 Students × 6 Subjects × 5 Tests</div><div class="code-block no-ln"><span class="cl">FOR Student ← 1 TO ClassSize          ← outer, runs 20 times
+  StudentHigh ← 0 : StudentTotal ← 0
+  FOR Subject ← 1 TO NumberOfSubjects ← middle, runs 6 times per student
+    SubjectHigh ← 0 : SubjectTotal ← 0
+    FOR Test ← 1 TO NumberOfTests     ← inner, runs 5 times per subject
+      INPUT Mark
+    NEXT Test
+  NEXT Subject
+NEXT Student</span></div>
+<p>Each level has its <strong>own</strong> high/low/total variables, re-initialised at the <strong>right level</strong>.</p></div>
+<div class="warn-box"><strong>⚠️ Common Mistake — Resetting at the Wrong Level.</strong> <p>Resetting <code>SubjectTotal</code> once at the start of the program, instead of at the start of every middle-loop pass, makes the total silently carry over between subjects. No error message — just wrong answers. When tracing nested code, finish the innermost loop completely before moving on.</p></div>
+
+
+<h3>8.1.6 Procedures, Functions and Parameters</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+  <tr><td><strong>Procedure</strong></td><td>Statements grouped under one name, called to perform a task at any point in a program</td></tr>
+  <tr><td><strong>Function</strong></td><td>The same — but a function <strong>returns a value</strong> to the main program</td></tr>
+  <tr><td><strong>Parameter</strong></td><td>A variable storing the value of an argument passed to a procedure or function</td></tr>
+</table></div>
+<div class="code-block no-ln"><span class="cl">PROCEDURE Stars
+  OUTPUT "************"
+ENDPROCEDURE
+
+CALL Stars</span></div>
+<div class="note-box"><strong>💡 Syllabus Update — Three Parameters, Not Two.</strong> <p>The older textbook says two parameters. The <strong>2026–2028 syllabus allows up to three</strong>. This is confirmed by the June 2025 examiner report, which awarded full marks to everyone on Q10 because the question needed three parameters while the then-current syllabus said two. Follow the <strong>current syllabus: three</strong>.</p></div>
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Scope</th><th>Meaning</th></tr></thead>
+  <tr><td><strong>Global variable</strong></td><td>Usable by any part of the program — scope is the whole program</td></tr>
+  <tr><td><strong>Local variable</strong></td><td>Usable only inside the part (e.g. the procedure) it was declared in</td></tr>
+</table></div>
+<div class="example-box"><div class="ex-title">📘 Worked Example — Tracing Scope</div><p><code>Answer</code> is declared <strong>both</strong> globally and locally inside procedure <code>Test</code>. Inside the procedure, <code>Answer</code> becomes 30 — but that is the <em>local</em> one. Back in the main program, the global <code>Answer</code> is still <strong>150</strong>, untouched.</p>
+<p><code>Number3</code> is declared only inside <code>Test</code>, so <code>OUTPUT Number3</code> in the main program is an <strong>error</strong> — its scope never reached outside the procedure.</p></div>
+<div class="warn-box"><strong>⚠️ Exam Tip.</strong> <p>To decide local or global, look at <strong>where it was declared</strong> — not at how important the variable looks. And when writing a <code>CALL</code>, pass the right number of arguments, in the right order, matching the definition exactly.</p></div>
+
+
+<h3>8.1.7 Library Routines</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Routine</th><th>Returns</th><th>Example</th></tr></thead>
+  <tr><td><code>MOD</code></td><td>The <strong>remainder</strong> of a division</td><td><code>MOD(10,3)</code> → <strong>1</strong></td></tr>
+  <tr><td><code>DIV</code></td><td>The <strong>quotient</strong> (whole-number part)</td><td><code>DIV(10,3)</code> → <strong>3</strong></td></tr>
+  <tr><td><code>ROUND</code></td><td>A value rounded to N decimal places</td><td><code>ROUND(6.97354, 2)</code> → <strong>6.97</strong></td></tr>
+  <tr><td><code>RANDOM</code></td><td>A random number between 0 and 1 inclusive</td><td><code>RANDOM()</code></td></tr>
+</table></div>
+<div class="example-box"><div class="ex-title">📘 Real Exam Question — Paper 22 Q5(b) [2]</div><p>"Write the pseudocode statement that will output the average height rounded to one decimal place."</p>
+<div class="code-block no-ln"><span class="cl">OUTPUT ROUND(Total / 500, 1)</span></div>
+<p>One mark for the average calculation, one for the correct use of ROUND with the decimal places set to 1 — <strong>inside</strong> the OUTPUT statement, not applied afterwards.</p></div>
+<div class="warn-box"><strong>⚠️ Examiner Evidence.</strong> <p>Paper 21: "Most candidates were able to identify the correct purpose of MOD and DIV with only a few giving the correct <strong>pseudocode</strong> for MOD and DIV." Knowing what they do is not enough — practise writing <code>MOD(a,b)</code> and <code>DIV(a,b)</code>.</p></div>
+
+
+<h3>8.1.8 Creating a Maintainable Program</h3>
+
+<div class="tbl-wrap"><table class="compare-table">
+  <thead><tr><th>Feature</th><th>In practice</th></tr></thead>
+  <tr><td><strong>Meaningful identifiers</strong></td><td>Every variable, constant, array, procedure and function named after what it represents</td></tr>
+  <tr><td><strong>Division into modules</strong></td><td>Split into procedures and functions, one per task, not one long block</td></tr>
+  <tr><td><strong>Full commenting</strong></td><td>Comments explaining what each section does, using the language's own comment syntax</td></tr>
+</table></div>
+<div class="example-box"><div class="ex-title">📘 Worked Example — Same Code, Maintainable</div><div class="code-block no-ln"><span class="cl">Poor:                    Improved:
+DECLARE X : REAL         // area of a circle from its radius
+DECLARE Y : REAL         DECLARE Radius, Area : REAL
+X ← Y * 3.142 * Y        CONSTANT PI = 3.142
+                         Area ← Radius * PI * Radius</span></div></div>
+<div class="note-box"><strong>💡 Exam Tip — Name It, Then Show It.</strong> <p>If asked for "a method to make the algorithm maintainable", do not just name the feature — <strong>give an example applied to the algorithm in the question</strong>. That is what separates full from partial marks. Note that exam questions may deliberately show badly named code to test your debugging; code <em>you</em> write should always follow the rules.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz4" data-quiz="4">
+  <div class="quiz-header"><h2>📝 Topic 4 check — structured programming</h2><div class="quiz-score" id="score4">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">What does LENGTH("Computer Science") return?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>15</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>17</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>16</button>
+      <button class="option-btn" data-quiz="4" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>2</button>
+    </div><div class="q-feedback" id="fb4_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which pair of string-handling functions changes the case of a string?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>LENGTH and SUBSTRING</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>UCASE and LCASE</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>ROUND and RANDOM</button>
+      <button class="option-btn" data-quiz="4" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>MOD and DIV</button>
+    </div><div class="q-feedback" id="fb4_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">A question begins 'Explain how...'. What did candidates who wrote only pseudocode receive?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>No marks, since an explanation was required</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Full marks, as the code shown was all correct</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Half marks for showing method</button>
+      <button class="option-btn" data-quiz="4" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Marks only for the variable names</button>
+    </div><div class="q-feedback" id="fb4_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which condition correctly REJECTS any value that is too small or too large?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>IF Value > -20 AND Value < 50</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>IF Value <= -20 AND Value >= 50</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>IF Value = -20 OR Value = 50</button>
+      <button class="option-btn" data-quiz="4" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>IF Value <= -20 OR Value >= 50</button>
+    </div><div class="q-feedback" id="fb4_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">SubjectTotal is reset once at the very start of the program instead of each middle-loop pass. What happens?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The program stops immediately with a runtime error</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only the first subject is totalled</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The total carries over between subjects</button>
+      <button class="option-btn" data-quiz="4" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Every total becomes exactly zero</button>
+    </div><div class="q-feedback" id="fb4_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 5 ============ -->
+<div class="unit" id="unit5">
+  <div class="unit-header">
+    <div class="unit-num">⑤</div>
+    <div><h2>8.2 Arrays</h2><div class="unit-sub">lists of data</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">One- and two-dimensional arrays</div>
+    <svg viewBox="0 0 520 150" role="img" aria-label="1D array with indexes and 2D grid" style="width:100%;max-width:520px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><text x="10" y="20" font-size="12" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >1-D array  Scores[0..4]</text><rect x="10" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="35.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >12</text><text x="35" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >0</text><rect x="60" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="85.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >7</text><text x="85" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >1</text><rect x="110" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="135.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >19</text><text x="135" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >2</text><rect x="160" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="185.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >4</text><text x="185" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >3</text><rect x="210" y="28" width="50" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="235.0" y="48.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >15</text><text x="235" y="76" font-size="11" text-anchor="middle" font-weight="400" fill="#64748b" stroke="none" >4</text><text x="300" y="20" font-size="12" text-anchor="start" font-weight="700" fill="#1e293b" stroke="none" >2-D array  Grid[0..2, 0..2]  (row, col)</text><rect x="300" y="28" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="322.0" y="49.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >1</text><rect x="344" y="28" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="366.0" y="49.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >2</text><rect x="388" y="28" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="410.0" y="49.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >3</text><rect x="300" y="62" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="322.0" y="83.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >4</text><rect x="344" y="62" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="366.0" y="83.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >5</text><rect x="388" y="62" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="410.0" y="83.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >6</text><rect x="300" y="96" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="322.0" y="117.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >7</text><rect x="344" y="96" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="366.0" y="117.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >8</text><rect x="388" y="96" width="44" height="34" rx="2" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/><text x="410.0" y="117.2" font-size="12" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >9</text><text x="430" y="140" font-size="11" text-anchor="middle" font-weight="700" fill="#059669" stroke="none" >Grid[1,2] = 6</text></svg>
+    <div class="viz-cap">Array indexes usually start at 0 (or as stated in the question).</div>
+  </div>
+<h3>8.2.1 One- and Two-Dimensional Arrays</h3>
+
+<p>An <strong>array</strong> is a data structure holding several elements <strong>of the same data type</strong>, all under one identifier, each reached by its <strong>index</strong>.</p>
+<div class="code-block no-ln"><span class="cl">DECLARE MyList  : ARRAY[0:9] OF INTEGER        ← a 1D list, 10 elements
+DECLARE MyTable : ARRAY[0:9,0:2] OF INTEGER    ← a 2D table, 10 rows × 3 columns
+
+MyList[4] ← 27          stores 27 at index 4
+OUTPUT MyTable[2,1]     row 2, column 1</span></div>
+<div class="warn-box"><strong>⚠️ Common Mistakes.</strong> <ul>
+  <li><strong>Which index is which.</strong> Read the declaration: <code>ARRAY[first row : last row, first column : last column]</code>. Never assume.</li>
+  <li><strong>First index.</strong> It may be 0 or 1 depending on the language — most languages start at 0. Check before writing loop bounds.</li>
+  <li><strong>Parallel arrays.</strong> Where <code>Names[]</code> and <code>Heights[]</code> hold related data, use the <strong>same</strong> loop variable as the index into both. Using <code>Index</code> in one place and <code>Counter</code> in another is a documented real exam error (Paper 22 Q5, line 11).</li>
+</ul></div>
+
+
+<h3>8.2.2 Filling Arrays With Iteration</h3>
+
+<div class="code-block no-ln"><span class="cl">FOR Counter ← 0 TO 9
+  OUTPUT "Enter next value "
+  INPUT MyList[Counter]        ← the loop VARIABLE is the index
+NEXT Counter
+
+FOR ColumnCounter ← 0 TO 2       ← 2D needs NESTED loops
+  FOR RowCounter ← 0 TO 9
+    INPUT MyTable[RowCounter, ColumnCounter]
+  NEXT RowCounter
+NEXT ColumnCounter</span></div>
+<div class="warn-box"><strong>⚠️ Loop-Index Matching Rule.</strong> <p>The order of the indexes inside the array reference must match the order in the <strong>declaration</strong> (rows then columns). Swap them and the data goes silently into the wrong cells — with no error message.</p></div>
+<div class="example-box"><div class="ex-title">📘 Real Exam Question — Paper 22 Q4(b), double entry verification [6]</div><div class="code-block no-ln"><span class="cl">FOR Index ← 1 TO 10
+  INPUT Numbers[Index]
+NEXT Index
+FOR Index ← 1 TO 10
+  INPUT CheckNumber
+  IF CheckNumber <> Numbers[Index]
+    THEN
+      OUTPUT CheckNumber, " and ", Numbers[Index], " do not match. Please re-enter. "
+      INPUT Numbers[Index]
+  ENDIF
+NEXT Index
+OUTPUT "The check has been completed."</span></div>
+<p>Marks for: a working loop · first inputs stored in the array · a second input per number · a selection comparing them · an output showing <strong>both</strong> values and asking for a re-input · the new input stored back <strong>in the same array position</strong>.</p></div>
+
+
+
+</div>
+
+<div class="quiz-section" id="quiz5" data-quiz="5">
+  <div class="quiz-header"><h2>📝 Topic 5 check — lists of data</h2><div class="quiz-score" id="score5">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog5"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">When tracing nested loops, what is the correct approach?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Alternate between the levels each row</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Trace the outer loop fully first, then the inner loop</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Trace only the innermost loop</button>
+      <button class="option-btn" data-quiz="5" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Complete the inner loop fully for each outer pass</button>
+    </div><div class="q-feedback" id="fb5_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">A variable is declared inside a procedure. What is its scope?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The whole program, once the procedure runs</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only the procedure it was declared in</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Every procedure but not the main program</button>
+      <button class="option-btn" data-quiz="5" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It has no scope until it is given a value</button>
+    </div><div class="q-feedback" id="fb5_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What does MOD(10,3) return?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>1</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>3</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>7</button>
+      <button class="option-btn" data-quiz="5" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>13</button>
+    </div><div class="q-feedback" id="fb5_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which statement outputs the average of 500 heights rounded to one decimal place?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>OUTPUT ROUND(Total, 1) / 500</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>ROUND(OUTPUT Total / 500, 1)</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>OUTPUT ROUND(Total / 500, 1)</button>
+      <button class="option-btn" data-quiz="5" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>OUTPUT Total / 500 ROUND 1</button>
+    </div><div class="q-feedback" id="fb5_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Which three features make a program maintainable?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Meaningful identifiers, modules, full commenting</button>
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Short names, very few comments, one single long block</button>
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Fast loops, small arrays, global variables</button>
+      <button class="option-btn" data-quiz="5" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Nested loops, casting, sentinel values</button>
+    </div><div class="q-feedback" id="fb5_5"></div></div>
+
+</div>
+
+<!-- ============ UNIT 6 ============ -->
+<div class="unit" id="unit6">
+  <div class="unit-header">
+    <div class="unit-num">⑥</div>
+    <div><h2>8.3 Files & examiner messages</h2><div class="unit-sub">reading and writing files</div></div>
+  </div>
+
+<div class="viz">
+    <div class="viz-title">File handling</div>
+    <svg viewBox="0 0 360 118" role="img" aria-label="Program reading and writing a file" style="width:100%;max-width:360px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect x="10" y="30" width="120" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="70.0" y="56.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >Program</text><rect x="220" y="30" width="120" height="44" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/><text x="280.0" y="56.55" font-size="13" text-anchor="middle" font-weight="600" fill="#1e293b" stroke="none" >data.txt</text><line x1="130" y1="40" x2="220" y2="40" stroke="#059669" stroke-width="2" marker-end="url(#ah)"/><text x="175" y="32" font-size="10" text-anchor="middle" font-weight="400" fill="#059669" stroke="none" >WRITE / APPEND</text><line x1="220" y1="66" x2="130" y2="66" stroke="#2563eb" stroke-width="2" marker-end="url(#ah)"/><text x="175" y="82" font-size="10" text-anchor="middle" font-weight="400" fill="#2563eb" stroke="none" >READ</text><text x="175" y="108" font-size="11" text-anchor="middle" font-weight="700" fill="#1e293b" stroke="none" >OPEN → read/write → CLOSE</text></svg>
+    
+  </div>
+<h3>8.3 File Handling</h3>
+
+<p>Data in <strong>RAM is volatile</strong> — lost when the power goes. Data in a <strong>file is permanent</strong>. That contrast is the answer to "why store data in a file", and it gives three uses:</p>
+<ul>
+  <li><strong>Persistence</strong> — the same program can read it back on a later run.</li>
+  <li><strong>Sharing</strong> — another program can use it.</li>
+  <li><strong>Transfer</strong> — it can be sent to other computers.</li>
+</ul>
+<div class="code-block no-ln"><span class="cl">OPEN MyFile FOR WRITE
+WRITEFILE MyFile, TextLine
+CLOSEFILE(MyFile)
+
+OPEN MyFile FOR READ        ← re-open in the other mode to switch
+READFILE MyFile, TextLine
+OUTPUT TextLine
+CLOSEFILE(MyFile)</span></div>
+<div class="warn-box"><strong>⚠️ Open–Use–Close Rule.</strong> <p>A file must be <strong>opened in the correct mode</strong> before use and <strong>closed</strong> as soon as you are finished. Forgetting to close it, or closing it too early, are both genuine documented errors — an open file can block later access, and an early close causes data loss. Show the full <strong>open → read/write → close</strong> sequence, and use the syllabus keywords (<code>OPEN … FOR READ</code>, <code>WRITEFILE</code>, <code>READFILE</code>, <code>CLOSEFILE</code>), not a specific language's syntax.</p></div>
+
+
+<h3>The Examiner's Key Messages for Paper 2</h3>
+
+<div class="note-box"><strong>💡 Straight From the June 2025 Report.</strong> <ul>
+  <li>"Candidates who answered algorithm questions <strong>using pseudocode, as stated in the question</strong>, achieved the best marks."</li>
+  <li>"Candidates who had made themselves <strong>fully aware of the syntax of the pseudocode defined within the syllabus</strong> were in a better position to answer pseudocode questions accurately."</li>
+  <li>"Candidates who answered questions in a manner <strong>appropriate to the command word</strong> — answering <em>explain</em> with more detail than <em>identify</em> — were more likely to achieve higher marks."</li>
+  <li>On error-correction questions: give the <strong>corrected line in full</strong>, not a description of what is wrong.</li>
+</ul></div>
+
+    
+
+</div>
+
+<div class="quiz-section" id="quiz6" data-quiz="6">
+  <div class="quiz-header"><h2>📝 Topic 6 check — reading and writing files</h2><div class="quiz-score" id="score6">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog6"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A question asks for a method to make an algorithm maintainable. What earns full marks?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Naming as many features as possible</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Rewriting the algorithm in Python</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Adding a comment to the very first line</button>
+      <button class="option-btn" data-quiz="6" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Naming a feature and showing it applied</button>
+    </div><div class="q-feedback" id="fb6_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">In MyTable[2,1], which index refers to the column?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The 2, since columns come first</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Both, since they are interchangeable</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The 1, since columns come second</button>
+      <button class="option-btn" data-quiz="6" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Neither, since 2D arrays use one index</button>
+    </div><div class="q-feedback" id="fb6_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What happens if the index order inside an array reference does not match the declaration order?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The program refuses to run at all</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Data is written into the wrong cells silently</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The array is automatically resized</button>
+      <button class="option-btn" data-quiz="6" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The indexes are swapped back by the interpreter</button>
+    </div><div class="q-feedback" id="fb6_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">Which is NOT one of the three uses of storing data in a file?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Access by the same program at a later date</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Faster processing of loops</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Access by another program</button>
+      <button class="option-btn" data-quiz="6" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Transfer to other computers</button>
+    </div><div class="q-feedback" id="fb6_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Why is forgetting to close a file a genuine error?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>The file permanently loses its original filename</button>
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The data is converted to the wrong type</button>
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The program cannot be compiled at all</button>
+      <button class="option-btn" data-quiz="6" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>An open file can block later access to it</button>
+    </div><div class="q-feedback" id="fb6_5"></div></div>
+
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">Variable / constant</div><div class="term-def">A named memory location whose value can change (variable) or stays fixed (constant).</div></div>
+    <div class="term-item"><div class="term-name">Data types</div><div class="term-def">integer, real, char, string and Boolean.</div></div>
+    <div class="term-item"><div class="term-name">Sequence</div><div class="term-def">Statements executed one after another in order.</div></div>
+    <div class="term-item"><div class="term-name">Selection</div><div class="term-def">Choosing which statements to run using IF or CASE statements.</div></div>
+    <div class="term-item"><div class="term-name">Iteration</div><div class="term-def">Repeating statements: count-controlled, pre-condition or post-condition loops.</div></div>
+    <div class="term-item"><div class="term-name">Totalling and counting</div><div class="term-def">Keeping a running total, or a count, as a program loops.</div></div>
+    <div class="term-item"><div class="term-name">String handling</div><div class="term-def">Operations on text: length, substring, upper and lower.</div></div>
+    <div class="term-item"><div class="term-name">Operators</div><div class="term-def">Arithmetic (+ - * / ^ MOD DIV), relational (= &lt; &lt;= &gt; &gt;= &lt;&gt;) and logical (AND, OR, NOT).</div></div>
+    <div class="term-item"><div class="term-name">Nested statements</div><div class="term-def">A selection or iteration placed inside another; no more than three levels are required.</div></div>
+    <div class="term-item"><div class="term-name">Procedure / function</div><div class="term-def">A named subroutine; a function returns a value, a procedure does not. Both may take up to three parameters.</div></div>
+    <div class="term-item"><div class="term-name">Local / global variable</div><div class="term-def">A local variable exists only inside its subroutine; a global variable can be used throughout the program.</div></div>
+    <div class="term-item"><div class="term-name">Library routine</div><div class="term-def">A ready-made subroutine such as MOD, DIV, ROUND or RANDOM.</div></div>
+    <div class="term-item"><div class="term-name">Maintainable program</div><div class="term-def">One that uses meaningful identifiers, comments, and procedures and functions so it is easy to understand and change.</div></div>
+    <div class="term-item"><div class="term-name">Array (1D / 2D)</div><div class="term-def">A data structure holding several items of the same type under one name, accessed by an index.</div></div>
+    <div class="term-item"><div class="term-name">File handling</div><div class="term-def">Opening, reading or writing (a single item or a line of text) and closing a file so data is stored outside the program.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Use the exact command-word wording from the question.</p>
+    <p>Show working: trace tables, truth-table columns, SQL on separate lines.</p>
+    <p>Check each answer against the marks available.</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G10 Computer Science · Chapter 8 Programming · Study guide (regular).
+  &nbsp;·&nbsp; <a href="chapter8_easy.html">🍎 Switch to the easy version</a>
+</footer>
+
+<script>
+var QUIZ = {
+  1:{answers:[3, 2, 0, 1, 1], total:5, score:0, done:0, feedback:[
+    "A variable is a named data store containing a value that may change during the execution of a program.",
+    "Python needs no declaration statement and does not differentiate constants — programmers manage this themselves, often with capital names.",
+    "Pseudocode declares variables as DECLARE Name : TYPE, for example DECLARE FirstVar : INTEGER.",
+    "Declarations can be placed at the start of a program, or just before the data is used for the first time.",
+    "A Boolean can have only two values: TRUE or FALSE."]},
+  2:{answers:[0, 2, 3, 0, 1], total:5, score:0, done:0, feedback:[
+    "A number stored as a string cannot be used directly in a calculation — it must be cast, e.g. with int() or float() in Python.",
+    "Real holds a positive or negative number with a fractional part, which a measurement such as 4.5 cm needs.",
+    "Casting converts a variable's value from one data type to another, such as a string input to an integer.",
+    "Outputting the whole array Heights does not give the single required result — the variable Shortest must be output.",
+    "The statement adding Mark to Total sits before the test for 999, so the sentinel value is added into the total."]},
+  3:{answers:[3, 2, 1, 3, 0], total:5, score:0, done:0, feedback:[
+    "Starting at −1 cancels out the extra iteration caused by entering the sentinel, giving the correct count of real marks.",
+    "A sentinel value is a special input value used to signal the end of a sequence of inputs to a loop.",
+    "Python uses an elif chain for multiple tests, since it has no native CASE construct for this syllabus's purposes.",
+    "A count-controlled (FOR) loop runs for a set, known number of iterations.",
+    "The total variable must appear on both sides with the new value added — using the loop counter instead is a documented exam error."]},
+  4:{answers:[2, 1, 0, 3, 2], total:5, score:0, done:0, feedback:[
+    "LENGTH counts every character including spaces, so \"Computer Science\" has a length of 16.",
+    "UCASE converts a string to all uppercase and LCASE converts it to all lowercase.",
+    "The Paper 21 report confirms an explain question requires a written explanation; correct pseudocode alone does not satisfy it.",
+    "Each side is a relational comparison and OR combines them, so breaching either limit rejects the input.",
+    "The total silently carries over between subjects instead of restarting, giving wrong results with no error raised."]},
+  5:{answers:[3, 1, 0, 2, 0], total:5, score:0, done:0, feedback:[
+    "Work through the innermost construct completely for each pass of the outer one — jumping between levels causes most trace-table errors.",
+    "A local variable can only be used by the part of the program it was declared in — its scope is restricted to that part.",
+    "MOD returns the remainder of a division, and 10 divided by 3 leaves a remainder of 1.",
+    "The mark scheme answer is OUTPUT ROUND(Total / 500, 1) — the calculation inside ROUND, all inside the OUTPUT statement.",
+    "A maintainable program uses meaningful identifiers, is divided into modules using procedures and functions, and is fully commented."]},
+  6:{answers:[3, 2, 1, 1, 3], total:5, score:0, done:0, feedback:[
+    "The examiner report shows full marks go to answers that identify a method AND give a correct example using the algorithm in the question.",
+    "The declaration is ARRAY[first row : last row, first column : last column], so the second index is the column.",
+    "Swapping the order silently writes data into the wrong cells without causing any error message.",
+    "The three uses are persistence across runs, sharing between programs, and transfer between computers.",
+    "A file left open can prevent other programs, or a later part of the same program, from accessing it correctly."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>

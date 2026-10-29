@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4 — Software | G9 Computer Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">G9 Computer Science <span>· Study Guide</span></div>
+  <nav class="header-nav">
+    <a href="index.html">🏠 Overview</a>
+    <a href="command_words.html">📝 Command Words</a>
+    <a href="study_tips.html">🎯 Exam Tips</a>
+    <span class="navg"><a class="n-main" href="chapter1.html">🔢 1</a><a class="n-easy" href="chapter1_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter2.html">📡 2</a><a class="n-easy" href="chapter2_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter3.html">🖥️ 3</a><a class="n-easy" href="chapter3_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main active" href="chapter4.html">⚙️ 4</a><a class="n-easy" href="chapter4_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter5.html">🌍 5</a><a class="n-easy" href="chapter5_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter6.html">🤖 6</a><a class="n-easy" href="chapter6_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter7.html">🧮 7</a><a class="n-easy" href="chapter7_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter8.html">💻 8</a><a class="n-easy" href="chapter8_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter9.html">🗃️ 9</a><a class="n-easy" href="chapter9_easy.html" title="Easy version">🍎</a></span>
+    <span class="navg"><a class="n-main" href="chapter10.html">⚡ 10</a><a class="n-easy" href="chapter10_easy.html" title="Easy version">🍎</a></span>
+  </nav>
+</header>
+
+<div class="ch-banner">
+<div class="ch-banner-inner">
+  <div class="ch-tag">Cambridge IGCSE Computer Science (0478) · Software</div>
+  <h1>Chapter 4 · Software</h1>
+  <p>How an operating system and its utilities keep a computer running, how interrupts and buffers let a slow device share the CPU, how programs move from hardware → firmware → OS → application, and how high-level and low-level languages get translated into machine code — with a quick quiz after every topic to check you've got it.</p>
+  <div class="unit-nav">
+    <a href="#unit1">① System software and operating systems</a>
+    <a href="#unit2">② Languages and translators</a>
+    <a href="chapter4_easy.html" class="easy-pill">🍎 Need it simpler?</a>
+    <a href="mock_chapter4.html" class="easy-pill">📝 Mock exam</a>
+  </div>
+</div>
+</div>
+
+<div class="page-layout">
+<main>
+
+<!-- ============================ UNIT 1 ============================ -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-num">①</div>
+    <div><h2>4.1 System Software and Operating Systems</h2><div class="unit-sub">System vs application software, the nine OS functions, booting up, and interrupts</div></div>
+  </div>
+
+  <h3>System software vs application software</h3>
+  <p>Software divides into exactly two categories. <strong>System software</strong> provides the platform the computer itself needs to work (the operating system and utility software). <strong>Application software</strong> lets the user carry out a specific task on top of that platform (a word processor, a game, a browser).</p>
+  <div class="note-box">💡 <strong>Services test.</strong> Ask "who does this serve?" System software provides <strong>services the computer requires</strong> to function at all. Application software provides <strong>services the user requires</strong> to complete a task. Always phrase a "describe the difference" answer this way — naming an example alone doesn't answer the question.</div>
+
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>System software (examples)</th><th>Application software (examples)</th></tr></thead>
+    <tbody>
+      <tr><td>Operating system — Windows, Mac OS</td><td>Word processor — Microsoft Word</td></tr>
+      <tr><td>Utility programs — anti-virus, defragmenter, back-up, screensaver</td><td>Spreadsheet — Microsoft Excel</td></tr>
+      <tr><td>Device drivers — printer driver, mouse driver</td><td>Database — Microsoft Access</td></tr>
+      <tr><td>Compilers, interpreters, assemblers, linkers</td><td>Internet browser, games, photo/video editors</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="task-grid">
+    <div class="task-card"><div class="tc-icon">🦠</div><div class="tc-name">Virus checker</div><div class="tc-example">Compares files against a virus database, plus <strong>heuristic checking</strong> for suspicious behaviour not yet on the database; infected files go into <strong>quarantine</strong></div></div>
+    <div class="task-card"><div class="tc-icon">🧩</div><div class="tc-name">Defragmenter</div><div class="tc-example">Rearranges scattered file blocks on an HDD into <strong>contiguous</strong> sectors so the read-write head moves less — not needed on SSDs</div></div>
+    <div class="task-card"><div class="tc-icon">💾</div><div class="tc-name">Back-up software</div><div class="tc-example">Schedules back-ups of changed files. Windows uses <strong>File History</strong>; Mac OS uses <strong>Time Machine</strong> (hourly → daily → weekly retention)</div></div>
+    <div class="task-card"><div class="tc-icon">🔐</div><div class="tc-name">Security software</div><div class="tc-example">Manages user accounts/passwords, links to firewalls and virus checkers, encrypts data, vets software updates</div></div>
+    <div class="task-card"><div class="tc-icon">🖨️</div><div class="tc-name">Device drivers</div><div class="tc-example">Translate data into a format a peripheral understands; without one the device shows "not recognised"</div></div>
+    <div class="task-card"><div class="tc-icon">🖥️</div><div class="tc-name">Screensaver</div><div class="tc-example">Originally protected CRT screens from burn-in; now mainly a security/idle-lock feature and trigger for background tasks</div></div>
+  </div>
+  <div class="warn-box">⚠️ Do not default to "utility software" as a catch-all answer for a system-software question — the June 2025 examiner report flags this as the most common wrong answer when the correct answer was simply "operating system". Utility software is only <em>one</em> category of system software, alongside the OS and device drivers.</div>
+
+  <h3>The operating system — nine functions</h3>
+  <p>The <strong>operating system (OS)</strong> is the software that lets a computer function correctly and lets a user communicate with it, providing a platform for every application to run on. It is normally stored on the HDD/SSD (or solid-state storage on a phone/tablet) because it is a large program. The syllabus groups its work into nine named functions.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>#</th><th>OS function</th><th>What it actually does</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Human computer interface (HCI)</td><td>Provides a CLI or GUI so the user can communicate with the computer</td></tr>
+      <tr><td>2</td><td>Memory management</td><td>Allocates memory to processes; prevents two processes using the same location at once</td></tr>
+      <tr><td>3</td><td>Security management</td><td>Ensures integrity, confidentiality and availability of data via passwords, updates, firewalls</td></tr>
+      <tr><td>4</td><td>Hardware/peripheral management</td><td>Allocates data to buffers; transmits/receives data to/from hardware via drivers</td></tr>
+      <tr><td>5</td><td>File management</td><td>Create, open, close, delete, rename, copy, move files; maintains directories and access rights</td></tr>
+      <tr><td>6</td><td>Handling of interrupts</td><td>Receives, prioritises and services interrupt signals (see below)</td></tr>
+      <tr><td>7</td><td>Platform for applications</td><td>Allows application software to run on the computer</td></tr>
+      <tr><td>8</td><td>Multitasking</td><td>Shares CPU time between processes using pre-emptive multitasking and priorities</td></tr>
+      <tr><td>9</td><td>User accounts</td><td>Username/password-protected accounts, managed by an administrator; multi-access levels</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 <strong>Name + description.</strong> A "give two/three functions" question is one mark per named function. But a table-style or "describe" question wants a <strong>name and a working example</strong> together — e.g. not just "memory management" but "allocates memory to processes / prevents two processes accessing the same memory location". A bare name alone may not earn the mark if a description is asked for.</div>
+
+  <h3>Command Line Interface vs Graphical User Interface</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Command line interface (CLI)</th><th>Graphical user interface (GUI)</th></tr></thead>
+    <tbody>
+      <tr><td>Direct communication with the computer; not restricted to pre-set options; can alter configuration settings; uses little memory</td><td>No commands to learn; icons and a pointing device (or touch screen) are used — WIMP: Windows, Icons, Menus, Pointing device</td></tr>
+      <tr><td>Many commands to learn; typing is slow and error-prone; exact spelling/format required</td><td>Uses far more memory than a CLI; user limited to icons provided; needs a full OS to run</td></tr>
+      <tr><td>Typical user: programmer, analyst, technician (debugging, memory dumps)</td><td>Typical user: an end-user who doesn't need to know how the computer works</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Running applications — hardware, firmware, OS, application</h3>
+  <p>An application cannot run on its own — it depends on a strict chain of layers, each running on the one below it.</p>
+  <div class="teal-box">📌 <strong>Chain order:</strong> applications run on the <strong>OS</strong> → the OS runs on the <strong>firmware</strong> → the firmware (bootloader) runs on the <strong>hardware</strong>. Getting the direction backwards (e.g. "the OS runs the firmware") loses marks even if every term used is correct.</div>
+
+  <div class="example-box">
+    <div class="ex-title">🖥️ Booting up a computer</div>
+    <div class="step"><span class="sn">1</span>Power on. The <strong>BIOS</strong> (Basic Input/Output System) — firmware, "a program that provides low-level control for devices" — starts up the motherboard.</div>
+    <div class="step"><span class="sn">2</span>The BIOS locates the storage device holding the operating system.</div>
+    <div class="step"><span class="sn">3</span>A small program, the <strong>bootstrap loader</strong>, loads the needed part of the OS into RAM — this is "booting up".</div>
+    <div class="step"><span class="sn">4</span>Once the OS is running, applications can run on top of it.</div>
+    <div class="answer-line">➜ Hardware powered on → BIOS (firmware) runs → bootstrap loader loads the OS → applications run on the OS</div>
+  </div>
+
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>What</th><th>Stored on</th><th>If power is lost</th></tr></thead>
+    <tbody>
+      <tr><td>BIOS software (the program itself)</td><td><strong>EEPROM</strong> — a flash memory chip</td><td>Contents remain unaffected</td></tr>
+      <tr><td>BIOS settings (e.g. boot order, clock speed)</td><td><strong>CMOS</strong> chip, kept powered by a motherboard battery</td><td>Settings reset to factory default if the battery is disconnected</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ Examiners specifically report that "firmware" is poorly defined by candidates. Give the precise definition — <strong>"a program that provides low-level control for devices"</strong> — not a vague "software on the computer".</div>
+
+  <h3>Interrupts</h3>
+  <p>An <strong>interrupt</strong> is a signal sent from hardware or software to the microprocessor, causing it to temporarily stop what it is doing so the interrupt can be serviced.</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>Hardware interrupts</th><th>Software interrupts</th></tr></thead>
+    <tbody>
+      <tr><td>A key being pressed / mouse moved</td><td>Two processes trying to access the same memory location</td></tr>
+      <tr><td>A regular timing/clock signal</td><td>An attempt to divide by zero</td></tr>
+      <tr><td>A hardware fault, e.g. a printer paper jam</td><td>An .exe file that cannot be found to start a program</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Documented misconception (June 2025 Examiner Report, 0478/11):</strong> "Some candidates gave responses such as 'keyboard' or 'mouse'. These are just devices and not examples of interrupt." Always name the <em>event</em> on the device (e.g. "a key being pressed"), not just the device itself.</div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 How an interrupt is serviced (the ISR process)</div>
+    <div class="step"><span class="sn">1</span>The processor finishes its current fetch–decode–execute cycle.</div>
+    <div class="step"><span class="sn">2</span>It checks the interrupt queue: is there an interrupt with <strong>higher priority</strong> than the current task?</div>
+    <div class="step"><span class="sn">3</span>If yes, it saves the current task's Program Counter and registers, then loads the start address of the <strong>interrupt service routine (ISR)</strong> into the PC.</div>
+    <div class="step"><span class="sn">4</span>The ISR runs and resolves the interrupt.</div>
+    <div class="step"><span class="sn">5</span>The saved registers are restored and the original task continues from where it left off.</div>
+    <div class="answer-line">➜ Skipping the priority-check step or the save/restore-registers step is the most common way marks are lost on "describe how an interrupt is handled" questions.</div>
+  </div>
+
+  <p><strong>Buffers</strong> — a memory area that stores data temporarily — let a fast processor cooperate with a slow device (e.g. a printer). Data is written to the buffer; the buffer is emptied to the device while the processor is freed for other tasks; once the buffer empties, an interrupt requests more data.</p>
+  <div class="note-box">💡 Without buffers and interrupts, the processor would sit idle waiting for a slow device (like a printer) to finish — an enormous waste of processing power.</div>
+</div>
+
+<!-- QUIZ 1 -->
+<div class="quiz-section" id="quiz1" data-quiz="1">
+  <div class="quiz-header"><h2>📝 Topic 1 check — System software and operating systems</h2><div class="quiz-score" id="score1">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">A program manages files, memory and multitasking on a computer. What is this program called?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Utility software</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Device driver</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Operating system</button>
+      <button class="option-btn" data-quiz="1" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Compiler</button>
+    </div><div class="q-feedback" id="fb1_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">Which best describes what "memory management" actually does, as an OS function?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Displays icons, windows and menus on screen so the user can interact with the computer</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Allocates memory to processes and prevents two processes accessing the same location</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Translates a high-level language into machine code so the processor can run it directly</button>
+      <button class="option-btn" data-quiz="1" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Rearranges scattered files into contiguous sectors on the disk to speed up file access</button>
+    </div><div class="q-feedback" id="fb1_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">Which statement about the boot-up chain is correct?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Applications run on the OS, the OS runs on the firmware, the firmware runs on the hardware</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>The operating system runs the firmware, which in turn runs the hardware and the applications</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The hardware runs the application software, which then runs the operating system on top of it</button>
+      <button class="option-btn" data-quiz="1" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The firmware runs on top of the application software, which runs on the operating system</button>
+    </div><div class="q-feedback" id="fb1_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A student says "the mouse is an example of an interrupt." Why is this an incomplete answer?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A mouse cannot generate an interrupt at all because it is only a pointing device, not a processor</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Only software can generate interrupts, never hardware devices such as keyboards or printers</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Interrupts only come from the operating system itself, never from hardware or running programs</button>
+      <button class="option-btn" data-quiz="1" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>A mouse is just a device — the interrupt is the event (e.g. it being moved), which must be named</button>
+    </div><div class="q-feedback" id="fb1_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">Why does a printer need a buffer?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>To translate the document into a different file format that the printer is able to read</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>To permanently back up the printed document so that it is kept safe on the disk</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>To scan the document for viruses and malware before it is sent to the printer</button>
+      <button class="option-btn" data-quiz="1" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>To temporarily store data so the processor isn't left waiting for the printer</button>
+    </div><div class="q-feedback" id="fb1_5"></div></div>
+</div>
+
+<!-- ============================ UNIT 2 ============================ -->
+<div class="unit" id="unit2">
+  <div class="unit-header">
+    <div class="unit-num">②</div>
+    <div><h2>4.2 Languages and Translators</h2><div class="unit-sub">High-level vs low-level languages, assembly language, compilers, interpreters and IDEs</div></div>
+  </div>
+
+  <p>A computer only understands its own language, <strong>machine code</strong> — every program must be translated into machine code before it can run.</p>
+
+  <h3>High-level vs low-level languages</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>High-level language (HLL)</th><th>Low-level language (LLL)</th></tr></thead>
+    <tbody>
+      <tr><td>Independent of computer hardware (portable/machine independent)</td><td>Dependent on the specific hardware and instruction set of a computer</td></tr>
+      <tr><td>Statements close to English — easier to read, write, debug and maintain</td><td>Harder to read and debug; may use mnemonics (assembly) or raw binary/hex (machine code)</td></tr>
+      <tr><td>Quicker to write programs; more portable across computers</td><td>Can directly manipulate hardware and use machine-specific instructions</td></tr>
+      <tr><td>Programs may be larger and take longer to execute</td><td>More memory-efficient, and executes/runs faster once translated</td></tr>
+      <tr><td>Examples: C++, Java, Pascal, Python, Visual Basic</td><td>Examples: assembly language, machine code</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 <strong>Four-way rule.</strong> An "advantages/disadvantages of high-level vs low-level" answer should cover: (1) ease of reading/writing, (2) ease of debugging, (3) machine independence, (4) direct hardware manipulation (only low-level can do this). A one-sided answer misses marks.</div>
+  <div class="warn-box">⚠️ Never repeat a reason already given in the question stem — a real June 2025 examiner report confirms candidates lost marks for restating "easier to read/write" when the question had already stated it. MCQ distractors are also built by swapping a low-level advantage into a high-level question (and vice versa) — sort each property into the correct column before answering.</div>
+
+  <h3>Assembly language</h3>
+  <p>Assembly language is a low-level language that uses <strong>mnemonics</strong> — short, memorable codes — instead of raw machine code. An <strong>assembler</strong> translates it into machine code; one assembly statement usually becomes exactly one machine code instruction (unlike a high-level statement, which usually becomes several).</p>
+  <div class="example-box">
+    <div class="ex-title">🧮 Adding two numbers in assembly language</div>
+    <div class="step"><span class="sn">1</span><code>LDA First</code> — load the value of <code>First</code> into the accumulator.</div>
+    <div class="step"><span class="sn">2</span><code>ADD Second</code> — add the value of <code>Second</code> to the accumulator.</div>
+    <div class="step"><span class="sn">3</span><code>STO Sum</code> — store the accumulator's value into <code>Sum</code>.</div>
+    <div class="answer-line">➜ Equivalent to the high-level statement <code>Sum := First + Second</code>, but written using hardware-level mnemonics.</div>
+  </div>
+  <div class="teal-box">📌 Programmers choose assembly language for embedded systems needing direct hardware control, machine-specific instructions, a small memory footprint, or fast execution — e.g. an embedded system in a washing machine.</div>
+
+  <h3>Compilers, interpreters and assemblers</h3>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th></th><th>Compiler</th><th>Interpreter</th></tr></thead>
+    <tbody>
+      <tr><td>What it does</td><td>Translates the <strong>whole</strong> high-level program at once, before execution</td><td>Translates and <strong>executes</strong> the code <strong>line by line</strong></td></tr>
+      <tr><td>Executable file?</td><td>Yes — produces a standalone executable file</td><td>No executable file — the interpreter must be present every run</td></tr>
+      <tr><td>Errors</td><td>Produces one error report listing <strong>all</strong> errors, before execution can happen</td><td>Stops execution at the <strong>first</strong> error found</td></tr>
+      <tr><td>Typical use</td><td>Translating the finished, final program for distribution</td><td>Used mostly while developing/testing a program</td></tr>
+      <tr><td>Speed once ready</td><td>Faster to run (already translated)</td><td>Slower — translated every run; but faster to fix errors while coding</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note-box">💡 <strong>Core phrasing to memorise:</strong> compiler = "translates the whole code at once, before executing it, and produces an executable file." Interpreter = "translates and executes the code line by line, stopping when an error is found." An <strong>assembler</strong> does the compiler's job but for assembly language, not a high-level language.</div>
+  <div class="teal-box">📌 <strong>Development vs deployment framing.</strong> An interpreter suits <em>development</em> — errors are found and fixed one line at a time. A compiler suits the <em>finished</em> program — the executable runs without the compiler present, runs faster, and can be distributed without exposing the source code.</div>
+
+  <div class="example-box">
+    <div class="ex-title">🧮 Fill-in-the-blank translator question (June 2025, 0478/12)</div>
+    <div class="step"><span class="sn">1</span>"A compiler translates the <strong>whole code</strong> at once before <strong>executing</strong> it."</div>
+    <div class="step"><span class="sn">2</span>"A compiler produces an error report that displays <strong>all</strong> errors."</div>
+    <div class="step"><span class="sn">3</span>"An interpreter translates and executes the code <strong>line by line</strong>."</div>
+    <div class="step"><span class="sn">4</span>"An interpreter stops execution when an <strong>error</strong> is found and continues once it is corrected."</div>
+    <div class="answer-line">➜ Fill-in-the-blank translator questions reward exact vocabulary — "whole code", "line by line", "executable file", "error report" — not paraphrases.</div>
+  </div>
+
+  <h3>Integrated Development Environment (IDE)</h3>
+  <p>An <strong>IDE</strong> is a suite of programs that helps a programmer write and test code — e.g. PyCharm (Python), Visual Studio (Visual Basic), BlueJ (Java).</p>
+  <div class="tbl-wrap"><table class="compare-table">
+    <thead><tr><th>IDE feature</th><th>What it actually does (the mechanism, not the name)</th></tr></thead>
+    <tbody>
+      <tr><td>Code editor</td><td>Lets the programmer write/change code without a separate text editor</td></tr>
+      <tr><td>Translator (compiler/interpreter)</td><td>Built in so the program can be run; interpreter used while developing, compiler for the final version</td></tr>
+      <tr><td>Run-time environment / debugger</td><td>Runs the program, allows single-stepping and breakpoints, and shows variable contents in a report window</td></tr>
+      <tr><td>Error diagnostics / auto-correction</td><td>Flags likely errors as code is typed and offers a suggested fix, before the program is even run</td></tr>
+      <tr><td>Auto-completion</td><td>As the programmer starts typing a command word or variable name, the IDE suggests options to complete it</td></tr>
+      <tr><td>Prettyprint</td><td>Colour-codes command words/identifiers and lays code out consistently, so it's easier to read</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box">⚠️ <strong>Real, documented examiner evidence (June 2025, 0478/12):</strong> "Some candidates gave the function 'auto-completion', then gave the description 'it auto-completes the code written'. Candidates need to describe the role of the function beyond rewording the function." Always describe the underlying mechanism — a command word being typed and the IDE suggesting matching options — not just restate the feature's name. Also, don't confuse IDE functions with operating-system functions: an IDE helps <em>write and test code</em>; an OS manages <em>hardware and resources</em>.</div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="quiz-section" id="quiz2" data-quiz="2">
+  <div class="quiz-header"><h2>📝 Topic 2 check — Languages and translators</h2><div class="quiz-score" id="score2">0 / 5</div></div>
+  <div class="progress-wrap"><div class="progress-bar" id="prog2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 1</div>
+    <div class="q-text">Which is a genuine advantage of a high-level language over a low-level language?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>It can directly manipulate the hardware</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>It is more memory efficient</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The program is machine independent (portable)</button>
+      <button class="option-btn" data-quiz="2" data-q="1" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The program executes faster than an equivalent low-level program</button>
+    </div><div class="q-feedback" id="fb2_1"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 2</div>
+    <div class="q-text">What is a mnemonic, in the context of assembly language?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A raw binary machine-code instruction made up only of 0s and 1s, with no readable words</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>A short, memorable code (like LDA or ADD) for a machine operation</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A comment explaining what a high-level program does, ignored by the translator</button>
+      <button class="option-btn" data-quiz="2" data-q="2" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>The name of the window in an IDE's debugger that shows the variable values</button>
+    </div><div class="q-feedback" id="fb2_2"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 3</div>
+    <div class="q-text">What is the key difference between how a compiler and an interpreter work?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>A compiler translates the whole program before it runs; an interpreter translates and executes line by line</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>An interpreter produces a standalone executable file for the whole program; a compiler does not, as it translates line by line</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>A compiler only works with assembly language and cannot translate any high-level language</button>
+      <button class="option-btn" data-quiz="2" data-q="3" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>They are two names for exactly the same process, so the choice between them makes no difference</button>
+    </div><div class="q-feedback" id="fb2_3"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 4</div>
+    <div class="q-text">A programmer is developing and frequently testing a new program, fixing errors one at a time as they appear. Which translator best suits this stage?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Assembler</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Interpreter</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>Linker</button>
+      <button class="option-btn" data-quiz="2" data-q="4" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>Device driver</button>
+    </div><div class="q-feedback" id="fb2_4"></div></div>
+
+  <div class="quiz-q"><div class="q-num">Question 5</div>
+    <div class="q-text">A student describes the "auto-completion" feature of an IDE as: "it auto-completes the code." What is wrong with this answer?</div>
+    <div class="options">
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="0" onclick="handleQ(this)"><span class="opt-letter">A</span>Auto-completion is not a real IDE feature, so the description cannot be creditworthy at all</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="1" onclick="handleQ(this)"><span class="opt-letter">B</span>Auto-completion is an operating-system function that runs in the background, not an IDE one</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="2" onclick="handleQ(this)"><span class="opt-letter">C</span>The description is completely correct and would receive full marks from the examiner</button>
+      <button class="option-btn" data-quiz="2" data-q="5" data-idx="3" onclick="handleQ(this)"><span class="opt-letter">D</span>It just rewords the feature's name instead of describing how it works</button>
+    </div><div class="q-feedback" id="fb2_5"></div></div>
+</div>
+
+<div class="page-nav">
+  <a href="chapter3.html">← Chapter 3</a>
+  <a href="chapter4_easy.html">🍎 Easy version</a>
+  <a href="chapter5.html">Chapter 5 →</a>
+</div>
+
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-sticky">
+  <div class="glossary">
+    <h3>🔑 Key terms</h3>
+    <div class="term-item"><div class="term-name">System / Application software</div><div class="term-def">Services the computer requires / services the user requires.</div></div>
+    <div class="term-item"><div class="term-name">Utility program</div><div class="term-def">System software managing resources — anti-virus, defrag, back-up, screensaver.</div></div>
+    <div class="term-item"><div class="term-name">Device driver</div><div class="term-def">Translates data so a peripheral can communicate with the OS.</div></div>
+    <div class="term-item"><div class="term-name">Operating system</div><div class="term-def">Provides a platform for applications and an interface for the user.</div></div>
+    <div class="term-item"><div class="term-name">Firmware / BIOS</div><div class="term-def">Low-level control program that boots the motherboard and finds the OS.</div></div>
+    <div class="term-item"><div class="term-name">EEPROM / CMOS</div><div class="term-def">BIOS program storage / battery-backed BIOS settings storage.</div></div>
+    <div class="term-item"><div class="term-name">Interrupt</div><div class="term-def">A signal to the processor requesting attention, given a priority.</div></div>
+    <div class="term-item"><div class="term-name">Interrupt service routine (ISR)</div><div class="term-def">Code that handles/resolves an interrupt.</div></div>
+    <div class="term-item"><div class="term-name">Buffer</div><div class="term-def">Temporary memory area matching a fast processor to a slow device.</div></div>
+    <div class="term-item"><div class="term-name">High-level / Low-level language</div><div class="term-def">Machine independent, readable / hardware-specific, e.g. assembly.</div></div>
+    <div class="term-item"><div class="term-name">Mnemonic</div><div class="term-def">Short code (LDA, ADD, STO) representing a machine operation.</div></div>
+    <div class="term-item"><div class="term-name">Compiler / Interpreter / Assembler</div><div class="term-def">Translate whole program at once / line by line / assembly → machine code.</div></div>
+    <div class="term-item"><div class="term-name">IDE</div><div class="term-def">Suite of tools to write and test code: editor, translator, debugger, diagnostics.</div></div>
+    <div class="term-item"><div class="term-name">Prettyprint</div><div class="term-def">Colour-codes and formats source code for readability.</div></div>
+  </div>
+  <div class="tip-box">
+    <h4>📌 Exam tips</h4>
+    <p>Describing IDE features? Go beyond the feature's name — explain the actual mechanism, e.g. auto-completion suggests matches as you type a command word, not "it auto-completes the code".</p>
+    <p>Never restate a reason already given in the question stem — examiners confirm this specifically loses the mark.</p>
+    <p>For interrupts, always give the event on a device ("a key pressed"), never just the device name ("keyboard").</p>
+  </div>
+</div>
+</aside>
+</div>
+
+<footer>
+  G9 Computer Science · Chapter 4 · Software
+</footer>
+
+<script>
+/* Per-topic quizzes: each keyed by its data-quiz id */
+var QUIZ = {
+  1:{answers:[2, 1, 0, 3, 3], total:5, score:0, done:0, feedback:[
+    "Managing files, memory and multitasking together is the job of the operating system — not a single utility program.",
+    "Memory management allocates memory to processes and prevents two processes from using the same location at once.",
+    "The chain runs applications → OS → firmware → hardware, in that order of dependency.",
+    "A mouse is just a device; the interrupt is the event on it, e.g. the mouse being moved — naming just the device is a documented examiner-flagged error.",
+    "A buffer stores data temporarily so the fast processor can keep working instead of sitting idle waiting for a slow device like a printer."]},
+  2:{answers:[2, 1, 0, 1, 3], total:5, score:0, done:0, feedback:[
+    "High-level languages are machine independent (portable) — the other options describe advantages of low-level languages instead.",
+    "A mnemonic is a short, memorable code such as LDA, ADD or STO that stands in for a machine operation.",
+    "A compiler translates the whole program at once before execution; an interpreter translates and executes line by line.",
+    "An interpreter suits development, since it stops at the first error found and lets the programmer fix it immediately.",
+    "This just rewords the feature's name — a full-mark answer explains the mechanism: the IDE suggests matching options as a command word is typed."]}
+};
+function handleQ(btn){
+  var quiz=+btn.dataset.quiz, q=+btn.dataset.q, idx=+btn.dataset.idx, Q=QUIZ[quiz];
+  var btns=document.querySelectorAll('[data-quiz="'+quiz+'"][data-q="'+q+'"]');
+  btns.forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('fb'+quiz+'_'+q);
+  fb.classList.add('show');
+  var correct=Q.answers[q-1];
+  if(idx===correct){
+    btn.classList.add('correct');
+    fb.className='q-feedback show correct-fb';
+    fb.textContent='✅ Correct! '+Q.feedback[q-1];
+    Q.score++;
+  }else{
+    btn.classList.add('wrong');
+    btns[correct].classList.add('correct');
+    fb.className='q-feedback show wrong-fb';
+    fb.textContent='❌ '+Q.feedback[q-1];
+  }
+  Q.done++;
+  document.getElementById('score'+quiz).textContent=Q.score+' / '+Q.total;
+  document.getElementById('prog'+quiz).style.width=(Q.done/Q.total*100)+'%';
+}
+/* Scroll reveal */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.unit').forEach(function(u){io.observe(u);});
+</script>
+</body>
+</html>
